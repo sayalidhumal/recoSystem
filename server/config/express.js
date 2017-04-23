@@ -7,9 +7,7 @@ var express = require('express'),
     passport = require('passport');
 
 module.exports = function(app,config){
-  function compile(str,path){
-    return stylus(str).set('filename',path);
-  }
+  
   app.use(logger('dev'));
   app.use(cookieParser());
   app.use(bodyParser.json());
@@ -18,5 +16,6 @@ module.exports = function(app,config){
     saveUninitialized: true}));
   app.use(passport.initialize());
   app.use(passport.session());
+
   app.use(express.static(config.rootPath +'/public'));
 };

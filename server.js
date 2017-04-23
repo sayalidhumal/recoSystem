@@ -13,7 +13,7 @@ require('./server/config/express')(app,config);
 
 require('./server/config/mongoose')(config);
 
-//console.log("inside server.js");
+
 var User = mongoose.model('User');
 console.log("calling LocalStrategy",User)
 passport.use(new LocalStrategy({

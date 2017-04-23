@@ -1,1 +1,20 @@
-<h2>sayali</h2>
+<div>
+  <md-content>
+    <div layout="row"  layout-xs="column">
+      <md-card ng-repeat="app in vm.application" flex flex-gt-xs="30">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">{{app.Name}}</span>
+              <span class="md-subhead">{{app.Description}}</span>
+            </md-card-title-text>
+            <md-card-title-media>
+              <div class="md-media-md card-media"></div>
+            </md-card-title-media>
+          </md-card-title>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button><a ui-sref="#">Open</a></md-button>
+          </md-card-actions>
+      </md-card>
+    </div>
+  </md-content>
+</div>

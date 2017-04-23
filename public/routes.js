@@ -1,15 +1,12 @@
 'use strict';
 
-angular.module('myApp', [
-  'ui.router'
-])
-.config(function($stateProvider, $urlRouterProvider) {
+angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
     .state('root', {
-        url: '/',
+        url: '',
         views:{
           '@':{
             templateUrl: 'assets/layout/layout.html'
@@ -27,11 +24,9 @@ angular.module('myApp', [
       views:{
         'content@root':{
           templateUrl:'app/applications/applications.html',
-          controller:'Applications'
+          controller:'Applications',
+          controllerAs:'vm'
         }
       }
-    })
-})
-.run(function () {
-
+    });
 });
