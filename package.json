@@ -6,18 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines":{
+  "engines": {
     "node": "6.10.x",
-    "npm":"3.10.x"
+    "npm": "3.10.x"
   },
   "author": "Sayali Dhumal",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
     "express": "^4.15.2",
+    "express-session": "^1.15.2",
     "jade": "^1.11.0",
     "mongoose": "^4.9.5",
     "morgan": "^1.8.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "stylus": "^0.54.5"
   },
   "devDependencies": {

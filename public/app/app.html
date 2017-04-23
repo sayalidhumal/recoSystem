@@ -1,0 +1,9 @@
+<div class="row white">
+  <div class="col-xs-2">
+    <form name="vm.form">
+      <input required type="text" name="username" ng-model="vm.username">
+      <input required type="password" name="password" ng-model="vm.password">
+      <button type="submit" ng-disabled="vm.form.invalid" ng-click="vm.login()">{{vm.loginBtn}}</button>
+    </form>
+  </div>
+</div>

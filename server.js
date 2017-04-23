@@ -1,59 +1,59 @@
-var express = require('express');
-  stylus = require('stylus'),
-  logger = require('morgan'),
-  bodyParser = require('body-parser'),
-  mongoose = require('mongoose');
+var express = require('express'),
+    mongoose = require('mongoose'),
+    passport = require('passport'),
+    LocalStrategy = require('passport-local').Strategy;
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var app = express();
 
-function compile(str,path){
-  return stylus(str).set('filename',path);
-}
+var config = require('./server/config/config')[env];
 
-app.set('views',__dirname + '/server/views');
-app.set('view engine','jade');
-app.use(logger('dev'));
-app.use(bodyParser());
-app.use(stylus.middleware(
-  {
-    src: __dirname + '/public',
-    compile: compile
+require('./server/config/express')(app,config);
+
+require('./server/config/mongoose')(config);
+
+//console.log("inside server.js");
+var User = mongoose.model('User');
+console.log("calling LocalStrategy",User)
+passport.use(new LocalStrategy({
+    usernameField:'username',
+    passwordField:'password'
+  },
+  function(username,password,done){
+    User.findOne({username:username}).exec(function(err,user){
+      console.log("error",err,user);
+      if(user && user.authenticate(password)){
+        return done(null,user);
+      }
+      else {
+        console.log("User Not Found")
+        return done(null,false);
+      }
+    })
   }
-));
-app.use(express.static(__dirname +'/public'));
+))
 
-if(env=='development'){
-  mongoose.connect('mongodb://localhost/training')
-}
-else{
-  mongoose.connect('mongodb://sayali:sayali@ds157740.mlab.com:57740/training');
-}
+passport.serializeUser(function(user,done){
 
-var db = mongoose.connection;
-db.on('error',console.error.bind(console,'connection error...'));
-db.once('open',function callback(){
-  console.log('training db opened');
+  if(user){
+    console.log("inside serializeUser",user)
+    done(null,user._id);
+  }
 });
 
-var messageSchema = mongoose.Schema({message:String});
-var Message = mongoose.model('Message',messageSchema);
-var mongoMessage;
-Message.findOne().exec(function(err,messageDoc){
-  mongoMessage = messageDoc.message;
+passport.deserializeUser(function(id,done){
+  User.findOne({_id:id}).exec(function(err,user){
+    if(user){
+      return done(null,user);
+    }
+    else {
+      return done(null,false);
+    }
+  })
 });
 
-app.get('/partials/:partialPath',function(req,res){
-  res.render('partials/'+req.params.partialPath);
-})
+require('./server/config/routes')(app);
 
-app.get('*',function(req,res){
-  res.render('index',{
-    mongoMessage: mongoMessage
-  });
-})
-
-var port = process.env.PORT || 3030;
-app.listen(port);
-console.log('listening on port '+port+'...');
+app.listen(config.port);
+console.log('listening on port '+config.port+'...');

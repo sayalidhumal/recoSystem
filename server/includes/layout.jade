@@ -4,7 +4,17 @@ html
     base(href="/")
     link(href="/css/bootstrap.css", rel='stylesheet')
     link(href="/vendor/toastr/toastr.css", rel='stylesheet')
+    link(href="/vendor/angular-material/angular-material.css", rel='stylesheet')
     link(href="/css/site.css", rel='stylesheet')
+    link(rel="stylesheet" href="/vendor/material-icons/css/material-icons.css")
+
   body(ng-app='app')
-      block main-content
-      include scripts
+    section
+      md-toolbar(layout="row", class="content-toolbar md-whiteframe-z2 md-hue-1")
+        md-button(class="md-icon-button " aria-label="menu" , hide-element)
+          md-icon(icon="menu")
+        div(class="md-toolbar-tools")
+          span Hey man!
+
+    block main-content
+    include scripts
