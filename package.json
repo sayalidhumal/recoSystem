@@ -4,7 +4,8 @@
   "description": "training",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./public/server/server"
   },
   "engines": {
     "node": "6.10.x",
@@ -17,13 +18,10 @@
     "consolidate": "^0.14.5",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.2",
-    "express-session": "^1.15.2",
+    "http": "0.0.0",
     "jade": "^1.11.0",
-    "mongoose": "^4.9.5",
     "morgan": "^1.8.1",
-    "mustache": "^2.3.0",
-    "passport": "^0.3.2",
-    "passport-local": "^1.0.0",
+    "pg": "^6.2.3",
     "stylus": "^0.54.5"
   },
   "devDependencies": {

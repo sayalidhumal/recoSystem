@@ -1,0 +1,46 @@
+<md-content layout="row" layout-align="space-around" ng-cloak="ng-cloak" class="login-form">
+  <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2><span>Sign Up</span></h2>
+      </div>
+    </md-toolbar>
+    <md-card-content>
+      <form name="vm.form">
+        <span class="md-headline">Sign Up</span>
+        <md-content>
+          <md-input-container class="md-block">
+            <label>First Name</label>
+            <input type="text" name="firstname" ng-model="vm.user.firstname">
+            <div ng-messages="vm.form.firstname.$error" role="alert" multiple="">
+              <div ng-message="required" class="my-message">Please enter your first name.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-block">
+            <label>Last Name</label>
+            <input type="text" name="lastname" ng-model="vm.user.lastname">
+            <div ng-messages="vm.form.lastname.$error" role="alert" multiple="">
+              <div ng-message="required" class="my-message">Please enter your last name.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-block">
+            <label>User Name</label>
+            <input type="text" name="username" ng-model="vm.user.username">
+            <div ng-messages="vm.form.username.$error" role="alert" multiple="">
+              <div ng-message="required" class="my-message">Please enter your user name.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-block">
+            <label>Password</label>
+            <input type="password" name="password" ng-model="vm.user.password">
+            <div ng-messages="vm.form.password.$error" role="alert" multiple="">
+              <div ng-message="required" class="my-message">Please enter your password.</div>
+            </div>
+          </md-input-container>
+        </md-content>
+        <md-button type="submit" ng-disabled="vm.form.$invalid" ng-click="vm.create()">Create Accout</md-button>
+        <md-button ng-click="vm.cancel()">Cancel</md-button>
+      </form>
+    </md-card-content>
+  </md-card>
+</md-content>

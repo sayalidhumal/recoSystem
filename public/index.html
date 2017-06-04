@@ -10,7 +10,10 @@
 
 
 </head>
-<body ui-view="">
+<body>
+  <div ui-view="login"></div>
+  <div ui-view="signup"></div>
+  <div ui-view></div>
   <script src="vendor/jquery/dist/jquery.js"></script>
   <script src="vendor/angular/angular.js"></script>
   <script src="vendor/angular-resource/angular-resource.js"></script>
@@ -19,11 +22,21 @@
   <script src="vendor/angular-aria/angular-aria.js"></script>
   <script src="vendor/angular-material/angular-material.js"></script>
   <script src="vendor/angular-messages/angular-messages.js"></script>
+  <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="assets/services/services.module.js"></script>
   <script src="app.js"></script>
   <script src="routes.js"></script>
+  <script src="assets/layout/layout.controller.js"></script>
   <script src="app/app.controller.js"></script>
-  <script src="app/applications/application.controller.js">
+  <script src="app/applications/application.controller.js"></script>
+  <script src="app/applications/todo/to-do.controller.js"></script>
+  <script src="app/signup/signup.controller.js"></script>
 
-  </script>
+
+
+  <!-- SERVICES -->
+  <script src="assets/services/authenticate.service.js"></script>
+  <script src="assets/services/user.service.js"></script>
+
 </body>
 </html>

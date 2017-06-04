@@ -1,5 +1,10 @@
 <div>
-  <h2>Welcome To My Angular App</h2>
-  <div ui-view="content">
+  <div>
+    <h2>Welcome To My Angular App</h2>
+    <md-button ng-show="vm.user" ng-click="vm.signOut()">Sign Out</md-buttonn>
   </div>
+
+  <md-content>
+    <div ui-view="content"></div>
+  </md-content>
 </div>
