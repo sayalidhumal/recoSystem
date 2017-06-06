@@ -4,11 +4,13 @@ const pg = require('pg');
 const path = require('path');
 const physicalQueries = require('../queries/physical.queries.js');
 const clubsQueries = require('../queries/clubs.queries')
-const connectionString = process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5434/cssp';
+const connectionString = process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5432/cssp';
 
 router.get('/', function(req, res, next){
+    console.log(path.join(
+        __dirname, '..','..','index.html'))
     res.sendFile(path.join(
-    __dirname, '..','..','app','index.html'));
+    __dirname, '..','..','index.html'));
 });
 
 router.get('/getPhysicalClubs', physicalQueries.getPhysicalClubs);

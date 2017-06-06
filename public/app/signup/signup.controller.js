@@ -1,5 +1,5 @@
 (function(){
-  angular.module('myApp').controller('SignUpController',
+  angular.module('Signup').controller('SignUpController',
   function($state,AuthService,UserService){
     var vm = this;
     vm.form = {}

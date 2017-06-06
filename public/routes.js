@@ -9,8 +9,8 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
         url: '/',
         views:{
           'login':{
-            templateUrl: 'app/app.html',
-            controller: 'AppCtrl',
+            templateUrl: 'app/login/login.html',
+            controller: 'LoginController',
             controllerAs:'vm'
           }
         }
@@ -36,21 +36,11 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
           controllerAs:'vm'
         },
         'content@root':{
-          templateUrl:'app/applications/applications.html',
-          controller:'Applications',
+          templateUrl:'app/home/home.html',
+          controller:'HomeController',
           controllerAs:'vm'
         }
       }
     })
 
-    .state('root.toDo',{
-      url:'todo-app',
-      views:{
-        'content@root':{
-          templateUrl:'app/applications/todo/to-do.html',
-          controller:'toDo',
-          controllerAs:'vm'
-        }
-      }
-    });
 });

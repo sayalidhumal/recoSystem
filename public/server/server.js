@@ -9,7 +9,7 @@ var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 const routes = require('./routes/index');
 var app = express();
 
-var port = process.env.PORT || '8100';
+var port = process.env.PORT || '3000';
 app.set('port', port);
 var server = http.createServer(app);
 

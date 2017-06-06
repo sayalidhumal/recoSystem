@@ -1,9 +1,12 @@
 (function(){
   var app = angular.module('myApp',[
-    'ui.router',
-    'ngMaterial',
-    'services',
-    'ngResource'
+      'ui.router',
+      'ngMaterial',
+      'services',
+      'ngResource',
+      'Login',
+      'Signup',
+      'Home'
   ])
   .constant('appconfig',{
     'TIMEOUT': 1800000,
@@ -48,16 +51,6 @@
     })//$rootScope.$on('$stateChangeStart')
 
     $rootScope.$on('$stateChangeSuccess',function(event,toState,toParams,fromState,fromParams){
-      var campusResource;
-        $http({
-            method: 'GET',
-            url: '/getPhysicalClubs'
-        }).then(function success(response){
-            console.log("Data from database",response.data)
-            campusResource = response.data;
-        },function error(error){
-
-        });
       console.log("changing the state");
       $state.go(toState);
     })//$rootScope.$on('$stateChangeSuccess')

@@ -3,7 +3,7 @@
     const router = express.Router();
     const pg = require('pg');
     const path = require('path');
-    const connectionString = process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5434/cssp';
+    const connectionString = process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5432/cssp';
 
     function getPhysicalClubs(req, res, next){
         const results = [];
