@@ -3,8 +3,7 @@ const router = express.Router();
 const pg = require('pg');
 const path = require('path');
 const physicalQueries = require('../queries/physical.queries.js');
-const clubsQueries = require('../queries/clubs.queries')
-const connectionString = process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5432/cssp';
+const clubsQueries = require('../queries/clubs.queries');
 
 router.get('/', function(req, res, next){
     console.log(path.join(
