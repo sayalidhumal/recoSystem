@@ -1,7 +1,7 @@
 {
-  "name": "Course recommendation system",
+  "name": "Course_recommendation_system",
   "version": "1.0.0",
-  "description": "Course recommendation system",
+  "description": "Course_recommendation_system",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

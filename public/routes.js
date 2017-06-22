@@ -28,7 +28,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
     })
 
     .state('root',{
-      url:'/',
+      url:'/home',
       views:{
         '':{
           templateUrl: 'assets/layout/layout.html',

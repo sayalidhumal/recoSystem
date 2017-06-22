@@ -4,19 +4,12 @@
     var dfd = $q.defer();
     return{
 
-      authenticate: function(username,password) {
-        var dfd = $q.defer();
-        $http.post('/login',{username: username, password: password}).then(function(response) {
-          console.log(response);
-          if(response.data.success){
-            var user = new UserService();
-            angular.extend(user, response.data.user);
-            dfd.resolve(true);
-          }
-          else
-            dfd.resolve(false);
-        });
-        return dfd.promise;
+      authenticate: function(userID) {
+          return $http({
+              method: 'GET',
+              url: '/login',
+              params:{userID: userID}
+          })
       },
 
       logoutUser: function() {

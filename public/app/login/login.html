@@ -11,8 +11,8 @@
                 <md-content>
                     <md-input-container class="md-block">
                         <label>Username</label>
-                        <input type="text" required name="username" ng-model="vm.username"/>
-                        <div ng-messages="vm.form.username.$error" role="alert" multiple="">
+                        <input type="text" required name="username" ng-model="vm.userID"/>
+                        <div ng-messages="vm.form.userID.$error" role="alert" multiple="">
                             <div ng-message="required" class="my-message">Please enter your username.</div>
                         </div>
                     </md-input-container>
@@ -24,7 +24,7 @@
                         </div>
                     </md-input-container>
                 </md-content>
-                <p class"md-warn" ng-if="vm.error">Invalid User Name or Password</p>
+                <p class="md-warn" ng-if="vm.error">Invalid User Name or Password</p>
                 <md-button ng-disabled="vm.form.$invalid" class="md-raised md-primary" aria-label="Login" ng-click="vm.login()">LOGIN</md-button>
                 <md-button ng-click="vm.register()">Sign Up</md-button>
             </form>

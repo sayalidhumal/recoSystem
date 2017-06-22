@@ -4,6 +4,7 @@ const pg = require('pg');
 const path = require('path');
 const physicalQueries = require('../queries/physical.queries.js');
 const clubsQueries = require('../queries/clubs.queries');
+const loginQueries = require('../queries/login.queries')
 
 router.get('/', function(req, res, next){
     console.log(path.join(
@@ -15,5 +16,7 @@ router.get('/', function(req, res, next){
 router.get('/getPhysicalClubs', physicalQueries.getPhysicalClubs);
 
 router.post('/addClubs', clubsQueries.addClubs);
+
+router.get('/login', loginQueries.getUser);
 
 module.exports = router;
