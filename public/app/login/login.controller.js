@@ -22,6 +22,18 @@
             AuthService.authenticate(vm.userID).then(
                 function success(response) {
                     console.log(response.data)
+                    vm.data = response.data[0];
+                    if(vm.data.password == vm.password){
+                        if(vm.data.role == "admin"){
+                            //$state.go('');
+                        }
+                        if(vm.data.role == "student"){
+                            //$state.go('');
+                        }
+                        if(vm.data.role == "advisor"){
+                            //$state.go('');
+                        }
+                    }
 
             }, function error(response) {
 
