@@ -1,0 +1,34 @@
+<md-content flex="flex" flex-gt-sm="50" flex-gt-md="33">
+    <h3 align="center">Currently Enrolled Courses</h3>
+    <table align="center" style="width: 70%">
+        <tr>
+            <th align="center">Course ID</th>
+            <th align="center">Course Name</th>
+            <th align="center">Quarter</th>
+        </tr>
+        <tr ng-if="vm.userCourseDetails.coursesEnrolled.length != 0" ng-repeat="courses in vm.userCourseDetails.coursesEnrolled">
+            <td>{{courses.courseID}}</td>
+            <td>{{courses.courseName}}</td>
+            <td>{{courses.quarter}} {{courses.yearTaken}}</td>
+        </tr>
+    </table>
+    <p align="center" ng-if="vm.userCourseDetails.coursesEnrolled.length ==0">No courses Enrolled</p>
+
+    <h3 align="center">Courses Completed</h3>
+    <table align="center" style="width: 70%">
+        <tr>
+            <th align="center">Course ID</th>
+            <th align="center">Course Name</th>
+            <th align="center">Quarter</th>
+            <th align="center">Units Obtained</th>
+        </tr>
+        <tr ng-if="vm.userCourseDetails.details.coursesTaken.length !=0" ng-repeat="courses in vm.userCourseDetails.details.coursesTaken">
+            <td>{{courses.courseID}}</td>
+            <td>{{courses.courseName}}</td>
+            <td>{{courses.quarter}} {{courses.yearTaken}}</td>
+            <td>{{courses.unitsObtained}}</td>
+        </tr>
+    </table>
+    <p align="center" ng-if="vm.userCourseDetails.details.coursesTaken.length ==0">No courses taken</p>
+</md-content>
+<button class="md-primary md-raised">Courses Offered</button>

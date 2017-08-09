@@ -2,11 +2,13 @@
   var app = angular.module('myApp',[
       'ui.router',
       'ngMaterial',
+      'ngCookies',
       'services',
       'ngResource',
       'Login',
       'Signup',
-      'Home'
+      'Home',
+      'Studenthome'
   ])
   .constant('appconfig',{
     'TIMEOUT': 1800000,
@@ -24,7 +26,6 @@
     $rootScope.$on('$stateChangeStart',function(event,toState){
       var timeOutThread = $timeout(function(){logOutSession();},maxIdleSession);
       if(toState.name!='login'){
-        console.log("success from app.js")
         angular.forEach(eventArray,function(eventName){
           bodyElement.on(eventName,function(e){
             ResetIdleSession(e);
@@ -51,7 +52,6 @@
     })//$rootScope.$on('$stateChangeStart')
 
     $rootScope.$on('$stateChangeSuccess',function(event,toState,toParams,fromState,fromParams){
-      console.log("changing the state");
       $state.go(toState);
     })//$rootScope.$on('$stateChangeSuccess')
   });//app.run()

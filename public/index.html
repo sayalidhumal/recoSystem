@@ -2,7 +2,7 @@
 <html ng-app ="myApp">
 <head>
 <title></title>
-<link href="css/bootstrap.css", rel='stylesheet'>
+<link href="vendor/bootstrap/dist/css/bootstrap.css", rel='stylesheet'>
 <link href="vendor/toastr/toastr.css", rel='stylesheet'>
 <link href="vendor/angular-material/angular-material.css", rel='stylesheet'>
 <link href="css/site.css", rel='stylesheet'>
@@ -11,6 +11,7 @@
 
 </head>
 <body>
+  <div ui-view="welcome"></div>
   <div ui-view="login"></div>
   <div ui-view="signup"></div>
   <div ui-view></div>
@@ -23,22 +24,29 @@
   <script src="vendor/angular-material/angular-material.js"></script>
   <script src="vendor/angular-messages/angular-messages.js"></script>
   <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="vendor/angular-cookies/angular-cookies.js"></script>
   <script src="assets/services/services.module.js"></script>
   <script src="app.js"></script>
   <script src="routes.js"></script>
   <script src="assets/layout/layout.controller.js"></script>
+  <script src="app/welcome/welcome.controller.js"></script>
   <script src="app/login/login.module.js"></script>
   <script src="app/login/login.controller.js"></script>
   <script src="app/signup/signup.module.js"></script>
   <script src="app/signup/signup.controller.js"></script>
   <script src="app/home/home.module.js"></script>
   <script src="app/home/home.controller.js"></script>
+  <script src="app/StudentHome/studenthome.module.js"></script>
+  <script src="app/StudentHome/questionnaire/questionnaire.controller.js"></script>
+  <script src="app/StudentHome/recommendationPath/recommendation-path.controller.js"></script>
+  <script src="app/StudentHome/userCoursesDetails/user-courses-details.controller.js"></script>
 
 
 
   <!-- SERVICES -->
   <script src="assets/services/authenticate.service.js"></script>
   <script src="assets/services/user.service.js"></script>
+  <script src="assets/services/questionnaire.service.js"></script>
 
 </body>
 </html>

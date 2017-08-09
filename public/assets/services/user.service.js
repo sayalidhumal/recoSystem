@@ -1,12 +1,25 @@
 (function(){
-  angular.module('services').factory('UserService',
-  function($resource){
-    var UserResource = $resource('/api/users/:id',{_id: "@id"});
+    angular.module('services').factory('UserService',
+        function($http){
+            return{
 
-    UserResource.prototype.isAdmin = function(){
-      return this.roles && this.roles.indexOf('admin') > -1;
-    }
+              getEnrolledCourses: function(userID) {
+               return $http({
+               method: 'GET',
+               url: '/getEnrolledCourses',
+               params:{userID: userID}
+               })
+               },
 
-    return UserResource;
-  })
+                /*addPreference: function(preferences){
+
+                    return $http({
+                        method: 'POST',
+                        url: '/addPreference',
+                        data:{preferences:preferences}
+                    })
+                }*/
+
+            }//end of outer return
+        })
 })();

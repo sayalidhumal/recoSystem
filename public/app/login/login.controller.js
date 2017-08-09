@@ -1,9 +1,9 @@
 (function(){
     angular.module('Login').controller('LoginController',LoginController);
 
-    LoginController.$inject=['$scope','$state','$http','AuthService','appconfig','$mdToast'];
+    LoginController.$inject=['$state','AuthService','$mdToast','$cookies'];
 
-    function LoginController($scope,$state,$http,AuthService,appconfig,$mdToast){
+    function LoginController($state,AuthService,$mdToast,$cookies){
         var vm = this;
         vm.loginBtn = 'Login';
         vm.userID=null;
@@ -18,7 +18,6 @@
         }
 
         function login(){
-            vm.userID = "'"+ vm.userID + "'";
             AuthService.authenticate(vm.userID).then(
                 function success(response) {
                     vm.data = response.data[0];
@@ -27,23 +26,14 @@
                     }
                     else{
                         if(vm.data.password == vm.password){
-                            if(vm.data.role == "admin"){
-                                //$state.go('');
-                            }
-                            if(vm.data.role == "student"){
-                                //$state.go('');
-                            }
-                            if(vm.data.role == "advisor"){
-                                //$state.go('');
-                            }
+                            $cookies.put('auth',vm.data.userID)
+                            $cookies.put('role',vm.data.role)
+                            $state.go('root',{userID : vm.data.userID, userRole: vm.data.role});
                         }
                         else{
                             $mdToast.showSimple("Invalid Password!")
                         }
                     }
-
-
-
             }, function error(response) {
 
             });

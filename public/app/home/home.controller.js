@@ -4,16 +4,12 @@
 (function () {
     angular.module("Home").controller("HomeController",HomeController);
 
-    HomeController.$inject = ["$http"];
+    HomeController.$inject = ["$http","$stateParams"];
 
-    function HomeController($http) {
-        $http({
-            method: 'GET',
-            url: '/getPhysicalClubs'
-        }).then(function success(response){
-            console.log("Data from database",response.data)
-        },function error(error){
-
-        });
+    function HomeController($http,$stateParams) {
+         var vm=this;
+         vm.role = $stateParams.userRole;
+         console.log("StateParams",$stateParams)
     }
+
 })();

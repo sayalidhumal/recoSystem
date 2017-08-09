@@ -1,0 +1,69 @@
+<md-content layout="row" layout-align="space-around" ng-cloak="ng-cloak" class="login-form">
+    <md-card flex>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2><span>Questionnaire</span></h2>
+            </div>
+        </md-toolbar>
+        <md-card-content>
+            <form name="vm.form">
+                <md-content>
+                    <p><b>Graduate by taking:</b></p>
+                    <md-radio-group ng-model="vm.preference.gradType">
+
+                        <md-radio-button value="Project">Project</md-radio-button>
+                        <md-radio-button value="Thesis">Thesis</md-radio-button>
+                        <md-radio-button value="Comprehensive Exam">Comprehensive Exam</md-radio-button>
+
+                    </md-radio-group>
+                    <md-divider></md-divider>
+
+                    <p><b>Lecture Type</b></p>
+                    <md-radio-group ng-model="vm.preference.lectureType">
+
+                        <md-radio-button value="Lecture And Lab">Lecture And Lab</md-radio-button>
+                        <md-radio-button value="Lecture">Lecture</md-radio-button>
+
+                    </md-radio-group>
+                    <md-divider></md-divider>
+
+                    <div>
+                        <p><b>Select Lecture Days</b></p>
+                        <md-checkbox ng-checked="vm.exists('Monday', vm.preference.lectureDays)" ng-click="vm.toggle('Monday', vm.preference.lectureDays)">
+                            Monday and Wednesday
+                        </md-checkbox>
+                        <md-checkbox ng-checked="vm.exists('Tuesday', vm.preference.lectureDays)" ng-click="vm.toggle('Tuesday', vm.preference.lectureDays)">
+                            Tuesday and Thursday
+                        </md-checkbox>
+                        <md-checkbox ng-checked="vm.exists('Friday', vm.preference.lectureDays)" ng-click="vm.toggle('Friday', vm.preference.lectureDays)">
+                            Friday
+                        </md-checkbox>
+                        <md-checkbox ng-checked="vm.exists('Any', vm.preference.lectureDays)" ng-click="vm.toggle('Any', vm.preference.lectureDays)">
+                            Any
+                        </md-checkbox>
+                    </div>
+
+                    <md-divider></md-divider>
+
+
+                    <div>
+                        <p><b>Select Lecture Time</b></p>
+                        <md-checkbox ng-checked="vm.exists('Morning', vm.preference.lectureTimes)" ng-click="vm.toggle('Morning', vm.preference.lectureTimes)">
+                            Morning: Between 08:00am - 12:00pm
+                        </md-checkbox>
+                        <md-checkbox ng-checked="vm.exists('Afternoon', vm.preference.lectureTimes)" ng-click="vm.toggle('Afternoon', vm.preference.lectureTimes)">
+                            Afternoon: Between 12:00pm - 05:00pm
+                        </md-checkbox>
+                        <md-checkbox ng-checked="vm.exists('Evening', vm.preference.lectureTimes)" ng-click="vm.toggle('Evening', vm.preference.lectureTimes)">
+                            Evening: Between 05:00pm - 10:00pm
+                        </md-checkbox>
+                        <md-checkbox ng-checked="vm.exists('Any', vm.preference.lectureTimes)" ng-click="vm.toggle('Any', vm.preference.lectureTimes)">
+                            Any
+                        </md-checkbox>
+                    </div>
+                </md-content>
+                <md-button ng-disabled="vm.form.$invalid" class="md-raised md-primary" aria-label="Login" ng-click="vm.questionnaire()">Submit</md-button>
+            </form>
+        </md-card-content>
+    </md-card>
+</md-content>

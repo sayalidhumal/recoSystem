@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const pg = require('pg');
 const path = require('path');
-const physicalQueries = require('../queries/physical.queries.js');
-const clubsQueries = require('../queries/clubs.queries');
-const loginQueries = require('../queries/login.queries')
+
+const loginQueries = require('../queries/login.queries');
+const questionnaireQueries = require('../queries/questionnaire.queries');
+const userQueries = require('../queries/user.queries');
 
 router.get('/', function(req, res, next){
     console.log(path.join(
@@ -13,10 +14,12 @@ router.get('/', function(req, res, next){
     __dirname, '..','..','index.html'));
 });
 
-router.get('/getPhysicalClubs', physicalQueries.getPhysicalClubs);
-
-router.post('/addClubs', clubsQueries.addClubs);
-
 router.get('/login', loginQueries.getUser);
+
+router.post('/createUser',loginQueries.createUser);
+
+router.post('/addPreference',questionnaireQueries.addPreference);
+
+router.get('/getEnrolledCourses',userQueries.getEnrolledCourses);
 
 module.exports = router;

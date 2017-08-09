@@ -1,0 +1,15 @@
+<md-content layout="row" layout-align="space-around" ng-cloak="ng-cloak" class="login-form">
+    <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2><span>{{vm.title}}</span></h2>
+            </div>
+        </md-toolbar>
+        <md-card-content>
+            <p>{{vm.welcomeNote}}</p>
+            <p>If you have already registered, then click on <a ui-sref="login">Login</a></p>
+
+            <p>If you have not registered, click on <a ui-sref="signup">SignUp</a></p>
+        </md-card-content>
+    </md-card>
+</md-content>
