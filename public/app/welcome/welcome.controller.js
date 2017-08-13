@@ -10,8 +10,7 @@
     function WelcomeController(){
         var vm =this;
         vm.title = "Welcome to Course Recommendation System"
-        vm.welcomeNote = "Welcome Note ";
-
+        vm.welcomeNote = "This system will help you in planning what courses to take when to successfully graduate on time.";
     }
 })();
 

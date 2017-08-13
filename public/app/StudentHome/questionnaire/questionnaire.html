@@ -8,27 +8,23 @@
         <md-card-content>
             <form name="vm.form">
                 <md-content>
-                    <p><b>Graduate by taking:</b></p>
+                    <p><em><b>In order for the system to recommend a schedule of courses for you, please answer the following questions:</b></em></p>
+                    <p><b>What is your degree option? (Please Select One)</b></p>
                     <md-radio-group ng-model="vm.preference.gradType">
-
                         <md-radio-button value="Project">Project</md-radio-button>
                         <md-radio-button value="Thesis">Thesis</md-radio-button>
                         <md-radio-button value="Comprehensive Exam">Comprehensive Exam</md-radio-button>
-
                     </md-radio-group>
                     <md-divider></md-divider>
 
-                    <p><b>Lecture Type</b></p>
+                    <p><b>For Elective Courses, What are your Preferences?</b></p>
                     <md-radio-group ng-model="vm.preference.lectureType">
-
                         <md-radio-button value="Lecture And Lab">Lecture And Lab</md-radio-button>
                         <md-radio-button value="Lecture">Lecture</md-radio-button>
-
                     </md-radio-group>
                     <md-divider></md-divider>
 
-                    <div>
-                        <p><b>Select Lecture Days</b></p>
+                    <p><b>On Which days do you prefer to take Classes?(Select all that Apply)</b></p>
                         <md-checkbox ng-checked="vm.exists('Monday', vm.preference.lectureDays)" ng-click="vm.toggle('Monday', vm.preference.lectureDays)">
                             Monday and Wednesday
                         </md-checkbox>
@@ -41,13 +37,9 @@
                         <md-checkbox ng-checked="vm.exists('Any', vm.preference.lectureDays)" ng-click="vm.toggle('Any', vm.preference.lectureDays)">
                             Any
                         </md-checkbox>
-                    </div>
-
                     <md-divider></md-divider>
 
-
-                    <div>
-                        <p><b>Select Lecture Time</b></p>
+                    <p><b>Which time do you prefer to take Classes?(Select all that Apply)</b></p>
                         <md-checkbox ng-checked="vm.exists('Morning', vm.preference.lectureTimes)" ng-click="vm.toggle('Morning', vm.preference.lectureTimes)">
                             Morning: Between 08:00am - 12:00pm
                         </md-checkbox>
@@ -60,7 +52,35 @@
                         <md-checkbox ng-checked="vm.exists('Any', vm.preference.lectureTimes)" ng-click="vm.toggle('Any', vm.preference.lectureTimes)">
                             Any
                         </md-checkbox>
-                    </div>
+                    <md-divider></md-divider>
+
+                    <p><b>Do you prefer to take Summer Courses?</b></p>
+                    <md-radio-group ng-model="vm.preference.summerClasses">
+                        <md-radio-button value="Yes">Yes</md-radio-button>
+                        <md-radio-button value="No">No</md-radio-button>
+                    </md-radio-group>
+                    <md-divider></md-divider>
+
+                    <p><b>How many courses do you prefer to take in Upcoming Quarter? (Enter 1-4)</b></p>
+                    <input type="number" ng-maxlength="4" ng-minlength="1" name="phone" ng-model="vm.preference.numberOfCourses">
+                    <md-divider></md-divider>
+
+                    <p><b>Do you want to do course overload?</b></p>
+                    <md-radio-group ng-model="vm.preference.courseOverload">
+                        <md-radio-button value="Yes">Yes</md-radio-button>
+                        <md-radio-button value="No">No</md-radio-button>
+                    </md-radio-group>
+                    <md-divider></md-divider>
+
+                    <p><b>Are you interested in taking Independent Study?</b></p>
+                    <md-radio-group ng-model="vm.preference.summerClasses">
+                        <md-radio-button value="Yes">Yes</md-radio-button>
+                        <md-radio-button value="No">No</md-radio-button>
+                    </md-radio-group>
+                    <md-divider></md-divider>
+
+
+
                 </md-content>
                 <md-button ng-disabled="vm.form.$invalid" class="md-raised md-primary" aria-label="Login" ng-click="vm.questionnaire()">Submit</md-button>
             </form>

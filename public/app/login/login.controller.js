@@ -22,6 +22,7 @@
                 function success(response) {
                     vm.data = response.data[0];
                     if(response.data.length == 0){
+                        vm.error = true
                         $mdToast.showSimple("User not found")
                     }
                     else{

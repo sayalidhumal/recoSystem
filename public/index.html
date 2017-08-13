@@ -6,8 +6,11 @@
 <link href="vendor/toastr/toastr.css", rel='stylesheet'>
 <link href="vendor/angular-material/angular-material.css", rel='stylesheet'>
 <link href="css/site.css", rel='stylesheet'>
+    <!--<link href="vendor/ng-password-strength/dist/styles/main.css">-->
 <link rel="stylesheet" href="vendor/material-icons/css/material-icons.css">
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+    <link rel="stylesheet" href="vendor/angular-material-data-table/dist/md-data-table.min.css">
 
 </head>
 <body>
@@ -15,6 +18,8 @@
   <div ui-view="login"></div>
   <div ui-view="signup"></div>
   <div ui-view></div>
+
+  <!-- BOWER FILES-->
   <script src="vendor/jquery/dist/jquery.js"></script>
   <script src="vendor/angular/angular.js"></script>
   <script src="vendor/angular-resource/angular-resource.js"></script>
@@ -25,7 +30,14 @@
   <script src="vendor/angular-messages/angular-messages.js"></script>
   <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
   <script src="vendor/angular-cookies/angular-cookies.js"></script>
+  <script src="vendor/angular-material-data-table/dist/md-data-table.min.js"></script>
+
+
+  <!-- MODULES-->
   <script src="assets/services/services.module.js"></script>
+  <script src="assets/directives/directive.module.js"></script>
+
+  <!--APPLICATION CONTROLLERS-->
   <script src="app.js"></script>
   <script src="routes.js"></script>
   <script src="assets/layout/layout.controller.js"></script>
@@ -42,11 +54,12 @@
   <script src="app/StudentHome/userCoursesDetails/user-courses-details.controller.js"></script>
 
 
-
   <!-- SERVICES -->
   <script src="assets/services/authenticate.service.js"></script>
   <script src="assets/services/user.service.js"></script>
   <script src="assets/services/questionnaire.service.js"></script>
+
+  <!-- DIRECTIVES  -->
 
 </body>
 </html>

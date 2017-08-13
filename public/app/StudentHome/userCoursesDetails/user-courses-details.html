@@ -1,34 +1,75 @@
-<md-content flex="flex" flex-gt-sm="50" flex-gt-md="33">
-    <h3 align="center">Currently Enrolled Courses</h3>
-    <table align="center" style="width: 70%">
-        <tr>
-            <th align="center">Course ID</th>
-            <th align="center">Course Name</th>
-            <th align="center">Quarter</th>
-        </tr>
-        <tr ng-if="vm.userCourseDetails.coursesEnrolled.length != 0" ng-repeat="courses in vm.userCourseDetails.coursesEnrolled">
-            <td>{{courses.courseID}}</td>
-            <td>{{courses.courseName}}</td>
-            <td>{{courses.quarter}} {{courses.yearTaken}}</td>
-        </tr>
-    </table>
-    <p align="center" ng-if="vm.userCourseDetails.coursesEnrolled.length ==0">No courses Enrolled</p>
+<body layout="column">
+<md-toolbar class="md-whiteframe-1dp">
+    <div class="md-toolbar-tools">
+        <div class="md-title">Currently Enrolled Courses</div>
+        <div flex></div>
+        <md-button class="md-icon-button" ng-click="loadStuff()">
+            <i class="material-icons">refresh</i>
+        </md-button>
+    </div>
+</md-toolbar>
+<md-content layout="column">
+    <md-card>
+        <md-table-container>
+            <table md-table>
+                <thead md-head>
+                <tr md-row>
+                    <th md-column><span>Course ID</span></th>
+                    <th md-column><span>Course Name</span></th>
+                    <th md-column><span>Units</span></th>
+                </tr>
+                </thead>
+                <tbody md-body>
+                <tr md-row ng-repeat="course in vm.coursesEnrolled" ng-if="vm.coursesEnrolled.length!=0">
+                    <td md-cell><span>{{course.courseID}}</span></td>
+                    <td md-cell><span>{{course.courseName}}</span></td>
+                    <td md-cell><span>{{course.totalUnits}}</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+        <p ng-if="vm.coursesEnrolled.length==0">No Courses Enrolled</p>
 
-    <h3 align="center">Courses Completed</h3>
-    <table align="center" style="width: 70%">
-        <tr>
-            <th align="center">Course ID</th>
-            <th align="center">Course Name</th>
-            <th align="center">Quarter</th>
-            <th align="center">Units Obtained</th>
-        </tr>
-        <tr ng-if="vm.userCourseDetails.details.coursesTaken.length !=0" ng-repeat="courses in vm.userCourseDetails.details.coursesTaken">
-            <td>{{courses.courseID}}</td>
-            <td>{{courses.courseName}}</td>
-            <td>{{courses.quarter}} {{courses.yearTaken}}</td>
-            <td>{{courses.unitsObtained}}</td>
-        </tr>
-    </table>
-    <p align="center" ng-if="vm.userCourseDetails.details.coursesTaken.length ==0">No courses taken</p>
+    </md-card>
+
 </md-content>
-<button class="md-primary md-raised">Courses Offered</button>
+
+<md-toolbar class="md-whiteframe-1dp">
+    <div class="md-toolbar-tools">
+        <div class="md-title">Courses Taken</div>
+    </div>
+</md-toolbar>
+
+<md-content layout="column">
+    <md-card>
+        <p align="center" style="background-color: #3f51b5;color: #E6E8F5; font-family: Helvetica Neue, Helvetica, Arial; padding: 0 32px 0 32px; font-size: 16px; max-height: 64px;font-weight: 500;
+    letter-spacing: 0.005em; box-sizing: border-box; z-index: 3; ">Fall 2016</p>
+        <md-table-container>
+            <table md-table>
+                <thead md-head>
+                <tr md-row>
+                    <th md-column><span>Course ID</span></th>
+                    <th md-column><span>Course Name</span></th>
+                    <th md-column><span>Units Obtained</span></th>
+                    <th md-column><span>Total Units</span></th>
+                    <th md-column><span>Grade</span></th>
+                </tr>
+                </thead>
+                <tbody md-body>
+                <tr md-row ng-repeat="course in vm.coursesTaken" ng-if="vm.coursesTaken.length!=0">
+                    <td md-cell><span>{{course.courseID}}</span></td>
+                    <td md-cell><span>{{course.courseName}}</span></td>
+                    <td md-cell><span>{{course.totalUnits}}</span></td>
+                    <td md-cell><span>{{course.gradePointsObtained}}</span></td>
+                    <td md-cell><span>{{course.gradeObtained}}</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+        <p ng-if="vm.coursesTaken.length==0">No Courses Enrolled</p>
+
+    </md-card>
+
+</md-content>
+
+</body>

@@ -4,11 +4,13 @@
       'ngMaterial',
       'ngCookies',
       'services',
+      'directives',
       'ngResource',
       'Login',
       'Signup',
       'Home',
-      'Studenthome'
+      'Studenthome',
+      'md.data.table'
   ])
   .constant('appconfig',{
     'TIMEOUT': 1800000,

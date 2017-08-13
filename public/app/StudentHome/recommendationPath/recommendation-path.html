@@ -1,1 +1,43 @@
-<p>Recommendation Path</p>
+<md-card>Based on your degree option, courses taken & preferences (from questionnaire), we recommend the following path from first quarter to last quarter for graduation.</md-card>
+<div ng-cloak>
+    <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Fall 2017">
+                <md-card>
+                    <md-table-container>
+                        <table md-table>
+                            <thead md-head>
+                            <tr md-row>
+                                <th md-column><span>Course ID</span></th>
+                                <th md-column><span>Course Name</span></th>
+                                <th md-column><span>Total Units</span></th>
+                                <th md-column><span>Detail View</span></th>
+                            </tr>
+                            </thead>
+                            <tbody md-body>
+                            <tr md-row ng-repeat="course in vm.coursesRecommended" ng-if="vm.coursesRecommended.length!=0">
+                                <td md-cell><span>{{course.courseID}}</span></td>
+                                <td md-cell><span>{{course.courseName}}</span></td>
+                                <td md-cell><span>{{course.totalUnits}}</span></td>
+                                <td md-cell><span><md-button class="md-primary md-raised" ng-click="showAlert($event)">view</md-button></span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </md-table-container>
+                    <p ng-if="vm.coursesTaken.length==0">No Courses Enrolled</p>
+
+                </md-card>
+            </md-tab>
+            <md-tab label="Winter 2018">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2"></h1>
+                    </md-content>
+            </md-tab>
+            <md-tab label="Spring 2018">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2"></h1>
+                    </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>

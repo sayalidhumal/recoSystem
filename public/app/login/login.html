@@ -9,10 +9,10 @@
             <form name="vm.form">
                 <md-content>
                     <md-input-container class="md-block">
-                        <label>Username</label>
-                        <input type="text" required name="username" ng-model="vm.userID"/>
+                        <label>Coyote ID</label>
+                        <input type="number" required name="username" ng-model="vm.userID"/>
                         <div ng-messages="vm.form.userID.$error" role="alert" multiple="">
-                            <div ng-message="required" class="my-message">Please enter your username.</div>
+                            <div ng-message="required" class="my-message">Please enter your Coyote ID.</div>
                         </div>
                     </md-input-container>
                     <md-input-container class="md-block">

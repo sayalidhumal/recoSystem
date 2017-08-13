@@ -11,6 +11,9 @@
                     <div class="md-media-sm card-media"></div>
                 </md-card-title-media>
             </md-card-title>
+            <md-card-content>
+                <p>Click view to know the information of courses you've taken and are enrolled</p>
+            </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button class="md-primary" ui-sref="root.student.userCourseDetails">View</md-button>
             </md-card-actions>
@@ -25,6 +28,26 @@
                     <div class="md-media-sm card-media"></div>
                 </md-card-title-media>
             </md-card-title>
+            <md-card-content>
+                <p>Click here to view the recommendation path of courses for upcoming quarter</p>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-primary" ui-sref="root.student.recommendationPath">View</md-button>
+            </md-card-actions>
+        </md-card>
+
+        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Review Questionnaire</span>
+                </md-card-title-text>
+                <md-card-title-media>
+                    <div class="md-media-sm card-media"></div>
+                </md-card-title-media>
+            </md-card-title>
+            <md-card-content>
+                <p>Click to modify the details you've entered while signing up</p>
+            </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button class="md-primary" ui-sref="root.student.questionnaire">View</md-button>
             </md-card-actions>

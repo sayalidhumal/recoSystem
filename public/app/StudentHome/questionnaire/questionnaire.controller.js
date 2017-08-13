@@ -22,11 +22,11 @@
 
         function questionnaire() {
             console.log(vm.preference)
-            QuestionnaireService.addPreference(vm.preference).then(function(response) {
+            /*QuestionnaireService.addPreference(vm.preference).then(function(response) {
                 $state.go('root.student.questionnaire.recommendationPath');
             },function (reason) {
 
-            })
+            })*/
         }
         
         function exists(option,selected) {

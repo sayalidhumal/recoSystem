@@ -54,7 +54,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
           },
           params: {
               userID : null,
-              userRole: null
+              userRole: 'student'
           }
         })
 
@@ -75,18 +75,22 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
             }
         })
         .state('root.student.questionnaire',{
-            url:'/recommendation-path',
+            url:'/questionnaire',
             views:{
                 'content@root':{
                     templateUrl:'app/StudentHome/questionnaire/questionnaire.html',
                     controller:'QuestionnaireController',
                     controllerAs:'vm'
                 }
+            },
+            params:{
+                userID : null,
+                userRole: null
             }
         })
 
-        .state('root.student.questionnaire.recommendationPath',{
-            url:'',
+        .state('root.student.recommendationPath',{
+            url:'/recommendation-path',
             views:{
                 'content@root':{
                     templateUrl:'app/StudentHome/recommendationPath/recommendation-path.html',

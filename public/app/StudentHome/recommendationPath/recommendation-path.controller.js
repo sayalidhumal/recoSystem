@@ -4,10 +4,23 @@
 (function () {
     angular.module("Studenthome").controller("RecommendationPathController",RecommendationPathController);
 
-    RecommendationPathController.$inject = ["$http"];
+    RecommendationPathController.$inject = ["$http","$mdDialog","$scope"];
 
-    function RecommendationPathController($http) {
+    function RecommendationPathController($http,$mdDialog,$scope) {
+        var vm=this;
+        vm.coursesRecommended = [
+            {
+                courseID:602,
+                courseName:"Automata theory",
+                totalUnits: 4
 
+            },
+            {
+                courseID:655,
+                courseName:"Software Engineering",
+                totalUnits: 4
+            }
+    ]
     }
 
 })();
