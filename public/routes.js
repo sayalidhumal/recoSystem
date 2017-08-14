@@ -54,7 +54,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
           },
           params: {
               userID : null,
-              userRole: 'student'
+              userRole: 'admin'
           }
         })
 

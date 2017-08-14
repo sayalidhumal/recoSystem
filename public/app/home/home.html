@@ -58,22 +58,29 @@
 <!-- Admin Home Page-->
 
 <md-content class="md-padding" ng-if="vm.role=='admin'">
+    <md-toolbar class="md-whiteframe-1dp">
+        <div class="md-toolbar-tools">
+            <div class="md-title">User Management</div>
+        </div>
+    </md-toolbar>
     <div layout="row"  layout-xs="column">
         <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
             <md-card-title>
                 <md-card-title-text>
-                    <span class="md-headline">Admin Card</span>
+                    <span class="md-headline">Search and Modify User Information</span>
                 </md-card-title-text>
                 <md-card-title-media>
                     <div class="md-media-sm card-media"></div>
                 </md-card-title-media>
             </md-card-title>
+            <md-card-content>
+                <p>Click to view, update & delete user information</p>
+            </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
-                <md-button class="md-primary">View</md-button>
+                <md-button class="md-primary" ui-sref="root.student.userCourseDetails">View</md-button>
             </md-card-actions>
         </md-card>
     </div>
-</md-content>
 
 
 <!-- Advisor Home Page-->
