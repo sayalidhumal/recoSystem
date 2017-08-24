@@ -9,12 +9,17 @@
     function QuestionnaireController($http,QuestionnaireService,$stateParams,$state) {
         var vm = this;
         vm.preference = {
-            gradType:null,
-            lectureDays : [],
-            lectureTimes:[],
-            lectureType: null,
+            degree_preference:null,
+            course_count_preference : null,
+            lecture_preference:null,
+            summer_course_preference: null,
+            course_overload_preference: null,
+            independent_study_preference: null,
+            time_preference:[],
+            day_preference:[],
             userID: $stateParams.userID
         }
+        vm.role = $stateParams.userRole;
         console.log($stateParams.userID)
         vm.exists = exists;
         vm.toggle = toggle;
@@ -22,11 +27,11 @@
 
         function questionnaire() {
             console.log(vm.preference)
-            /*QuestionnaireService.addPreference(vm.preference).then(function(response) {
-                $state.go('root.student.questionnaire.recommendationPath');
+            QuestionnaireService.addPreference(vm.preference).then(function(response) {
+                $state.go('root',{userID : vm.preference.userID, userRole: vm.role});
             },function (reason) {
 
-            })*/
+            })
         }
         
         function exists(option,selected) {

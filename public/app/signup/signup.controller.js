@@ -72,7 +72,6 @@
     }
 
 
-
   function SignUpController($state,AuthService,UserService,$scope) {
       var vm = this;
       $scope.password = '';
@@ -93,15 +92,14 @@
       'CA').split(' ').map(function (state) {
           return {abbrev: state};
       });
-      vm.form = {}
+      vm.form = {};
+      vm.firstname ='';
+      vm.lastname ='';
+      vm.middlename = '';
       vm.user = {
           'password': null,
           'role': 'student',
-          'name': {
-              "FirstName": null,
-              "LastName": null,
-              "MiddleName": null
-          },
+          'name': '',
           "email": null,
           "phone": null,
           "userID": null,
@@ -111,18 +109,26 @@
               "State": "",
               "Pin": ""
           },
-          "dateOfBirth": ""
+          "dateOfBirth": "",
+          "residency":null,
+          "ft_pt": null
       }
       vm.create = create;
       vm.cancel = cancel;
 
       function create() {
+          if(vm.middlename==''){
+              vm.user.name = vm.firstname + " " + vm.lastname;
+          }
+          else {
+              vm.user.name = vm.firstname + " " + vm.middlename + " " + vm.lastname;
+          }
           console.log(vm.user)
-          AuthService.createUser(vm.user).then(function () {
+          AuthService.createUser(vm.user).then(function (response) {
                   console.log("user created successfully");
-                  $state.go('root.student.questionnaire');
+                  $state.go('root.student.questionnaire',{userID : vm.user.userID, userRole: vm.user.role});
               },
-              function (reason) {
+              function(reason) {
                   console.log(reason);
               })
       }
@@ -130,5 +136,6 @@
       function cancel() {
           $state.go('login');
       }
+
   }
 })();

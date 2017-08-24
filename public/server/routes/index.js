@@ -6,6 +6,7 @@ const path = require('path');
 const loginQueries = require('../queries/login.queries');
 const questionnaireQueries = require('../queries/questionnaire.queries');
 const userQueries = require('../queries/user.queries');
+const courseQueries = require('../queries/course.queries');
 
 router.get('/', function(req, res, next){
     console.log(path.join(
@@ -21,5 +22,13 @@ router.post('/createUser',loginQueries.createUser);
 router.post('/addPreference',questionnaireQueries.addPreference);
 
 router.get('/getEnrolledCourses',userQueries.getEnrolledCourses);
+
+router.get('/getUserRole',userQueries.getUserRole);
+
+router.get('/getCourse',courseQueries.getCourse);
+
+router.get('/getCourseType',courseQueries.getCourseType);
+
+router.get('/getCourseDetailsForYear',courseQueries.getCourseDetailsForYear);
 
 module.exports = router;

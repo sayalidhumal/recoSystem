@@ -10,14 +10,44 @@
       'Signup',
       'Home',
       'Studenthome',
+      'AdminHome',
       'md.data.table'
   ])
+
+
+  /* To be added to set it to current DD/MM/YYYY
+
+      * 'CurrentDate': new Date(),
+      * 'CurrentMonth': (new Date()).getMonth(),
+      *'CurrentYear': (new Date()).getFullYear(),
+      *'NextYear': (new Date()).getFullYear() + 1,
+      *
+      * */
+
   .constant('appconfig',{
     'TIMEOUT': 1800000,
-    'CurrentUser': null
+    'QUARTERS': {
+        JANUARY: 'Winter',
+        FEBRUARY: 'Winter',
+        MARCH: 'Winter',
+        APRIL: 'Spring',
+        MAY: 'Spring',
+        JUNE: 'Spring',
+        JULY: 'Summer',
+        AUGUST: 'Summer',
+        SEPTEMBER: 'Fall',
+        OCTOBER: 'Fall',
+        NOVEMBER: 'Fall',
+        DECEMBER: 'Fall'
+    },
+     'CurrentDate': new Date(),
+      'CurrentMonth': (new Date()).getMonth(),
+      'CurrentYear': 2015,
+      'NextYear': 2016
+
   })//app.constant
 
-  .run(function ($rootScope, $location, $state, $stateParams, $timeout, $document, appconfig , $mdToast, $http) {
+  .run(function ($rootScope, $location, $state, $stateParams, $timeout, $document, appconfig , $cookies, $http) {
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
     var eventArray = ['keydown','keyup','click','dblclick','movemouse','DOMMouseScroll','mousewheel','mousedown','touchstart','touchmove','scroll','focus','change','select'];
@@ -28,11 +58,11 @@
     $rootScope.$on('$stateChangeStart',function(event,toState){
       var timeOutThread = $timeout(function(){logOutSession();},maxIdleSession);
       if(toState.name!='login'){
-        angular.forEach(eventArray,function(eventName){
-          bodyElement.on(eventName,function(e){
-            ResetIdleSession(e);
+          angular.forEach(eventArray,function(eventName){
+              bodyElement.on(eventName,function(e){
+                  ResetIdleSession(e);
+              })
           })
-        })
       }
       else if (toState.name=='login') {
         unbindTimerEvents();
@@ -55,6 +85,7 @@
 
     $rootScope.$on('$stateChangeSuccess',function(event,toState,toParams,fromState,fromParams){
       $state.go(toState);
+
     })//$rootScope.$on('$stateChangeSuccess')
   });//app.run()
 })();

@@ -54,7 +54,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
           },
           params: {
               userID : null,
-              userRole: 'admin'
+              userRole: null
           }
         })
 
@@ -64,8 +64,9 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
         .state('root.student',{
             url:''
         })
+
         .state('root.student.userCourseDetails',{
-            url:'/course-details',
+            url:'/user-course-details',
             views:{
                 'content@root':{
                     templateUrl:'app/StudentHome/userCoursesDetails/user-courses-details.html',
@@ -74,6 +75,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+
         .state('root.student.questionnaire',{
             url:'/questionnaire',
             views:{
@@ -102,6 +104,66 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
 
     /************************ ADMIN ************************/
 
+        .state('root.admin',{
+            url:''
+        })
+        .state('root.admin.userDetails',{
+            url:'/user-details',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdminHome/modifyUserInformation/modifyUserInformation.html',
+                    controller:'modifyUserInformationController',
+                    controllerAs:'vm'
+                }
+            }
+        })
+
+        .state('root.admin.createUser',{
+            url:'/create-user',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdminHome/createUser/createUser.html',
+                    controller:'createUserController',
+                    controllerAs:'vm'
+                }
+            }
+        })
+
+        .state('root.admin.courseDetails',{
+            url:'/course-details',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdminHome/modifyCourseInformation/modifyCourseInformation.html',
+                    controller:'modifyCourseInformationController',
+                    controllerAs:'vm'
+                }
+            }
+        })
+
+        .state('root.admin.courseDetails.viewCourseDetails',{
+            url:'/:courseID',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.html',
+                    controller:'ViewCourseController',
+                    controllerAs:'vm'
+                }
+            },
+            params: {
+                courseID : null
+            }
+        })
+
+        .state('root.admin.createCourse',{
+            url:'/create-course',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdminHome/createCourse/createCourse.html',
+                    controller:'createCourseController',
+                    controllerAs:'vm'
+                }
+            }
+        })
 
     /************************ ADVISOR  ************************/
 

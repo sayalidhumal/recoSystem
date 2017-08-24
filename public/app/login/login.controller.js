@@ -1,9 +1,9 @@
 (function(){
     angular.module('Login').controller('LoginController',LoginController);
 
-    LoginController.$inject=['$state','AuthService','$mdToast','$cookies'];
+    LoginController.$inject=['$state','AuthService','UserService','$mdToast','$cookies'];
 
-    function LoginController($state,AuthService,$mdToast,$cookies){
+    function LoginController($state,AuthService,UserService,$mdToast,$cookies){
         var vm = this;
         vm.loginBtn = 'Login';
         vm.userID=null;
@@ -26,17 +26,25 @@
                         $mdToast.showSimple("User not found")
                     }
                     else{
+                        console.log(vm.data)
                         if(vm.data.password == vm.password){
-                            $cookies.put('auth',vm.data.userID)
-                            $cookies.put('role',vm.data.role)
-                            $state.go('root',{userID : vm.data.userID, userRole: vm.data.role});
+                            $cookies.put('auth',vm.data.userID);
+                            UserService.getUserRole(vm.userID).then(
+                                function success(response) {
+                                    vm.role = response.data[0];
+                                    $state.go('root',{userID : vm.data.coyote_id, userRole: vm.role});
+                                },function error(response) {
+                                    console.log(response)
+                                }
+                            )
+
                         }
                         else{
                             $mdToast.showSimple("Invalid Password!")
                         }
                     }
             }, function error(response) {
-
+                console.log(response)
             });
         }
     }

@@ -3,13 +3,21 @@
         function($http){
             return{
 
-              getEnrolledCourses: function(userID) {
-               return $http({
-               method: 'GET',
-               url: '/getEnrolledCourses',
-               params:{userID: userID}
-               })
-               },
+                getEnrolledCourses: function(userID) {
+                    return $http({
+                        method: 'GET',
+                        url: '/getEnrolledCourses',
+                        params:{userID: userID}
+                    })
+                },
+
+                getUserRole: function(userID) {
+                    return $http({
+                        method: 'GET',
+                        url: '/getUserRole',
+                        params:{userID: userID}
+                    })
+                }
 
                 /*addPreference: function(preferences){
 
