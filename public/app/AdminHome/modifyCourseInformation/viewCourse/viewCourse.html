@@ -1,0 +1,45 @@
+<md-content layout="row" layout-align="space-around" ng-cloak="ng-cloak">
+    <md-card flex >
+        <md-content>
+            <div>
+                <p>Course Name: {{vm.course.details.name}}</p>
+                <p>Course ID: {{vm.course.details.course_id}}</p>
+                <p>Course Type: {{vm.courseType}}</p>
+                <p ng-if="vm.course.details.has_lab">Has Practical: YES</p><p ng-if="!vm.course.details.has_lab">Has Practical: NO</p>
+                <p>Units: {{vm.course.details.units}}</p>
+            </div>
+            <div ng-cloak>
+                <md-content>
+                    <md-tabs md-dynamic-height md-border-bottom>
+                        <md-tab label='{{schedule.quarter}} {{schedule.year}}' ng-repeat="schedule in vm.course.schedule">
+                            <md-content class="md-padding">
+                                <md-card>
+                                    <md-content>
+                                        <p>Instructor: {{schedule.instructor}}</p>
+                                        <div ng-if="schedule.course_day">
+                                            <div ng-if="schedule.course_day">
+                                                <p>Course Day: {{schedule.course_day}}</p>
+                                                <p>Course Time: <time>{{schedule.course_start_time}}</time> - <time>{{schedule.course_end_time}}</time></p>
+                                            </div>
+                                            <p ng-if="!schedule.course_day">Course Day: N/A</p>
+                                        </div>
+                                        <div ng-if="vm.course.details.has_lab">
+                                            <div ng-if="schedule.lab_day">
+
+                                            </div>
+                                            <p ng-if="!schedule.lab_day">Lab Day: ONLINE</p>
+                                        </div>
+                                        <md-button class="md-primary">Edit</md-button>
+                                        <md-button class="md-primary">Delete</md-button>
+                                    </md-content>
+
+                                </md-card>
+
+                            </md-content>
+                        </md-tab>
+                    </md-tabs>
+                </md-content>
+            </div>
+        </md-content>
+    </md-card>
+</md-content>

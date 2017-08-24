@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddf75658-7106-474a-babe-5f9a4b21c0c2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/AdminHome/adminhome.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/AdminHome/adminhome.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/AdminHome/adminhome.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/AdminHome/createCourse/createCourse.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/AdminHome/createCourse/createCourse.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/AdminHome/createUser/createUser.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/AdminHome/createUser/createUser.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app.js" afterPath="$PROJECT_DIR$/public/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.controller.js" afterPath="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.html" afterPath="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html" afterPath="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/home/home.html" afterPath="$PROJECT_DIR$/public/app/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/login/login.controller.js" afterPath="$PROJECT_DIR$/public/app/login/login.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/signup/signup.controller.js" afterPath="$PROJECT_DIR$/public/app/signup/signup.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/signup/signup.html" afterPath="$PROJECT_DIR$/public/app/signup/signup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/services/user.service.js" afterPath="$PROJECT_DIR$/public/assets/services/user.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/routes.js" afterPath="$PROJECT_DIR$/public/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/server/queries/login.queries.js" afterPath="$PROJECT_DIR$/public/server/queries/login.queries.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/server/queries/questionnaire.queries.js" afterPath="$PROJECT_DIR$/public/server/queries/questionnaire.queries.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/server/queries/user.queries.js" afterPath="$PROJECT_DIR$/public/server/queries/user.queries.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/server/routes/index.js" afterPath="$PROJECT_DIR$/public/server/routes/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -129,8 +103,8 @@
       <file leaf-file-name="questionnaire.queries.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/server/queries/questionnaire.queries.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="270" lean-forward="false" selection-start-line="27" selection-start-column="270" selection-end-line="27" selection-end-column="270" />
+            <state relative-caret-position="512">
+              <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -668,7 +642,7 @@
       <workItem from="1501020283603" duration="8813000" />
       <workItem from="1502494659781" duration="19424000" />
       <workItem from="1503284473715" duration="11690000" />
-      <workItem from="1503353751252" duration="25313000" />
+      <workItem from="1503353751252" duration="26204000" />
     </task>
     <task id="LOCAL-00001" summary="basic structure">
       <created>1496789371316</created>
@@ -684,11 +658,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499380486658</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Admin UI and database queries">
+      <created>1503541066031</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1503541066031</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193035000" />
+    <option name="totallyTimeSpent" value="193926000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -732,7 +713,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="basic structure" />
     <MESSAGE value="Student UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Student UI" />
+    <MESSAGE value="Admin UI and database queries" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin UI and database queries" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1146,8 +1128,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/server/queries/questionnaire.queries.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="270" lean-forward="false" selection-start-line="27" selection-start-column="270" selection-end-line="27" selection-end-column="270" />
+        <state relative-caret-position="512">
+          <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
           <folding />
         </state>
       </provider>
