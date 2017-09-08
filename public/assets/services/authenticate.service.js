@@ -3,11 +3,11 @@
   function($http){
     return{
 
-      authenticate: function(userID) {
+      authenticate: function(coyote_id) {
           return $http({
               method: 'GET',
               url: '/login',
-              params:{userID: userID}
+              params:{coyote_id: coyote_id}
           })
       },
 

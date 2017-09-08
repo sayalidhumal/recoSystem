@@ -29,8 +29,28 @@
                 [data.userID,data.degree_preference,data.course_count_preference,data.lecture_preference,data.summer_course_preference,data.course_overload_preference,data.independent_study_preference]);
             query.on('end', function(){
                 done();
-                return res.json(results);
+                //return res.json(results);
             });
+            for(var i = 0;i<data.day_preference.length;i++){
+                const day_preference = client.query('INSERT INTO day_preference ("coyote_id", "day_preference") VALUES ($1,$2);',
+                    [data.userID,data.day_preference[i]]);
+                day_preference.on('end', function(){
+                    done();
+                    //return res.json(results);
+                });
+            }
+
+
+
+            for(var i = 0;i<data.time_preference.length;i++){
+                const time_preference = client.query('INSERT INTO time_preference ("coyote_id", "time_preference") VALUES ($1,$2);',
+                    [data.userID,data.time_preference[i]]);
+                time_preference.on('end', function(){
+                    done();
+                    return res.json(results);
+                });
+            }
+
         });
     }
 

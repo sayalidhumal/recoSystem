@@ -4,10 +4,12 @@
 (function () {
     angular.module("Studenthome").controller("RecommendationPathController",RecommendationPathController);
 
-    RecommendationPathController.$inject = ["$http","$mdDialog","$scope"];
+    RecommendationPathController.$inject = ["$http","$mdDialog","UserService","$stateParams","_"];
 
-    function RecommendationPathController($http,$mdDialog,$scope) {
+    function RecommendationPathController($http,$mdDialog,UserService,$stateParams,_) {
         var vm=this;
+        vm.coyote_id = $stateParams.userID;
+        vm.userDetails ={};
         vm.coursesRecommended = [
             {
                 courseID:602,
@@ -20,7 +22,17 @@
                 courseName:"Software Engineering",
                 totalUnits: 4
             }
-    ]
+        ]
+
+        UserService.getRecommendationDetails(vm.coyote_id).then(
+            function success(response) {
+                console.log(response.data)
+                vm.userDetails = response.data;
+            },
+            function error(response) {
+
+        })
+
     }
 
 })();

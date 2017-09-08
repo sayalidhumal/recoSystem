@@ -12,7 +12,7 @@
      */
 
     function getUser(req, res, next){
-        var userID = req.query.userID;
+        var coyote_id = req.query.coyote_id;
         const results = [];
 
         pg.connect(connectionString, function(err, client, done){
@@ -21,7 +21,7 @@
                 console.log(err);
                 return res.status(500).json({success: false, data: err});
             }
-            const query = client.query('SELECT * FROM "user" WHERE coyote_id =' + userID + ';');
+            const query = client.query('SELECT * FROM "user" WHERE coyote_id =' + coyote_id + ';');
             query.on('row', function(row){
                 results.push(row);
             });

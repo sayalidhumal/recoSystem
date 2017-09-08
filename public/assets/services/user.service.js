@@ -11,13 +11,13 @@
                     })
                 },
 
-                getUserRole: function(userID) {
+                getUserRole: function(coyote_id) {
                     return $http({
                         method: 'GET',
                         url: '/getUserRole',
-                        params:{userID: userID}
+                        params:{coyote_id: coyote_id}
                     })
-                }
+                },
 
                 /*addPreference: function(preferences){
 
@@ -27,6 +27,14 @@
                         data:{preferences:preferences}
                     })
                 }*/
+
+                getRecommendationDetails: function(coyote_id) {
+                    return $http({
+                        method: 'GET',
+                        url: '/getRecommendationDetails',
+                        params:{coyote_id: coyote_id}
+                    })
+                },
 
             }//end of outer return
         })

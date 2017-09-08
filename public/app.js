@@ -5,6 +5,7 @@
       'ngCookies',
       'services',
       'directives',
+      'underscore',
       'ngResource',
       'Login',
       'Signup',
@@ -43,7 +44,38 @@
      'CurrentDate': new Date(),
       'CurrentMonth': (new Date()).getMonth(),
       'CurrentYear': 2015,
-      'NextYear': 2016
+      'NextYear': 2016,
+    'DegreeRequirements':[
+        {
+            "degreeType":"Project",
+            "electiveUnits": 20,
+            "max500LevelElectives": 8,
+            "courseOption": {
+                "course_id": 690,
+                "course_dept":"CSE"
+            }
+        },
+        {
+            "degreeType":"Comprehensive Exam",
+            "electiveUnits": 24,
+            "max500LevelElectives": 8,
+            "courseOption": {
+                "course_id": 689,
+                "course_dept":"CSE"
+            }
+        },
+        {
+            "degreeType":"Thesis",
+            "electiveUnits": 16,
+            "max500LevelElectives": 8,
+            "courseOption": {
+                "course_id": 699,
+                "course_dept":"CSE"
+            }
+        }
+    ]
+
+
 
   })//app.constant
 
