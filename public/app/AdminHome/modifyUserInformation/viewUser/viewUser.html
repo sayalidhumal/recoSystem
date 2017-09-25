@@ -1,0 +1,16 @@
+<md-content layout="row" layout-align="space-around" ng-cloak="ng-cloak">
+    <md-card flex="flex" flex-gt-sm="50" flex-gt-md="50" >
+        <md-content>
+                <md-card>
+                    <p>Name: {{vm.user.name}}</p>
+                    <p>Coyote ID: {{vm.user.coyote_id}}</p>
+                    <p>Email: {{vm.user.email_id}}</p>
+                    <p>Address: {{vm.user.address.address}},{{vm.user.address.city}},{{vm.user.address.state}} {{vm.user.address.zipcode}}</p>
+                    <p>DOB: {{vm.user.date_of_birth| date:"MM/dd/yyyy"}}</p>
+                    <p>Role: {{vm.role}}</p>
+                </md-card>
+            <md-button class="md-primary" ng-click="vm.edit()">Edit</md-button>
+            <md-button class="md-primary">Delete</md-button>
+        </md-content>
+    </md-card>
+</md-content>

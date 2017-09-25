@@ -1,0 +1,44 @@
+<md-content class="md-padding">
+    <div layout="row"  layout-xs="column">
+<md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Educational History</span>
+        </md-card-title-text>
+        <md-card-title-media>
+            <div class="md-media-sm card-media"></div>
+        </md-card-title-media>
+    </md-card-title>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-primary"  ui-sref="root.student.userCourseDetails">View</md-button>
+    </md-card-actions>
+</md-card>
+<md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Add Prerequisites</span>
+        </md-card-title-text>
+        <md-card-title-media>
+            <div class="md-media-sm card-media"></div>
+        </md-card-title-media>
+    </md-card-title>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-primary" ui-sref="root.advisor.addprerequisites">View</md-button>
+    </md-card-actions>
+</md-card>
+<md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">View Recommendation path</span>
+        </md-card-title-text>
+        <md-card-title-media>
+            <div class="md-media-sm card-media"></div>
+        </md-card-title-media>
+    </md-card-title>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-primary" ui-sref="root.student.recommendationPath"> View </md-button>
+    </md-card-actions>
+</md-card>
+</md-card>
+    </div>
+</md-content>

@@ -12,7 +12,8 @@
       'Home',
       'Studenthome',
       'AdminHome',
-      'md.data.table'
+      'md.data.table',
+      'AdvisorHome'
   ])
 
 

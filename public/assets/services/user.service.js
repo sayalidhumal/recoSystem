@@ -19,6 +19,24 @@
                     })
                 },
 
+                getUser: function (coyote_id, name) {
+                  return $http({
+                      method:'GET',
+                      url:'/getUser',
+                      params:{coyote_id: coyote_id , name: name }
+                  })
+
+                },
+
+                postUser: function (coyote_id, name) {
+                    return $http({
+                        method:'PUT',
+                        url:'/postUser',
+                        params:{coyote_id: coyote_id , name: name }
+                    })
+
+                },
+
                 /*addPreference: function(preferences){
 
                     return $http({

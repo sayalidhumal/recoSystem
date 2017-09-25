@@ -1,1 +1,32 @@
-<p>{{vm.title}}</p>
+<md-content layout="row" layout-align="space-around">
+    <md-card flex="flex" flex-gt-sm="50" flex-gt-md="50">
+        <md-content>
+            <form name="vm.form">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>User Name</label>
+                    <input type="text" name="searchName" ng-model="vm.searchName">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Coyote ID</label>
+                    <input type="number" name="searchID" ng-model="vm.searchID">
+                </md-input-container>
+            </form>
+            <md-button type="submit" ng-disabled="vm.form.$invalid" class="md-raised md-primary" ng-click="vm.search(vm.searchName,vm.searchID)">Search</md-button>
+        </md-content>
+        <md-content ng-if="vm.user.length != 0">
+            <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    Name: {{vm.user.name}}
+                </md-card-title>
+                <md-card-content>
+                    <p>Coyote ID: 00{{vm.user.coyote_id}}</p>
+                    <p>Role: {{vm.role}}</p>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button class="md-raised md-primary" ng-click="vm.view(vm.user)">View</md-button>
+                </md-card-actions>
+            </md-card>
+        </md-content>
+    </md-card>
+</md-content>

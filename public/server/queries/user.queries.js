@@ -101,6 +101,84 @@
         });
     }
 
+    function getUser(req, res, next){
+        var coyote_id = req.query.coyote_id;
+        var name = req.query.name;
+        //console.log(user_name)
+        const results = [];
+
+        pg.connect(connectionString, function(err, client, done){
+            if(err) {
+                done();
+                console.log(err);
+                return res.status(500).json({success: false, data: err});
+            }
+            if(coyote_id){
+                const query = client.query("SELECT * FROM "+ '"user"' + "WHERE coyote_id = '" + coyote_id + "';");
+                query.on('row', function(row){
+                    //results.push({type:"elective"});
+                    results.push(row);
+                });
+                query.on('end', function(){
+                    done();
+                    return res.json(results);
+                });
+            }else {
+                name = name.toLowerCase();
+                query =client.query("SELECT * FROM"+ '"user"'+ "WHERE lower(name)LIKE '%" + name + "%';");
+                query.on('row', function(row){
+                    console.log(row)
+                    results.push(row);
+                });
+                query.on('end', function(){
+                    done();
+                    return res.json(results);
+                });
+            }
+
+        });
+    }
+
+    function postUser(req, res, next){
+        var coyote_id = req.query.coyote_id;
+        var name = req.query.name;
+        //console.log(user_name)
+        const results = [];
+
+        pg.connect(connectionString, function(err, client, done){
+            if(err) {
+                done();
+                console.log(err);
+                return res.status(500).json({success: false, data: err});
+            }
+            if(coyote_id){
+                const query = client.query("SELECT * FROM "+ '"user"' + "WHERE coyote_id = '" + coyote_id + "';");
+                query.on('row', function(row){
+                    //results.push({type:"elective"});
+                    results.push(row);
+                });
+                query.on('end', function(){
+                    done();
+                    return res.json(results);
+                });
+            }else {
+                query =client.query("SELECT * FROM"+ '"user"'+ "WHERE name='" + name + "';");
+                query.on('row', function(row){
+                    console.log(row)
+                    results.push(row);
+                });
+                query.on('end', function(){
+                    done();
+                    return res.json(results);
+                });
+            }
+
+        });
+    }
+
+
+
+
 
     function getRecommendationDetails(req, res, next) {
         const coyote_id = req.query.coyote_id;
@@ -189,7 +267,8 @@
     module.exports = {
         getEnrolledCourses: getEnrolledCourses,
         getUserRole:getUserRole,
-        getRecommendationDetails: getRecommendationDetails
+        getRecommendationDetails: getRecommendationDetails,
+        getUser:getUser
     };
 })();
 

@@ -39,7 +39,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
         })
 
         .state('root',{
-          url:'/:userID',
+          url:'/:userRole/:userID',
           views:{
             '':{
               templateUrl: 'assets/layout/layout.html',
@@ -118,6 +118,36 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
+        .state('root.admin.userDetails.viewUserDetails',{
+            url:'/:coyote_id',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdminHome/modifyUserInformation/viewUser/viewUser.html',
+                    controller:'ViewUserController',
+                    controllerAs:'vm'
+                }
+            },
+            params: {
+                coyote_id : null,
+                role: null
+            }
+        })
+
+        .state('root.admin.userDetails.viewUserDetails.editUserDetails',{
+            url:'/edit',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdminHome/modifyUserInformation/editUser/editUser.html',
+                    controller:'EditUserController',
+                    controllerAs:'vm'
+                }
+            },
+            params: {
+                coyote_id : null,
+                role: null
+            }
+        })
+
         .state('root.admin.createUser',{
             url:'/create-user',
             views:{
@@ -166,5 +196,36 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
         })
 
     /************************ ADVISOR  ************************/
+
+        .state('root.advisor',{
+            url:''
+        })
+        .state('root.advisor.advisorhome',{
+            url:'/user/:coyote_id',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdvisorHome/advisorHome.html',
+                    controller:'AdvisorHomeController',
+                    controllerAs:'vm'
+                }
+            },
+            params: {
+                coyote_id : null,
+                role: null
+            }
+        })
+
+        .state('root.advisor.addprerequisites',{
+            url:'/course-details',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdvisorHome/addPrerequisites/addPrerequisites.controller.js',
+                    controller:'addPrerequisitesController',
+                    controllerAs:'vm'
+                }
+            }
+        })
+
+
 
 });

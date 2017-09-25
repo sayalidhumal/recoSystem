@@ -5,26 +5,34 @@
 (function () {
     angular.module('AdminHome').controller('modifyUserInformationController',modifyUserInformationController);
 
-    modifyUserInformationController.$inject = [];
+    modifyUserInformationController.$inject = ['UserService','$state'];
 
-    function modifyUserInformationController() {
+    function modifyUserInformationController(UserService,$state) {
         var vm =this;
         vm.form = {};
         vm.searchName = '';
         vm.searchID = '';
         vm.search = search;
         vm.course = [];
+        vm.user=[];
+        vm.role=""
         vm.view =view;
 
-        function view(course) {
-            console.log(course)
-            $state.go('root.admin.courseDetails.viewCourseDetails',{courseID: course.course_id});
+        function view(user) {
+            console.log(user)
+            $state.go('root.admin.userDetails.viewUserDetails',{coyote_id: vm.user.coyote_id,role:vm.role});
         }
 
         function search(searchName,searchID) {
-            CourseService.getCourse(searchID,searchName).then(
+            UserService.getUser(searchID,searchName).then(
                 function success(response) {
-                    vm.course = response.data[0];
+                    vm.user = response.data[0];
+                    console.log(vm.user);
+                    UserService.getUserRole(vm.user.coyote_id).then(function success(response) {
+                        vm.role = response.data[0];
+                    },function () {
+
+                    })
 
                 },function error(response) {
                     console.log(response);

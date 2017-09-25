@@ -33,4 +33,6 @@ router.get('/getCourseDetailsForYear',courseQueries.getCourseDetailsForYear);
 
 router.get('/getRecommendationDetails',userQueries.getRecommendationDetails);
 
+router.get('/getUser',userQueries.getUser);
+
 module.exports = router;
