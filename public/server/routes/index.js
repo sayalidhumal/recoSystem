@@ -35,4 +35,7 @@ router.get('/getRecommendationDetails',userQueries.getRecommendationDetails);
 
 router.get('/getUser',userQueries.getUser);
 
+router.get('/getAllCourses',courseQueries.getAllCourses);
+
+
 module.exports = router;

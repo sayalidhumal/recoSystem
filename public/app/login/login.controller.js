@@ -28,10 +28,15 @@
                     else{
                         console.log(vm.data)
                         if(vm.data.password == vm.password){
-                            $cookies.put('auth',vm.data.userID);
+
                             UserService.getUserRole(vm.userID).then(
                                 function success(response) {
                                     vm.role = response.data[0];
+                                    cookieData = {
+                                        auth: vm.data.userID,
+                                        role: vm.role
+                                    }
+                                    $cookies.put('usedata',cookieData);
                                     $state.go('root',{userID : vm.data.coyote_id, userRole: vm.role});
                                 },function error(response) {
                                     console.log(response)

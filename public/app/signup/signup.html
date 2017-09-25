@@ -123,7 +123,7 @@
                 </div>
                 <md-input-container class="md-block">
                     <label>State</label>
-                    <md-select ng-model="vm.userState">
+                    <md-select ng-model="vm.user.address.State">
                         <md-option><em>None</em></md-option>
                         <md-option ng-repeat="state in vm.states" ng-selected="true" ng-value="state.abbrev" ng-disabled="$index === 1">
                             {{state.abbrev}}

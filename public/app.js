@@ -29,19 +29,20 @@
   .constant('appconfig',{
     'TIMEOUT': 1800000,
     'QUARTERS': {
-        JANUARY: 'Winter',
-        FEBRUARY: 'Winter',
-        MARCH: 'Winter',
-        APRIL: 'Spring',
-        MAY: 'Spring',
-        JUNE: 'Spring',
-        JULY: 'Summer',
-        AUGUST: 'Summer',
-        SEPTEMBER: 'Fall',
-        OCTOBER: 'Fall',
-        NOVEMBER: 'Fall',
-        DECEMBER: 'Fall'
+        January: 'Winter',
+        February: 'Winter',
+        March: 'Winter',
+        April: 'Spring',
+        May: 'Spring',
+        June: 'Spring',
+        July: 'Summer',
+        August: 'Summer',
+        September: 'Fall',
+        October: 'Fall',
+        November: 'Fall',
+        December: 'Fall'
     },
+      'QuarterOrder':["Fall","Winter","Spring","Summer"],
      'CurrentDate': new Date(),
       'CurrentMonth': (new Date()).getMonth(),
       'CurrentYear': 2015,
@@ -94,6 +95,7 @@
           angular.forEach(eventArray,function(eventName){
               bodyElement.on(eventName,function(e){
                   ResetIdleSession(e);
+                  console.log("reser !=login")
               })
           })
       }
@@ -118,6 +120,7 @@
 
     $rootScope.$on('$stateChangeSuccess',function(event,toState,toParams,fromState,fromParams){
       $state.go(toState);
+      console.log("StateChangeSuccess")
 
     })//$rootScope.$on('$stateChangeSuccess')
   });//app.run()

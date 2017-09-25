@@ -198,7 +198,7 @@
                 console.log(err);
                 return res.status(500).json({success: false, data: err});
             }
-            const coursestaken = client.query('SELECT course_id,day_time,grade,instructor,quarter_year FROM course_taken WHERE coyote_id =' + coyote_id + ';');
+            const coursestaken = client.query('SELECT course_id FROM course_taken WHERE coyote_id =' + coyote_id + ';');
 
             const preference = client.query('SELECT degree_preference,course_count_preference,course_overload_preference,independent_study_preference,lecture_preference,summer_course_preference FROM student_preference WHERE coyote_id =' + coyote_id + ';');
 
@@ -211,7 +211,7 @@
             const path = client.query('SELECT current_recommendation_path FROM student WHERE coyote_id =' + coyote_id + ';')
 
             coursestaken.on('row', function(row){
-                results.coursesTaken.push(row);
+                results.coursesTaken.push(row.course_id);
             });
             coursestaken.on('end', function(){
                 done();

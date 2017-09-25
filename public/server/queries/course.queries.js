@@ -5,11 +5,64 @@
     const path = require('path');
     const connectionString = process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5432/recomSystem';
 
-    /*
-     name: getUser()
-     description: get the user details from the server for login
-     parameter: userID
-     */
+    function getAllCourses(req, res, next){
+        var currentYear = req.query.currentYear;
+        const results = {
+            electives:[],
+            core:[],
+            schedule:[],
+            prerequisites:[]
+        }
+
+        pg.connect(connectionString, function(err, client, done){
+            if(err) {
+                done();
+                console.log(err);
+                return res.status(500).json({success: false, data: err});
+            }
+            const core = client.query('SELECT c.course_id, c.has_lab, c.course_level, c.units, c.course_dept, c.name FROM core_course e INNER JOIN course c ON e.course_id=c.course_id');
+            const elective = client.query('SELECT c.course_id, c.has_lab, c.course_level, c.units, c.course_dept, c.name FROM elective_course e INNER JOIN course c ON e.course_id=c.course_id');
+            const prerequisites = client.query('SELECT c.course_id, e.prerequisite_id, c.has_lab, c.course_level, c.units, c.course_dept, c.name FROM course_prerequisite e INNER JOIN course c ON e.course_id=c.course_id');
+            const schedule = client.query('SELECT * FROM course_schedule  WHERE year >= ' + currentYear + ';');
+
+
+            core.on('row',function (row) {
+                results.core.push(row);
+            });
+
+            core.on('end',function () {
+                done();
+            });
+
+            elective.on('row',function (row) {
+                results.electives.push(row);
+            });
+
+            elective.on('end',function () {
+                done();
+                //return res.json(results);
+            });
+
+            prerequisites.on('row',function (row) {
+                results.prerequisites.push(row);
+            });
+
+            prerequisites.on('end',function () {
+                done();
+                //return res.json(results);
+            });
+
+            schedule.on('row',function (row) {
+                results.schedule.push(row);
+            });
+
+            schedule.on('end',function () {
+                done();
+                return res.json(results);
+            })
+
+        });
+    }
 
     function getCourse(req, res, next){
         var course_id = req.query.courseID;
@@ -140,6 +193,7 @@
     module.exports = {
         getCourse: getCourse,
         getCourseType:getCourseType,
-        getCourseDetailsForYear: getCourseDetailsForYear
+        getCourseDetailsForYear: getCourseDetailsForYear,
+        getAllCourses:getAllCourses
     };
 })();

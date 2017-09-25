@@ -25,6 +25,14 @@
                         url:'/getCourseDetailsForYear',
                         params:{courseID: courseID,currentYear: currentYear,nextYear: nextYear}
                     })
+                },
+
+                getAllCourses: function (currentYear) {
+                    return $http({
+                        method: 'GET',
+                        url: '/getAllCourses',
+                        params:{currentYear:currentYear}
+                    })
                 }
 
             }//end of outer return
