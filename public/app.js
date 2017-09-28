@@ -95,7 +95,7 @@
           angular.forEach(eventArray,function(eventName){
               bodyElement.on(eventName,function(e){
                   ResetIdleSession(e);
-                  console.log("reser !=login")
+
               })
           })
       }
@@ -120,7 +120,7 @@
 
     $rootScope.$on('$stateChangeSuccess',function(event,toState,toParams,fromState,fromParams){
       $state.go(toState);
-      console.log("StateChangeSuccess")
+
 
     })//$rootScope.$on('$stateChangeSuccess')
   });//app.run()

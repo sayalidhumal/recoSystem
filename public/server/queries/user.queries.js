@@ -27,7 +27,7 @@
             });
             student.on('end', function(){
                 done();
-                console.log(results)
+
                 if(!results.length){
                     admin.on('row', function(row){
                         results.push(row);
@@ -35,7 +35,7 @@
                     admin.on('end', function(){
                         done();
                         if(!results.length){
-                            console.log("advisor")
+
                             advisor.on('row', function(row){
                                 results.push(row);
                             });
@@ -46,7 +46,7 @@
                             });
                         }
                         else {
-                            console.log("admin")
+
                             results[0]="administrator"
                             return res.json(results);
                         }
@@ -54,7 +54,7 @@
 
                 }
                 else {
-                    console.log("student")
+
                     results[0]="student"
                     return res.json(results);
                 }
@@ -125,7 +125,7 @@
                 });
             }else {
                 name = name.toLowerCase();
-                query =client.query("SELECT * FROM"+ '"user"'+ "WHERE lower(name)LIKE '%" + name + "%';");
+                query =client.query("SELECT * FROM"+ '"user"'+ "WHERE lower(name) LIKE '%" + name + "%';");
                 query.on('row', function(row){
                     console.log(row)
                     results.push(row);

@@ -26,7 +26,7 @@
                         $mdToast.showSimple("User not found")
                     }
                     else{
-                        console.log(vm.data)
+
                         if(vm.data.password == vm.password){
 
                             UserService.getUserRole(vm.userID).then(

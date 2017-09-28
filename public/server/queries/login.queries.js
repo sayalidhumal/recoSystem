@@ -74,7 +74,7 @@
                         return res.json(results);
                     });
                     break;
-                case 'adviser':
+                case 'advisor':
                     console.log("adviser");
                     const advisorquery = client.query('INSERT INTO advisor(coyote_id) VALUES ($1);',
                         [ data.userID]);
