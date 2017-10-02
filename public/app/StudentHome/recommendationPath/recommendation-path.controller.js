@@ -38,7 +38,7 @@
             function success(response) {
                 //console.log(response.data)
                 vm.userDetails = response.data;
-                console.log("userDetails",vm.userDetails);
+
                 CourseService.getAllCourses(vm.currentYear).then(
                     function success(reponse) {
                         //console.log(reponse.data)
@@ -57,10 +57,14 @@
                             vm.coursesData.prerequisites[i].schedule = vm.schedule[vm.coursesData.prerequisites[i].prerequisite_id];
                         }
 
-
                         /** Adding pre-requisites **/
                         prerequisites(vm.userDetails,vm.coursesData.core,vm.coursesData.prerequisites);
 
+
+                        //core(vm.userDetails,vm.coursesData.core,vm.coursesData.prerequisites)
+
+                        vm.recommendationPath = formatForDisplay(vm.recommendationPath);
+                        console.log(vm.recommendationPath)
 
 
 
@@ -95,15 +99,6 @@
         });
 
 
-        /*Pre-requisites
-         * Select the schedule for the prerequisites
-         * Name: prerequisites()
-         * Parameters: JSON objects
-         *          userDetails: contains the course details of the student
-         *          coreCourses: contains the list of core subjects
-         *          coursePrerequisites: prerequisites of the core courses
-         * Description: Select the best quarter to take the prerequisites
-         */
         function prerequisites(userDetails,coreCourses,coursePrerequisites) {
             /*
             * STEPS:
@@ -153,7 +148,7 @@
                 coreNotTaken[i].schedule = _.groupBy(coreNotTaken[i].schedule,'year');
             }
 
-            var count =0;
+            var count = 0;
             var addPrereqschedule =[];
             var addCoreSchedule = [];
 
@@ -167,7 +162,9 @@
                     var p ={};
                     addPrereqschedule[count] = [];
                     addCoreSchedule[count] = [];
+
                     angular.forEach(coreNotTaken[k].schedule,function(schedule,year){
+
                         var a = [];
                         if(flag==0){
                             var i=0;
@@ -199,7 +196,9 @@
                                         for(var l=0;l<p.length;l++){
 
                                             if(preyear==p[l].year && (p[l].quarter+p[l].year)!=string && preyear <=year){
+                                                p[l]["type"] = "prerequisites"
                                                 addPrereqschedule[count].push(p[l])
+                                                a["type"] = "core"
                                                 addCoreSchedule[count].push(a)
                                                 flag=1;
                                             }
@@ -221,13 +220,19 @@
                     }
                 }
                 addToPath(addPrereqschedule,vm.userDetails.preferences.other.course_count_preference,"prerequisite");
+                console.log(vm.recommendationPath)
                 addToPath(addCoreSchedule,vm.userDetails.preferences.other.course_count_preference,"core");
+                return
             }
             else {
                 console.log("no prerequisites to be taken")
                 return;
             }
 
+        }
+
+        function core(userDetails,coreCourses,coursePrerequisites){
+            console.log(userDetails,coreCourses,coursePrerequisites)
         }
 
         function sortByDay(userDetails,coursesData) {
@@ -332,16 +337,8 @@
             return ElectivecourseByTime;
         }
 
-
-
-        /*
-        * Add course to the Recommendation Path
-        * Name: addToPath()
-        * Parameters: JSON object (containing courses to add and their schedule)
-        * Description: Add the courses to the recommendation path
-        */
         function addToPath(courses,course_count_preference,courseType) {
-            console.log("cooouurree",courses)
+            console.log("add to path",courses)
             var currentQuarter = vm.currentQuarter;
             var year = vm.currentYear;
             var quarterOrder = vm.quarterOrder;
@@ -387,6 +384,7 @@
                         }
 
                     }else {
+                        console.log(courses[i][j])
                         vm.recommendationPath[courses[i][j].year] = {};
                         vm.recommendationPath[courses[i][j].year][courses[i][j].quarter] = []
                         vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].push(courses[i][j]);
@@ -418,19 +416,12 @@
 
                 return
             }
-            console.log(vm.recommendationPath,vm.optionalSchedule)
+
             return
         }
 
-        /*
-         * Check for time clashes
-         * Name: clashesCheck()
-         * Parameters: JSON objects
-         *              path: contains the recommendation path part clashes is to be checked
-         *              course: course that is to be added
-         * Description: Checks for course schedule time clashes
-         */
         function clashesCheck(path,course,courseType) {
+
             var a = path;
             var flag =0;
             for(var k=0;k<a.length;k++){
@@ -442,14 +433,16 @@
                                 flag++;
                             else{
                                 clash(courseType,a[k],course)
-                                console.log("clashes")
+                                flag++;
+                                //console.log("clashes")
                             }
                         }else {
                             if(course.lab_end_time < a[k].course_start_time){
                                 flag++;
                             }else{
                                 clash(courseType,a[k],course)
-                                console.log("clash 1",course,a[k])
+                                flag++;
+                                //console.log("clash 1",course,a[k])
                             }
 
                         }
@@ -461,14 +454,16 @@
                                     flag++;
                                 else{
                                     clash(courseType,a[k],course)
-                                    console.log("clash 2",course,a[k])
+                                    flag++;
+                                    //console.log("clash 2",course,a[k])
                                 }
                             }else {
                                 if(course.lab_end_time < a[k].course_start_time){
                                     flag++;
                                 }else{
                                     clash(courseType,a[k],course)
-                                    console.log("clash 3",course,a[k])
+                                    flag++;
+                                    //console.log("clash 3",course,a[k])
                                 }
                             }
                         }else {
@@ -478,14 +473,16 @@
                                     flag++;
                                 else{
                                     clash(courseType,a[k],course)
-                                    console.log("clash 4",course,a[k])
+                                    flag++;
+                                    //console.log("clash 4",course,a[k])
                                 }
                             }else {
                                 if(course.course_end_time < a[k].course_start_time){
                                     flag++;
                                 } else{
                                     clash(courseType,a[k],course)
-                                    console.log("clash 5",course,a[k])
+                                    flag++;
+                                    //console.log("clash 5",course,a[k])
                                 }
                             }
                         }
@@ -500,27 +497,39 @@
         }
 
         function clash(courseType,pathcourse,course) {
-            console.log(vm.recommendationPath)
+            console.log(courseType,pathcourse,course)
             switch (courseType) {
                 case "prerequisite":
                     // clash of prerequsities
                     break;
                 case "core":
+
                     if(!vm.optionalSchedule[pathcourse.course_id]){
                         var coreSchedule = _.where(vm.coursesData.core,{course_id: course.course_id})[0].schedule;
+                        //console.log(coreSchedule)
                         var a = [];
                         a[0] = []
                         angular.forEach(coreSchedule,function (schedule,year) {
+
                             for(var j=0;j<schedule.length;j++){
-                                console.log("core in clash",schedule[j].year,course.year,schedule[j].quarter,course.quarter)
                                 if((schedule[j].year != course.year)||(schedule[j].quarter != course.quarter)){
+                                    console.log("added");
+
                                     a[0].push(schedule[j])
+                                    console.log(schedule,year,a)
                                 }
                             }
                         })
-                        addToPath(a,vm.userDetails.preferences.other.course_count_preference,"core");
+                        if(a[0].length){
+
+                            addToPath(a,vm.userDetails.preferences.other.course_count_preference,"core");
+                            console.log("returned")
+                            break;
+
+                        }
+
                     }else {
-                        //switch to the other schedule
+
                     }
 
                     break;
@@ -528,48 +537,32 @@
 
                     break;
             }
+
+            return;
+        }
+
+        function formatForDisplay(path) {
+            var recommendationPath = []
+            angular.forEach(path,function (data,year) {
+                var yearobj = {
+                    year : year,
+                    quarters: []
+                }
+
+                angular.forEach(data,function (schedules,quarter) {
+                    var quarterObj = {
+                        quarter: quarter,
+                        schedule: []
+                    }
+                    quarterObj.schedule = schedules;
+                    yearobj.quarters.push(quarterObj);
+                })
+                recommendationPath.push(yearobj)
+            })
+
+            return recommendationPath;
         }
     }
 
 
 })();
-
-// var a = vm.recommendationPath[courses[i][j].year][courses[i][j].quarter];
-//
-// for(var k=0;k<a.length;k++){
-//     if(courses[i][j].course_day == a[k].course_day){
-//         if(courses[i][j].lab_day && a[k].lab_day){
-//             if((courses[i][j].course_start_time > a[k].course_start_time) && (a[k].lab_end_time < courses[i][j].course_start_time)){
-//                 flag++;
-//             }else {
-//                 if(courses[i][j].lab_end_time < a[k].course_start_time){
-//                     flag++;
-//                 }
-//             }
-//         }else {
-//             if(courses[i][j].lab_day){
-//                 if((courses[i][j].course_start_time > a[k].course_start_time) && (a[k].course_end_time < courses[i][j].course_start_time)){
-//                     flag++;
-//                 }else {
-//                     if(courses[i][j].lab_end_time < a[k].course_start_time){
-//                         flag++;
-//                     }
-//                 }
-//             }else {
-//                 if((courses[i][j].course_start_time > a[k].course_start_time) && (a[k].lab_end_time < courses[i][j].course_start_time)){
-//                     flag++;
-//                 }else {
-//                     if(courses[i][j].course_end_time < a[k].course_start_time){
-//                         flag++;
-//                     }
-//                 }
-//             }
-//         }
-//     }else {
-//         flag ++;
-//     }
-// }
-// if(flag == a.length){
-//     vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].push(courses[i][j]);
-//     break;
-// }
