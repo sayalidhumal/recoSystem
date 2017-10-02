@@ -9,6 +9,8 @@
 
     function createUserController(AuthService,$state) {
         var vm =this;
+        vm.cancel = cancel;
+        vm.create = create;
         vm.form = {}
         vm.firstname ='';
         vm.lastname ='';
@@ -62,6 +64,10 @@
                 function error(reason) {
                     console.log(reason);
                 })
+        }
+
+        function cancel() {
+            $state.go('root.admin.createUser');
         }
     }
 })();

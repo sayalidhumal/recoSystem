@@ -184,6 +184,20 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
+        .state('root.admin.courseDetails.viewCourseDetails.editCourseDetails',{
+            url:'/edit',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdminHome/modifyCourseInformation/editCourse/editCourse.html',
+                    controller:'EditCourseController',
+                    controllerAs:'vm'
+                }
+            },
+            params: {
+                schedule:null
+            }
+        })
+
         .state('root.admin.createCourse',{
             url:'/create-course',
             views:{
@@ -215,11 +229,11 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
-        .state('root.advisor.addprerequisites',{
-            url:'/course-details',
+        .state('root.advisor.advisorhome.addprerequisites',{
+            url:'/addprerequisite',
             views:{
                 'content@root':{
-                    templateUrl:'app/AdvisorHome/addPrerequisites/addPrerequisites.controller.js',
+                    templateUrl:'app/AdvisorHome/addPrerequisites/addPrerequisites.html',
                     controller:'addPrerequisitesController',
                     controllerAs:'vm'
                 }

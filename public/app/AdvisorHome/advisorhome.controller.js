@@ -7,10 +7,19 @@
 (function(){
     angular.module('AdvisorHome').controller('AdvisorHomeController',AdvisorHomeController);
 
-    AdvisorHomeController.$inject=['$scope','$state','$http','AuthService','appconfig','$mdToast'];
+    AdvisorHomeController.$inject=['$scope','$state','$http','AuthService','appconfig','$mdToast','UserService'];
 
-    function AdvisorHomeController($scope,$state,$http,AuthService,appconfig,$mdToast){
+    function AdvisorHomeController($scope,$state,$http,AuthService,appconfig,$mdToast,UserService){
         var vm = this;
+        vm.view = view;
+        console.log(vm.user);
+
+
+
+
+        function view() {
+            $state.go('root.advisor.advisorhome.addprerequisites');
+        }
 
     }
 })();

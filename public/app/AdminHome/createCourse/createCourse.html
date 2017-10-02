@@ -1,1 +1,140 @@
-<p>Create Course</p>
+<md-content layout="row" layout-align="space-around" ng-cloak="ng-cloak">
+    <md-card flex="flex" flex-gt-sm="50" flex-gt-md="50">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2><span>Create New Course</span></h2>
+            </div>
+        </md-toolbar>
+        <md-card-content>
+            <form name="vm.form">
+                <md-content>
+                    <div layout-gt-sm="row">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Course ID</label>
+                            <input type="number" name="courseID" ng-model="vm.course.course_id">
+                            <div ng-messages="vm.form.courseID.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please enter course ID.</div>
+                            </div>
+                        </md-input-container>
+                        <div flex="5" hide-xs hide-sm>
+                            <!-- Spacer //-->
+                        </div>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Course Name</label>
+                            <input type="text" name="courseName" ng-model="vm.course.name">
+                        </md-input-container>
+                        <div flex="5" hide-xs hide-sm>
+                            <!-- Spacer //-->
+                        </div>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Units</label>
+                            <input type="number" name="units" ng-model="vm.course.units" min="1" max="5">
+                            <div ng-messages="vm.form.lastname.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please enter number of units for the course</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+                    <div layout-gt-sm="row">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Course Level</label>
+                            <md-select ng-model="vm.course.course_level">
+                                <md-option ng-value="'undergraduate'">Undergraduate</md-option>
+                                <md-option ng-value="'graduate'">Graduate</md-option>
+                            </md-select>
+                        </md-input-container>
+                        <div flex="5" hide-xs hide-sm>
+                            <!-- Spacer //-->
+                        </div>
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Course Department</label>
+                                <md-select ng-model="vm.course.course_dept">
+                                    <md-option ng-value="'CSE'">CSE</md-option>
+                                </md-select>
+                            </md-input-container>
+                            <div flex="5" hide-xs hide-sm>
+                                <!-- Spacer //-->
+                            </div>
+                            <div flex="5" hide-xs hide-sm>
+                            <!-- Spacer //-->
+                        </div>
+                    </div>
+                    <div>
+                        <p>Is it a practical course(has Lab)?</p>
+                        <md-radio-group ng-model="vm.course.has_lab">
+                            <md-radio-button value="Yes">Yes</md-radio-button>
+                            <md-radio-button value="No">No</md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <div layout-gt-sm="row">
+                        <md-input-container>
+                            <label>Quarter</label>
+                            <md-select ng-model="vm.course.quarter" required>
+                                <md-option value="Fall">Fall</md-option>
+                                <md-option value="Winter">Winter</md-option>
+                                <md-option value="Spring">Spring</md-option>
+                                <md-option value="Summer">Summer</md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-input-container>
+                            <label>Year</label>
+                            <input type="number" ng-model="vm.course.year" required min="2015" placeholder="YYYY">
+                        </md-input-container>
+                    </div>
+
+                    <div layout-gt-sm="row">
+                            <md-input-container>
+                                <label>Course Day</label>
+                                <md-select ng-model="vm.course.course_day" required>
+                                    <md-option value="MondayAndWednesday">Monday and Wednesday</md-option>
+                                    <md-option value="TuesdayAndThursday">Tuesday and Thursday</md-option>
+                                    <md-option value="Friday">Friday</md-option>
+                                </md-select>
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Instructor</label>
+                                <input type="text" ng-model="vm.course.instructor" required>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-sm="row">
+                            <md-input-container>
+                                <label>Course Start Time</label>
+                                <input type="time" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.course.course_start_time" required>
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Course End Time</label>
+                                <input type="time" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.course.course_end_time" required>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-sm="row" ng-if="vm.course.has_lab=='Yes'">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Lab Day</label>
+                                <md-select ng-model="vm.course.lab_day" required>
+                                    <md-option value="Monday">Monday</md-option>
+                                    <md-option value="Tuesday">Tuesday</md-option>
+                                    <md-option value="Wednesday">Wednesday</md-option>
+                                    <md-option value="Thursday">Thursday</md-option>
+                                    <md-option value="Friday">Friday</md-option>
+                                </md-select>
+                            </md-input-container>
+                                <md-input-container>
+                                    <label>Lab start time</label>
+                                    <input type="time" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.course.lab_start_time" required>
+                                </md-input-container>
+                                <md-input-container>
+                                    <label>Lab end time</label>
+                                    <input type="time" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.course.lab_end_time" required>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    <div flex="5" hide-xs hide-sm>
+                        <!-- Spacer //-->
+                    </div>
+                </md-content>
+
+            </form>
+            <md-button type="submit" ng-disabled="vm.form.$invalid" class="md-raised md-primary" ng-click="vm.create()">Submit</md-button>
+            <md-button ng-click="vm.cancel()">Cancel</md-button>
+        </md-card-content>
+    </md-card>
+</md-content>

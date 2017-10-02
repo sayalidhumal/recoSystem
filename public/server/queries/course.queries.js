@@ -87,7 +87,8 @@
                     return res.json(results);
                 });
             }else {
-                query =client.query("SELECT * FROM course c WHERE c.name='" + course_name + "';");
+                course_name = course_name.toLowerCase();
+                query =client.query("SELECT * FROM course c WHERE lower(c.name) LIKE '%" + course_name + "%';");
                 query.on('row', function(row){
                     console.log(row)
                     results.push(row);
@@ -100,6 +101,61 @@
 
         });
     }
+
+       function createCourse(req, res, next){
+        console.log("req obj",req.body.course)
+        const data = req.body.course;
+        const results = [];
+        var finalquery;
+        console.log(data);
+
+        pg.connect(connectionString, function(err, client, done){
+            // Handle connection errors
+            if(err) {
+                done();
+                console.log(err);
+                return res.status(500).json({success: false, data: err});
+            }
+            const query = client.query('INSERT INTO "course"(course_id, name, has_lab, course_level, units, course_dept) VALUES ($1,$2,$3,$4,$5,$6);',
+                [ data.course_id,data.name,data.has_lab,data.course_level,data.units,data.course_dept]);
+            const query2 = client.query('INSERT INTO "course_schedule"(quarter, year, instructor, course_day, course_start_time, course_end_time, lab_day, lab_start_time, lab_end_time) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9);',
+                [ data.quarter,data.year,data.instructor,data.course_day,data.course_start_time,data.course_end_time,data.lab_day,data.lab_start_time,data]);
+            query.on('end', function(){
+                done();
+                return res.json(results);
+            });
+            query2.on('end', function(){
+                done();
+                return res.json(results);
+            });
+        });
+    }
+
+
+    function addPrerequisite(req, res, next){
+        console.log("req obj",req.body.data)
+        const data = req.body.data;
+        const results = [];
+        var finalquery;
+        console.log(data);
+
+        pg.connect(connectionString, function(err, client, done){
+            // Handle connection errors
+            if(err) {
+                done();
+                console.log(err);
+                return res.status(500).json({success: false, data: err});
+            }
+            const query = client.query('INSERT INTO "student_prerequisite"(coyote_id,course_id) VALUES ($1,$2);',
+                [data.coyote_id,data.course_id]);
+                query.on('end', function () {
+                    done();
+                    return res.json(results);
+                });
+        });
+    }
+
+
 
     function getCourseType(req, res, next) {
         var courseID = req.query.courseID;
@@ -194,6 +250,8 @@
         getCourse: getCourse,
         getCourseType:getCourseType,
         getCourseDetailsForYear: getCourseDetailsForYear,
-        getAllCourses:getAllCourses
+        getAllCourses:getAllCourses,
+        createCourse:createCourse,
+        addPrerequisite:addPrerequisite
     };
 })();

@@ -25,11 +25,12 @@
                                         </div>
                                         <div ng-if="vm.course.details.has_lab">
                                             <div ng-if="schedule.lab_day">
-
+                                                <p>Lab Day: {{schedule.lab_day}}</p>
+                                                <p>Lab Time: <time>{{schedule.lab_start_time}}</time><time>{{schedule.lab_end_time}}</time></p>
                                             </div>
                                             <p ng-if="!schedule.lab_day">Lab Day: ONLINE</p>
                                         </div>
-                                        <md-button class="md-primary">Edit</md-button>
+                                        <md-button class="md-primary" ng-click="vm.edit(schedule)">Edit</md-button>
                                         <md-button class="md-primary">Delete</md-button>
                                     </md-content>
 

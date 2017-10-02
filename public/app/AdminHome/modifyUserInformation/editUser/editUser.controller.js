@@ -40,16 +40,16 @@
             })
 
         function submit() {
-            UserService.postUser(vm.coyote_id,null).then(
-                function success(response) {
-
-                    vm.user = response.data[0];
-                    console.log(vm.user)
-                    console.log("role",vm.role)
-                },
-                function error() {
-
-                })
+            console.log(vm.user);
+            // UserService.postUser().then(
+            //     function success(response) {
+            //
+            //         vm.user = response.data[0];
+            //         console.log("Successful operation",vm.user)
+            //     },
+            //     function error() {
+            //
+            //     })
         }
 
         function cancel() {

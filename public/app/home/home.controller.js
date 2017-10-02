@@ -22,6 +22,7 @@
         function view(user) {
 
             $state.go('root.advisor.advisorhome', {coyote_id: vm.user.coyote_id, role: vm.role});
+            console.log("ID",vm.user.coyote_id);
         }
 
         function search(searchName, searchID) {

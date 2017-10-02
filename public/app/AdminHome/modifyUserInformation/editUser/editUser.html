@@ -31,7 +31,7 @@
                 </md-input-container>
                 <md-input-container>
                 <label>Date of Birth</label>
-                    <md-datepicker ng-model="vm.user.dateOfBirth" md-placeholder="Birth Date" flex-gt-sm md-min-date="vm.minDate" md-max-date="vm.maxDate"></md-datepicker>
+                    <input type="date" ng-model="vm.user.dateOfBirth" md-placeholder="Birth Date" flex-gt-sm md-min-date="vm.minDate" md-max-date="vm.maxDate">
                 </md-input-container>
                 <md-input-container>
                 <label>Role</label>
@@ -43,7 +43,7 @@
                 </md-input-container>
                 <md-input-container>
             </div>
-            <md-button class="md-primary">Submit</md-button>
+            <md-button class="md-primary" ng-click="vm.submit()">Submit</md-button>
             <md-button class="md-primary" ng-click="vm.cancel()">Cancel</md-button>
     </md-card>
 </md-content>

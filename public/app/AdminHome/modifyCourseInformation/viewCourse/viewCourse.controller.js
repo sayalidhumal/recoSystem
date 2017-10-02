@@ -5,15 +5,20 @@
 (function () {
     angular.module('AdminHome').controller('ViewCourseController',ViewCourseController);
 
-    ViewCourseController.$inject = ['CourseService','$stateParams','appconfig'];
+    ViewCourseController.$inject = ['CourseService','$stateParams','appconfig','$state'];
 
-    function ViewCourseController(CourseService,$stateParams,appconfig) {
+    function ViewCourseController(CourseService,$stateParams,appconfig,$state) {
         var vm =this;
         vm.courseID = $stateParams.courseID;
         vm.courseType = '';
         vm.currentYear = appconfig.CurrentYear;
         vm.nextYear = appconfig.NextYear
         vm.course = {}
+        vm.edit = edit;
+
+        function edit(schedule) {
+            $state.go('root.admin.courseDetails.viewCourseDetails.editCourseDetails',{schedule: schedule});
+        }
 
         CourseService.getCourseDetailsForYear(vm.courseID,vm.currentYear,vm.nextYear).then(
             function success(response) {

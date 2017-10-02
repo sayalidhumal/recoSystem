@@ -1,0 +1,45 @@
+<md-content layout="row" layout-align="space-around" ng-cloak="ng-cloak">
+    <md-card flex="flex" flex-gt-sm="50" flex-gt-md="50" >\
+        <div>
+            <md-input-container>
+                <label>Course Day</label>
+                <md-select ng-model="vm.schedule.course_day" required>
+                    <md-option value="MondayAndWednesday">Monday and Wednesday</md-option>
+                    <md-option value="TuesdayAndThursday">Tuesday and Thursday</md-option>
+                    <md-option value="Friday">Friday</md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container>
+                <label>Instructor</label>
+                <input type="text" ng-model="vm.schedule.instructor" required>
+            </md-input-container>
+            <md-input-container>
+                <label>Course Start Time</label>
+                <input type="datetime" ng-model="vm.schedule.course_start_time" required>
+            </md-input-container>
+            <md-input-container>
+                <label>Course End Time</label>
+                <input type="text" ng-model="vm.schedule.course_end_time" required>
+            </md-input-container>
+            <div ng-if="schedule.lab_day">
+            <md-select ng-model="vm.schedule.lab_day" required>
+                <md-option value="Monday">Monday</md-option>
+                <md-option value="Tuesday">Tuesday</md-option>
+                <md-option value="Wednesday">Wednesday</md-option>
+                <md-option value="Thursday">Thursday</md-option>
+                <md-option value="Friday">Friday</md-option>
+            </md-select>
+            <md-input-container>
+                <label>Lab start time</label>
+                <input type="text" ng-model="vm.schedule.lab_start_time" required>
+            </md-input-container>
+            <md-input-container>
+                <label>Lab end time</label>
+                <input type="text" ng-model="vm.schedule.lab_end_time" required>
+            </md-input-container>
+            </div>
+        </div>
+        <md-button class="md-primary">Submit</md-button>
+        <md-button class="md-primary" ng-click="vm.cancel()">Cancel</md-button>
+    </md-card>
+</md-content>

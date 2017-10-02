@@ -15,15 +15,15 @@
             <md-button type="submit" ng-disabled="vm.form.$invalid" class="md-raised md-primary" ng-click="vm.search(vm.searchName,vm.searchID)">Search</md-button>
         </md-content>
         <md-content ng-if="vm.course.length != 0">
-            <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+            <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch ng-repeat="course in vm.course">
                 <md-card-title>
-                    {{vm.course.name}}
+                    {{course.name}}
                 </md-card-title>
                 <md-card-content>
-                    <p>Course ID: {{vm.course.course_dept}} {{vm.course.course_id}}</p>
+                    <p>Course ID: {{course.course_dept}} {{course.course_id}}</p>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="end center">
-                    <md-button class="md-raised md-primary" ng-click="vm.view(vm.course)">View</md-button>
+                    <md-button class="md-raised md-primary" ng-click="vm.view(course)">View</md-button>
                 </md-card-actions>
             </md-card>
         </md-content>

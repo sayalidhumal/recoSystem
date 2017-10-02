@@ -8,30 +8,41 @@
 (function () {
     angular.module('AdvisorHome').controller('addPrerequisitesController',addPrerequisitesController);
 
-    addPrerequisitesController.$inject = ['CourseService','$state'];
+    addPrerequisitesController.$inject = ['CourseService','$state','AddPrerequisiteService','$stateParams'];
 
-    function addPrerequisitesController(CourseService,$state) {
+    function addPrerequisitesController(CourseService,$state,AddPrerequisiteService,$stateParams) {
         var vm =this;
         vm.form = {};
         vm.searchName = '';
         vm.searchID = '';
         vm.search = search;
-        vm.course = [];
-        vm.view =view;
-
-        function view(course) {
-            console.log(course)
-            $state.go('root.admin.courseDetails.viewCourseDetails',{courseID: course.course_id});
+        vm.data = [];
+        vm.add =add;
+        vm.prerequisite = {
+            "coyote_id":"$stateParams.coyote_id",
+            "course_id":"null"
         }
-
-        function search(searchName,searchID) {
-            CourseService.getCourse(searchID,searchName).then(
+        function add(course) {
+            vm.prerequisite.course_id = course.course_id;
+            vm.prerequisite.coyote_id = $stateParams.coyote_id;
+            vm.data.push(vm.prerequisite);
+            console.log(vm.data);
+            AddPrerequisiteService.postprerequisite(vm.data[0]).then(
                 function success(response) {
-                    vm.course = response.data[0];
-
+                    console.log("Prerequisite posted");
                 },function error(response) {
                     console.log(response);
                 });
         }
+
+        function search(searchName,searchID) {
+            CourseService.getCourse(searchID,searchName).then(
+            function success(response) {
+                vm.course = response.data[0];
+
+            },function error(response) {
+                console.log(response);
+            });
+    }
     }
 })();

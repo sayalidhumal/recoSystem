@@ -33,6 +33,15 @@
                         url: '/getAllCourses',
                         params:{currentYear:currentYear}
                     })
+                },
+
+                createCourse: function (Course) {
+                    console.log("happt",Course)
+                    return $http({
+                        method: 'POST',
+                        url: '/createCourses',
+                        data: {course:Course}
+                    })
                 }
 
             }//end of outer return

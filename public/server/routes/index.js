@@ -37,5 +37,9 @@ router.get('/getUser',userQueries.getUser);
 
 router.get('/getAllCourses',courseQueries.getAllCourses);
 
+router.post('/createCourses',courseQueries.createCourse);
+
+router.post('/addPrerequisite',courseQueries.addPrerequisite);
+
 
 module.exports = router;
