@@ -18,7 +18,9 @@
         vm.userCourse = [];
         vm.recommendationPath= {};
         vm.optionalSubjects=[];
-        vm.optionalSchedule ={}
+        vm.optionalSchedule ={};
+        vm.electiveCount = 0;
+        vm.added = 0;
 
         /*vm.coursesRecommended = [
             {
@@ -36,7 +38,7 @@
 
         UserService.getRecommendationDetails(vm.coyote_id).then(
             function success(response) {
-                //console.log(response.data)
+                console.log("",response.data)
                 vm.userDetails = response.data;
 
                 CourseService.getAllCourses(vm.currentYear).then(
@@ -49,45 +51,38 @@
 
                         for(var i=0;i<vm.coursesData.core.length;i++){
                             vm.coursesData.core[i].schedule = vm.schedule[vm.coursesData.core[i].course_id];
+                            for(var j=0;j<vm.coursesData.core[i].schedule.length;j++){
+                                vm.coursesData.core[i].schedule[j].name = vm.coursesData.core[i].name
+                                vm.coursesData.core[i].schedule[j].units = vm.coursesData.core[i].units
+                            }
+
                         }
+
                         for(var i=0;i<vm.coursesData.electives.length;i++){
                             vm.coursesData.electives[i].schedule = vm.schedule[vm.coursesData.electives[i].course_id];
+                            if(vm.coursesData.electives[i].schedule)
+                                for(var j=0;j<vm.coursesData.electives[i].schedule.length;j++){
+                                    vm.coursesData.electives[i].schedule[j].name = vm.coursesData.electives[i].name
+                                    vm.coursesData.electives[i].schedule[j].units = vm.coursesData.electives[i].units
+                                }
                         }
                         for(var i=0;i<vm.coursesData.prerequisites.length;i++){
                             vm.coursesData.prerequisites[i].schedule = vm.schedule[vm.coursesData.prerequisites[i].prerequisite_id];
+                            for(var j=0;j<vm.coursesData.prerequisites[i].schedule.length;j++){
+                                vm.coursesData.prerequisites[i].schedule[j].name = vm.coursesData.prerequisites[i].name
+                                vm.coursesData.prerequisites[i].schedule[j].units = vm.coursesData.prerequisites[i].units
+                            }
                         }
 
-                        /** Adding pre-requisites **/
                         prerequisites(vm.userDetails,vm.coursesData.core,vm.coursesData.prerequisites);
 
+                        core(vm.userDetails,vm.coursesData.core,vm.coursesData.prerequisites)
 
-                        //core(vm.userDetails,vm.coursesData.core,vm.coursesData.prerequisites)
+                       elective(vm.userDetails,vm.coursesData.electives,vm.coursesData.constraints)
 
-                        vm.recommendationPath = formatForDisplay(vm.recommendationPath);
+                       vm.recommendationPath = formatForDisplay(vm.recommendationPath);
+
                         console.log(vm.recommendationPath)
-
-
-
-                        //delete vm.coursesData.schedule;
-
-
-                        /*** Filter the subjects according to the user preference ***/
-                        //vm.ElectivescourseByDay= sortByDay(vm.userDetails,vm.coursesData);
-
-                       // vm.ElectivecourseByTime = sortByTime(vm.userDetails,vm.coursesData);
-                       // console.log(_.pluck(vm.ElectivescourseByDay,'course_id'),_.pluck(vm.ElectivecourseByTime,'course_id'));
-
-                       // vm.common = _.union(_.pluck(vm.ElectivescourseByDay,'course_id'),_.pluck(vm.ElectivecourseByTime,'course_id'))
-
-                       // console.log(vm.common)
-
-                        /*** Get independent study if User wants to take it ***/
-                       /* if(vm.userDetails.preferences.other.independent_study_preference){
-                            vm.userCourse.push(_.where(vm.coursesData.electives,{name:'GRAD INDEPENDENT STUDY'}).course_id);
-
-                        }*/
-
-
 
                     },function error(response) {
 
@@ -100,15 +95,7 @@
 
 
         function prerequisites(userDetails,coreCourses,coursePrerequisites) {
-            /*
-            * STEPS:
-            * Has the user taken pre-requisites
-            * get the core and pre-requisites not taken by the user
-            * are the pre-requisites add to the path
-            * get the pre-requisites for the quarter
-            * are the quarter pre-requisites added to the path
-            * if no add
-            * */
+
             var userPrerequistes = userDetails.prerequisites;
             var coursesTaken = userDetails.coursesTaken;
             var prerequisitesNotTaken=[];
@@ -220,7 +207,6 @@
                     }
                 }
                 addToPath(addPrereqschedule,vm.userDetails.preferences.other.course_count_preference,"prerequisite");
-                console.log(vm.recommendationPath)
                 addToPath(addCoreSchedule,vm.userDetails.preferences.other.course_count_preference,"core");
                 return
             }
@@ -232,113 +218,286 @@
         }
 
         function core(userDetails,coreCourses,coursePrerequisites){
-            console.log(userDetails,coreCourses,coursePrerequisites)
+            var coreToBeAdded = [];
+            var searchvalue;
+            var index = -1
+            //console.log(userDetails.prerequisites)
+            for(var i = 0;i<userDetails.prerequisites.length;i++){
+                if(userDetails.prerequisites[i] != 306){
+                    searchvalue = _.where(coursePrerequisites,{prerequisite_id:userDetails.prerequisites[i]})[0].course_id;
+                    index = _.findLastIndex(coreCourses,{course_id:searchvalue});
+                    coreCourses.splice(index,1);
+                }
+            }
+
+            for(var i=0;i<userDetails.coursesTaken.length;i++){
+                index = _.findLastIndex(coreCourses,{course_id:userDetails.coursesTaken[i]});
+                if(index!=-1)
+                    coreCourses.splice(index,1);
+            }
+
+            for(var i=0;i<coreCourses.length;i++){
+                coreToBeAdded[i] = [];
+                for(var j=0;j<coreCourses[i].schedule.length;j++){
+                    coreToBeAdded[i].push(coreCourses[i].schedule[j])
+                }
+            }
+
+            for(var i=0;i<coreCourses.length;i++){
+                coreCourses[i].schedule = _.groupBy(coreCourses[i].schedule,'year');
+            }
+
+            if(coreToBeAdded.length!=0)
+                addToPath(coreToBeAdded,userDetails.preferences.other.course_count_preference,"core");
+
         }
 
-        function sortByDay(userDetails,coursesData) {
+        function elective(userDetails,electives,constraints) {
 
-            var courseByDay=[];
-            vm.degreeRequirement = appconfig.DegreeRequirements;
-            vm.electiveUnits = _.findWhere(vm.degreeRequirement,{"degreeType":userDetails.preferences.other.degree_preference}).electiveUnits;
+            var electivesToBeTaken = [];
+            var index = -1;
+            for(var i=0;i<constraints.length;i++){
+                index = _.findLastIndex(electives,{course_id:constraints[i].constraint_id});
+                electives.splice(index,1);
+            }
 
-            if(userDetails.preferences.dayPreference.length<3){
-                for(var i=0;i<userDetails.preferences.dayPreference.length;i++){
-                    for(var j=0;j<coursesData.electives.length;j++){
-                        var schedule = coursesData.electives[j].schedule;
-                        if(schedule){
-                            for(var k=0;k<schedule.length;k++){
-                                if(schedule[k].course_day!='N/A'){
-                                    if(userDetails.preferences.dayPreference[i].includes(schedule[k].course_day)){
-                                        courseByDay.push(schedule[k]);
+            for(var i=0;i<electives.length;i++){
+                if(electives[i].schedule){
+                    if(electives[i].schedule[0].course_start_time == null){
+                        index = _.findLastIndex(electives,{course_id:electives[i].course_id});
+                        electives.splice(index,1);
+                        i--;
+                    }
+                } else {
+                    index = _.findLastIndex(electives,{course_id:electives[i].course_id});
+                    electives.splice(index,1);
+                    i--;
+                }
+
+            }
+            var degreeRequirement = appconfig.DegreeRequirements;
+            var electiveUnits = _.findWhere(degreeRequirement,{"degreeType":userDetails.preferences.other.degree_preference}).electiveUnits
+            var electiveNo = electiveUnits/4
+            console.log(electiveNo)
+            var electiveCount = electiveUnits/4;
+            electivesToBeTaken = getElectives(electives,vm.recommendationPath);
+            var sortDay = sortByDay(electivesToBeTaken,vm.userDetails.preferences)
+
+            var above =[];
+            var below = [];
+            for(var i=0;i<sortDay.length;i++){
+                if(sortDay[i][0].course_id >600)
+                    above.push(sortDay[i]);
+                else
+                    below.push(sortDay[i]);
+            }
+
+             if(above.length <= electiveNo){
+                 var sortTime = sortByTime(below,vm.userDetails.preferences);
+             }
+
+
+
+            if(userDetails.preferences.other.independent_study_preference){
+                electiveNo--;
+                electiveCount = electiveCount-1;
+            }
+
+            var data =[];
+            data[0] = [];
+            for(var i=0;i<above.length;i++){
+                if(electiveCount>0){
+                    data[0] = above[i]
+                    addToPath(data,userDetails.preferences.other.course_count_preference,"elective");
+                    if(vm.added==1){
+                        vm.added=0;
+                        electiveCount--;
+                    }
+                }
+
+            }
+            if(electiveCount>0){
+                for(var i=0;i<below.length;i++){
+                    if(electiveCount>0){
+                        data[0] = below[i]
+                        addToPath(data,userDetails.preferences.other.course_count_preference,"elective");
+                        if(vm.added==1){
+                            vm.added=0;
+                            electiveCount--;
+                        }
+                    }
+
+                }
+            }
+
+            if(electiveNo!=(electiveUnits/4)){
+                console.log("add independent study")
+            }
+            return;
+        }
+
+        function getElectives(electives,path){
+            var electivesToBeTaken = [];
+            var keys = _.keys(path)
+            var endingYear = keys[keys.length -1];
+            keys = _.keys(path[endingYear]);
+            var endingindex ;
+            var endingQuarter;
+            var count = 0;
+            for(var i=0;i<vm.quarterOrder.length;i++){
+                if(_.contains(keys,vm.quarterOrder[i])){
+                    endingindex = i;
+                    endingQuarter = vm.quarterOrder[i]
+                }
+            }
+            var flag = 0;
+            for(var i=0;i<electives.length;i++){
+                electivesToBeTaken[count] = [];
+                for(var j=0;j<electives[i].schedule.length;j++){
+                    flag = 0
+                    var a = electives[i].schedule[j];
+                    if(path[a.year]){
+                        if(path[a.year][a.quarter]){
+                            var b = path[a.year][a.quarter];
+                            for(var k =0;k<b.length;k++){
+                                if(a.course_day == b[k].course_day) {
+                                    if(a.lab_day && b[k].lab_day) {
+                                        if (a.course_start_time > b[k].course_start_time) {
+                                            if (b[k].lab_end_time < a.course_start_time)
+                                                flag++;
+                                        }else {
+                                            if (a.lab_end_time < b[k].course_start_time) {
+                                                flag++;
+                                            }
+                                        }
+                                    }else{
+                                        if(a.lab_day){
+                                            if(a.course_start_time > b[k].course_start_time){
+                                                if(b[k].course_end_time < a.course_start_time)
+                                                    flag++;
+                                            }else {
+                                                if(a.lab_end_time < b[k].course_start_time){
+                                                    flag++;
+                                                }
+                                            }
+                                        }else{
+                                            if(a.course_start_time > b[k].course_start_time){
+                                                if(b[k].lab_end_time < a.course_start_time)
+                                                    flag++;
+                                            }else {
+                                                if(a.course_end_time < b[k].course_start_time){
+                                                    flag++;
+                                                }
+                                            }
+                                        }
                                     }
-                                }else {
-                                    vm.optionalSubjects.push(schedule[k]);
-                                }
+                                }else
+                                    flag ++;
+
+                            }
+                            if(flag == b.length){
+                                electivesToBeTaken[count].push(a)
+                            }
+                        }else {
+                            if(_.indexOf(vm.quarterOrder,a.quarter)< endingindex){
+                                electivesToBeTaken[count].push(a)
                             }
                         }
                     }
                 }
-
-            }else{
-                for(var j=0;j<coursesData.electives.length;j++){
-                    var schedule = coursesData.electives[j].schedule;
-                    if(schedule){
-                        for(var k=0;k<schedule.length;k++){
-                            if(schedule[k].course_day!='N/A')
-                                courseByDay.push(schedule[k]);
-                            else
-                                vm.optionalSubjects.push(schedule[k]);
-                        }
-                    }
-                }
+                if(electivesToBeTaken[count].length)
+                    count++;
+                else
+                    electivesToBeTaken.splice(electivesToBeTaken.length-1,1)
             }
-
-            return courseByDay;
-
+            return electivesToBeTaken
         }
 
-        function sortByTime(userDetails,coursesData,courseByDay) {
-            var ElectivecourseByTime=[];
-            if(userDetails.preferences.timePreference.length<3){
-                for(var i=0;i<userDetails.preferences.timePreference.length;i++){
-                    switch(userDetails.preferences.timePreference[i]){
+        function sortByDay(electives,preference){
+            var courses = [];
+            var count = 0;
 
+            if(preference.dayPreference.length<3){
+                switch(preference.dayPreference.length){
+                    case 1:
+                        for(var i=0;i<electives.length;i++){
+                            courses[count] = [];
+                            for(var j=0;j<electives[i].length;j++){
+
+                                if(electives[i][j].course_day ==preference.dayPreference[0]){
+                                    courses[count].push(electives[i][j])
+                                }
+                            }
+                            if(courses[count].length)
+                                count++
+                            else
+                                courses.splice(courses.length-1,1);
+
+                        }
+                        return courses
+                        break;
+                    case 2:
+                        for(var i=0;i<electives.length;i++){
+                            courses[count] = [];
+                            for(var j=0;j<electives[i].length;j++){
+                                if(electives[i][j].course_day ==preference.dayPreference[0] || electives[i][j].course_day ==preference.dayPreference[1]){
+                                    courses[count].push(electives[i][j])
+                                }
+                            }
+                            if(courses[count].length)
+                                count++
+                            else
+                                courses.splice(courses.length-1,1);
+
+                        }
+                        return courses
+                        break;
+                }
+            }
+            else
+                return electives
+        }
+
+        function sortByTime(electives,preference) {
+            if(preference.timePreference.length<3){
+                var time=[];
+                var sortTime =[];
+                for(var i=0;i<preference.timePreference.length;i++){
+                    switch (preference.timePreference[i]){
                         case "Morning":
-                            getSubjects("08:00:00-07","12:00:00-07");
-
+                            time.push({start:'08:00:00-07',end:'12:00:00-07'})
                             break;
                         case "Afternoon":
-                            getSubjects("12:00:00-07","17:00:00-07");
-
+                            time.push({start:'12:00:00-07',end:'17:00:00-07'})
                             break;
                         case "Evening":
-                            getSubjects("17:00:00-07","22:00:00-07");
+                            time.push({start:'17:00:00-07',end:'22:00:00-07'})
                             break;
                     }
                 }
-                console.log(ElectivecourseByTime)
-            }
-            else{
-                for(var j=0;j<coursesData.electives.length;j++){
-                    var schedule = coursesData.electives[j].schedule;
-                    if(schedule){
-                        for(var k=0;k<schedule.length;k++){
-                            if(schedule[k].course_start_time){
-                                ElectivecourseByTime.push(schedule[k]);
-                            }
-                            else {
-                                vm.optionalSubjects.push(schedule[k]);
-                            }
+                var count =0;
+                for(var i=0;i<electives.length;i++){
+                    sortTime[count]=[]
+                    for(var j=0;j<electives[i].length;j++){
+                        if((time[0].start<=electives[i][j].course_start_time && electives[i][j].course_end_time<=time[0].end) || (time[1].start<=electives[i][j].course_start_time && electives[i][j].course_end_time<=time[1].end)){
+                            sortTime[count].push(electives[i][j])
                         }
                     }
-                }
-            }
-
-            function getSubjects(start,end) {
-                for(var j=0;j<coursesData.electives.length;j++){
-                    var schedule = coursesData.electives[j].schedule;
-                    if(schedule){
-                        for(var k=0;k<schedule.length;k++){
-                            if(schedule[k].course_start_time){
-                                if(schedule[k].course_start_time >= start && schedule[k].course_end_time <= end){
-                                    ElectivecourseByTime.push(schedule[k]);
-                                }
-                            }
-                            else {
-                                vm.optionalSubjects.push(schedule[k]);
-                            }
-                        }
+                    if(sortTime[count].length!=0){
+                        count++
                     }
                 }
-
-                return
-            }
-
-            return ElectivecourseByTime;
+                if(sortTime[count].length==0){
+                    sortTime.splice(count,1)
+                }
+                console.log("sorttime",sortTime)
+                return sortTime
+            }else
+                return electives
         }
 
         function addToPath(courses,course_count_preference,courseType) {
-            console.log("add to path",courses)
+            //console.log("add to path",courses)
             var currentQuarter = vm.currentQuarter;
             var year = vm.currentYear;
             var quarterOrder = vm.quarterOrder;
@@ -347,11 +506,13 @@
 
             for(var i=0;i<courses.length;i++){
                 for(var j=0;j<courses[i].length;j++){
-                    flag = 0
+                    flag = 0;
                     if(Object.keys(vm.recommendationPath).length == 0){
+                        //console.log("adding",courses[i][j])
                         vm.recommendationPath[courses[i][j].year] = {};
                         vm.recommendationPath[courses[i][j].year][courses[i][j].quarter] = []
                         vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].push(courses[i][j]);
+                        vm.added = 1;
                         flag = 1;
                         if(courses[i].length > 1)
                             addOptional(courses[i],j+1)
@@ -361,22 +522,30 @@
                     //check for year if present
                     if(vm.recommendationPath[courses[i][j].year]){
                         //check for quarter if present
-                        if(vm.recommendationPath[courses[i][j].year][courses[i][j].quarter] ){
+                        if(vm.recommendationPath[courses[i][j].year][courses[i][j].quarter]){
                             if(vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].length >= course_count_preference)
                                 continue;
 
                             if(clashesCheck(vm.recommendationPath[courses[i][j].year][courses[i][j].quarter],courses[i][j],courseType)){
+                                //console.log("adding11",courses[i][j])
                                 vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].push(courses[i][j]);
+                                vm.added = 1;
+                                flag = 1;
+                                if(courses[i].length > 1)
+                                    addOptional(courses[i],j+1)
+                                break;
+                            }else {
                                 flag = 1;
                                 if(courses[i].length > 1)
                                     addOptional(courses[i],j+1)
                                 break;
                             }
-                            //previous reco code will go here if this clashesCheck() does not work above if() will be removed
                         }
                         else {
+                            //console.log("adding",courses[i][j])
                             vm.recommendationPath[courses[i][j].year][courses[i][j].quarter] = []
                             vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].push(courses[i][j]);
+                            vm.added = 1;
                             flag = 1;
                             if(courses[i].length > 1)
                                 addOptional(courses[i],j+1)
@@ -384,10 +553,11 @@
                         }
 
                     }else {
-                        console.log(courses[i][j])
+                        //console.log("adding",courses[i][j])
                         vm.recommendationPath[courses[i][j].year] = {};
                         vm.recommendationPath[courses[i][j].year][courses[i][j].quarter] = []
                         vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].push(courses[i][j]);
+                        vm.added = 1;
                         flag = 1;
                         if(courses[i].length > 1)
                             addOptional(courses[i],j+1)
@@ -398,12 +568,19 @@
                     for(var j=0;j<courses[i].length;j++){
                         if(vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].length < 4){
                             if(clashesCheck(vm.recommendationPath[courses[i][j].year][courses[i][j].quarter],courses[i][j],courseType)){
+                                //console.log("adding",courses[i][j])
                                 vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].push(courses[i][j]);
+                                vm.added = 1;
                                 if(courses[i].length > 1)
                                     addOptional(courses[i],j+1)
                                 break;
                             }
-                            //previous reco code will go here if this clashesCheck() does not work above if() will be removed
+                            else {
+                                flag = 1;
+                                if(courses[i].length > 1)
+                                    addOptional(courses[i],j+1)
+                                break;
+                            }
                         }
                     }
                 }
@@ -421,7 +598,6 @@
         }
 
         function clashesCheck(path,course,courseType) {
-
             var a = path;
             var flag =0;
             for(var k=0;k<a.length;k++){
@@ -433,7 +609,7 @@
                                 flag++;
                             else{
                                 clash(courseType,a[k],course)
-                                flag++;
+                                flag--;
                                 //console.log("clashes")
                             }
                         }else {
@@ -441,7 +617,7 @@
                                 flag++;
                             }else{
                                 clash(courseType,a[k],course)
-                                flag++;
+                                flag--;
                                 //console.log("clash 1",course,a[k])
                             }
 
@@ -454,7 +630,7 @@
                                     flag++;
                                 else{
                                     clash(courseType,a[k],course)
-                                    flag++;
+                                    flag--;
                                     //console.log("clash 2",course,a[k])
                                 }
                             }else {
@@ -462,7 +638,7 @@
                                     flag++;
                                 }else{
                                     clash(courseType,a[k],course)
-                                    flag++;
+                                    flag--;
                                     //console.log("clash 3",course,a[k])
                                 }
                             }
@@ -472,16 +648,16 @@
                                 if(a[k].lab_end_time < course.course_start_time)
                                     flag++;
                                 else{
-                                    clash(courseType,a[k],course)
-                                    flag++;
                                     //console.log("clash 4",course,a[k])
+                                    clash(courseType,a[k],course)
+                                    flag--;
                                 }
                             }else {
                                 if(course.course_end_time < a[k].course_start_time){
                                     flag++;
                                 } else{
                                     clash(courseType,a[k],course)
-                                    flag++;
+                                    flag--;
                                     //console.log("clash 5",course,a[k])
                                 }
                             }
@@ -494,38 +670,33 @@
             if(flag == a.length){
                 return true
             }
+            else
+                return false
         }
 
         function clash(courseType,pathcourse,course) {
-            console.log(courseType,pathcourse,course)
+            //console.log(courseType,"course in path",pathcourse,"course to be added",course)
             switch (courseType) {
                 case "prerequisite":
                     // clash of prerequsities
                     break;
                 case "core":
-
                     if(!vm.optionalSchedule[pathcourse.course_id]){
                         var coreSchedule = _.where(vm.coursesData.core,{course_id: course.course_id})[0].schedule;
-                        //console.log(coreSchedule)
                         var a = [];
                         a[0] = []
                         angular.forEach(coreSchedule,function (schedule,year) {
 
                             for(var j=0;j<schedule.length;j++){
                                 if((schedule[j].year != course.year)||(schedule[j].quarter != course.quarter)){
-                                    console.log("added");
-
                                     a[0].push(schedule[j])
-                                    console.log(schedule,year,a)
+                                    //console.log(schedule,year,a)
                                 }
                             }
                         })
                         if(a[0].length){
-
                             addToPath(a,vm.userDetails.preferences.other.course_count_preference,"core");
-                            console.log("returned")
                             break;
-
                         }
 
                     }else {

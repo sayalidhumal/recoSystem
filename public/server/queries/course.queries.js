@@ -11,7 +11,8 @@
             electives:[],
             core:[],
             schedule:[],
-            prerequisites:[]
+            prerequisites:[],
+            constraints: []
         }
 
         pg.connect(connectionString, function(err, client, done){
@@ -24,6 +25,7 @@
             const elective = client.query('SELECT c.course_id, c.has_lab, c.course_level, c.units, c.course_dept, c.name FROM elective_course e INNER JOIN course c ON e.course_id=c.course_id');
             const prerequisites = client.query('SELECT c.course_id, e.prerequisite_id, c.has_lab, c.course_level, c.units, c.course_dept, c.name FROM course_prerequisite e INNER JOIN course c ON e.course_id=c.course_id');
             const schedule = client.query('SELECT * FROM course_schedule  WHERE year >= ' + currentYear + ';');
+            const constraints = client.query('SELECT * FROM course_constraints;');
 
 
             core.on('row',function (row) {
@@ -58,8 +60,18 @@
 
             schedule.on('end',function () {
                 done();
+                //return res.json(results);
+            })
+
+            constraints.on('row',function (row) {
+                results.constraints.push(row);
+            });
+
+            constraints.on('end',function () {
+                done();
                 return res.json(results);
             })
+
 
         });
     }
