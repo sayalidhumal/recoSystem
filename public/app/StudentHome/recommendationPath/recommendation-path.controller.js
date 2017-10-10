@@ -4,9 +4,9 @@
 (function () {
     angular.module("Studenthome").controller("RecommendationPathController",RecommendationPathController);
 
-    RecommendationPathController.$inject = ["UserService","$stateParams","_","appconfig","CourseService","$filter"];
+    RecommendationPathController.$inject = ["UserService","$stateParams","_","appconfig","CourseService","$filter","RecommendationAlgo"];
 
-    function RecommendationPathController(UserService,$stateParams,_,appconfig,CourseService,$filter) {
+    function RecommendationPathController(UserService,$stateParams,_,appconfig,CourseService,$filter,RecommendationAlgo) {
         var vm=this;
         vm.coyote_id = $stateParams.userID;
         vm.currentYear = appconfig.CurrentYear;
@@ -22,79 +22,80 @@
         vm.electiveCount = 0;
         vm.added = 0;
 
-        /*vm.coursesRecommended = [
-            {
-                courseID:602,
-                courseName:"Automata theory",
-                totalUnits: 4
-
-            },
-            {
-                courseID:655,
-                courseName:"Software Engineering",
-                totalUnits: 4
-            }
-        ];*/
-
         UserService.getRecommendationDetails(vm.coyote_id).then(
             function success(response) {
-                console.log("",response.data)
+                console.log("",response.data);
                 vm.userDetails = response.data;
 
-                CourseService.getAllCourses(vm.currentYear).then(
-                    function success(reponse) {
-                        //console.log(reponse.data)
-                        vm.coursesData = reponse.data;
+                if(vm.userDetails.path == null){
 
-                        /****  Grouping the courses and schedule  ***/
-                        vm.schedule = _.groupBy(vm.coursesData.schedule,'course_id');
+                    CourseService.getAllCourses(vm.currentYear).then(
+                        function success(reponse) {
+                            vm.coursesData = reponse.data;
+                            console.log(reponse.data)
+                            /****  Grouping the courses and schedule  ***/
+                            vm.schedule = _.groupBy(vm.coursesData.schedule,'course_id');
 
-                        for(var i=0;i<vm.coursesData.core.length;i++){
-                            vm.coursesData.core[i].schedule = vm.schedule[vm.coursesData.core[i].course_id];
-                            for(var j=0;j<vm.coursesData.core[i].schedule.length;j++){
-                                vm.coursesData.core[i].schedule[j].name = vm.coursesData.core[i].name
-                                vm.coursesData.core[i].schedule[j].units = vm.coursesData.core[i].units
-                            }
-
-                        }
-
-                        for(var i=0;i<vm.coursesData.electives.length;i++){
-                            vm.coursesData.electives[i].schedule = vm.schedule[vm.coursesData.electives[i].course_id];
-                            if(vm.coursesData.electives[i].schedule)
-                                for(var j=0;j<vm.coursesData.electives[i].schedule.length;j++){
-                                    vm.coursesData.electives[i].schedule[j].name = vm.coursesData.electives[i].name
-                                    vm.coursesData.electives[i].schedule[j].units = vm.coursesData.electives[i].units
+                            for(var i=0;i<vm.coursesData.core.length;i++){
+                                vm.coursesData.core[i].schedule = vm.schedule[vm.coursesData.core[i].course_id];
+                                for(var j=0;j<vm.coursesData.core[i].schedule.length;j++){
+                                    vm.coursesData.core[i].schedule[j].name = vm.coursesData.core[i].name;
+                                    vm.coursesData.core[i].schedule[j].units = vm.coursesData.core[i].units
                                 }
-                        }
-                        for(var i=0;i<vm.coursesData.prerequisites.length;i++){
-                            vm.coursesData.prerequisites[i].schedule = vm.schedule[vm.coursesData.prerequisites[i].prerequisite_id];
-                            for(var j=0;j<vm.coursesData.prerequisites[i].schedule.length;j++){
-                                vm.coursesData.prerequisites[i].schedule[j].name = vm.coursesData.prerequisites[i].name
-                                vm.coursesData.prerequisites[i].schedule[j].units = vm.coursesData.prerequisites[i].units
+
                             }
+
+                            for(var i=0;i<vm.coursesData.electives.length;i++){
+                                vm.coursesData.electives[i].schedule = vm.schedule[vm.coursesData.electives[i].course_id];
+                                if(vm.coursesData.electives[i].schedule)
+                                    for(var j=0;j<vm.coursesData.electives[i].schedule.length;j++){
+                                        vm.coursesData.electives[i].schedule[j].name = vm.coursesData.electives[i].name;
+                                        vm.coursesData.electives[i].schedule[j].units = vm.coursesData.electives[i].units
+                                    }
+                            }
+
+                            for(var i=0;i<vm.coursesData.prerequisites.length;i++){
+                                vm.coursesData.prerequisites[i].schedule = vm.schedule[vm.coursesData.prerequisites[i].prerequisite_id];
+                                for(var j=0;j<vm.coursesData.prerequisites[i].schedule.length;j++){
+                                    vm.coursesData.prerequisites[i].schedule[j].name = vm.coursesData.prerequisites[i].name;
+                                    vm.coursesData.prerequisites[i].schedule[j].units = vm.coursesData.prerequisites[i].units
+                                }
+                            }
+
+                            vm.recommendationPath = RecommendationAlgo.createPath(vm.userDetails,vm.coursesData);
+
+                            console.log(vm.recommendationPath)
+
+                            // UserService.addRecommendationPath(vm.recommendationPath,vm.coyote_id).then(function success(response) {
+                            //
+                            // },function error() {
+                            //
+                            // })
+
+
+                            //  prerequisites(vm.userDetails,vm.coursesData.core,vm.coursesData.prerequisites);
+                            //
+                            //  core(vm.userDetails,vm.coursesData.core,vm.coursesData.prerequisites);
+                            //
+                            // elective(vm.userDetails,vm.coursesData.electives,vm.coursesData.constraints);
+                            //
+                            // vm.recommendationPath = formatForDisplay(vm.recommendationPath);
+                            //
+                            //  console.log(vm.recommendationPath)
+
+                        },function error(response) {
+
                         }
-
-                        prerequisites(vm.userDetails,vm.coursesData.core,vm.coursesData.prerequisites);
-
-                        core(vm.userDetails,vm.coursesData.core,vm.coursesData.prerequisites)
-
-                       elective(vm.userDetails,vm.coursesData.electives,vm.coursesData.constraints)
-
-                       vm.recommendationPath = formatForDisplay(vm.recommendationPath);
-
-                        console.log(vm.recommendationPath)
-
-                    },function error(response) {
-
-                }
-                )
+                    )
+                } else
+                    vm.recommendationPath = vm.userDetails.path
             },
             function error(response) {
 
         });
 
 
-        function prerequisites(userDetails,coreCourses,coursePrerequisites) {
+       /* function prerequisites(userDetails,coreCourses,coursePrerequisites) {
 
             var userPrerequistes = userDetails.prerequisites;
             var coursesTaken = userDetails.coursesTaken;
@@ -128,7 +129,7 @@
                     }
                 }
             }else {
-                console.log("no prerequisites to be taken")
+                console.log("no prerequisites to be taken");
                 return;
             }
             for(var i=0;i<coreNotTaken.length;i++){
@@ -157,7 +158,7 @@
                             var i=0;
                             var p = [];
                             if(startcore==1){
-                                i = _.indexOf(vm.quarterOrder,vm.currentQuarter)
+                                i = _.indexOf(vm.quarterOrder,vm.currentQuarter);
                                 startcore = 0;
                             }
 
@@ -185,7 +186,7 @@
                                             if(preyear==p[l].year && (p[l].quarter+p[l].year)!=string && preyear <=year){
                                                 p[l]["type"] = "prerequisites"
                                                 addPrereqschedule[count].push(p[l])
-                                                a["type"] = "core"
+                                                a["type"] = "core";
                                                 addCoreSchedule[count].push(a)
                                                 flag=1;
                                             }
@@ -211,7 +212,7 @@
                 return
             }
             else {
-                console.log("no prerequisites to be taken")
+                console.log("no prerequisites to be taken");
                 return;
             }
 
@@ -220,7 +221,7 @@
         function core(userDetails,coreCourses,coursePrerequisites){
             var coreToBeAdded = [];
             var searchvalue;
-            var index = -1
+            var index = -1;
             //console.log(userDetails.prerequisites)
             for(var i = 0;i<userDetails.prerequisites.length;i++){
                 if(userDetails.prerequisites[i] != 306){
@@ -277,11 +278,11 @@
             }
             var degreeRequirement = appconfig.DegreeRequirements;
             var electiveUnits = _.findWhere(degreeRequirement,{"degreeType":userDetails.preferences.other.degree_preference}).electiveUnits
-            var electiveNo = electiveUnits/4
-            console.log(electiveNo)
+            var electiveNo = electiveUnits/4;
+            console.log(electiveNo);
             var electiveCount = electiveUnits/4;
             electivesToBeTaken = getElectives(electives,vm.recommendationPath);
-            var sortDay = sortByDay(electivesToBeTaken,vm.userDetails.preferences)
+            var sortDay = sortByDay(electivesToBeTaken,vm.userDetails.preferences);
 
             var above =[];
             var below = [];
@@ -307,7 +308,7 @@
             data[0] = [];
             for(var i=0;i<above.length;i++){
                 if(electiveCount>0){
-                    data[0] = above[i]
+                    data[0] = above[i];
                     addToPath(data,userDetails.preferences.other.course_count_preference,"elective");
                     if(vm.added==1){
                         vm.added=0;
@@ -319,7 +320,7 @@
             if(electiveCount>0){
                 for(var i=0;i<below.length;i++){
                     if(electiveCount>0){
-                        data[0] = below[i]
+                        data[0] = below[i];
                         addToPath(data,userDetails.preferences.other.course_count_preference,"elective");
                         if(vm.added==1){
                             vm.added=0;
@@ -338,7 +339,7 @@
 
         function getElectives(electives,path){
             var electivesToBeTaken = [];
-            var keys = _.keys(path)
+            var keys = _.keys(path);
             var endingYear = keys[keys.length -1];
             keys = _.keys(path[endingYear]);
             var endingindex ;
@@ -354,7 +355,7 @@
             for(var i=0;i<electives.length;i++){
                 electivesToBeTaken[count] = [];
                 for(var j=0;j<electives[i].schedule.length;j++){
-                    flag = 0
+                    flag = 0;
                     var a = electives[i].schedule[j];
                     if(path[a.year]){
                         if(path[a.year][a.quarter]){
@@ -429,12 +430,12 @@
                                 }
                             }
                             if(courses[count].length)
-                                count++
+                                count++;
                             else
                                 courses.splice(courses.length-1,1);
 
                         }
-                        return courses
+                        return courses;
                         break;
                     case 2:
                         for(var i=0;i<electives.length;i++){
@@ -445,12 +446,12 @@
                                 }
                             }
                             if(courses[count].length)
-                                count++
+                                count++;
                             else
                                 courses.splice(courses.length-1,1);
 
                         }
-                        return courses
+                        return courses;
                         break;
                 }
             }
@@ -465,19 +466,19 @@
                 for(var i=0;i<preference.timePreference.length;i++){
                     switch (preference.timePreference[i]){
                         case "Morning":
-                            time.push({start:'08:00:00-07',end:'12:00:00-07'})
+                            time.push({start:'08:00:00-07',end:'12:00:00-07'});
                             break;
                         case "Afternoon":
-                            time.push({start:'12:00:00-07',end:'17:00:00-07'})
+                            time.push({start:'12:00:00-07',end:'17:00:00-07'});
                             break;
                         case "Evening":
-                            time.push({start:'17:00:00-07',end:'22:00:00-07'})
+                            time.push({start:'17:00:00-07',end:'22:00:00-07'});
                             break;
                     }
                 }
                 var count =0;
                 for(var i=0;i<electives.length;i++){
-                    sortTime[count]=[]
+                    sortTime[count]=[];
                     for(var j=0;j<electives[i].length;j++){
                         if((time[0].start<=electives[i][j].course_start_time && electives[i][j].course_end_time<=time[0].end) || (time[1].start<=electives[i][j].course_start_time && electives[i][j].course_end_time<=time[1].end)){
                             sortTime[count].push(electives[i][j])
@@ -490,7 +491,7 @@
                 if(sortTime[sortTime.length-1].length==0){
                     sortTime.splice(sortTime.length-1,1)
                 }
-                console.log("sorttime",sortTime)
+                console.log("sorttime",sortTime);
                 return sortTime
             }else
                 return electives
@@ -510,12 +511,12 @@
                     if(Object.keys(vm.recommendationPath).length == 0){
                         //console.log("adding",courses[i][j])
                         vm.recommendationPath[courses[i][j].year] = {};
-                        vm.recommendationPath[courses[i][j].year][courses[i][j].quarter] = []
+                        vm.recommendationPath[courses[i][j].year][courses[i][j].quarter] = [];
                         vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].push(courses[i][j]);
                         vm.added = 1;
                         flag = 1;
                         if(courses[i].length > 1)
-                            addOptional(courses[i],j+1)
+                            addOptional(courses[i],j+1);
                         break;
                     }
 
@@ -532,35 +533,35 @@
                                 vm.added = 1;
                                 flag = 1;
                                 if(courses[i].length > 1)
-                                    addOptional(courses[i],j+1)
+                                    addOptional(courses[i],j+1);
                                 break;
                             }else {
                                 flag = 1;
                                 if(courses[i].length > 1)
-                                    addOptional(courses[i],j+1)
+                                    addOptional(courses[i],j+1);
                                 break;
                             }
                         }
                         else {
                             //console.log("adding",courses[i][j])
-                            vm.recommendationPath[courses[i][j].year][courses[i][j].quarter] = []
+                            vm.recommendationPath[courses[i][j].year][courses[i][j].quarter] = [];
                             vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].push(courses[i][j]);
                             vm.added = 1;
                             flag = 1;
                             if(courses[i].length > 1)
-                                addOptional(courses[i],j+1)
+                                addOptional(courses[i],j+1);
                             break;
                         }
 
                     }else {
                         //console.log("adding",courses[i][j])
                         vm.recommendationPath[courses[i][j].year] = {};
-                        vm.recommendationPath[courses[i][j].year][courses[i][j].quarter] = []
+                        vm.recommendationPath[courses[i][j].year][courses[i][j].quarter] = [];
                         vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].push(courses[i][j]);
                         vm.added = 1;
                         flag = 1;
                         if(courses[i].length > 1)
-                            addOptional(courses[i],j+1)
+                            addOptional(courses[i],j+1);
                         break;
                     }
                 }
@@ -572,13 +573,13 @@
                                 vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].push(courses[i][j]);
                                 vm.added = 1;
                                 if(courses[i].length > 1)
-                                    addOptional(courses[i],j+1)
+                                    addOptional(courses[i],j+1);
                                 break;
                             }
                             else {
                                 flag = 1;
                                 if(courses[i].length > 1)
-                                    addOptional(courses[i],j+1)
+                                    addOptional(courses[i],j+1);
                                 break;
                             }
                         }
@@ -587,14 +588,14 @@
             }
 
             function addOptional(courses,j) {
-                vm.optionalSchedule[courses[0].course_id] = []
+                vm.optionalSchedule[courses[0].course_id] = [];
                 for(;j<courses.length;j++)
                     vm.optionalSchedule[courses[j].course_id].push(courses[j])
 
-                return
+                return;
             }
 
-            return
+            return;
         }
 
         function clashesCheck(path,course,courseType) {
@@ -608,7 +609,7 @@
                             if(a[k].lab_end_time < course.course_start_time)
                                 flag++;
                             else{
-                                clash(courseType,a[k],course)
+                                clash(courseType,a[k],course);
                                 flag--;
                                 //console.log("clashes")
                             }
@@ -616,7 +617,7 @@
                             if(course.lab_end_time < a[k].course_start_time){
                                 flag++;
                             }else{
-                                clash(courseType,a[k],course)
+                                clash(courseType,a[k],course);
                                 flag--;
                                 //console.log("clash 1",course,a[k])
                             }
@@ -629,7 +630,7 @@
                                 if(a[k].course_end_time < course.course_start_time)
                                     flag++;
                                 else{
-                                    clash(courseType,a[k],course)
+                                    clash(courseType,a[k],course);
                                     flag--;
                                     //console.log("clash 2",course,a[k])
                                 }
@@ -637,7 +638,7 @@
                                 if(course.lab_end_time < a[k].course_start_time){
                                     flag++;
                                 }else{
-                                    clash(courseType,a[k],course)
+                                    clash(courseType,a[k],course);
                                     flag--;
                                     //console.log("clash 3",course,a[k])
                                 }
@@ -649,14 +650,14 @@
                                     flag++;
                                 else{
                                     //console.log("clash 4",course,a[k])
-                                    clash(courseType,a[k],course)
+                                    clash(courseType,a[k],course);
                                     flag--;
                                 }
                             }else {
                                 if(course.course_end_time < a[k].course_start_time){
                                     flag++;
                                 } else{
-                                    clash(courseType,a[k],course)
+                                    clash(courseType,a[k],course);
                                     flag--;
                                     //console.log("clash 5",course,a[k])
                                 }
@@ -684,16 +685,16 @@
                     if(!vm.optionalSchedule[pathcourse.course_id]){
                         var coreSchedule = _.where(vm.coursesData.core,{course_id: course.course_id})[0].schedule;
                         var a = [];
-                        a[0] = []
+                        a[0] = [];
                         angular.forEach(coreSchedule,function (schedule,year) {
 
                             for(var j=0;j<schedule.length;j++){
                                 if((schedule[j].year != course.year)||(schedule[j].quarter != course.quarter)){
-                                    a[0].push(schedule[j])
+                                    a[0].push(schedule[j]);
                                     //console.log(schedule,year,a)
                                 }
                             }
-                        })
+                        });
                         if(a[0].length){
                             addToPath(a,vm.userDetails.preferences.other.course_count_preference,"core");
                             break;
@@ -713,26 +714,26 @@
         }
 
         function formatForDisplay(path) {
-            var recommendationPath = []
+            var recommendationPath = [];
             angular.forEach(path,function (data,year) {
                 var yearobj = {
                     year : year,
                     quarters: []
-                }
+                };
 
                 angular.forEach(data,function (schedules,quarter) {
                     var quarterObj = {
                         quarter: quarter,
                         schedule: []
-                    }
+                    };
                     quarterObj.schedule = schedules;
                     yearobj.quarters.push(quarterObj);
-                })
-                recommendationPath.push(yearobj)
-            })
+                });
+                recommendationPath.push(yearobj);
+            });
 
             return recommendationPath;
-        }
+        }*/
     }
 
 

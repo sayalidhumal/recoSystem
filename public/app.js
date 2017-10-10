@@ -7,6 +7,7 @@
       'directives',
       'underscore',
       'ngResource',
+      'RecommendationAlgorithm',
       'Login',
       'Signup',
       'Home',

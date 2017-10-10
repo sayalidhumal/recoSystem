@@ -43,6 +43,8 @@ router.post('/createCourses',courseQueries.createCourse);
 
 router.post('/addPrerequisite',courseQueries.addPrerequisite);
 
+router.put('/addRecommendationPath',userQueries.addRecommendationPath);
+
 router.get('/viewPrerequisite',courseQueries.viewPrerequisite);
 
 router.get('/getPrerequisite',courseQueries.getPrerequisite);

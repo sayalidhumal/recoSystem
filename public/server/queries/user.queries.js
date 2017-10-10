@@ -76,9 +76,8 @@
                 console.log(err);
                 return res.status(500).json({success: false, data: err});
             }
-            //const coursesTaken = client.query("SELECT * FROM "+'"course_taken"' +"WHERE coyote_id ='" + coyote_id + "';");
-            //const coursesTaken = client.query("SELECT t.course_id,t.grade,t.coyote_id,c.units,c.name FROM"+ '"course c"','"course_taken t"'+"WHERE t.course_id = c.course_id AND t.coyote_id='" + coyote_id + "';");
-            const coursesTaken = client.query("SELECT t.course_id,t.grade,t.coyote_id,t.quarter_year,c.units,c.name FROM course c, course_taken t where t.course_id = c.course_id AND t.coyote_id ='" + coyote_id + "';");
+            const coursesEnrolled = client.query("SELECT t.course_id,t.grade,t.coyote_id,t.quarter_year,c.units,c.name FROM course c, course_taken t where t.course_id = c.course_id AND t.coyote_id ='" + coyote_id + "';");
+
             // const studentDetails = client.query('SELECT * FROM "studentDetails" WHERE "userID" =' + userID + ';');
             //
             // studentDetails.on('row', function(row){
@@ -89,11 +88,11 @@
             //     done();
             //     return res.json(results);
             // });
-            coursesTaken.on('row', function(row){
+            coursesEnrolled.on('row', function(row){
                 results.push(row);
             });
 
-            coursesTaken.on('end', function(){
+            coursesEnrolled.on('end', function(){
                 done();
                 return res.json(results);
             });
@@ -137,72 +136,6 @@
 
         });
     }
-
-   /* function updateUser(req, res, next){
-        console.log("req obj",req.query.user)
-        const data = req.query.user;
-        const results = [];
-        var finalquery;
-        console.log(data)
-        pg.connect(connectionString, function(err, client, done){
-            // Handle connection errors
-            if(err) {
-                done();
-                console.log(err);
-                return res.status(500).json({success: false, data: err});
-            }
-            // SQL Query > Insert Data
-            const query = client.query("UPDATE" +'"user"'+" SET name=($1), email_id=($2), phone=($3), address =($4), password($5), date_of_birth($6)  WHERE coyote_id=($7)",
-                [data.name, data.email, data.phone, data.address, data.password, data.date_of_birth, data.coyote_id]);
-
-            query.on('end', function(){
-                done();
-                return res;
-            });
-
-            // switch(data.role){
-            //     case 'administrator':
-            //         console.log("admin");
-            //         const adminquery = client.query('UPDATE administrator SET coyote_id=($1);',
-            //             [data.coyote_id]);
-            //         adminquery.on('end', function(){
-            //             done();
-            //             return res.json(results);
-            //         });
-            //         break;
-            //     case 'advisor':
-            //         console.log("adviser");
-            //         const advisorquery = client.query('UPDATE advisor SET coyote_id=($1);',
-            //             [data.coyote_id]);
-            //         advisorquery.on('end', function(){
-            //             done();
-            //             return res.json(results);
-            //         });
-            //         break;
-            // }
-        });
-    }*/
-
-   function updateUser(req, res, next) {
-       const data = req.body.user;
-
-       console.log("data in query",data)
-
-       pg.connect(connectionString, function(err, client, done){
-           if(err) {
-               done();
-               console.log(err);
-               return res.status(500).json({success: false, data: err});
-           }
-           const query = client.query('UPDATE "user" SET  address=($1), name=($2),email_id=($3), phone=($4), date_of_birth=($5) WHERE coyote_id=($6)',[data.address,data.name,data.email_id,data.phone,data.date_of_birth,data.coyote_id]);
-           query.on('end', function(){
-               console.log("successful in updating")
-               done();
-               return res;
-           });
-       });
-
-   }
 
     function getRecommendationDetails(req, res, next) {
         const coyote_id = req.query.coyote_id;
@@ -288,12 +221,57 @@
         });
     }
 
+    function addRecommendationPath(req, res, next) {
+        const data = req.body.path;
+        const coyote_id = req.body.coyote_id;
+        console.log(data)
+        pg.connect(connectionString, function(err, client, done) {
+            // Handle connection errors
+            if (err) {
+                done();
+                console.log(err);
+                return res.status(500).json({success: false, data: err});
+            }
+            // SQL Query > Insert Data
+            const query = client.query('UPDATE student SET current_recommendation_path=($1) WHERE coyote_id=($2)',
+                [data,coyote_id]);
+
+            query.on('end', function(){
+                done();
+                return res;
+            });
+
+        })
+    }
+
+    function updateUser(req, res, next) {
+        const data = req.body.user;
+
+        console.log("data in query",data)
+
+        pg.connect(connectionString, function(err, client, done){
+            if(err) {
+                done();
+                console.log(err);
+                return res.status(500).json({success: false, data: err});
+            }
+            const query = client.query('UPDATE "user" SET  address=($1), name=($2),email_id=($3), phone=($4), date_of_birth=($5) WHERE coyote_id=($6)',[data.address,data.name,data.email_id,data.phone,data.date_of_birth,data.coyote_id]);
+            query.on('end', function(){
+                console.log("successful in updating");
+                done();
+                return res;
+            });
+        });
+
+    }
+
     module.exports = {
         getEnrolledCourses: getEnrolledCourses,
         getUserRole:getUserRole,
         getRecommendationDetails: getRecommendationDetails,
         getUser:getUser,
-        updateUser:updateUser
+        addRecommendationPath: addRecommendationPath,
+        updateUser: updateUser
     };
 })();
 

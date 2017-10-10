@@ -39,7 +39,6 @@
      */
 
     function createUser(req, res, next){
-        console.log("req obj",req.body.user)
         const data = req.body.user;
         const results = [];
         var finalquery;

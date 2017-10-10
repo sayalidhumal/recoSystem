@@ -28,6 +28,14 @@
 
                 },
 
+                addRecommendationPath: function (path,coyote_id) {
+                    return $http({
+                        method: 'PUT',
+                        url: '/addRecommendationPath',
+                        data:{path:path,coyote_id:coyote_id}
+                    })
+                },
+
                 /*addPreference: function(preferences){
 
                     return $http({
@@ -44,16 +52,14 @@
                         params:{coyote_id: coyote_id}
                     })
                 },
-
                 updateUser: function(user) {
                     console.log("user in service",user)
-                return $http({
-                    method: 'PUT',
-                    url: '/updateUser',
-                    data:{user: user}
-                })
-            }
-
+                    return $http({
+                        method: 'PUT',
+                        url: '/updateUser',
+                        data:{user: user}
+                    })
+                }
 
             }//end of outer return
         })

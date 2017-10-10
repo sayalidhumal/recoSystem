@@ -36,7 +36,6 @@
                 },
 
                 createCourse: function (Course) {
-                    console.log("happt",Course)
                     return $http({
                         method: 'POST',
                         url: '/createCourses',
