@@ -1,4 +1,4 @@
-<md-content layout="row" layout-align="space-around" ng-cloak="ng-cloak">
+ <md-content layout="row" layout-align="space-around" ng-cloak="ng-cloak">
     <md-card flex="flex" flex-gt-sm="50" flex-gt-md="50" >\
             <div>
                 <md-input-container>
@@ -12,6 +12,10 @@
                 <md-input-container>
                 <label>Email ID</label>
                 <input type="text" ng-model="vm.user.email_id" required>
+                </md-input-container>
+                <md-input-container>
+                    <label>Phone</label>
+                    <input type="text" ng-model="vm.user.phone" required>
                 </md-input-container>
                 <md-input-container>
                 <label>Address</label>
@@ -29,10 +33,7 @@
                 <label>Zipcode</label>
                 <input type="text" ng-model="vm.user.address.Pin" required>
                 </md-input-container>
-                <md-input-container>
-                <label>Date of Birth</label>
-                    <input type="date" ng-model="vm.user.dateOfBirth" md-placeholder="Birth Date" flex-gt-sm md-min-date="vm.minDate" md-max-date="vm.maxDate">
-                </md-input-container>
+                <md-datepicker ng-model="vm.user.date_of_birth" md-placeholder="Birth Date" flex-gt-sm md-min-date="vm.minDate" md-max-date="vm.maxDate"></md-datepicker>
                 <md-input-container>
                 <label>Role</label>
                 <md-select ng-model="vm.role" required>

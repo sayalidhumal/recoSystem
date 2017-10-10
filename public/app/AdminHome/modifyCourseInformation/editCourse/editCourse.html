@@ -14,14 +14,16 @@
                 <input type="text" ng-model="vm.schedule.instructor" required>
             </md-input-container>
             <md-input-container>
-                <label>Course Start Time</label>
-                <input type="datetime" ng-model="vm.schedule.course_start_time" required>
+                <label>Course Start Time(24H format)</label>
+                <input type="text" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.schedule.course_start_time" required>
             </md-input-container>
             <md-input-container>
-                <label>Course End Time</label>
-                <input type="text" ng-model="vm.schedule.course_end_time" required>
+                <label>Course End Time(24H format)</label>
+                <input type="text" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.schedule.course_end_time" required>
             </md-input-container>
-            <div ng-if="schedule.lab_day">
+        </div>
+            <div ng-if="vm.schedule.has_lab">
+            <div ng-if="vm.schedule.lab_day">
             <md-select ng-model="vm.schedule.lab_day" required>
                 <md-option value="Monday">Monday</md-option>
                 <md-option value="Tuesday">Tuesday</md-option>
@@ -30,16 +32,17 @@
                 <md-option value="Friday">Friday</md-option>
             </md-select>
             <md-input-container>
-                <label>Lab start time</label>
-                <input type="text" ng-model="vm.schedule.lab_start_time" required>
+                <label>Lab start time(24H format)</label>
+                <input type="text" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.schedule.lab_start_time" required>
             </md-input-container>
             <md-input-container>
-                <label>Lab end time</label>
-                <input type="text" ng-model="vm.schedule.lab_end_time" required>
+                <label>Lab end time(24H format)</label>
+                <input type="text" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.schedule.lab_end_time" required>
             </md-input-container>
             </div>
-        </div>
-        <md-button class="md-primary">Submit</md-button>
+                <p ng-if="!vm.schedule.lab_day">Lab Day: ONLINE</p>
+            </div>
+        <md-button class="md-primary" ng-click="vm.submit()">Submit</md-button>
         <md-button class="md-primary" ng-click="vm.cancel()">Cancel</md-button>
     </md-card>
 </md-content>

@@ -1,14 +1,24 @@
 /**
- * Created by sayalidhumal on 6/4/17.
+ * Created by Sanjay Karrolla on 10/6/2017.
  */
+/**
+ * Created by Sanjay Karrolla on 10/6/2017.
+ */
+/**
+ * Created by Sanjay Karrolla on 9/24/2017.
+ */
+/**
+ * Created by sayalidhumal on 8/13/17.
+ */
+
 (function () {
-    angular.module("Studenthome").controller("RecommendationPathController",RecommendationPathController);
+    angular.module('AdvisorHome').controller('recommendationPathController',recommendationPathController);
 
-    RecommendationPathController.$inject = ["UserService","$stateParams","_","appconfig","CourseService","$filter"];
+    recommendationPathController.$inject = ['UserService','$stateParams','_','CourseService','$stateParams','$filter','appconfig'];
 
-    function RecommendationPathController(UserService,$stateParams,_,appconfig,CourseService,$filter) {
+    function recommendationPathController(UserService,$stateParams,_,CourseService,$stateParams,$filter,appconfig) {
         var vm=this;
-        vm.coyote_id = $stateParams.userID;
+        vm.coyote_id = $stateParams.coyote_id;
         vm.currentYear = appconfig.CurrentYear;
         vm.currentMonth = $filter('date')(new Date(), 'MMMM');
         vm.currentQuarter = appconfig.QUARTERS[vm.currentMonth];
@@ -23,22 +33,22 @@
         vm.added = 0;
 
         /*vm.coursesRecommended = [
-            {
-                courseID:602,
-                courseName:"Automata theory",
-                totalUnits: 4
+         {
+         courseID:602,
+         courseName:"Automata theory",
+         totalUnits: 4
 
-            },
-            {
-                courseID:655,
-                courseName:"Software Engineering",
-                totalUnits: 4
-            }
-        ];*/
+         },
+         {
+         courseID:655,
+         courseName:"Software Engineering",
+         totalUnits: 4
+         }
+         ];*/
 
         UserService.getRecommendationDetails(vm.coyote_id).then(
             function success(response) {
-                console.log("",response.data)
+                console.log("",response.data);
                 vm.userDetails = response.data;
 
                 CourseService.getAllCourses(vm.currentYear).then(
@@ -78,20 +88,20 @@
 
                         core(vm.userDetails,vm.coursesData.core,vm.coursesData.prerequisites)
 
-                       elective(vm.userDetails,vm.coursesData.electives,vm.coursesData.constraints)
+                        elective(vm.userDetails,vm.coursesData.electives,vm.coursesData.constraints)
 
-                       vm.recommendationPath = formatForDisplay(vm.recommendationPath);
+                        vm.recommendationPath = formatForDisplay(vm.recommendationPath);
 
                         console.log(vm.recommendationPath)
 
                     },function error(response) {
 
-                }
+                    }
                 )
             },
             function error(response) {
 
-        });
+            });
 
 
         function prerequisites(userDetails,coreCourses,coursePrerequisites) {
@@ -124,7 +134,7 @@
                             i--;
                         }
                     }else {
-                       // prerequisitesSchedule.push(obj);
+                        // prerequisitesSchedule.push(obj);
                     }
                 }
             }else {
@@ -292,9 +302,9 @@
                     below.push(sortDay[i]);
             }
 
-             if(above.length <= electiveNo){
-                 var sortTime = sortByTime(below,vm.userDetails.preferences);
-             }
+            if(above.length <= electiveNo){
+                var sortTime = sortByTime(below,vm.userDetails.preferences);
+            }
 
 
 
@@ -487,8 +497,8 @@
                         count++
                     }
                 }
-                if(sortTime[sortTime.length-1].length==0){
-                    sortTime.splice(sortTime.length-1,1)
+                if(sortTime[count].length==0){
+                    sortTime.splice(count,1)
                 }
                 console.log("sorttime",sortTime)
                 return sortTime
@@ -733,7 +743,6 @@
 
             return recommendationPath;
         }
+
     }
-
-
 })();

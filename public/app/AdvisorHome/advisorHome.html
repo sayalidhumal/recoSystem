@@ -10,7 +10,7 @@
         </md-card-title-media>
     </md-card-title>
     <md-card-actions layout="row" layout-align="end center">
-        <md-button class="md-primary"  ui-sref="root.student.userCourseDetails">View</md-button>
+        <md-button class="md-primary"  ng-click="vm.history()">View</md-button>
     </md-card-actions>
 </md-card>
 <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
@@ -36,7 +36,7 @@
         </md-card-title-media>
     </md-card-title>
     <md-card-actions layout="row" layout-align="end center">
-        <md-button class="md-primary" ui-sref="root.student.recommendationPath"> View </md-button>
+        <md-button class="md-primary" ng-click="vm.recommendation()"> View </md-button>
     </md-card-actions>
 </md-card>
 </md-card>

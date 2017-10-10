@@ -21,7 +21,9 @@ router.post('/createUser',loginQueries.createUser);
 
 router.post('/addPreference',questionnaireQueries.addPreference);
 
-router.get('/getEnrolledCourses',userQueries.getEnrolledCourses);
+router.get('/getPreference',questionnaireQueries.getPreference);
+
+router.get('/getCoursesTaken',userQueries.getCoursesTaken);
 
 router.get('/getUserRole',userQueries.getUserRole);
 
@@ -40,6 +42,14 @@ router.get('/getAllCourses',courseQueries.getAllCourses);
 router.post('/createCourses',courseQueries.createCourse);
 
 router.post('/addPrerequisite',courseQueries.addPrerequisite);
+
+router.get('/viewPrerequisite',courseQueries.viewPrerequisite);
+
+router.get('/getPrerequisite',courseQueries.getPrerequisite);
+
+router.put('/updateUser',userQueries.updateUser);
+
+router.put('/updateCourse',courseQueries.updateCourse)
 
 
 module.exports = router;

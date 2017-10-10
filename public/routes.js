@@ -84,10 +84,6 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
                     controller:'QuestionnaireController',
                     controllerAs:'vm'
                 }
-            },
-            params:{
-                userID : null,
-                userRole: null
             }
         })
 
@@ -235,6 +231,39 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
                 'content@root':{
                     templateUrl:'app/AdvisorHome/addPrerequisites/addPrerequisites.html',
                     controller:'addPrerequisitesController',
+                    controllerAs:'vm'
+                }
+            }
+        })
+
+        .state('root.advisor.advisorhome.viewprerequisites',{
+            url:'/viewprerequisite',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdvisorHome/viewPrerequisites/viewPrerequisites.html',
+                    controller:'viewPrerequisitesController',
+                    controllerAs:'vm'
+                }
+            }
+        })
+
+        .state('root.advisor.advisorhome.educationalhistory',{
+            url:'/educationalhistory',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdvisorHome/educationalHistory/educationalHistory.html',
+                    controller:'educationalHistoryController',
+                    controllerAs:'vm'
+                }
+            }
+        })
+
+        .state('root.advisor.advisorhome.recommendationpath',{
+            url:'/recommendationpath',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdvisorHome/recommendationPath/recommendationPath.html',
+                    controller:'recommendationPathController',
                     controllerAs:'vm'
                 }
             }

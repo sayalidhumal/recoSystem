@@ -8,41 +8,69 @@
 (function () {
     angular.module('AdvisorHome').controller('addPrerequisitesController',addPrerequisitesController);
 
-    addPrerequisitesController.$inject = ['CourseService','$state','AddPrerequisiteService','$stateParams'];
+    addPrerequisitesController.$inject = ['CourseService','$state','PrerequisiteService','$stateParams','$mdToast','_'];
 
-    function addPrerequisitesController(CourseService,$state,AddPrerequisiteService,$stateParams) {
+    function addPrerequisitesController(CourseService,$state,PrerequisiteService,$stateParams,$mdToast,_) {
         var vm =this;
         vm.form = {};
-        vm.searchName = '';
-        vm.searchID = '';
-        vm.search = search;
+        vm.prerequisite = [];
+        vm.coyote_id = $stateParams.coyote_id;
         vm.data = [];
         vm.add =add;
-        vm.prerequisite = {
+        vm.courseidadd;
+        vm.course;
+        vm.addPrerequisite = {
             "coyote_id":"$stateParams.coyote_id",
             "course_id":"null"
         }
-        function add(course) {
-            vm.prerequisite.course_id = course.course_id;
-            vm.prerequisite.coyote_id = $stateParams.coyote_id;
-            vm.data.push(vm.prerequisite);
-            console.log(vm.data);
-            AddPrerequisiteService.postprerequisite(vm.data[0]).then(
-                function success(response) {
-                    console.log("Prerequisite posted");
-                },function error(response) {
-                    console.log(response);
-                });
-        }
 
-        function search(searchName,searchID) {
-            CourseService.getCourse(searchID,searchName).then(
+
+        PrerequisiteService.viewPrerequisite(vm.coyote_id).then(
             function success(response) {
-                vm.course = response.data[0];
-
+                vm.prerequisite= response.data;
+                console.log("Prerequisite",vm.prerequisite);
+                PrerequisiteService.getPrerequisite().then(
+                    function success(response) {
+                        vm.course=response.data;
+                        console.log(vm.course, "Success")
+                        var index;
+                        for(var i=0;i<vm.prerequisite.length;i++){
+                            index= _.findLastIndex(vm.course,{prerequisite_id:vm.prerequisite[i].course_id})
+                            console.log("index",index)
+                            if(index!=-1)
+                                vm.course.splice(index,1);
+                        }
+                    }, function error(response) {
+                        console.log(response);
+                    });
             },function error(response) {
                 console.log(response);
             });
-    }
+
+
+        function add(id) {
+            vm.addPrerequisite.course_id = id;
+            vm.addPrerequisite.coyote_id = $stateParams.coyote_id;
+            vm.data.push(vm.addPrerequisite);
+            var index = _.findLastIndex(vm.course,{prerequisite_id:id})
+            vm.prerequisite.push({course_id:vm.course[index].prerequisite_id,name:vm.course[index].name});
+            console.log("inside add",vm.prerequisite)
+            vm.course.splice(index,1);
+            PrerequisiteService.postprerequisite(vm.data[0]).then(
+                function success(response) {
+                    console.log("Prerequisite posted");
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .textContent('Prerequisite Posted')
+                            .hideDelay(4000)
+                    );
+                    //$state.go('root.advisor.advisorhome.addprerequisites');
+                   //$state.go($state.current, {}, {reload: true});
+                },function error(response) {
+                    console.log(response);
+                });
+
+
+        }
     }
 })();

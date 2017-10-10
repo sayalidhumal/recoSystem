@@ -99,11 +99,11 @@
                         <div layout-gt-sm="row">
                             <md-input-container>
                                 <label>Course Start Time</label>
-                                <input type="time" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.course.course_start_time" required>
+                                <input type="text" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.course.course_start_time" required>
                             </md-input-container>
                             <md-input-container>
                                 <label>Course End Time</label>
-                                <input type="time" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.course.course_end_time" required>
+                                <input type="text" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.course.course_end_time" required>
                             </md-input-container>
                         </div>
                         <div layout-gt-sm="row" ng-if="vm.course.has_lab=='Yes'">
@@ -119,11 +119,11 @@
                             </md-input-container>
                                 <md-input-container>
                                     <label>Lab start time</label>
-                                    <input type="time" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.course.lab_start_time" required>
+                                    <input type="text" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.course.lab_start_time" required>
                                 </md-input-container>
                                 <md-input-container>
                                     <label>Lab end time</label>
-                                    <input type="time" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.course.lab_end_time" required>
+                                    <input type="text" placeholder="HH:MM" min="08:00" max="22:00" ng-model="vm.course.lab_end_time" required>
                                 </md-input-container>
                             </div>
                         </div>

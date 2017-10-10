@@ -54,7 +54,55 @@
         });
     }
 
+    function getPreference(req, res, next){
+        console.log("req obj",req.query.coyote_id)
+        const coyote_id = req.query.coyote_id;
+        const results = {
+            preference: [],
+            day_preference:[],
+            time_preference:[]
+        };
+        console.log(results);
+
+        pg.connect(connectionString, function(err, client, done){
+            if(err) {
+                done();
+                console.log(err);
+                return res.status(500).json({success: false, data: err});
+            }
+            const query =client.query("SELECT * FROM student_preference where coyote_id ='" + coyote_id + "';");
+            const day_preference =client.query("SELECT * FROM day_preference where coyote_id ='" + coyote_id + "';");
+            const time_preference =client.query("SELECT * FROM time_preference where coyote_id ='" + coyote_id + "';");
+                query.on('row', function(row){
+                    console.log(row)
+                    results.preference.push(row);
+                });
+                query.on('end', function(){
+                    done();
+                    //return res.json(results);
+                });
+            day_preference.on('row', function(row){
+                console.log(row)
+                results.day_preference.push(row);
+            });
+            day_preference.on('end', function(){
+                done();
+                //return res.json(results);
+            });
+            time_preference.on('row', function(row){
+                console.log(row)
+                results.time_preference.push(row);
+            });
+            time_preference.on('end', function(){
+                done();
+                return res.json(results);
+            });
+        });
+    }
+
+
     module.exports = {
-        addPreference: addPreference
+        addPreference: addPreference,
+        getPreference: getPreference
     };
 })();

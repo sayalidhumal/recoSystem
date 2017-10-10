@@ -10,7 +10,22 @@
     function EditUserController(UserService,$stateParams,appconfig,$state) {
         var vm =this;
         vm.coyote_id = $stateParams.coyote_id;
-        vm.user = {}
+        vm.user;
+        // vm.user = {
+        //     'password': null,
+        //     'role': 'student',
+        //     'name': '',
+        //     "email_id": null,
+        //     "phone": null,
+        //     "coyote_id": vm.coyote_id,
+        //     "address": {
+        //         "Address": "",
+        //         "City": "",
+        //         "State": "",
+        //         "Pin": ""
+        //     },
+        //     "date_of_birth": ""
+        // }
         console.log("coyote",vm.coyote_id)
         vm.role = $stateParams.role;
         vm.submit = submit;
@@ -40,16 +55,16 @@
             })
 
         function submit() {
-            console.log(vm.user);
-            // UserService.postUser().then(
-            //     function success(response) {
-            //
-            //         vm.user = response.data[0];
-            //         console.log("Successful operation",vm.user)
-            //     },
-            //     function error() {
-            //
-            //     })
+
+            vm.user.phone = parseInt(vm.user.phone)
+            console.log("submit",vm.user);
+            UserService.updateUser(vm.user).then(
+                function success(response) {
+                    console.log("Successful operation")
+                },
+                function error() {
+
+                })
         }
 
         function cancel() {

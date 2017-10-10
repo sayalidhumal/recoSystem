@@ -8,6 +8,7 @@
                 <p ng-if="vm.course.details.has_lab">Has Practical: YES</p><p ng-if="!vm.course.details.has_lab">Has Practical: NO</p>
                 <p>Units: {{vm.course.details.units}}</p>
             </div>
+            <md-button class="md-primary" ng-click="vm.editcourse(course)">Edit</md-button>
             <div ng-cloak>
                 <md-content>
                     <md-tabs md-dynamic-height md-border-bottom>
@@ -26,12 +27,12 @@
                                         <div ng-if="vm.course.details.has_lab">
                                             <div ng-if="schedule.lab_day">
                                                 <p>Lab Day: {{schedule.lab_day}}</p>
-                                                <p>Lab Time: <time>{{schedule.lab_start_time}}</time><time>{{schedule.lab_end_time}}</time></p>
+                                                <p>Lab Time: <time>{{schedule.lab_start_time}}</time>-<time>{{schedule.lab_end_time}}</time></p>
                                             </div>
                                             <p ng-if="!schedule.lab_day">Lab Day: ONLINE</p>
                                         </div>
-                                        <md-button class="md-primary" ng-click="vm.edit(schedule)">Edit</md-button>
-                                        <md-button class="md-primary">Delete</md-button>
+                                        <md-button class="md-raised md-primary" ng-click="vm.editschedule(schedule,vm.course.details.has_lab,vm.course.details.course_id)">Edit</md-button>
+                                        <md-button class="md-raised md-primary">Delete</md-button>
                                     </md-content>
 
                                 </md-card>

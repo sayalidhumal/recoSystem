@@ -10,28 +10,51 @@
                 <md-content>
                     <p><em><b>In order for the system to recommend a schedule of courses for you, please answer the following questions:</b></em></p>
                     <p><b>What is your degree option? (Please Select One)</b></p>
-                    <md-radio-group ng-model="vm.preference.degree_preference">
-                        <md-radio-button value="Project">Project</md-radio-button>
-                        <md-radio-button value="Thesis">Thesis</md-radio-button>
-                        <md-radio-button value="Comprehensive Exam">Comprehensive Exam</md-radio-button>
-                    </md-radio-group>
+                    <div>
+                    <p>
+                        <md-icon class="material-icons" ng-if="vm.preference[0].degree_preference == 'Project'">radio_button_checked</md-icon>
+                        <md-icon  class="material-icons" ng-if="vm.preference[0].degree_preference != 'Project'">radio_button_unchecked</md-icon >
+                        Project
+                    </p>
+
+                    <p>
+                        <md-icon  class="material-icons" ng-if="vm.preference[0].degree_preference == 'Comprehensive Exam'">radio_button_checked</md-icon >
+                        <md-icon  class="material-icons" ng-if="vm.preference[0].degree_preference != 'Comprehensive Exam'">radio_button_unchecked</md-icon >
+                        Comprehensive Exam
+                    </p>
+
+                    <p>
+                        <md-icon  class="material-icons" ng-if="vm.preference[0].degree_preference == 'Thesis'">radio_button_checked</md-icon >
+                        <md-icon  class="material-icons" ng-if="vm.preference[0].degree_preference != 'Thesis'">radio_button_unchecked</md-icon >
+                        Thesis
+                    </p>
+                    </div>
                     <md-divider></md-divider>
 
                     <p><b>For Elective Courses, What are your Preferences?</b></p>
-                    <md-radio-group ng-model="vm.preference.lecture_preference">
-                        <md-radio-button value=1>Lecture And Lab</md-radio-button>
-                        <md-radio-button value=0>Lecture</md-radio-button>
-                    </md-radio-group>
+                    <div>
+                        <p>
+                            <md-icon class="material-icons" ng-if="vm.preference[0].lecture_preference == true">radio_button_checked</md-icon>
+                            <md-icon  class="material-icons" ng-if="vm.preference[0].lecture_preference != true">radio_button_unchecked</md-icon >
+                            Lecture and Lab
+                        </p>
+
+                        <p>
+                            <md-icon  class="material-icons" ng-if="vm.preference[0].lecture_preference == false">radio_button_checked</md-icon >
+                            <md-icon  class="material-icons" ng-if="vm.preference[0].lecture_preference != false">radio_button_unchecked</md-icon >
+                            Lecture
+                        </p>
+                    </div>
                     <md-divider></md-divider>
 
                     <p><b>On Which days do you prefer to take Classes?(Select all that Apply)</b></p>
-                        <md-checkbox ng-checked="vm.exists('MondayAndWednesday', vm.preference.day_preference)" ng-click="vm.toggle('MondayAndWednesday', vm.preference.day_preference)">
+                        <md-checkbox ng-checked="vm.exists('MondayAndWednesday', x.day_preference)" ng-click="vm.toggle('MondayAndWednesday', vm.preference.day_preference)">
                             Monday and Wednesday
                         </md-checkbox>
-                        <md-checkbox ng-checked="vm.exists('TuesdayAndThursday', vm.preference.day_preference)" ng-click="vm.toggle('TuesdayAndThursday', vm.preference.day_preference)">
+                        <md-checkbox ng-checked="vm.exists('TuesdayAndThursday', x.day_preference)" ng-click="vm.toggle('TuesdayAndThursday', vm.preference.day_preference)">
                             Tuesday and Thursday
                         </md-checkbox>
-                        <md-checkbox ng-checked="vm.exists('Friday', vm.preference.day_preference)" ng-click="vm.toggle('Friday', vm.preference.day_preference)">
+                        <md-checkbox ng-checked="vm.exists('Friday', x.day_preference)" ng-click="vm.toggle('Friday', vm.preference.day_preference)">
                             Friday
                         </md-checkbox>
                     <md-divider></md-divider>

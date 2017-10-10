@@ -42,6 +42,15 @@
                         url: '/createCourses',
                         data: {course:Course}
                     })
+                },
+
+                updateCourse: function(schedule) {
+                    console.log("schedule in service", schedule)
+                    return $http({
+                        method: 'PUT',
+                        url: '/updateCourse',
+                        data: {schedule: schedule}
+                    })
                 }
 
             }//end of outer return

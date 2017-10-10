@@ -21,9 +21,9 @@
                 </thead>
                 <tbody md-body>
                 <tr md-row ng-repeat="course in vm.coursesEnrolled" ng-if="vm.coursesEnrolled.length!=0">
-                    <td md-cell><span>{{course.courseID}}</span></td>
-                    <td md-cell><span>{{course.courseName}}</span></td>
-                    <td md-cell><span>{{course.totalUnits}}</span></td>
+                    <td md-cell><span>{{course.course_id}}</span></td>
+                    <td md-cell><span>{{course.name}}</span></td>
+                    <td md-cell><span>{{course.units}}</span></td>
                 </tr>
                 </tbody>
             </table>
@@ -45,27 +45,27 @@
         <md-table-container>
             <table md-table>
                 <thead md-head>
-                    <tr md-row>
-                        <th md-column><span>Course ID</span></th>
-                        <th md-column><span>Grade</span></th>
-                        <th md-column><span>Name</span></th>
-                        <th md-column><span>Units</span></th>
-                        <th md-column><span>Quarter</span></th>
-                        <th md-column><span>Year</span></th>
-                    </tr>
+                <tr md-row>
+                    <th md-column><span>Course ID</span></th>
+                    <th md-column><span>Grade</span></th>
+                    <th md-column><span>Name</span></th>
+                    <th md-column><span>Units</span></th>
+                    <th md-column><span>Quarter</span></th>
+                    <th md-column><span>Year</span></th>
+                </tr>
                 </thead>
                 <tbody md-body>
-                    <tr md-row ng-repeat="course in vm.userCourseDetails" ng-if="vm.userCourseDetails.length!=0">
-                        <td md-cell><span>{{course.course_id}}</span></td>
-                        <td md-cell><span>{{course.grade}}</span></td>
-                        <td md-cell><span>{{course.name}}</span></td>
-                        <td md-cell><span>{{course.units}}</span></td>
-                        <td md-cell><span>{{course.quarter_year.quarter}}</span></td>
-                        <td md-cell><span>{{course.quarter_year.year}}</span></td>
-                    </tr>
-                    <tr md-row >
-                        <td></td><td></td><td></td><td></td><td>GPA: {{vm.gradePointAverage}}</td>
-                    </tr>
+                <tr md-row ng-repeat="course in vm.coursesTaken" ng-if="vm.coursesTaken.length!=0">
+                    <td md-cell><span>{{course.course_id}}</span></td>
+                    <td md-cell><span>{{course.grade}}</span></td>
+                    <td md-cell><span>{{course.name}}</span></td>
+                    <td md-cell><span>{{course.units}}</span></td>
+                    <td md-cell><span>{{course.quarter_year.quarter}}</span></td>
+                    <td md-cell><span>{{course.quarter_year.year}}</span></td>
+                </tr>
+                <tr md-row >
+                    <td></td><td></td><td></td><td></td><td>GPA: {{vm.gradePointAverage}}</td>
+                </tr>
                 </tbody>
             </table>
         </md-table-container>

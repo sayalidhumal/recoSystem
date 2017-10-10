@@ -10,7 +10,19 @@
                         url: '/addPreference',
                         data:{preferences:preferences}
                     })
+                },
+
+                getPreference: function (coyote_id) {
+
+                    return $http({
+                        method: 'GET',
+                        url: '/getPreference',
+                        params:{coyote_id:coyote_id}
+                    })
+
                 }
+
+
 
             }//end of outer return
         })

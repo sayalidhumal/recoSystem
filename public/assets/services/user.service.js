@@ -3,11 +3,11 @@
         function($http){
             return{
 
-                getEnrolledCourses: function(userID) {
+                getCoursesTaken: function(coyote_id) {
                     return $http({
                         method: 'GET',
-                        url: '/getEnrolledCourses',
-                        params:{userID: userID}
+                        url: '/getCoursesTaken',
+                        params:{coyote_id: coyote_id}
                     })
                 },
 
@@ -28,15 +28,6 @@
 
                 },
 
-                postUser: function (coyote_id, name) {
-                    return $http({
-                        method:'PUT',
-                        url:'/postUser',
-                        params:{coyote_id: coyote_id , name: name }
-                    })
-
-                },
-
                 /*addPreference: function(preferences){
 
                     return $http({
@@ -53,6 +44,16 @@
                         params:{coyote_id: coyote_id}
                     })
                 },
+
+                updateUser: function(user) {
+                    console.log("user in service",user)
+                return $http({
+                    method: 'PUT',
+                    url: '/updateUser',
+                    data:{user: user}
+                })
+            }
+
 
             }//end of outer return
         })

@@ -14,9 +14,12 @@
         vm.currentYear = appconfig.CurrentYear;
         vm.nextYear = appconfig.NextYear
         vm.course = {}
-        vm.edit = edit;
+        vm.editschedule = editschedule;
 
-        function edit(schedule) {
+        function editschedule(schedule,has_lab,course_id) {
+            schedule.has_lab = has_lab;
+            schedule.course_id = course_id;
+            console.log("has lab schedule",schedule)
             $state.go('root.admin.courseDetails.viewCourseDetails.editCourseDetails',{schedule: schedule});
         }
 
