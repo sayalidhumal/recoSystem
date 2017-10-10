@@ -3,10 +3,10 @@
         function($http){
             return{
 
-                getCoursesTaken: function(coyote_id) {
+                getEnrolledCourses: function(coyote_id) {
                     return $http({
                         method: 'GET',
-                        url: '/getCoursesTaken',
+                        url: '/getEnrolledCourses',
                         params:{coyote_id: coyote_id}
                     })
                 },

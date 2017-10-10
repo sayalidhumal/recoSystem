@@ -23,7 +23,7 @@ router.post('/addPreference',questionnaireQueries.addPreference);
 
 router.get('/getPreference',questionnaireQueries.getPreference);
 
-router.get('/getCoursesTaken',userQueries.getCoursesTaken);
+router.get('/getEnrolledCourses',userQueries.getEnrolledCourses);
 
 router.get('/getUserRole',userQueries.getUserRole);
 

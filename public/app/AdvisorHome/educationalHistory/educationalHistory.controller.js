@@ -22,7 +22,7 @@
         vm.userCourseDetails =[];
         //vm.gradePointAverageCalculate=gradePointAverageCalculate;
 
-        UserService.getCoursesTaken(vm.coyote_id).then(function success(response) {
+        UserService.getEnrolledCourses(vm.coyote_id).then(function success(response) {
                 vm.userCourseDetails = response.data;
                 console.log("userDetails",vm.userCourseDetails)
                 vm.coursesTaken=[];

@@ -15,11 +15,21 @@
         vm.userCourseDetails =[];
         //vm.gradePointAverageCalculate=gradePointAverageCalculate;
 
-        UserService.getCoursesTaken(vm.coyote_id).then(function success(response) {
-                vm.userCourseDetails = response.data;
-                console.log(vm.userCourseDetails)
-                vm.gradePointAverage = gradePointAverageCalculate(vm.userCourseDetails);
-                console.log(vm.gradePointAverage,"gradePointAverage")
+        UserService.getEnrolledCourses(vm.coyote_id).then(function success(response) {
+            vm.userCourseDetails = response.data;
+            console.log("userDetails",vm.userCourseDetails);
+            vm.coursesTaken=[];
+            vm.coursesEnrolled=[];
+            for(var i=0;i<vm.userCourseDetails.length;i++){
+                if(vm.userCourseDetails[i].grade!=null){
+                    vm.coursesTaken.push(vm.userCourseDetails[i]);
+                }else {
+                    vm.coursesEnrolled.push(vm.userCourseDetails[i]);
+                }
+            }
+            console.log("courseTaken",vm.coursesTaken,vm.coursesEnrolled);
+            vm.gradePointAverage = gradePointAverageCalculate(vm.coursesTaken);
+            console.log(vm.gradePointAverage,"gradePointAverage")
             },
             function error(reason) {}
         )

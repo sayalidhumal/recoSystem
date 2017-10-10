@@ -66,7 +66,7 @@
     }
 
 
-    function getCoursesTaken(req, res, next){
+    function getEnrolledCourses(req, res, next){
         const coyote_id = req.query.coyote_id;
         console.log(coyote_id)
         const results = [];
@@ -289,7 +289,7 @@
     }
 
     module.exports = {
-        getCoursesTaken: getCoursesTaken,
+        getEnrolledCourses: getEnrolledCourses,
         getUserRole:getUserRole,
         getRecommendationDetails: getRecommendationDetails,
         getUser:getUser,
