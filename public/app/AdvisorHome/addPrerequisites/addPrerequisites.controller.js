@@ -33,6 +33,7 @@
                     function success(response) {
                         vm.course=response.data;
                         console.log(vm.course, "Success")
+                        vm.course.push({prerequisite_id:"306",name:"Expository Writing for the Natural Sciences"})
                         var index;
                         for(var i=0;i<vm.prerequisite.length;i++){
                             index= _.findLastIndex(vm.course,{prerequisite_id:vm.prerequisite[i].course_id})

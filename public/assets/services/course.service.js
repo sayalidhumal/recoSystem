@@ -44,7 +44,6 @@
                 },
 
                 updateCourse: function(schedule) {
-                    console.log("schedule in service", schedule)
                     return $http({
                         method: 'PUT',
                         url: '/updateCourse',

@@ -23,17 +23,30 @@
             'year':null,
             'instructor':null,
             'course_day':null,
-            'course_start_time':null,
-            'course_end_time':null,
+            'course_start_time':new Date(null, null, null,08,00),
+            'course_end_time':new Date(null, null, null,08,00),
             'lab_day':null,
-            'lab_start_time':null,
-            'lab_end_time':null
+            'lab_start_time':new Date(null, null, null,08,00),
+            'lab_end_time':new Date(null, null, null,08,00)
         }
 
         function create() {
-            CourseService.createCourse(vm.course).then(function(response) {
+            schedule = angular.copy(vm.course);
+            schedule.course_id = parseInt(schedule.course_id);
+            schedule.year = parseInt(schedule.year);
+            if(schedule.course_start_time){
+                schedule.course_start_time = new Date(schedule.course_start_time).getHours()+":"+new Date(schedule.course_start_time).getMinutes();
+                schedule.course_end_time = new Date(schedule.course_end_time).getHours()+":"+new Date(schedule.course_end_time).getMinutes();
+            }
+
+            if(schedule.lab_start_time){
+                schedule.lab_start_time = new Date(schedule.lab_start_time).getHours()+":"+new Date(schedule.lab_start_time).getMinutes();
+                schedule.lab_end_time = new Date(schedule.lab_end_time).getHours()+":"+new Date(schedule.lab_end_time).getMinutes();
+            }
+            console.log(schedule)
+            CourseService.createCourse(schedule).then(function(response) {
                     console.log("Course Creation Succsessful");
-                    $state.go('root.admin.createCourse');
+                    $state.go('root.admin.courseDetails.viewCourseDetails',{courseID: schedule.course_id});
                 },
                 function error(reason) {
                     console.log(reason);

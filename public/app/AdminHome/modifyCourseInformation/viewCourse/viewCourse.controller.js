@@ -19,7 +19,6 @@
         function editschedule(schedule,has_lab,course_id) {
             schedule.has_lab = has_lab;
             schedule.course_id = course_id;
-            console.log("has lab schedule",schedule)
             $state.go('root.admin.courseDetails.viewCourseDetails.editCourseDetails',{schedule: schedule});
         }
 
@@ -27,12 +26,26 @@
             function success(response) {
 
                 vm.course = response.data;
+                console.log(vm.course)
                 vm.course.details = vm.course.details[0];
                 vm.course.prerequisite = vm.course.prerequisite[0]
+                for(var i=0;i<vm.course.schedule.length;i++){
+                    if(vm.course.schedule[i].course_start_time){
+                        vm.time = vm.course.schedule[i].course_start_time.split(":")
+                        vm.course.schedule[i].course_start_time = new Date(null, null, null,vm.time[0],vm.time[1]).toLocaleTimeString();
+                        vm.time = vm.course.schedule[i].course_end_time.split(":")
+                        vm.course.schedule[i].course_end_time = new Date(null, null, null,vm.time[0],vm.time[1]).toLocaleTimeString();
+                    }
 
+                    if(vm.course.schedule[i].lab_start_time){
+                        vm.time = vm.course.schedule[i].lab_start_time.split(":")
+                        vm.course.schedule[i].lab_start_time = new Date(null, null, null,vm.time[0],vm.time[1]).toLocaleTimeString();
+                        vm.time = vm.course.schedule[i].lab_end_time.split(":")
+                        vm.course.schedule[i].lab_end_time = new Date(null, null, null,vm.time[0],vm.time[1]).toLocaleTimeString();
+                    }
+                }
                 CourseService.getCourseType(vm.courseID).then(
                     function success(response) {
-
                         vm.courseType = response.data[0];
                     },
                     function error(response){

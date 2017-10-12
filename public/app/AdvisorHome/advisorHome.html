@@ -1,44 +1,49 @@
 <md-content class="md-padding">
     <div layout="row"  layout-xs="column">
-<md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
-    <md-card-title>
-        <md-card-title-text>
-            <span class="md-headline">Educational History</span>
-        </md-card-title-text>
-        <md-card-title-media>
-            <div class="md-media-sm card-media"></div>
-        </md-card-title-media>
-    </md-card-title>
-    <md-card-actions layout="row" layout-align="end center">
-        <md-button class="md-primary"  ng-click="vm.history()">View</md-button>
-    </md-card-actions>
-</md-card>
-<md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
-    <md-card-title>
-        <md-card-title-text>
-            <span class="md-headline">Add Prerequisites</span>
-        </md-card-title-text>
-        <md-card-title-media>
-            <div class="md-media-sm card-media"></div>
-        </md-card-title-media>
-    </md-card-title>
-    <md-card-actions layout="row" layout-align="end center">
-        <md-button class="md-primary" ng-click="vm.view()">View</md-button>
-    </md-card-actions>
-</md-card>
-<md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
-    <md-card-title>
-        <md-card-title-text>
-            <span class="md-headline">View Recommendation path</span>
-        </md-card-title-text>
-        <md-card-title-media>
-            <div class="md-media-sm card-media"></div>
-        </md-card-title-media>
-    </md-card-title>
-    <md-card-actions layout="row" layout-align="end center">
-        <md-button class="md-primary" ng-click="vm.recommendation()"> View </md-button>
-    </md-card-actions>
-</md-card>
-</md-card>
+            <md-content>
+                <md-card>
+                    <p><b>Name:</b> {{vm.user.name}}</p>
+                    <p><b>Coyote ID:</b> 00{{vm.user.coyote_id}}</p>
+                    <p><b>DOB:</b> {{vm.user.date_of_birth| date:"MM/dd/yyyy"}}</p>
+                    <p><b>Email:</b> {{vm.user.email_id}}</p>
+                    <p><b>Address:</b> {{vm.user.address.Address}},{{vm.user.address.City}},{{vm.user.address.State}} {{vm.user.address.Pin}}</p>
+                    <p><b>Role:</b> {{vm.role}}</p>
+                </md-card>
+            </md-content>
+    </div>
+    <div layout="row"  layout-xs="column">
+        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Educational History</span>
+                    <span class="md-subhead">Click view to know courses that student has enrolled and courses already taken.</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-primary"  ng-click="vm.history()">View</md-button>
+            </md-card-actions>
+        </md-card>
+        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Add Prerequisites</span>
+                    <span class="md-subhead">Click view to add any prerequisite courses student need to take.</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-primary" ng-click="vm.view()">View</md-button>
+            </md-card-actions>
+        </md-card>
+        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">View Recommendation path</span>
+                    <span class="md-subhead">Click view to know the recommendation path for the student.</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-primary" ng-click="vm.recommendation()"> View </md-button>
+            </md-card-actions>
+        </md-card>
     </div>
 </md-content>

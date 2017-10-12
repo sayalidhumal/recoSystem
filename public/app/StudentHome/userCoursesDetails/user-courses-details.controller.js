@@ -4,35 +4,39 @@
 (function(){
     angular.module('Studenthome').controller('UserCoursesController',UserCoursesController);
 
-    UserCoursesController.$inject=["UserService","$stateParams"];
+    UserCoursesController.$inject=["UserService","$stateParams","appconfig","$filter"];
 
-    function UserCoursesController(UserService,$stateParams){
+    function UserCoursesController(UserService,$stateParams,appconfig,$filter){
         var vm = this;
         vm.coyote_id = $stateParams.userID;
         console.log(vm.coyote_id,"ID");
         vm.gradePointAverage = 0;
-
+        vm.currentYear = appconfig.CurrentYear;
+        vm.currentMonth = $filter('date')(new Date(), 'MMMM');
+        vm.currentQuarter = appconfig.QUARTERS[vm.currentMonth];
         vm.userCourseDetails =[];
+        vm.quarterOrder = appconfig.QuarterOrder;
         //vm.gradePointAverageCalculate=gradePointAverageCalculate;
 
         UserService.getEnrolledCourses(vm.coyote_id).then(function success(response) {
-            vm.userCourseDetails = response.data;
-            console.log("userDetails",vm.userCourseDetails);
-            vm.coursesTaken=[];
-            vm.coursesEnrolled=[];
-            for(var i=0;i<vm.userCourseDetails.length;i++){
-                if(vm.userCourseDetails[i].grade!=null){
-                    vm.coursesTaken.push(vm.userCourseDetails[i]);
-                }else {
-                    vm.coursesEnrolled.push(vm.userCourseDetails[i]);
+                vm.userCourseDetails = response.data;
+                console.log("userDetails",vm.userCourseDetails);
+                vm.coursesTaken=[];
+                vm.coursesEnrolled=[];
+                for(var i=0;i<vm.userCourseDetails.length;i++){
+                    if(vm.userCourseDetails[i].grade!=null){
+                        vm.coursesTaken.push(vm.userCourseDetails[i]);
+                    }else {
+                        vm.coursesEnrolled.push(vm.userCourseDetails[i]);
+                    }
                 }
-            }
-            console.log("courseTaken",vm.coursesTaken,vm.coursesEnrolled);
-            vm.gradePointAverage = gradePointAverageCalculate(vm.coursesTaken);
-            console.log(vm.gradePointAverage,"gradePointAverage")
+                console.log("courseTaken",vm.coursesTaken,vm.coursesEnrolled);
+                vm.gradePointAverage = gradePointAverageCalculate(vm.coursesTaken);
+                vm.coursesTaken = displayFormat(vm.coursesTaken);
             },
             function error(reason) {}
         )
+
         function gradePointAverageCalculate(userCourseDetails) {
             var gradeopts = {
                 "A": 4,
@@ -62,14 +66,36 @@
             }
 
             return gradePointAverage;
+        }
 
-            // angular.forEach(vm.userCourseDetails,function (course) {
-            //     if(course.grade=== gradeopts.grade){
-            //         gradepoints= course.units*gradeopts.weight;
-            //         gradePointAverage= gradePoints/course.length();
-            //         console.logs(gradePointAverage,"GPA");
-            //     }
-            // })
+        function displayFormat(courses) {
+            var display = [];
+            var quar = vm.quarterOrder;
+            for(var i=0;i<courses.length;i++){
+                courses[i].quarter = courses[i].quarter_year.quarter;
+                courses[i].year = courses[i].quarter_year.year
+            }
+            courses = _.groupBy(courses,'year');
+            angular.forEach(courses,function (data,year) {
+                var yearobj = {
+                    year : year,
+                    quarters: []
+                };
+                data = _.groupBy(data,'quarter');
+                for(i=0;i<quar.length;i++){
+                    if(data[quar[i]]){
+                        var quarterObj = {
+                            quarter: quar[i],
+                            schedule: data[quar[i]]
+                        };
+                        yearobj.quarters.push(quarterObj);
+                    }
+                }
+                display.push(yearobj);
+            })
+            console.log(display)
+            return display
+
         }
     }
 

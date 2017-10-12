@@ -4,7 +4,6 @@
             return{
 
                 addPreference: function(preferences){
-
                     return $http({
                         method: 'POST',
                         url: '/addPreference',
@@ -20,9 +19,15 @@
                         params:{coyote_id:coyote_id}
                     })
 
+                },
+
+                updatePreference:function (preference) {
+                    return $http({
+                        method: 'PUT',
+                        url: '/updatePreference',
+                        data:{preferences:preference}
+                    })
                 }
-
-
 
             }//end of outer return
         })

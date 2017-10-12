@@ -27,7 +27,7 @@
                 console.log("",response.data);
                 vm.userDetails = response.data;
 
-                if(vm.userDetails.path == null){
+                // if(vm.userDetails.path == null){
 
                     CourseService.getAllCourses(vm.currentYear).then(
                         function success(reponse) {
@@ -66,11 +66,11 @@
 
                             console.log(vm.recommendationPath)
 
-                            // UserService.addRecommendationPath(vm.recommendationPath,vm.coyote_id).then(function success(response) {
-                            //
-                            // },function error() {
-                            //
-                            // })
+                            UserService.addRecommendationPath(vm.recommendationPath,vm.coyote_id).then(function success(response) {
+
+                            },function error() {
+
+                            })
 
 
                             //  prerequisites(vm.userDetails,vm.coursesData.core,vm.coursesData.prerequisites);
@@ -87,8 +87,8 @@
 
                         }
                     )
-                } else
-                    vm.recommendationPath = vm.userDetails.path
+                // } else
+                //     vm.recommendationPath = vm.userDetails.path
             },
             function error(response) {
 

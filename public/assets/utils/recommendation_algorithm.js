@@ -26,15 +26,14 @@ function RecommendationAlgo(appconfig,_,$filter) {
             prerequisites(vm.userDetails,vm.coursesData.core,vm.coursesData.prerequisites);
 
             core(vm.userDetails,vm.coursesData.core,vm.coursesData.prerequisites);
-console.log(_.contains(vm.userDetails.prerequisites,"306"))
+
+            addGradType(vm.userDetails, vm.coursesData.schedule);
+
             if(_.contains(vm.userDetails.prerequisites,"306") && !_.contains(vm.userDetails.coursesTaken,"306")){
                 addNSCI(vm.userDetails,vm.coursesData.schedule)
             }
 
-
-            addGradType(vm.userDetails, vm.coursesData.schedule);
-
-            elective(vm.userDetails,vm.coursesData.electives,vm.coursesData.constraints);
+           elective(vm.userDetails,vm.coursesData.electives,vm.coursesData.constraints);
 
             vm.recommendationPath = formatForDisplay(vm.recommendationPath);
 
@@ -209,13 +208,17 @@ console.log(_.contains(vm.userDetails.prerequisites,"306"))
 
                 data = sortByDay(data,userdetails.preferences);
                 //data = sortByTime(data,userdetails.preferences)
-                console.log("data by day",data)
                 flag = 0;
                 angular.forEach(vm.recommendationPath[vm.currentYear],function (c,quarter) {
                     course = [];
                     if(flag ==0){
                         course.push(_.where(data[0],{quarter: quarter}))
                         if(course.length>0){
+                            for(var i=0;i<course[0].length;i++){
+                                course[0][i].name = "Expository Writing for the Natural Sciences"
+                                course[0][i].units = 4;
+                            }
+
                             addToPath(course,userdetails.preferences.other.course_count_preference,"elective");
                             if(_.findLastIndex(vm.recommendationPath[vm.currentYear][quarter],{course_id:"306"}) >= 0)
                                 flag = 1;
@@ -228,8 +231,12 @@ console.log(_.contains(vm.userDetails.prerequisites,"306"))
                         if(flag ==0){
                             course.push(_.where(data[1],{quarter: quarter}))
                             if(course.length>0){
+                                for(var i=0;i<course[0].length;i++){
+                                    course[0][i].name = "Expository Writing for the Natural Sciences"
+                                    course[0][i].units = 4;
+                                }
                                 addToPath(course,userdetails.preferences.other.course_count_preference,"elective");
-                                if(_.findLastIndex(vm.recommendationPath[vm.currentYear][quarter],{course_id:"306"})>=0){
+                                if(_.findLastIndex(vm.recommendationPath[vm.currentYear+1][quarter],{course_id:"306"})>=0){
                                     flag = 1;
                                 }
 
@@ -246,7 +253,6 @@ console.log(_.contains(vm.userDetails.prerequisites,"306"))
                             if(course[0].length==0)
                                 course.splice(0,1)
                             course.push(_.where(data[1],{quarter: "Summer"}))
-                            console.log("fsef",course)
                              if(course[course.length-1].length==0)
                                  course.splice(course.length-1,1)
                         }else {
@@ -254,6 +260,10 @@ console.log(_.contains(vm.userDetails.prerequisites,"306"))
                         }
 
                         if(course.length>0){
+                            for(var i=0;i<course[0].length;i++){
+                                course[0][i].name = "Expository Writing for the Natural Sciences"
+                                course[0][i].units = 4;
+                            }
                             addToPath(course,userdetails.preferences.other.course_count_preference,"elective");
                         }
                     }
@@ -265,55 +275,134 @@ console.log(_.contains(vm.userDetails.prerequisites,"306"))
                 var lastyear = keys[keys.length-1];
                 var quarters = _.keys(vm.recommendationPath[lastyear]);
 
-                //console.log("addGradType",lastyear,quarters,vm.recommendationPath[lastyear]);
-                var index = 0
-                for(var j=0;j<quarters.length;j++){
-                    var i = _.indexOf(vm.quarterOrder,quarters[j]);
-                    if(index < i)
-                        index = i
+                var index = 0;
+                if(vm.currentYear!==lastyear){
+                    if(quarters.length<vm.quarterOrder.length){
+                        if(_.indexOf(quarters,"Fall") !== -1){
+                            index =0;
+                        }else {
+                            for(i=1;i<vm.quarterOrder.length;i++){
+                                j = _.indexOf(quarters,vm.quarterOrder[i]);
+                                if(j!==-1)
+                                    index = i
+                            }
+                        }
+                    }else {
+                        if(_.indexOf(quarters,"Fall") !== -1){
+                            index =0;
+                        }else {
+                            for(i=1;i<vm.quarterOrder.length;i++){
+                                j = _.indexOf(quarters,vm.quarterOrder[i]);
+                                if(j!==-1)
+                                    index = i
+                            }
+                        }
+                    }
+                }else {
+                    //start from current quarter index
                 }
+                if(index===0)
+                    lastyear = parseInt(lastyear)+1;
 
-                if(index==0)
-                    parseInt(lastyear)+1;
                 var data = [];
                 vm.sch = _.groupBy(schedule,'course_id');
 
+                var flag =0;
                 switch (userDetails.preferences.other.degree_preference){
                     case "Project":
-                        for(var i =index+1;i<vm.quarterOrder.length;i++){
-                            data[0] =_.where(vm.sch[690],{year:lastyear,quarter:vm.quarterOrder[i]})
-                            if(data.length){
-                                addToPath(data,userDetails.preferences.other.course_count_preference,"core")
+                        for(i=0;i<vm.sch[690].length;i++){
+                            if((vm.sch[690][i].quarter==="Summer") && (userDetails.preferences.other.summer_course_preference===false)){
+                                vm.sch[690].splice(i,1);
+                                console.log(vm.sch[690],i);
+                                i--
+                            }
+
+                        }
+                        for(i =index+1;i<vm.quarterOrder.length;i++){
+                            data[0] =_.where(vm.sch[690],{year:lastyear.toString(),quarter:vm.quarterOrder[i]});
+                            if(data[0].length){
+                                flag =1;
+                                addToPath(data,userDetails.preferences.other.course_count_preference,"core");
                                 break;
                             }
 
+                        }
+                        if(flag===0){
+                            for(i =0;i<index+1;i++){
+                                if(vm.quarterOrder[i]==="Winter")
+                                    lastyear = parseInt(lastyear)+1;
+                                data[0] = _.where(vm.sch[690],{year:lastyear.toString(),quarter:vm.quarterOrder[i]});
+                                if(data[0].length){
+                                    flag =1;
+                                    addToPath(data,userDetails.preferences.other.course_count_preference,"core");
+                                    break;
+                                }
+                            }
                         }
                         break;
                     case "Comprehensive Exam":
-                        for(var i =index+1;i<vm.quarterOrder.length;i++){
-                            data[0] =_.where(vm.sch[689],{year:lastyear,quarter:vm.quarterOrder[i]})
-                            if(data.length){
-                                addToPath(data,userDetails.preferences.other.course_count_preference,"core")
-                                break;
+                        for(i=0;i<vm.sch[689].length;i++){
+                            if((vm.sch[689][i].quarter==="Summer") && (userDetails.preferences.other.summer_course_preference===false)){
+                                vm.sch[689].splice(i,1)
+                                console.log(vm.sch[689],i)
+                                i--
                             }
 
+                        }
+                        for(i =index+1;i<vm.quarterOrder.length;i++){
+                            data[0] = _.where(vm.sch[689],{year:lastyear.toString(),quarter:vm.quarterOrder[i]});
+                            if(data[0].length){
+                                flag =1;
+                                addToPath(data,userDetails.preferences.other.course_count_preference,"core");
+                                break;
+                            }
+                        }
+                        if(flag===0){
+                            for(i =0;i<index+1;i++){
+                                if(vm.quarterOrder[i]==="Winter")
+                                    lastyear = parseInt(lastyear)+1;
+                                data[0] = _.where(vm.sch[689],{year:lastyear.toString(),quarter:vm.quarterOrder[i]});
+                                if(data[0].length){
+                                    flag =1;
+                                    addToPath(data,userDetails.preferences.other.course_count_preference,"core");
+                                    break;
+                                }
+                            }
                         }
                         break;
                     case "Thesis":
-                        for(var i =index+1;i<vm.quarterOrder.length;i++){
-                            data[0] =_.where(vm.sch[699],{year:lastyear,quarter:vm.quarterOrder[i]})
-                            if(data.length){
-                                addToPath(data,userDetails.preferences.other.course_count_preference,"core")
-                                break;
+                        for(i=0;i<vm.sch[699].length;i++){
+                            if((vm.sch[699][i].quarter==="Summer") && (userDetails.preferences.other.summer_course_preference===false)){
+                                vm.sch[699].splice(i,1);
+                                console.log(vm.sch[699],i);
+                                i--
                             }
 
                         }
+                        for(i =index+1;i<vm.quarterOrder.length;i++){
+                            data[0] =_.where(vm.sch[699],{year:lastyear.toString(),quarter:vm.quarterOrder[i]});
+                            if(data[0].length){
+                                flag =1;
+                                addToPath(data,userDetails.preferences.other.course_count_preference,"core");
+                                break;
+                            }
+                        }
+                        if(flag==0){
+                            for(i =0;i<index+1;i++){
+                                if(vm.quarterOrder[i]==="Winter")
+                                    lastyear = parseInt(lastyear)+1;
+                                data[0] = _.where(vm.sch[699],{year:lastyear.toString(),quarter:vm.quarterOrder[i]});
+                                if(data[0].length){
+                                    flag =1;
+                                    addToPath(data,userDetails.preferences.other.course_count_preference,"core");
+                                    break;
+                                }
+                            }
+                        }
+
                         break;
                 }
 
-                for(var i =index+1;i<vm.quarterOrder.length;i++){
-                    schedule = _.where(vm.coursesData.schedule,{})
-                }
             }
 
             function elective(userDetails,electives,constraints) {
@@ -393,9 +482,32 @@ console.log(_.contains(vm.userDetails.prerequisites,"306"))
 
                     }
                 }
+                var sch = angular.copy(vm.coursesData.schedule);
+                sch = _.groupBy(sch,'course_id');
+                var flag = 0;
+                if(electiveNo!==(electiveUnits/4)){
+                    for(i=0;i<sch[595].length;i++){
+                        if((sch[595][i].quarter==="Summer") && (userDetails.preferences.other.summer_course_preference===false)){
+                            sch[595].splice(i,1);
+                            console.log(vm.sch[595],i);
+                            i--
+                        }
 
-                if(electiveNo!=(electiveUnits/4)){
-
+                    }
+                    angular.forEach(vm.recommendationPath,function (data,year) {
+                        if(flag===0){
+                            angular.forEach(data,function (schedules,quarter) {
+                                if(flag===0){
+                                    if(schedules.length<2){
+                                        var a = [];
+                                        a[0]= _.where(sch[595],{quarter:quarter,year:year});
+                                        addToPath(a,userDetails.preferences.other.course_count_preference,"elective");
+                                        flag=1;
+                                    }
+                                }
+                            })
+                        }
+                    })
                 }
                 return;
             }
@@ -414,7 +526,13 @@ console.log(_.contains(vm.userDetails.prerequisites,"306"))
                         endingQuarter = vm.quarterOrder[i]
                     }
                 }
-                console.log("elective ending index",endingindex)
+                var index;
+                for(i=0;i<vm.userDetails.coursesTaken.length;i++){
+                    index = _.findLastIndex(electives,{course_id:vm.userDetails.coursesTaken[i]});
+                    if(index!==-1){
+                        electives.splice(index,1);
+                    }
+                }
                 var flag = 0;
                 for(var i=0;i<electives.length;i++){
                     electivesToBeTaken[count] = [];
@@ -530,7 +648,6 @@ console.log(_.contains(vm.userDetails.prerequisites,"306"))
             }
 
             function sortByTime(electives,preference) {
-                console.log("sort time sss",electives)
                 if(preference.timePreference.length<3){
                     var time=[];
                     var sortTime =[];
@@ -562,14 +679,13 @@ console.log(_.contains(vm.userDetails.prerequisites,"306"))
                     if(sortTime[sortTime.length-1].length==0){
                         sortTime.splice(sortTime.length-1,1)
                     }
-                    console.log("sorttime",sortTime);
                     return sortTime
                 }else
                     return electives
             }
 
             function addToPath(courses,course_count_preference,courseType) {
-               // console.log("add to path",courses)
+                //console.log("add to path",courses)
                 var currentQuarter = vm.currentQuarter;
                 var year = vm.currentYear;
                 var quarterOrder = vm.quarterOrder;
@@ -595,22 +711,22 @@ console.log(_.contains(vm.userDetails.prerequisites,"306"))
                         if(vm.recommendationPath[courses[i][j].year]){
                             //check for quarter if present
                             if(vm.recommendationPath[courses[i][j].year][courses[i][j].quarter]){
-                                if(vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].length >= course_count_preference)
-                                    continue;
-
-                                if(clashesCheck(vm.recommendationPath[courses[i][j].year][courses[i][j].quarter],courses[i][j],courseType)){
-                                    //console.log("adding11",courses[i][j])
-                                    vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].push(courses[i][j]);
-                                    vm.added = 1;
-                                    flag = 1;
-                                    if(courses[i].length > 1)
-                                        addOptional(courses[i],j+1);
-                                    break;
-                                }else {
-                                    flag = 1;
-                                    if(courses[i].length > 1)
-                                        addOptional(courses[i],j+1);
-                                    break;
+                                //console.log(vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].length < course_count_preference ||courses[i][j]== "N/A",courses[i][j])
+                                if(vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].length < course_count_preference || courses[i][j].course_day == "N/A"){
+                                    if(clashesCheck(vm.recommendationPath[courses[i][j].year][courses[i][j].quarter],courses[i][j],courseType)){
+                                        //console.log("adding11",courses[i][j])
+                                        vm.recommendationPath[courses[i][j].year][courses[i][j].quarter].push(courses[i][j]);
+                                        vm.added = 1;
+                                        flag = 1;
+                                        if(courses[i].length > 1)
+                                            addOptional(courses[i],j+1);
+                                        break;
+                                    }else {
+                                        flag = 1;
+                                        if(courses[i].length > 1)
+                                            addOptional(courses[i],j+1);
+                                        break;
+                                    }
                                 }
                             }
                             else {
@@ -788,24 +904,25 @@ console.log(_.contains(vm.userDetails.prerequisites,"306"))
             }
 
             function formatForDisplay(path) {
+                var quar = ["Winter","Spring","Summer","Fall"];
                 var recommendationPath = [];
                 angular.forEach(path,function (data,year) {
                     var yearobj = {
                         year : year,
                         quarters: []
                     };
-
-                    angular.forEach(data,function (schedules,quarter) {
-                        var quarterObj = {
-                            quarter: quarter,
-                            schedule: []
-                        };
-                        quarterObj.schedule = schedules;
-                        yearobj.quarters.push(quarterObj);
-                    });
+                    for(i=0;i<quar.length;i++){
+                        if(data[quar[i]]){
+                            var quarterObj = {
+                                quarter: quar[i],
+                                schedule: data[quar[i]]
+                            };
+                            yearobj.quarters.push(quarterObj);
+                        }
+                    }
                     recommendationPath.push(yearobj);
-                });
-                //recommendationPath = JSON.stringify(recommendationPath)
+                })
+
                 return recommendationPath;
             }
 

@@ -87,6 +87,31 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
+        .state('root.student.reviewquestionnaire',{
+            url:'/review-questionnaire',
+            views:{
+                'content@root':{
+                    templateUrl:'app/StudentHome/reviewQuestionnaire/review-questionnaire.html',
+                    controller:'ReviewQuestionnaireController',
+                    controllerAs:'vm'
+                }
+            }
+        })
+
+        .state('root.student.reviewquestionnaire.editquestionnaire',{
+            url:'/edit',
+            views:{
+                'content@root':{
+                    templateUrl:'app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.html',
+                    controller:'EditQuestionnaireController',
+                    controllerAs:'vm'
+                }
+            },
+            params: {
+                coyote_id : null
+            }
+        })
+
         .state('root.student.recommendationPath',{
             url:'/recommendation-path',
             views:{
@@ -221,7 +246,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
             },
             params: {
                 coyote_id : null,
-                role: null
+                Studentrole: null
             }
         })
 

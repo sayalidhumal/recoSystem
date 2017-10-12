@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddf75658-7106-474a-babe-5f9a4b21c0c2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/services/recommendation-path.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/server/queries/clubs.queries.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/nightwatch/lib/api/expect.js" afterPath="$PROJECT_DIR$/node_modules/nightwatch/lib/api/expect.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xregexp/.npmignore" afterPath="$PROJECT_DIR$/node_modules/xregexp/.npmignore" />
@@ -16,13 +13,35 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xregexp/tests/node-qunit.js" afterPath="$PROJECT_DIR$/node_modules/xregexp/tests/node-qunit.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xregexp/tests/tests.js" afterPath="$PROJECT_DIR$/node_modules/xregexp/tests/tests.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xregexp/xregexp-all.js" afterPath="$PROJECT_DIR$/node_modules/xregexp/xregexp-all.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app.js" afterPath="$PROJECT_DIR$/public/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/createCourse/createCourse.controller.js" afterPath="$PROJECT_DIR$/public/app/AdminHome/createCourse/createCourse.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/createCourse/createCourse.html" afterPath="$PROJECT_DIR$/public/app/AdminHome/createCourse/createCourse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/editCourse/editCourse.controller.js" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/editCourse/editCourse.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/editCourse/editCourse.html" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/editCourse/editCourse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.controller.js" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.html" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.controller.js" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.html" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/advisorHome.html" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/advisorHome.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/advisorhome.controller.js" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/advisorhome.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.controller.js" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.html" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.controller.js" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.html" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.controller.js" afterPath="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.html" afterPath="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.controller.js" afterPath="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.html" afterPath="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.controller.js" afterPath="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html" afterPath="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/home/home.controller.js" afterPath="$PROJECT_DIR$/public/app/home/home.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/home/home.html" afterPath="$PROJECT_DIR$/public/app/home/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/services/course.service.js" afterPath="$PROJECT_DIR$/public/assets/services/course.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/services/user.service.js" afterPath="$PROJECT_DIR$/public/assets/services/user.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/services/questionnaire.service.js" afterPath="$PROJECT_DIR$/public/assets/services/questionnaire.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/utils/recommendation_algorithm.js" afterPath="$PROJECT_DIR$/public/assets/utils/recommendation_algorithm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/server/queries/login.queries.js" afterPath="$PROJECT_DIR$/public/server/queries/login.queries.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/server/queries/user.queries.js" afterPath="$PROJECT_DIR$/public/server/queries/user.queries.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/routes.js" afterPath="$PROJECT_DIR$/public/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/server/queries/course.queries.js" afterPath="$PROJECT_DIR$/public/server/queries/course.queries.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/server/queries/questionnaire.queries.js" afterPath="$PROJECT_DIR$/public/server/queries/questionnaire.queries.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/server/routes/index.js" afterPath="$PROJECT_DIR$/public/server/routes/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -41,13 +60,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="user.queries.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/server/queries/user.queries.js">
+      <file leaf-file-name="educationalHistory.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="97" column="15" lean-forward="true" selection-start-line="97" selection-start-column="15" selection-end-line="97" selection-end-column="15" />
+            <state relative-caret-position="293">
+              <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
               <folding>
-                <element signature="e#361#2211#0" expanded="false" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#md-card#0;n#md-content#1;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#md-card#0;n#md-content#1;n#body#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,25 +76,84 @@
       <file leaf-file-name="user-courses-details.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+            <state relative-caret-position="257">
+              <caret line="91" column="55" lean-forward="false" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
               <folding>
-                <marker date="1507604998000" expanded="true" signature="2703:2723" ph="..." />
-                <marker date="1507604998000" expanded="true" signature="2703:2748" ph="..." />
-                <marker date="1507604998000" expanded="true" signature="2703:2769" ph="..." />
-                <marker date="1507604998000" expanded="true" signature="2703:2799" ph="..." />
-                <marker date="1507604998000" expanded="true" signature="2703:2882" ph="..." />
-                <marker date="1507604998000" expanded="true" signature="2703:2897" ph="..." />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#md-card#0;n#md-content#1;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#md-card#0;n#md-content#1;n#body#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="educationalHistory.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.html">
+      <file leaf-file-name="user-courses-details.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+            <state relative-caret-position="225">
+              <caret line="15" column="64" lean-forward="true" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
+              <folding>
+                <element signature="e#1768#2726#0" expanded="false" />
+                <element signature="e#2768#3783#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recommendation-path.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="73" lean-forward="false" selection-start-line="2" selection-start-column="73" selection-end-line="2" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit-questionnaire.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-787">
+              <caret line="6" column="21" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="6" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recommendationPath.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="77" lean-forward="false" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addPrerequisites.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="35" column="112" lean-forward="false" selection-start-line="35" selection-start-column="112" selection-end-line="35" selection-end-column="112" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addPrerequisites.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="438">
+              <caret line="40" column="33" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="40" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="advisorHome.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/advisorHome.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="28" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="20" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -83,101 +162,10 @@
       <file leaf-file-name="educationalHistory.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="47" column="23" lean-forward="false" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+            <state relative-caret-position="433">
+              <caret line="108" column="9" lean-forward="true" selection-start-line="80" selection-start-column="8" selection-end-line="108" selection-end-column="9" />
               <folding>
-                <element signature="e#52#103#0" expanded="false" />
-                <element signature="e#104#150#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="questionnaire.queries.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/server/queries/questionnaire.queries.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="56" column="42" lean-forward="false" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
-              <folding>
-                <element signature="e#452#2345#0" expanded="false" />
-                <element signature="e#2389#4112#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.queries.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/server/queries/login.queries.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-              <folding>
-                <element signature="e#431#1074#0" expanded="false" />
-                <element signature="e#1235#3271#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/server/routes/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14">
-              <caret line="25" column="63" lean-forward="false" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user-courses-details.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding>
-                <marker date="1507605035000" expanded="true" signature="281:2782" ph="{...}" />
-                <marker date="1507605035000" expanded="true" signature="1323:1337" ph="{...}" />
-                <marker date="1507605035000" expanded="true" signature="1450:2776" ph="{...}" />
-                <marker date="1507605035000" expanded="true" signature="1480:1804" ph="{...}" />
-                <marker date="1507605035000" expanded="true" signature="1968:2249" ph="{...}" />
-                <marker date="1507605035000" expanded="true" signature="2016:2235" ph="{...}" />
-                <marker date="1507605035000" expanded="true" signature="2277:2359" ph="{...}" />
-                <marker date="1507605035000" expanded="true" signature="2412:2766" ph="//..." />
-                <marker date="1507605035000" expanded="false" signature="2793:4002" ph="//..." />
-                <marker date="1507605035000" expanded="false" signature="4006:4655" ph="//..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/services/user.service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-              <folding>
-                <marker date="1507605522000" expanded="true" signature="90:2147" ph="{...}" />
-                <marker date="1507605522000" expanded="true" signature="110:2116" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="course.queries.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/server/queries/course.queries.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="352" column="32" lean-forward="false" selection-start-line="352" selection-start-column="32" selection-end-line="352" selection-end-column="32" />
-              <folding>
-                <element signature="e#315#2734#0" expanded="false" />
-                <element signature="e#2774#4099#0" expanded="false" />
-                <element signature="e#4142#5521#0" expanded="false" />
-                <element signature="e#5567#6325#0" expanded="false" />
-                <element signature="e#6372#7908#0" expanded="false" />
-                <element signature="e#7954#9384#0" expanded="false" />
-                <element signature="e#9429#10694#0" expanded="false" />
-                <element signature="e#10748#12513#0" expanded="false" />
-                <element signature="e#12557#13450#0" expanded="false" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -211,6 +199,7 @@
       <find>Taken</find>
       <find>course</find>
       <find>create</find>
+      <find>index</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -226,57 +215,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/advisorHome.module.js" />
-        <option value="$PROJECT_DIR$/public/app.js" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.html" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/viewUser/viewUser.html" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/viewUser/viewUser.controller.js" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/createUser/createUser.controller.js" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/editCourse.controller.js" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.controller.js" />
         <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.html" />
         <option value="$PROJECT_DIR$/public/app/AdminHome/createUser/createUser.html" />
-        <option value="$PROJECT_DIR$/public/app/home/home.html" />
         <option value="$PROJECT_DIR$/public/server/queries/login.queries.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/createCourse/createCourse.controller.js" />
-        <option value="$PROJECT_DIR$/public/app/home/home.controller.js" />
         <option value="$PROJECT_DIR$/public/assets/services/student.service.js" />
-        <option value="$PROJECT_DIR$/public/assets/services/questionnaire.service.js" />
-        <option value="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.html" />
         <option value="$PROJECT_DIR$/public/app/AdvisorHome/viewPrerequisites/viewPrerequisites.html.js" />
         <option value="$PROJECT_DIR$/public/app/AdvisorHome/viewPrerequisites/viewPrerequisites.controller.js" />
         <option value="$PROJECT_DIR$/public/app/AdvisorHome/viewPrerequisites/viewPrerequisites.html" />
-        <option value="$PROJECT_DIR$/public/server/queries/questionnaire.queries.js" />
-        <option value="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.controller.js" />
         <option value="$PROJECT_DIR$/public/app/AdvisorHome/Educational History/educationalHistory.html" />
         <option value="$PROJECT_DIR$/public/app/AdvisorHome/Educational History/educationalHistory.controller.js" />
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.html" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/public/routes.js" />
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/advisorhome.controller.js" />
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/advisorHome.html" />
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.controller.js" />
         <option value="$PROJECT_DIR$/public/assets/services/prerequisite.service.js" />
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.html" />
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.controller.js" />
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.html" />
-        <option value="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.controller.js" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/createCourse/createCourse.html" />
         <option value="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/editUser/editUser.controller.js" />
         <option value="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/editUser/editUser.html" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/editCourse/editCourse.html" />
-        <option value="$PROJECT_DIR$/public/assets/services/course.service.js" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.html" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.controller.js" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/editCourse/editCourse.controller.js" />
-        <option value="$PROJECT_DIR$/public/server/queries/course.queries.js" />
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.controller.js" />
         <option value="$PROJECT_DIR$/public/assets/services/user.service.js" />
+        <option value="$PROJECT_DIR$/public/server/queries/user.queries.js" />
+        <option value="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.js" />
+        <option value="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/review-questionnaire.controller.js" />
+        <option value="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.controller.js" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.controller.js" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.controller.js" />
+        <option value="$PROJECT_DIR$/public/assets/utils/recommendation_algorithm.js" />
+        <option value="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.controller.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/app.js" />
+        <option value="$PROJECT_DIR$/public/assets/services/course.service.js" />
+        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/editCourse/editCourse.controller.js" />
+        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.controller.js" />
+        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.html" />
+        <option value="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.html" />
+        <option value="$PROJECT_DIR$/public/assets/services/questionnaire.service.js" />
         <option value="$PROJECT_DIR$/public/server/routes/index.js" />
+        <option value="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.controller.js" />
+        <option value="$PROJECT_DIR$/public/server/queries/questionnaire.queries.js" />
+        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/editCourse/editCourse.html" />
+        <option value="$PROJECT_DIR$/public/app/AdminHome/createCourse/createCourse.html" />
+        <option value="$PROJECT_DIR$/public/app/AdminHome/createCourse/createCourse.controller.js" />
+        <option value="$PROJECT_DIR$/public/server/queries/course.queries.js" />
+        <option value="$PROJECT_DIR$/public/routes.js" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/advisorhome.controller.js" />
+        <option value="$PROJECT_DIR$/public/app/home/home.controller.js" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/advisorHome.html" />
+        <option value="$PROJECT_DIR$/public/app/home/home.html" />
+        <option value="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/review-questionnaire.html" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.controller.js" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.html" />
         <option value="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.controller.js" />
         <option value="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html" />
-        <option value="$PROJECT_DIR$/public/server/queries/user.queries.js" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.html" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.html" />
+        <option value="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.html" />
+        <option value="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.html" />
       </list>
     </option>
   </component>
@@ -357,7 +346,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -375,11 +364,103 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recoSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recoSystem" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="queries" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recoSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recoSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviewQuestionnaire" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recoSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recoSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AdvisorHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recoSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recoSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AdvisorHome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewPrerequisites" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -405,12 +486,13 @@
     <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Sanjay Karrolla\Documents\Project\recoSystem\public\app\AdminHome\modifyCourseInformation\editCourse" />
       <recent name="C:\Users\Sanjay Karrolla\Documents\Project\recoSystem\public\assets\directives" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire" />
+      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -1369,11 +1451,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507603378220</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="recommendation path">
+      <created>1507605906233</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1507605906233</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="408174000" />
+    <option name="totallyTimeSpent" value="456392000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1386,9 +1475,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26286116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26286116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3923611" sideWeight="0.5018411" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1429,443 +1517,487 @@
     <MESSAGE value="Student UI" />
     <MESSAGE value="Admin UI and database queries" />
     <MESSAGE value="Advisor UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Advisor UI" />
+    <MESSAGE value="recommendation path" />
+    <option name="LAST_COMMIT_MESSAGE" value="recommendation path" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="2" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/pg/lib/connection.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/angular-material-time-picker/demoApp/demoApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="571" column="10" lean-forward="false" selection-start-line="571" selection-start-column="10" selection-end-line="571" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/adminhome.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/services/authenticate.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/viewPrerequisites/viewPrerequisites.html.js" />
-    <entry file="file://$PROJECT_DIR$/public/assets/services/questionnaire.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="22" column="17" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/server/queries/questionnaire.queries.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="56" column="42" lean-forward="false" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
-          <folding>
-            <element signature="e#452#2345#0" expanded="false" />
-            <element signature="e#2389#4112#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="51" column="29" lean-forward="true" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="32" column="18" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="36" selection-end-column="6" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.html">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="158">
+          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding>
+            <marker date="1507680573000" expanded="true" signature="0:703" ph="{&quot;name&quot;: &quot;Course_recommendation_system&quot;...}" />
+            <marker date="1507680573000" expanded="true" signature="388:651" ph="{&quot;angular-material-time-picker&quot;: &quot;^1.0.7&quot;...}" />
+            <marker date="1507680573000" expanded="true" signature="674:701" ph="{&quot;bower&quot;: &quot;^1.8.0&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/advisorHome.html">
+    <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="40" column="10" lean-forward="true" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1507751169000" expanded="true" signature="0:676" ph="{&quot;name&quot;: &quot;training&quot;...}" />
+            <marker date="1507751169000" expanded="true" signature="190:603" ph="{&quot;jquery&quot;: &quot;^3.2.1&quot;...}" />
+            <marker date="1507751169000" expanded="true" signature="622:674" ph="{&quot;jquery&quot;: &quot;^3.2.1&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/angular-material-time-picker/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendor/angular-material-time-picker/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="66" column="18" lean-forward="false" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
-          <folding>
-            <element signature="e#52#103#0" expanded="false" />
-            <element signature="e#104#155#0" expanded="false" />
-            <element signature="e#156#202#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="150">
+          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/studenthome.controller.js">
+    <entry file="file://$PROJECT_DIR$/public/assets/layout/layout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/login/login.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/login/login.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="39" column="102" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/server/queries/user.queries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="261" column="27" lean-forward="true" selection-start-line="261" selection-start-column="27" selection-end-line="261" selection-end-column="27" />
+          <folding>
+            <element signature="e#361#2211#0" expanded="false" />
+            <element signature="e#2261#3491#0" expanded="false" />
+            <element signature="e#3529#4832#0" expanded="false" />
+            <element signature="e#4888#7901#0" expanded="false" />
+            <element signature="e#7954#8655#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="43" column="131" lean-forward="false" selection-start-line="43" selection-start-column="131" selection-end-line="43" selection-end-column="131" />
+          <folding>
+            <element signature="e#0#46#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/signup/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/signup/signup.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1693">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/services/course.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="50" lean-forward="false" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="88" column="44" lean-forward="false" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/services/questionnaire.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/server/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="21" column="63" lean-forward="false" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="28" column="70" lean-forward="true" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/viewPrerequisites/viewPrerequisites.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="20" column="13" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/viewPrerequisites/viewPrerequisites.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="27" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1163">
-          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="227" column="57" lean-forward="false" selection-start-line="227" selection-start-column="41" selection-end-line="227" selection-end-column="57" />
+        <state relative-caret-position="-176">
+          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.controller.js">
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/editCourse/editCourse.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="886">
-          <caret line="57" column="38" lean-forward="true" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+        <state relative-caret-position="328">
+          <caret line="65" column="33" lean-forward="true" selection-start-line="52" selection-start-column="12" selection-end-line="65" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.controller.js">
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/editCourse/editCourse.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="491" column="17" lean-forward="true" selection-start-line="491" selection-start-column="17" selection-end-line="491" selection-end-column="17" />
+        <state relative-caret-position="41">
+          <caret line="22" column="83" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/createCourse/createCourse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="137" column="71" lean-forward="false" selection-start-line="137" selection-start-column="71" selection-end-line="137" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="20" column="97" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="97" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/AdminHome/createCourse/createCourse.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="67" column="93" lean-forward="true" selection-start-line="67" selection-start-column="93" selection-end-line="67" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/server/queries/login.queries.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding>
-            <element signature="e#431#1074#0" expanded="false" />
-            <element signature="e#1235#3271#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/advisorhome.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/viewUser/viewUser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/viewUser/viewUser.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/signup/signup.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="111" column="28" lean-forward="true" selection-start-line="98" selection-start-column="6" selection-end-line="111" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/signup/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="103" column="12" lean-forward="false" selection-start-line="102" selection-start-column="16" selection-end-line="103" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/editUser/editUser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="35" column="58" lean-forward="false" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/adminhome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#46#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#46#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="25" column="59" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/createCourse/createCourse.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="121" column="144" lean-forward="true" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="144" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="33" column="168" lean-forward="false" selection-start-line="33" selection-start-column="168" selection-end-line="33" selection-end-column="168" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/editCourse/editCourse.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="35" column="115" lean-forward="false" selection-start-line="35" selection-start-column="101" selection-end-line="35" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/editUser/editUser.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="58" column="51" lean-forward="true" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/editCourse/editCourse.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="39" column="41" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/services/prerequisite.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#51#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/services/course.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        <state relative-caret-position="332">
+          <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/services/user.service.js">
+    <entry file="file://$PROJECT_DIR$/public/server/queries/questionnaire.queries.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        <state relative-caret-position="401">
+          <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
           <folding>
-            <marker date="1507605522000" expanded="true" signature="90:2147" ph="{...}" />
-            <marker date="1507605522000" expanded="true" signature="110:2116" ph="{...}" />
+            <element signature="e#2090#3813#0" expanded="false" />
+            <element signature="e#3860#5813#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/server/queries/course.queries.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="352" column="32" lean-forward="false" selection-start-line="352" selection-start-column="32" selection-end-line="352" selection-end-column="32" />
+        <state relative-caret-position="131">
+          <caret line="116" column="41" lean-forward="false" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
           <folding>
             <element signature="e#315#2734#0" expanded="false" />
             <element signature="e#2774#4099#0" expanded="false" />
-            <element signature="e#4142#5521#0" expanded="false" />
-            <element signature="e#5567#6325#0" expanded="false" />
-            <element signature="e#6372#7908#0" expanded="false" />
-            <element signature="e#7954#9384#0" expanded="false" />
-            <element signature="e#9429#10694#0" expanded="false" />
-            <element signature="e#10748#12513#0" expanded="false" />
-            <element signature="e#12557#13450#0" expanded="false" />
+            <element signature="e#4142#5510#0" expanded="false" />
+            <element signature="e#5556#6314#0" expanded="false" />
+            <element signature="e#6361#7897#0" expanded="false" />
+            <element signature="e#7943#9373#0" expanded="false" />
+            <element signature="e#9418#10683#0" expanded="false" />
+            <element signature="e#10737#12502#0" expanded="false" />
+            <element signature="e#12546#13486#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/server/routes/index.js">
+    <entry file="file://$PROJECT_DIR$/public/app/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="25" column="63" lean-forward="false" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="63" />
+        <state relative-caret-position="0">
+          <caret line="0" column="24" lean-forward="true" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.controller.js">
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/viewUser/viewUser.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="404">
+          <caret line="32" column="14" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="32" selection-end-column="14" />
           <folding>
-            <marker date="1507605035000" expanded="true" signature="281:2782" ph="{...}" />
-            <marker date="1507605035000" expanded="true" signature="1323:1337" ph="{...}" />
-            <marker date="1507605035000" expanded="true" signature="1450:2776" ph="{...}" />
-            <marker date="1507605035000" expanded="true" signature="1480:1804" ph="{...}" />
-            <marker date="1507605035000" expanded="true" signature="1968:2249" ph="{...}" />
-            <marker date="1507605035000" expanded="true" signature="2016:2235" ph="{...}" />
-            <marker date="1507605035000" expanded="true" signature="2277:2359" ph="{...}" />
-            <marker date="1507605035000" expanded="true" signature="2412:2766" ph="//..." />
-            <marker date="1507605035000" expanded="false" signature="2793:4002" ph="//..." />
-            <marker date="1507605035000" expanded="false" signature="4006:4655" ph="//..." />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/viewUser/viewUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/advisorhome.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/home/home.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="23" column="105" lean-forward="false" selection-start-line="23" selection-start-column="105" selection-end-line="23" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="152" column="32" lean-forward="false" selection-start-line="152" selection-start-column="32" selection-end-line="152" selection-end-column="32" />
+          <folding>
+            <element signature="n#md-content#0;n#!!top" expanded="false" />
+            <element signature="n#md-content#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="977">
+          <caret line="73" column="45" lean-forward="false" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/review-questionnaire.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="137" lean-forward="true" selection-start-line="10" selection-start-column="116" selection-end-line="10" selection-end-column="137" />
+          <folding>
+            <element signature="n#style#0;n#md-button#0;n#div#0;n#md-content#0;n#md-card-content#0;n#md-card#0;n#md-content#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="248" column="27" lean-forward="false" selection-start-line="248" selection-start-column="27" selection-end-line="248" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/review-questionnaire.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="43" column="12" lean-forward="true" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/utils/recommendation_algorithm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="906" column="27" lean-forward="true" selection-start-line="906" selection-start-column="27" selection-end-line="906" selection-end-column="27" />
+          <folding>
+            <element signature="e#1613#7823#0" expanded="false" />
+            <element signature="e#7895#9383#0" expanded="false" />
+            <element signature="e#13075#19624#0" expanded="false" />
+            <element signature="e#19691#24172#0" expanded="false" />
+            <element signature="e#24223#28788#0" expanded="false" />
+            <element signature="e#28842#30780#0" expanded="false" />
+            <element signature="e#30836#32604#0" expanded="false" />
+            <element signature="e#32681#38204#0" expanded="false" />
+            <element signature="e#37919#38165#0" expanded="false" />
+            <element signature="e#38264#42331#0" expanded="false" />
+            <element signature="e#42390#43902#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="14" column="49" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="49" />
+          <folding>
+            <element signature="e#4778#33080#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/viewPrerequisites/viewPrerequisites.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="35" column="112" lean-forward="false" selection-start-line="35" selection-start-column="112" selection-end-line="35" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="40" column="33" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="40" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="47" column="23" lean-forward="false" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+        <state relative-caret-position="433">
+          <caret line="108" column="9" lean-forward="true" selection-start-line="80" selection-start-column="8" selection-end-line="108" selection-end-column="9" />
           <folding>
-            <element signature="e#52#103#0" expanded="false" />
-            <element signature="e#104#150#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="64" lean-forward="true" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
+          <folding>
+            <element signature="e#1768#2726#0" expanded="false" />
+            <element signature="e#2768#3783#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="91" column="55" lean-forward="false" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#md-card#0;n#md-content#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#md-card#0;n#md-content#1;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        <state relative-caret-position="293">
+          <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#md-card#0;n#md-content#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#md-card#0;n#md-content#1;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="77" lean-forward="false" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html">
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
-          <folding>
-            <marker date="1507604998000" expanded="true" signature="2703:2723" ph="..." />
-            <marker date="1507604998000" expanded="true" signature="2703:2748" ph="..." />
-            <marker date="1507604998000" expanded="true" signature="2703:2769" ph="..." />
-            <marker date="1507604998000" expanded="true" signature="2703:2799" ph="..." />
-            <marker date="1507604998000" expanded="true" signature="2703:2882" ph="..." />
-            <marker date="1507604998000" expanded="true" signature="2703:2897" ph="..." />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="73" lean-forward="false" selection-start-line="2" selection-start-column="73" selection-end-line="2" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/server/queries/user.queries.js">
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/advisorHome.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="97" column="15" lean-forward="true" selection-start-line="97" selection-start-column="15" selection-end-line="97" selection-end-column="15" />
-          <folding>
-            <element signature="e#361#2211#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="20" column="28" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-787">
+          <caret line="6" column="21" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="6" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>

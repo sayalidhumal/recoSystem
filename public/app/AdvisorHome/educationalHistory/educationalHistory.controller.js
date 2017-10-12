@@ -11,15 +11,18 @@
 (function () {
     angular.module('AdvisorHome').controller('educationalHistoryController',educationalHistoryController);
 
-    educationalHistoryController.$inject = ['UserService','$state','PrerequisiteService','$stateParams','$mdToast'];
+    educationalHistoryController.$inject = ['UserService','$state','PrerequisiteService','$stateParams','$filter','appconfig'];
 
-    function educationalHistoryController(UserService,$state,PrerequisiteService,$stateParams,$mdToast) {
+    function educationalHistoryController(UserService,$state,PrerequisiteService,$stateParams,$filter,appconfig) {
         var vm = this;
         vm.coyote_id = $stateParams.coyote_id;
         console.log(vm.coyote_id,"ID");
         vm.gradePointAverage = 0;
-
+        vm.currentYear = appconfig.CurrentYear;
+        vm.currentMonth = $filter('date')(new Date(), 'MMMM');
+        vm.currentQuarter = appconfig.QUARTERS[vm.currentMonth];
         vm.userCourseDetails =[];
+        vm.quarterOrder = appconfig.QuarterOrder;
         //vm.gradePointAverageCalculate=gradePointAverageCalculate;
 
         UserService.getEnrolledCourses(vm.coyote_id).then(function success(response) {
@@ -36,6 +39,10 @@
                 }
                 console.log("courseTaken",vm.coursesTaken,vm.coursesEnrolled)
                 vm.gradePointAverage = gradePointAverageCalculate(vm.coursesTaken);
+
+                vm.coursesTaken = displayFormat(vm.coursesTaken);
+
+
                 console.log(vm.gradePointAverage,"gradePointAverage")
             },
             function error(reason) {}
@@ -69,6 +76,36 @@
             }
 
             return gradePointAverage;
+        }
+
+        function displayFormat(courses) {
+            var display = [];
+            var quar = vm.quarterOrder;
+            for(var i=0;i<courses.length;i++){
+                courses[i].quarter = courses[i].quarter_year.quarter;
+                courses[i].year = courses[i].quarter_year.year
+            }
+            courses = _.groupBy(courses,'year');
+            angular.forEach(courses,function (data,year) {
+                var yearobj = {
+                    year : year,
+                    quarters: []
+                };
+                data = _.groupBy(data,'quarter');
+                for(i=0;i<quar.length;i++){
+                    if(data[quar[i]]){
+                        var quarterObj = {
+                            quarter: quar[i],
+                            schedule: data[quar[i]]
+                        };
+                        yearobj.quarters.push(quarterObj);
+                    }
+                }
+                display.push(yearobj);
+            })
+            console.log(display)
+            return display
+
         }
 
     }

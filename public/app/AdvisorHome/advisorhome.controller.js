@@ -7,14 +7,24 @@
 (function(){
     angular.module('AdvisorHome').controller('AdvisorHomeController',AdvisorHomeController);
 
-    AdvisorHomeController.$inject=['$scope','$state','$http','AuthService','appconfig','$mdToast','UserService'];
+    AdvisorHomeController.$inject=['$stateParams','$state','$http','AuthService','appconfig','$mdToast','UserService'];
 
-    function AdvisorHomeController($scope,$state,$http,AuthService,appconfig,$mdToast,UserService){
+    function AdvisorHomeController($stateParams,$state,$http,AuthService,appconfig,$mdToast,UserService){
         var vm = this;
         vm.view = view;
         vm.history= history;
         vm.recommendation= recommendation;
-        console.log(vm.user);
+        vm.coyote_id = $stateParams.coyote_id;
+        console.log($stateParams)
+        vm.role = $stateParams.Studentrole;
+        UserService.getUser(vm.coyote_id,null).then(
+            function success(response) {
+                vm.user = response.data[0];
+                console.log(vm.user)
+            },
+            function error() {
+
+            })
 
         function history() {
             $state.go('root.advisor.advisorhome.educationalhistory');
