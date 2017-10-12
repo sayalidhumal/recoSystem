@@ -1,5 +1,6 @@
 {
   "src_folders" : ["./tests/e2e"],
+  "page_objects_path" : ["./tests/pageObjects"],
   "test_settings" : {
     "chrome" : {
       "desiredCapabilities": {

@@ -2,7 +2,7 @@
     <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2><span>Login</span></h2>
+                <h2 id="loginHeader"><span>Login</span></h2>
             </div>
         </md-toolbar>
         <md-card-content>
@@ -10,21 +10,21 @@
                 <md-content>
                     <md-input-container class="md-block">
                         <label>Coyote ID</label>
-                        <input type="number" required name="username" ng-model="vm.userID"/>
+                        <input id="coyoteID" type="number" required name="username" ng-model="vm.userID"/>
                         <div ng-messages="vm.form.userID.$error" role="alert" multiple="">
                             <div ng-message="required" class="my-message">Please enter your Coyote ID.</div>
                         </div>
                     </md-input-container>
                     <md-input-container class="md-block">
                         <label>Password</label>
-                        <input type="password" required name="password" ng-model="vm.password" placeholder="Password"/>
+                        <input id="password" type="password" required name="password" ng-model="vm.password" placeholder="Password"/>
                         <div ng-messages="vm.form.password.$error" role="alert" multiple="">
                             <div ng-message="required" class="my-message">Please enter your password.</div>
                         </div>
                     </md-input-container>
                 </md-content>
                 <p class="md-warn" ng-if="vm.error">Invalid User Name or Password</p>
-                <md-button ng-disabled="vm.form.$invalid" class="md-raised md-primary" aria-label="Login" ng-click="vm.login()">Login</md-button>
+                <md-button id="loginButton" ng-disabled="vm.form.$invalid" class="md-raised md-primary" aria-label="Login" ng-click="vm.login()">Login</md-button>
             </form>
         </md-card-content>
     </md-card>

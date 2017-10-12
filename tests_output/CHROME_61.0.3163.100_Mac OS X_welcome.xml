@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="3">
+
+  <testsuite name="welcome"
+    errors="0" failures="0" hostname="" id="" package="welcome" skipped="0"
+    tests="3" time="2.357" timestamp="Thu, 12 Oct 2017 06:17:38 GMT">
+  
+    <testcase name="Redirects to the welcome page" classname="welcome" time="1.663" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Redirects to login page" classname="welcome" time="0.1880" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Redirects to signup page" classname="welcome" time="0.5060" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>
