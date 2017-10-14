@@ -32,3 +32,8 @@ md-card:first-child {
     width: 250px;
     table-layout: fixed;
 }
+
+.courseDetailview{
+    background: #6ba0ef;
+    text-align: center;
+}
