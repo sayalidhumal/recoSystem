@@ -4,9 +4,9 @@
 (function () {
     angular.module("Studenthome").controller("RecommendationPathController",RecommendationPathController);
 
-    RecommendationPathController.$inject = ["UserService","$stateParams","_","appconfig","CourseService","$filter","RecommendationAlgo"];
+    RecommendationPathController.$inject = ["UserService","$stateParams","_","appconfig","CourseService","$filter","RecommendationAlgo","$state"];
 
-    function RecommendationPathController(UserService,$stateParams,_,appconfig,CourseService,$filter,RecommendationAlgo) {
+    function RecommendationPathController(UserService,$stateParams,_,appconfig,CourseService,$filter,RecommendationAlgo,$state) {
         var vm=this;
         vm.coyote_id = $stateParams.userID;
         vm.currentYear = appconfig.CurrentYear;
@@ -21,6 +21,8 @@
         vm.optionalSchedule ={};
         vm.electiveCount = 0;
         vm.added = 0;
+
+        vm.view = view;
 
         UserService.getRecommendationDetails(vm.coyote_id).then(
             function success(response) {
@@ -94,6 +96,11 @@
 
         });
 
+        function view(quarter,year) {
+            quarter.year = year;
+            console.log(quarter)
+            $state.go('root.student.recommendationPath.detailView',{quarter: quarter});
+        }
 
        /* function prerequisites(userDetails,coreCourses,coursePrerequisites) {
 

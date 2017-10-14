@@ -926,7 +926,7 @@ function RecommendationAlgo(appconfig,_,$filter) {
                 return recommendationPath;
             }
 
-        }
+        },
     }
 
 

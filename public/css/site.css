@@ -26,3 +26,9 @@ md-card:first-child {
     min-width: 300px;
     flex: 0 0 auto;
 }
+
+.detailviewHeader{
+    text-align: center !important;
+    width: 250px;
+    table-layout: fixed;
+}

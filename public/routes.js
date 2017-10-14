@@ -123,6 +123,20 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
+        .state('root.student.recommendationPath.detailView',{
+            url:'/recommendation-path/detail-View',
+            views:{
+                'content@root':{
+                    templateUrl:'app/StudentHome/recommendationPath/detailView/detail-view.html',
+                    controller:'StudentDetailViewController',
+                    controllerAs:'vm'
+                }
+            },
+            params:{
+                quarter: null
+            }
+        })
+
     /************************ ADMIN ************************/
 
         .state('root.admin',{
