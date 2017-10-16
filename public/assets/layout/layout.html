@@ -1,8 +1,28 @@
 <div>
-  <div>
-    <h2 align="center">Course Recommendation System</h2>
-    <md-button ng-show="vm.user" ng-click="vm.signOut()">Sign Out</md-button>
-  </div>
+  <md-sidenav md-component-id = "left" class = "md-sidenav-left">
+    <md-content ng-controller="LeftCtrl" layout-padding>
+      <md-toolbar class="md-theme-light">
+        <md-button ng-click="close()"><md-icon>arrow_back</md-icon>Back</md-button>
+      </md-toolbar>
+      <div>
+        <table md-table>
+          <tbody md-body>
+            <tr md-row ng-repeat="cell in vm.menu">
+              <td md-cell><a ui-sref="{{cell.route}}">{{cell.cardName}}</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </md-content>
+  </md-sidenav>
+  <md-toolbar class="topNav">
+    <div class="md-toolbar-tools">
+      <md-button ng-click="toggleLeft()" ng-hide="isOpenLeft()"><md-icon>menu</md-icon></md-button>
+      <h1 style="text-align: center;"><b>Course Recommendation System</b></h1>
+      <!--<md-button ng-show="vm.user" ng-click="vm.signOut()">Sign Out</md-button>-->
+    </div>
+  </md-toolbar>
+
 
     <md-content>
       <div ui-view="content"></div>

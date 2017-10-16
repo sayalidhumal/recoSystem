@@ -2,13 +2,14 @@
 (function () {
     angular.module('AdvisorHome').controller('recommendationPathController',recommendationPathController);
 
-    recommendationPathController.$inject = ['UserService','$stateParams','_','CourseService','$stateParams','$filter','appconfig'];
+    recommendationPathController.$inject = ['UserService','$stateParams','$state'];
 
-    function recommendationPathController(UserService,$stateParams,_,CourseService,$stateParams,$filter,appconfig) {
+    function recommendationPathController(UserService,$stateParams,$state) {
         var vm=this;
         vm.coyote_id = $stateParams.coyote_id;
         vm.userDetails ={};
         vm.recommendationPath= {};
+        vm.view = view;
 
         UserService.getRecommendationDetails(vm.coyote_id).then(
             function success(response) {
@@ -19,6 +20,11 @@
             function error(response) {
 
             });
+
+        function view(quarter,year) {
+            quarter.year = year;
+            $state.go('root.advisor.advisorhome.recommendationpath.detailView',{quarter: quarter});
+        }
 
 
     }

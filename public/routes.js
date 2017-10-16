@@ -40,6 +40,11 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
 
         .state('root',{
           url:'/:userRole/:userID',
+          resolve: {
+            sidenav: function() {
+                return { menu: []};
+            }
+          },
           views:{
             '':{
               templateUrl: 'assets/layout/layout.html',
@@ -62,7 +67,10 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
         /************************ STUDENT ************************/
 
         .state('root.student',{
-            url:''
+            url:'',
+            controller: function(sidenav) {
+                this.sidenav = sidenav;
+            }
         })
 
         .state('root.student.userCourseDetails',{
@@ -124,7 +132,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
         })
 
         .state('root.student.recommendationPath.detailView',{
-            url:'/recommendation-path/detail-View',
+            url:'/detail-View',
             views:{
                 'content@root':{
                     templateUrl:'app/StudentHome/recommendationPath/detailView/detail-view.html',
@@ -305,6 +313,20 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
                     controller:'recommendationPathController',
                     controllerAs:'vm'
                 }
+            }
+        })
+
+        .state('root.advisor.advisorhome.recommendationpath.detailView',{
+            url:'/detail-View',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdvisorHome/recommendationPath/detailView/detail-view.html',
+                    controller:'AdvisorDetailViewController',
+                    controllerAs:'vm'
+                }
+            },
+            params:{
+                quarter: null
             }
         })
 

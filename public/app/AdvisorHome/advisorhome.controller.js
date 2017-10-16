@@ -15,7 +15,7 @@
         vm.history= history;
         vm.recommendation= recommendation;
         vm.coyote_id = $stateParams.coyote_id;
-        console.log($stateParams)
+        console.log($stateParams,"params")
         vm.role = $stateParams.Studentrole;
         UserService.getUser(vm.coyote_id,null).then(
             function success(response) {

@@ -98,7 +98,6 @@
 
         function view(quarter,year) {
             quarter.year = year;
-            console.log(quarter)
             $state.go('root.student.recommendationPath.detailView',{quarter: quarter});
         }
 

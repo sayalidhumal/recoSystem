@@ -37,3 +37,7 @@ md-card:first-child {
     background: #6ba0ef;
     text-align: center;
 }
+
+.topNav{
+    height: 2cm;
+}
