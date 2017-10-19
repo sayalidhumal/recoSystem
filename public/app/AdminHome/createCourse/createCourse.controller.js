@@ -15,6 +15,7 @@
         vm.course = {
             "course_id": null,
             "has_lab": '',
+            "course_type":'',
             "course_level": null,
             "units": null,
             "name": null,

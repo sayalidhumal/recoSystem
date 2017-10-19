@@ -116,6 +116,7 @@
 
     function createCourse(req, res, next){
         console.log("req obj",req.body.course)
+        req.body.course.session_no =1;
         const data = req.body.course;
         const results = [];
         var finalquery;
@@ -128,18 +129,30 @@
                 console.log(err);
                 return res.status(500).json({success: false, data: err});
             }
-            const query = client.query('INSERT INTO "course"(course_id, name, has_lab, course_level, units, course_dept) VALUES ($1,$2,$3,$4,$5,$6);',
+            const query = client.query('INSERT INTO course(course_id, name, has_lab, course_level, units, course_dept) VALUES ($1,$2,$3,$4,$5,$6);',
                 [ data.course_id,data.name,data.has_lab,data.course_level,data.units,data.course_dept]);
-            const query2 = client.query('INSERT INTO "course_schedule"(course_id,quarter, year, instructor, course_day, course_start_time, course_end_time, lab_day, lab_start_time, lab_end_time) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10);',
-                [ data.quarter,data.year,data.instructor,data.course_day,data.course_start_time,data.course_end_time,data.lab_day,data.lab_start_time,data.lab_end_time]);
-            query.on('end', function(){
-                done();
-                return res.json(results);
-            });
-            query2.on('end', function(){
-                done();
-                return res.json(results);
-            });
+            const query2 = client.query('INSERT INTO course_schedule(course_id,quarter, year, instructor, course_day, course_start_time, course_end_time, lab_day, lab_start_time, lab_end_time, session_no) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11);',
+                [ data.course_id,data.quarter,data.year,data.instructor,data.course_day,data.course_start_time,data.course_end_time,data.lab_day,data.lab_start_time,data.lab_end_time, data.session_no]);
+            if(data.course_type == 'Core'){
+                console.log("inside Core")
+                const query3 = client.query('INSERT INTO core_course(course_id) VALUES ($1));',
+                    [data.course_id]);
+                query3.on('end', function(){
+                    return res.json(results);
+                    done();
+                });
+            }
+            else if(data.course_type == 'Elective')
+            {
+                console.log("inside elective")
+                const query4 = client.query('INSERT INTO elective_course(course_id) VALUES ($1));',
+                    [data.course_id]);
+
+                query4.on('end', function(){
+                    done();
+                    return res.json(results);
+                });
+            }
         });
     }
 

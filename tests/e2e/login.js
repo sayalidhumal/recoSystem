@@ -12,8 +12,8 @@ module.exports = {
 
     'Does login successful and redirects to student home page': function (client) {
         var login = client.page.loginPage();
-        var loginProps = login.props
-        console.log(loginProps.password)
+        var loginProps = login.props;
+
         login
             .click('@CoyoteID')
             .setValue('@CoyoteID',loginProps.StudentID)

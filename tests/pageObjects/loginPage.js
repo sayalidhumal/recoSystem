@@ -2,17 +2,19 @@
  * Created by sayalidhumal on 10/11/17.
  */
 
-var login = function (login,id,password) {
-    this.api.pause(1000);
-    return login.url('http://localhost:3000/#!/login')
-        .waitForElementVisible('@Header', 1000)
-        .click('@CoyoteID')
-        .setValue('@CoyoteID',id)
-        .click('@Password')
-        .setValue('@Password',password)
-        .waitForElementVisible('@LoginButton',1000)
-        .assert.visible('@LoginButton')
-        .click('@LoginButton')
+var login = {
+    login: function (login,id,password) {
+        this.api.pause(1000);
+        return login.navigate()
+            .waitForElementVisible('@Header', 1000)
+            .click('@CoyoteID')
+            .setValue('@CoyoteID',id)
+            .click('@Password')
+            .setValue('@Password',password)
+            .waitForElementVisible('@LoginButton',1000)
+            .assert.visible('@LoginButton')
+            .click('@LoginButton')
+    }
 }
 
 

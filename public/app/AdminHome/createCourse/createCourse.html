@@ -36,16 +36,16 @@
                     </div>
 
                     <div layout-gt-sm="row">
-                        <md-input-container class="md-block" flex-gt-sm>
+                            <md-input-container class="md-block" flex-gt-sm>
                             <label>Course Level</label>
                             <md-select ng-model="vm.course.course_level">
                                 <md-option ng-value="'undergraduate'">Undergraduate</md-option>
                                 <md-option ng-value="'graduate'">Graduate</md-option>
                             </md-select>
-                        </md-input-container>
-                        <div flex="5" hide-xs hide-sm>
+                            </md-input-container>
+                            <div flex="5" hide-xs hide-sm>
                             <!-- Spacer //-->
-                        </div>
+                            </div>
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>Course Department</label>
                                 <md-select ng-model="vm.course.course_dept">
@@ -57,7 +57,14 @@
                             </div>
                             <div flex="5" hide-xs hide-sm>
                             <!-- Spacer //-->
-                        </div>
+                            </div>
+                            <md-input-container class="md-block" flex-gt-sm>
+                            <label>Course Type</label>
+                            <md-select ng-model="vm.course.course_type">
+                                <md-option ng-value="'Core'">Core</md-option>
+                                <md-option ng-value="'Elective'">Elective</md-option>
+                            </md-select>
+                            </md-input-container>
                     </div>
                     <div>
                         <p>Is it a practical course(has Lab)?</p>

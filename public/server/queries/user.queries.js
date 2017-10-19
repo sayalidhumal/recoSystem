@@ -76,8 +76,9 @@
                 console.log(err);
                 return res.status(500).json({success: false, data: err});
             }
+            //const coursesTaken = client.query("SELECT * FROM "+'"course_taken"' +"WHERE coyote_id ='" + coyote_id + "';");
+            //const coursesTaken = client.query("SELECT t.course_id,t.grade,t.coyote_id,c.units,c.name FROM"+ '"course c"','"course_taken t"'+"WHERE t.course_id = c.course_id AND t.coyote_id='" + coyote_id + "';");
             const coursesEnrolled = client.query("SELECT t.course_id,t.grade,t.coyote_id,t.quarter_year,c.units,c.name FROM course c, course_taken t where t.course_id = c.course_id AND t.coyote_id ='" + coyote_id + "';");
-
             // const studentDetails = client.query('SELECT * FROM "studentDetails" WHERE "userID" =' + userID + ';');
             //
             // studentDetails.on('row', function(row){
