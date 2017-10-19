@@ -180,9 +180,11 @@
             </md-content>
             <md-content ng-if="vm.user == undefined">
                 <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
-                    <md-card-title>
-                        No Record found
-                    </md-card-title>
+                    <md-card-content>
+                        <p>No Student record found with:</p>
+                        <p ng-if="vm.searchName !=''">Student Name: {{vm.searchName}}</p>
+                        <p ng-if="vm.searchID !=''">Coyote ID: {{vm.searchID}}</p>
+                    </md-card-content>
                 </md-card>
             </md-content>
         </md-card>

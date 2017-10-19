@@ -10,8 +10,14 @@
         vm.password=null;
         vm.form={};
         vm.error = false;
+        vm.data = {};
         vm.login = login;
         vm.register = register;
+        vm.forgot =  forgot;
+
+        function forgot() {
+            $state.go('resetPassword');
+        }
 
         function register(){
             $state.go('signup')
@@ -20,6 +26,7 @@
         function login(){
             AuthService.authenticate(vm.userID).then(
                 function success(response) {
+                    console.log(response.data[0])
                     vm.data = response.data[0];
                     if(response.data.length == 0){
                         vm.error = true

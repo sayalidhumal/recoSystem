@@ -20,7 +20,6 @@
         vm.user =[];
 
         function view(user) {
-
             $state.go('root.advisor.advisorhome', {coyote_id: vm.user.coyote_id, Studentrole: vm.userRole});
             console.log("ID",vm.user.coyote_id);
         }
@@ -28,10 +27,15 @@
         function search(searchName, searchID) {
             UserService.getUser(searchID, searchName).then(
                 function success(response) {
-                    vm.user = response.data[0];
-                    if(vm.user){
-                        UserService.getUserRole(vm.user.coyote_id).then(function success(response) {
+                    var user = response.data[0];
+                    if(user){
+                        UserService.getUserRole(user.coyote_id).then(function success(response) {
                             vm.userRole = response.data[0];
+                            if(vm.userRole !== 'student'){
+                                vm.user = undefined;
+                            }
+                            else
+                                vm.user = user
                         }, function () {
 
                         })

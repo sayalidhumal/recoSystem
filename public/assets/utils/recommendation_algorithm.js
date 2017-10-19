@@ -543,6 +543,7 @@ function RecommendationAlgo(appconfig,_,$filter) {
                             if(path[a.year][a.quarter]){
                                 var b = path[a.year][a.quarter];
                                 for(var k =0;k<b.length;k++){
+                                    //check code start here
                                     if(a.course_day == b[k].course_day) {
                                         if(a.lab_day && b[k].lab_day) {
                                             if (a.course_start_time > b[k].course_start_time) {

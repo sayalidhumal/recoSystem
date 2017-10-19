@@ -27,6 +27,17 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
+        .state('resetPassword', {
+            url: '/reset-password',
+            views:{
+                'resetPassword':{
+                    templateUrl: 'app/resetPassword/reset-password.html',
+                    controller: 'ResetPasswordController',
+                    controllerAs:'vm'
+                }
+            }
+        })
+
         .state('signup',{
           url: '/signup',
           views:{
@@ -238,6 +249,20 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
             },
             params: {
                 schedule:null
+            }
+        })
+
+        .state('root.admin.courseDetails.viewCourseDetails.addScheduleCourseDetails',{
+            url:'/add-schedule',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdminHome/modifyCourseInformation/addSchedule/addSchedule.html',
+                    controller:'AddCourseController',
+                    controllerAs:'vm'
+                }
+            },
+            params: {
+                course:null
             }
         })
 

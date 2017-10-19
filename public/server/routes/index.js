@@ -17,6 +17,8 @@ router.get('/', function(req, res, next){
 
 router.get('/login', loginQueries.getUser);
 
+router.put('/changePassword',loginQueries.changePassword);
+
 router.post('/createUser',loginQueries.createUser);
 
 router.post('/addPreference',questionnaireQueries.addPreference);
@@ -53,7 +55,11 @@ router.get('/getPrerequisite',courseQueries.getPrerequisite);
 
 router.put('/updateUser',userQueries.updateUser);
 
-router.put('/updateCourse',courseQueries.updateCourse)
+router.put('/updateCourse',courseQueries.updateCourse);
+
+router.post('/addSchedule',courseQueries.addSchedule);
+
+router.post('/resetPassword',loginQueries.resetPassword);
 
 
 module.exports = router;

@@ -26,6 +26,21 @@
             url: '/createUser',
             data:{user:User}
         })
+      }, 
+        
+      resetPassword: function (email,code) {
+          return $http({
+              method: 'POST',
+              url: '/resetPassword',
+              data:{email: email,code:code}
+          })
+      },
+      changePassword: function (password,coyoteID) {
+          return $http({
+              method: 'PUT',
+              url: '/changePassword',
+              data:{password:password,coyote_id:coyoteID}
+          })
       }
 
     }//end of outer return

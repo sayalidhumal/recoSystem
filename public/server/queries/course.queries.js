@@ -342,17 +342,37 @@
                 console.log(err);
                 return res.status(500).json({success: false, data: err});
             }
-            const query = client.query('UPDATE course_schedule SET course_day=($1), instructor=($2), course_start_time=($3), course_end_time=($4), lab_day=($5), lab_start_time=($6), lab_end_time=($7)  WHERE course_id=($8) AND quarter=($9) AND year=($10)',
+            const query = client.query('UPDATE course_schedule SET course_day=($1), instructor=($2), course_start_time=($3), course_end_time=($4), lab_day=($5), lab_start_time=($6), lab_end_time=($7) WHERE course_id=($8) AND quarter=($9) AND year=($10)',
                 [data.course_day,data.instructor,data.course_start_time,data.course_end_time,data.lab_day,data.lab_start_time,data.lab_end_time,data.course_id,data.quarter,data.year]);
             query.on('end', function(){
                 console.log("successful in updating")
                 done();
-                return res;
+                return res.json("successfull");
             });
         });
 
     }
 
+    function addSchedule(req, res, next) {
+        console.log("req obj",req.body.schedule)
+        const data = req.body.schedule;
+        const results = [];
+
+        pg.connect(connectionString, function(err, client, done){
+            // Handle connection errors
+            if(err) {
+                done();
+                console.log(err);
+                return res.status(500).json({success: false, data: err});
+            }
+            const query = client.query('INSERT INTO course_schedule(course_id,course_day,instructor,course_start_time,course_end_time,lab_day,lab_start_time,lab_end_time,quarter,year) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10);',
+                [data.course_id,data.course_day,data.instructor,data.course_start_time,data.course_end_time,data.lab_day,data.lab_start_time,data.lab_end_time,data.quarter,data.year]);
+            query.on('end', function () {
+                done();
+                return res.json("Successful");
+            });
+        });
+    }
 
     module.exports = {
         getCourse: getCourse,
@@ -363,6 +383,7 @@
         addPrerequisite:addPrerequisite,
         viewPrerequisite:viewPrerequisite,
         getPrerequisite:getPrerequisite,
-        updateCourse:updateCourse
+        updateCourse:updateCourse,
+        addSchedule:addSchedule
     };
 })();

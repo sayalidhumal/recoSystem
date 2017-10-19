@@ -25,7 +25,6 @@
             vm.schedule.lab_end_time = new Date(null, null, null,vm.time[0],vm.time[1])
         }
 
-
         // CourseService.getCourseDetailsForYear(vm.courseID,vm.currentYear,vm.nextYear).then(
         //     function success(response) {
         //
@@ -47,7 +46,6 @@
         //     function error() {
         //
         //     })
-
 
         function submit() {
             schedule = angular.copy(vm.schedule);

@@ -65,7 +65,6 @@
         });
     }
 
-
     function getEnrolledCourses(req, res, next){
         const coyote_id = req.query.coyote_id;
         console.log(coyote_id)

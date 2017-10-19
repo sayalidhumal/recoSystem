@@ -26,6 +26,7 @@
                 <p class="md-warn" ng-if="vm.error">Invalid User Name or Password</p>
                 <md-button id="loginButton" ng-disabled="vm.form.$invalid" class="md-raised md-primary" aria-label="Login" ng-click="vm.login()">Login</md-button>
             </form>
+            <md-button ng-click="vm.forgot()">forgot password?</md-button>
         </md-card-content>
     </md-card>
 </md-content>

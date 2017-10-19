@@ -15,6 +15,11 @@
         vm.nextYear = appconfig.NextYear
         vm.course = {}
         vm.editschedule = editschedule;
+        vm.addSchedule = addSchedule;
+
+        function addSchedule() {
+            $state.go('root.admin.courseDetails.viewCourseDetails.addScheduleCourseDetails',{course:vm.course});
+        }
 
         function editschedule(schedule,has_lab,course_id) {
             schedule.has_lab = has_lab;
@@ -26,7 +31,6 @@
             function success(response) {
 
                 vm.course = response.data;
-                console.log(vm.course)
                 vm.course.details = vm.course.details[0];
                 vm.course.prerequisite = vm.course.prerequisite[0]
                 for(var i=0;i<vm.course.schedule.length;i++){

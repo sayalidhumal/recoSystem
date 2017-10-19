@@ -49,6 +49,14 @@
                         url: '/updateCourse',
                         data: {schedule: schedule}
                     })
+                },
+
+                addSchedule: function (schedule) {
+                    return $http({
+                        method: 'POST',
+                        url: '/addSchedule',
+                        data: {schedule: schedule}
+                    })
                 }
 
             }//end of outer return

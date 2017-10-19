@@ -9,6 +9,7 @@
       'ngResource',
       'RecommendationAlgorithm',
       'Login',
+      'ResetPassword',
       'Signup',
       'Home',
       'Studenthome',
