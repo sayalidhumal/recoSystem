@@ -157,7 +157,6 @@
     }
 
     function addPrerequisite(req, res, next){
-        console.log("req obj",req.body.data)
         const data = req.body.data;
         const results = [];
         var finalquery;
@@ -365,11 +364,84 @@
                 console.log(err);
                 return res.status(500).json({success: false, data: err});
             }
-            const query = client.query('INSERT INTO course_schedule(course_id,course_day,instructor,course_start_time,course_end_time,lab_day,lab_start_time,lab_end_time,quarter,year) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10);',
-                [data.course_id,data.course_day,data.instructor,data.course_start_time,data.course_end_time,data.lab_day,data.lab_start_time,data.lab_end_time,data.quarter,data.year]);
+            const query = client.query('INSERT INTO course_schedule(course_id,course_day,instructor,course_start_time,course_end_time,lab_day,lab_start_time,lab_end_time,quarter,year,session_no) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11);',
+                [data.course_id,data.course_day,data.instructor,data.course_start_time,data.course_end_time,data.lab_day,data.lab_start_time,data.lab_end_time,data.quarter,data.year,1]);
             query.on('end', function () {
                 done();
                 return res.json("Successful");
+            });
+        });
+    }
+
+    function getCourseWithSchedule(req, res, next) {
+        var course_id = req.query.courseID;
+        const results = [];
+        const schedules =[]
+
+        pg.connect(connectionString, function(err, client, done){
+            if(err) {
+                done();
+                console.log(err);
+                return res.status(500).json({success: false, data: err});
+            }
+
+            const query = client.query('SELECT * FROM course  WHERE course_id = ' + course_id + ';');
+            query.on('row', function(row){
+                results.push(row);
+            });
+            const schedule = client.query('SELECT * FROM course_schedule  WHERE course_id = ' + course_id + ';')
+            schedule.on('row', function(row){
+                schedules.push(row);
+            });
+            query.on('end', function(){
+                done();
+                //return res.json(results);
+            });
+            schedule.on('end', function(){
+                done();
+                results[0].schedule = schedules
+                return res.json(results);
+            });
+        });
+    }
+
+    function deletePrerequisite(req, res, next) {
+        const coyote_id= req.query.coyote_id;
+        const course_id = req.query.course_id
+        const results = [];
+        console.log(req.params,req)
+        pg.connect(connectionString, function(err, client, done){
+            // Handle connection errors
+            if(err) {
+                done();
+                console.log(err);
+                return res.status(500).json({success: false, data: err});
+            }
+            const query = client.query('DELETE FROM "student_prerequisite" WHERE coyote_id =($1) AND course_id=($2); ',
+                [coyote_id,course_id]);
+            query.on('end', function () {
+                done();
+                return res.json(results);
+            });
+        });
+    }
+
+    function deleteCourseSchedule(req, res, next) {
+        const course= req.query.course;
+        console.log(course)
+        pg.connect(connectionString, function(err, client, done){
+            // Handle connection errors
+            if(err) {
+                done();
+                console.log(err);
+                return res.status(500).json({success: false, data: err});
+            }
+            const query = client.query('DELETE FROM "course_schedule" WHERE course_id =($1) AND quarter=($2) AND year=($3) AND session_no=($4); ',
+                [course.course_id,course.quarter,course.year,course.session_no]);
+            query.on('end', function () {
+                done();
+                console.log("success")
+                return res.json("success");
             });
         });
     }
@@ -384,6 +456,9 @@
         viewPrerequisite:viewPrerequisite,
         getPrerequisite:getPrerequisite,
         updateCourse:updateCourse,
-        addSchedule:addSchedule
+        addSchedule:addSchedule,
+        getCourseWithSchedule:getCourseWithSchedule,
+        deletePrerequisite: deletePrerequisite,
+        deleteCourseSchedule:deleteCourseSchedule
     };
 })();

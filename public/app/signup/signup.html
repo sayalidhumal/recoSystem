@@ -6,153 +6,146 @@
       </div>
     </md-toolbar>
       <body ng-controller="SignUpController">
-    <md-card-content>
-      <form name="vm.form">
-        <md-content>
-          <div layout-gt-sm="row">
-            <md-input-container class="md-block" flex-gt-sm>
-              <label>First Name</label>
-              <input type="text" name="firstname" ng-model="vm.firstname">
-              <div ng-messages="vm.form.firstname.$error" role="alert" multiple="">
-                <div ng-message="required" class="my-message">Please enter your first name.</div>
-              </div>
-            </md-input-container>
-            <div flex="5" hide-xs hide-sm>
-              <!-- Spacer //-->
-            </div>
-            <md-input-container class="md-block" flex-gt-sm>
-              <label>Middle Name</label>
-              <input type="text" name="middlename" ng-model="vm.middlename">
-            </md-input-container>
-            <div flex="5" hide-xs hide-sm>
-              <!-- Spacer //-->
-            </div>
-            <md-input-container class="md-block" flex-gt-sm>
-              <label>Last Name</label>
-              <input type="text" name="lastname" ng-model="vm.lastname">
-              <div ng-messages="vm.form.lastname.$error" role="alert" multiple="">
-                <div ng-message="required" class="my-message">Please enter your last name.</div>
-              </div>
-            </md-input-container>
-          </div>
-
-          <div layout-gt-sm="row">
-              <md-input-container class="md-block" flex-gt-sm>
-                  <label>Coyote ID</label>
-                  <input type="number" ng-maxlength=10 name="userID" ng-model="vm.user.userID">
-                  <div ng-messages="vm.form.userID.$error" role="alert" multiple="">
-                      <div ng-message="required" class="my-message">Please enter your coyote ID.</div>
-                  </div>
-              </md-input-container>
-              <div flex="5" hide-xs hide-sm>
-                  <!-- Spacer //-->
-              </div>
-
-              <md-input-container class="md-block" flex-gt-sm>
-                  <label>Email</label>
-                  <input type="email" name="email" ng-model="vm.user.email">
-                  <div ng-messages="vm.form.email.$error" role="alert" multiple="">
-                    <div ng-message="required" class="my-message">Please enter your email.</div>
-                  </div>
-              </md-input-container>
-              <div flex="5" hide-xs hide-sm>
-                  <!-- Spacer //-->
-              </div>
-          </div>
-
-
-        <md-input-container class="md-block">
-            <label>Password</label>
-            <input type="password" name="password" ng-model="vm.user.password" id="password">
-            <ul id="strength" check-strength="password"></ul>
-            <div ng-messages="vm.form.password.$error" role="alert" multiple="">
-                <div ng-message="required" class="my-message">Please enter your password.</div>
-            </div>
-        </md-input-container>
-            <div>
-                <md-input-container>
-                    <label>Residency</label>
-                    <md-select ng-model="vm.user.residency">
-                        <md-option ng-value=0>US Citizen</md-option>
-                        <md-option ng-value=1>International</md-option>
-                    </md-select>
-                </md-input-container>
-                <div flex="5" hide-xs hide-sm>
-                    <!-- Spacer //-->
+        <md-card-content>
+          <form name="vm.form">
+            <md-content>
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>First Name</label>
+                        <input type="text" name="firstname" ng-model="vm.firstname">
+                        <div ng-messages="vm.form.firstname.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter your first name.</div>
+                        </div>
+                    </md-input-container>
+                    <div flex="5" hide-xs hide-sm>
+                        <!-- Spacer //-->
+                    </div>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Middle Name</label>
+                        <input type="text" name="middlename" ng-model="vm.middlename">
+                    </md-input-container>
+                    <div flex="5" hide-xs hide-sm>
+                        <!-- Spacer //-->
+                    </div>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Last Name</label>
+                        <input type="text" name="lastname" ng-model="vm.lastname">
+                        <div ng-messages="vm.form.lastname.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter your last name.</div>
+                        </div>
+                    </md-input-container>
                 </div>
-                <md-input-container>
-                    <label>Enrollment Status</label>
-                    <md-select ng-model="vm.user.ft_pt">
-                        <md-option ng-value=0>Full Time</md-option>
-                        <md-option ng-value=1>Part Time</md-option>
-                    </md-select>
-                </md-input-container>
-            </div>
+                <div layout-gt-sm="row">
+                  <md-input-container class="md-block" flex-gt-sm>
+                      <label>Coyote ID</label>
+                      <input type="number" ng-maxlength=10 name="userID" ng-model="vm.user.userID">
+                      <div ng-messages="vm.form.userID.$error" role="alert" multiple="">
+                          <div ng-message="required" class="my-message">Please enter your coyote ID.</div>
+                      </div>
+                  </md-input-container>
+                  <div flex="5" hide-xs hide-sm>
+                      <!-- Spacer //-->
+                  </div>
 
-            <div layout-gt-sm="row">
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label>Phone Number</label>
-                    <input type="number" ng-maxlength="10" ng-minlength="10" name="phone" ng-model="vm.user.phone">
-                    <div ng-messages="vm.form.phone.$error" role="alert" multiple="">
-                        <div ng-message="required" class="my-message">Please enter your phone.</div>
+                  <md-input-container class="md-block" flex-gt-sm>
+                      <label>Email</label>
+                      <input type="email" name="email" ng-model="vm.user.email">
+                      <div ng-messages="vm.form.email.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Please enter your email.</div>
+                      </div>
+                  </md-input-container>
+                  <div flex="5" hide-xs hide-sm>
+                      <!-- Spacer //-->
+                  </div>
+                </div>
+                <md-input-container class="md-block">
+                    <label>Password</label>
+                    <input type="password" name="password" ng-model="vm.user.password" id="password">
+                    <ul id="strength" check-strength="password"></ul>
+                    <div ng-messages="vm.form.password.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Please enter your password.</div>
                     </div>
                 </md-input-container>
+                <div>
+                    <md-input-container class="md-block">
+                        <label>Residency</label>
+                        <md-select ng-model="vm.user.residency">
+                            <md-option ng-value=0>US Citizen</md-option>
+                            <md-option ng-value=1>International</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <div flex="5" hide-xs hide-sm>
+                        <!-- Spacer //-->
+                    </div>
+                    <md-input-container class="md-block">
+                        <label>Enrollment Status</label>
+                        <md-select ng-model="vm.user.ft_pt">
+                            <md-option ng-value=0>Full Time</md-option>
+                            <md-option ng-value=1>Part Time</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Phone Number</label>
+                        <input type="number" ng-maxlength="10" ng-minlength="10" name="phone" ng-model="vm.user.phone">
+                        <div ng-messages="vm.form.phone.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter your phone.</div>
+                        </div>
+                    </md-input-container>
+                    <div flex="5" hide-xs hide-sm>
+                        <!-- Spacer //-->
+                    </div>
+                    <md-datepicker ng-model="vm.user.dateOfBirth" md-placeholder="Birth Date" flex-gt-sm md-min-date="vm.minDate" md-max-date="vm.maxDate"></md-datepicker>
+                </div>
+                <md-input-container class="md-block">
+                    <label>Street Address</label>
+                    <input type="text" name="address" ng-model="vm.user.address.Address">
+                    <div ng-messages="vm.form.address.$error" role="alert" multiple="">
+                      <div ng-message="required" class="my-message">Please enter your Address.</div>
+                    </div>
+                </md-input-container>
+
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block">
+                      <label>City</label>
+                      <input type="text" name="city" ng-model="vm.user.address.City">
+                      <div ng-messages="vm.form.city.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Please enter your City.</div>
+                      </div>
+                    </md-input-container>
+                    <div flex="5" hide-xs hide-sm>
+                  <!-- Spacer //-->
+                    </div>
+                    <md-input-container class="md-block">
+                        <label>State</label>
+                        <md-select ng-model="vm.user.address.State">
+                            <md-option><em>None</em></md-option>
+                            <md-option ng-repeat="state in vm.states" ng-selected="true" ng-value="state.abbrev" ng-disabled="$index === 1">
+                                {{state.abbrev}}
+                            </md-option>
+                        </md-select>
+                        <div ng-message="required" class="my-message">Please select your State</div>
+                    </md-input-container>
+                    <div flex="5" hide-xs hide-sm>
+                  <!-- Spacer //-->
+                    </div>
+                    <md-input-container class="md-block">
+                      <label>Zip Code</label>
+                      <input type="number" name="zip" ng-model="vm.user.address.Pin">
+                      <div ng-messages="vm.form.zip.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Please enter your Zip Code.</div>
+                      </div>
+                    </md-input-container>
+                </div>
                 <div flex="5" hide-xs hide-sm>
                     <!-- Spacer //-->
                 </div>
-                <md-datepicker ng-model="vm.user.dateOfBirth" md-placeholder="Birth Date" flex-gt-sm md-min-date="vm.minDate" md-max-date="vm.maxDate"></md-datepicker>
-            </div>
-            <md-input-container class="md-block">
-                <label>Address Line</label>
-                <input type="text" name="address" ng-model="vm.user.address.Address">
-                <div ng-messages="vm.form.address.$error" role="alert" multiple="">
-                  <div ng-message="required" class="my-message">Please enter your Address.</div>
-                </div>
-            </md-input-container>
-
-            <div layout-gt-sm="row">
-                <md-input-container class="md-block">
-                  <label>City</label>
-                  <input type="text" name="city" ng-model="vm.user.address.City">
-                  <div ng-messages="vm.form.city.$error" role="alert" multiple="">
-                    <div ng-message="required" class="my-message">Please enter your City.</div>
-                  </div>
-                </md-input-container>
-                <div flex="5" hide-xs hide-sm>
-              <!-- Spacer //-->
-                </div>
-                <md-input-container class="md-block">
-                    <label>State</label>
-                    <md-select ng-model="vm.user.address.State">
-                        <md-option><em>None</em></md-option>
-                        <md-option ng-repeat="state in vm.states" ng-selected="true" ng-value="state.abbrev" ng-disabled="$index === 1">
-                            {{state.abbrev}}
-                        </md-option>
-                    </md-select>
-                    <div ng-message="required" class="my-message">Please select your State</div>
-                  </div>
-                </md-input-container>
-                <div flex="5" hide-xs hide-sm>
-              <!-- Spacer //-->
-                </div>
-                <md-input-container class="md-block">
-                  <label>Zip Code</label>
-                  <input type="number" name="zip" ng-model="vm.user.address.Pin">
-                  <div ng-messages="vm.form.zip.$error" role="alert" multiple="">
-                    <div ng-message="required" class="my-message">Please enter your Zip Code.</div>
-                  </div>
-                </md-input-container>
-            </div>
-            <div flex="5" hide-xs hide-sm>
-                <!-- Spacer //-->
-            </div>
-            <md-checkbox ng-model="vm.isChecked" aria-label="By clicking this checkbox you confirm all the details are correct and up-to-date, please review the information before you submit" required>
-                By clicking this checkbox you confirm all the details are correct and up-to-date, please review the information before you submit.
-            </md-checkbox>
-
-        </md-content>
-
-      </form>
+                <md-checkbox ng-model="vm.isChecked" aria-label="By clicking this checkbox you confirm all the details are correct and up-to-date, please review the information before you submit" required>
+                    Please review the information before you submit. By clicking this checkbox you confirm all the details are correct and up-to-date.
+                </md-checkbox>
+            </md-content>
+          </form>
         <md-button type="submit" ng-disabled="vm.form.$invalid" class="md-raised md-primary" ng-click="vm.create()">Create Account</md-button>
         <md-button ng-click="vm.cancel()">Cancel</md-button>
     </md-card-content>

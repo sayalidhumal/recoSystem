@@ -32,7 +32,7 @@
                                             <p ng-if="!schedule.lab_day">Lab Day: ONLINE</p>
                                         </div>
                                         <md-button class="md-raised md-primary" ng-click="vm.editschedule(schedule,vm.course.details.has_lab,vm.course.details.course_id)">Edit</md-button>
-                                        <md-button class="md-raised md-primary">Delete</md-button>
+                                        <md-button class="md-raised md-primary" ng-click="vm.deleteCourseSchedule($event,schedule.quarter,schedule.year,schedule)">Delete</md-button>
                                     </md-content>
 
                                 </md-card>

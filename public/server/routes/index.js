@@ -15,6 +15,8 @@ router.get('/', function(req, res, next){
     __dirname, '..','..','index.html'));
 });
 
+
+
 router.get('/login', loginQueries.getUser);
 
 router.put('/changePassword',loginQueries.changePassword);
@@ -33,6 +35,8 @@ router.get('/getUserRole',userQueries.getUserRole);
 
 router.get('/getCourse',courseQueries.getCourse);
 
+router.get('/getCourseWithSchedule',courseQueries.getCourseWithSchedule);
+
 router.get('/getCourseType',courseQueries.getCourseType);
 
 router.get('/getCourseDetailsForYear',courseQueries.getCourseDetailsForYear);
@@ -41,11 +45,17 @@ router.get('/getRecommendationDetails',userQueries.getRecommendationDetails);
 
 router.get('/getUser',userQueries.getUser);
 
+router.delete('/deleteUser',userQueries.deleteUser);
+
 router.get('/getAllCourses',courseQueries.getAllCourses);
 
 router.post('/createCourses',courseQueries.createCourse);
 
+router.delete('/deleteCourseSchedule',courseQueries.deleteCourseSchedule);
+
 router.post('/addPrerequisite',courseQueries.addPrerequisite);
+
+router.delete('/deletePrerequisite',courseQueries.deletePrerequisite);
 
 router.put('/addRecommendationPath',userQueries.addRecommendationPath);
 

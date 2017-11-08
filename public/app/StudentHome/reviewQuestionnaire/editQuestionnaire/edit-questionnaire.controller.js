@@ -106,15 +106,15 @@
                                         }
                                     }
 
-                                    vm.recommendationPath = RecommendationAlgo.createPath(vm.userDetails,vm.coursesData);
+                                    var path = RecommendationAlgo.createPath(vm.userDetails,vm.coursesData);
+                                    vm.recommendationPath = path[0].path;
+                                    console.log(path);
 
-                                    console.log(vm.recommendationPath)
+                                    UserService.addRecommendationPath(path,vm.coyote_id).then(function success(response) {
 
-                                    // UserService.addRecommendationPath(vm.recommendationPath,vm.coyote_id).then(function success(response) {
-                                    //
-                                    // },function error() {
-                                    //
-                                    // })
+                                    },function error() {
+
+                                    })
 
 
                                     //  prerequisites(vm.userDetails,vm.coursesData.core,vm.coursesData.prerequisites);

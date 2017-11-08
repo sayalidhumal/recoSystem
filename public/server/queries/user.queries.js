@@ -114,7 +114,6 @@
             if(coyote_id){
                 const query = client.query("SELECT * FROM "+ '"user"' + "WHERE coyote_id = '" + coyote_id + "';");
                 query.on('row', function(row){
-                    //results.push({type:"elective"});
                     results.push(row);
                 });
                 query.on('end', function(){
@@ -224,7 +223,7 @@
     function addRecommendationPath(req, res, next) {
         const data = req.body.path;
         const coyote_id = req.body.coyote_id;
-        console.log(data)
+
         pg.connect(connectionString, function(err, client, done) {
             // Handle connection errors
             if (err) {
@@ -238,7 +237,7 @@
 
             query.on('end', function(){
                 done();
-                return res;
+                return res.json("success");
             });
 
         })
@@ -259,10 +258,29 @@
             query.on('end', function(){
                 console.log("successful in updating");
                 done();
-                return res;
+                return res.json("success");
             });
         });
 
+    }
+
+    function deleteUser(req, res, next) {
+        const coyote_id= req.query.coyote_id;
+        console.log("inside")
+        pg.connect(connectionString, function(err, client, done){
+            // Handle connection errors
+            if(err) {
+                done();
+                console.log(err);
+                return res.status(500).json({success: false, data: err});
+            }
+            const query = client.query('DELETE FROM "user" WHERE coyote_id =($1); ',
+                [coyote_id]);
+            query.on('end', function () {
+                done();
+                return res.json("success");
+            });
+        });
     }
 
     module.exports = {
@@ -271,7 +289,8 @@
         getRecommendationDetails: getRecommendationDetails,
         getUser:getUser,
         addRecommendationPath: addRecommendationPath,
-        updateUser: updateUser
+        updateUser: updateUser,
+        deleteUser:deleteUser
     };
 })();
 

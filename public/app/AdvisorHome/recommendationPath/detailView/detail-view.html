@@ -2,449 +2,449 @@
     <md-card>
         <md-card-content>
             <md-content>
-                    <table border="1" md-table style="display: inline-block;">
-                        <thead md-head>
+                <table border="1" md-table style="display: inline-block;">
+                    <thead md-head>
+                    <tr md-row>
+                        <th class="detailviewHeader" md-column>Time</th>
+                        <th class="detailviewHeader" md-column>Monday</th>
+                        <th class="detailviewHeader" md-column>Tuesday</th>
+                        <th class="detailviewHeader" md-column>Wednesday</th>
+                        <th class="detailviewHeader" md-column>Thursday</th>
+                        <th class="detailviewHeader" md-column>Friday</th>
+                    </tr>
+                    </thead>
+                    <tbody md-body>
                         <tr md-row>
-                            <th class="detailviewHeader" md-column>Time</th>
-                            <th class="detailviewHeader" md-column>Monday</th>
-                            <th class="detailviewHeader" md-column>Tuesday</th>
-                            <th class="detailviewHeader" md-column>Wednesday</th>
-                            <th class="detailviewHeader" md-column>Thursday</th>
-                            <th class="detailviewHeader" md-column>Friday</th>
+                            <th class="detailviewHeader" md-cell>08:00 AM</th>
+                            <td md-cell ng-repeat="day in vm.day">
+                                <div ng-repeat="schedule in vm.quarter.schedule">
+                                    <div ng-switch="day">
+                                        <div ng-switch-when="M">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'08:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}}</p>
+                                            </div>
+                                        </div>
+                                        <div ng-switch-when="T">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'08:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
+                                            </div>
+                                        </div>
+                                        <div ng-switch-when="W">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'08:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
+                                            </div>
+                                        </div>
+                                        <div ng-switch-when="TH">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'08:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
+                                            </div>
+                                        </div>
+                                        <div ng-switch-when="F">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'08:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
-                        </thead>
-                        <tbody md-body>
-                            <tr md-row>
-                                <th class="detailviewHeader" md-cell>08:00 AM</th>
-                                <td md-cell ng-repeat="day in vm.day">
-                                    <div ng-repeat="schedule in vm.quarter.schedule">
-                                        <div ng-switch="day">
-                                            <div ng-switch-when="M">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'08:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}}</p>
-                                                </div>
+                        <tr md-row>
+                            <th class="detailviewHeader" md-cell>09:00 AM</th>
+                            <td md-cell ng-repeat="day in vm.day">
+                                <div ng-repeat="schedule in vm.quarter.schedule">
+                                    <div ng-switch="day">
+                                        <div ng-switch-when="M">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'09:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="T">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'08:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="T">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'09:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="W">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'08:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="W">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'09:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="TH">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'08:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="TH">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'09:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="F">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'08:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="F">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'09:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr md-row>
-                                <th class="detailviewHeader" md-cell>09:00 AM</th>
-                                <td md-cell ng-repeat="day in vm.day">
-                                    <div ng-repeat="schedule in vm.quarter.schedule">
-                                        <div ng-switch="day">
-                                            <div ng-switch-when="M">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'09:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr md-row>
+                            <th class="detailviewHeader" md-cell>10:00 AM</th>
+                            <td md-cell ng-repeat="day in vm.day">
+                                <div ng-repeat="schedule in vm.quarter.schedule">
+                                    <div ng-switch="day">
+                                        <div ng-switch-when="M">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'10:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="T">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'09:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="T">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'10:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="W">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'09:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="W">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'10:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="TH">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'09:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="TH">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'10:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="F">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'09:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="F">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'10:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr md-row>
-                                <th class="detailviewHeader" md-cell>10:00 AM</th>
-                                <td md-cell ng-repeat="day in vm.day">
-                                    <div ng-repeat="schedule in vm.quarter.schedule">
-                                        <div ng-switch="day">
-                                            <div ng-switch-when="M">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'10:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr md-row>
+                            <th class="detailviewHeader" md-cell>11:00 AM</th>
+                            <td md-cell ng-repeat="day in vm.day">
+                                <div ng-repeat="schedule in vm.quarter.schedule">
+                                    <div ng-switch="day">
+                                        <div ng-switch-when="M">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'11:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="T">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'10:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="T">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'11:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="W">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'10:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="W">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'11:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="TH">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'10:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="TH">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'11:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="F">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'10:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="F">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'11:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr md-row>
-                                <th class="detailviewHeader" md-cell>11:00 AM</th>
-                                <td md-cell ng-repeat="day in vm.day">
-                                    <div ng-repeat="schedule in vm.quarter.schedule">
-                                        <div ng-switch="day">
-                                            <div ng-switch-when="M">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'11:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr md-row>
+                            <th class="detailviewHeader" md-cell>12:00 PM</th>
+                            <td md-cell ng-repeat="day in vm.day">
+                                <div ng-repeat="schedule in vm.quarter.schedule">
+                                    <div ng-switch="day">
+                                        <div ng-switch-when="M">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'12:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="T">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'11:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="T">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'12:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="W">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'11:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="W">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'12:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="TH">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'11:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="TH">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'12:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="F">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'11:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="F">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'12:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr md-row>
-                                <th class="detailviewHeader" md-cell>12:00 PM</th>
-                                <td md-cell ng-repeat="day in vm.day">
-                                    <div ng-repeat="schedule in vm.quarter.schedule">
-                                        <div ng-switch="day">
-                                            <div ng-switch-when="M">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'12:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr md-row>
+                            <th class="detailviewHeader" md-cell>01:00 PM</th>
+                            <td md-cell ng-repeat="day in vm.day">
+                                <div ng-repeat="schedule in vm.quarter.schedule">
+                                    <div ng-switch="day">
+                                        <div ng-switch-when="M">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'13:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="T">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'12:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="T">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'13:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="W">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'12:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="W">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'13:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="TH">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'12:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="TH">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'13:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="F">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'12:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="F">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'13:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr md-row>
-                                <th class="detailviewHeader" md-cell>01:00 PM</th>
-                                <td md-cell ng-repeat="day in vm.day">
-                                    <div ng-repeat="schedule in vm.quarter.schedule">
-                                        <div ng-switch="day">
-                                            <div ng-switch-when="M">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'13:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr md-row>
+                            <th class="detailviewHeader" md-cell>02:00 PM</th>
+                            <td md-cell ng-repeat="day in vm.day">
+                                <div ng-repeat="schedule in vm.quarter.schedule">
+                                    <div ng-switch="day">
+                                        <div ng-switch-when="M">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'14:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="T">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'13:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="T">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'14:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="W">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'13:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="W">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'14:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="TH">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'13:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="TH">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'14:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="F">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'13:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="F">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'14:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr md-row>
-                                <th class="detailviewHeader" md-cell>02:00 PM</th>
-                                <td md-cell ng-repeat="day in vm.day">
-                                    <div ng-repeat="schedule in vm.quarter.schedule">
-                                        <div ng-switch="day">
-                                            <div ng-switch-when="M">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'14:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr md-row>
+                            <th class="detailviewHeader" md-cell>03:00 PM</th>
+                            <td md-cell ng-repeat="day in vm.day">
+                                <div ng-repeat="schedule in vm.quarter.schedule">
+                                    <div ng-switch="day">
+                                        <div ng-switch-when="M">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'15:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="T">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'14:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="T">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'15:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="W">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'14:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="W">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'15:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="TH">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'14:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="TH">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'15:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="F">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'14:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="F">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'15:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr md-row>
-                                <th class="detailviewHeader" md-cell>03:00 PM</th>
-                                <td md-cell ng-repeat="day in vm.day">
-                                    <div ng-repeat="schedule in vm.quarter.schedule">
-                                        <div ng-switch="day">
-                                            <div ng-switch-when="M">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'15:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr md-row>
+                            <th class="detailviewHeader" md-cell>04:00  PM</th>
+                            <td md-cell ng-repeat="day in vm.day">
+                                <div ng-repeat="schedule in vm.quarter.schedule">
+                                    <div ng-switch="day">
+                                        <div ng-switch-when="M">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'16:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="T">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'15:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="T">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'16:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="W">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'15:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="W">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'16:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="TH">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'15:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="TH">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'16:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="F">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'15:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="F">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'16:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr md-row>
-                                <th class="detailviewHeader" md-cell>04:00  PM</th>
-                                <td md-cell ng-repeat="day in vm.day">
-                                    <div ng-repeat="schedule in vm.quarter.schedule">
-                                        <div ng-switch="day">
-                                            <div ng-switch-when="M">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'16:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr md-row>
+                            <th class="detailviewHeader" md-cell>05:00 PM</th>
+                            <td md-cell ng-repeat="day in vm.day">
+                                <div ng-repeat="schedule in vm.quarter.schedule">
+                                    <div ng-switch="day">
+                                        <div ng-switch-when="M">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'17:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="T">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'16:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="T">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'17:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="W">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'16:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="W">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'17:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="TH">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'16:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="TH">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'17:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="F">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'16:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="F">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'17:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr md-row>
-                                <th class="detailviewHeader" md-cell>05:00 PM</th>
-                                <td md-cell ng-repeat="day in vm.day">
-                                    <div ng-repeat="schedule in vm.quarter.schedule">
-                                        <div ng-switch="day">
-                                            <div ng-switch-when="M">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'17:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr md-row>
+                            <th class="detailviewHeader" md-cell>06:00 PM</th>
+                            <td md-cell ng-repeat="day in vm.day">
+                                <div ng-repeat="schedule in vm.quarter.schedule">
+                                    <div ng-switch="day">
+                                        <div ng-switch-when="M">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'18:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="T">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'17:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="T">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'18:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="W">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'17:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="W">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'18:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="TH">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'17:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="TH">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'18:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
-                                            <div ng-switch-when="F">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'17:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
+                                        </div>
+                                        <div ng-switch-when="F">
+                                            <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'18:')">
+                                                <label>{{schedule.course_id}} {{schedule.name}}</label>
+                                                <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
                                             </div>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr md-row>
-                                <th class="detailviewHeader" md-cell>06:00 PM</th>
-                                <td md-cell ng-repeat="day in vm.day">
-                                    <div ng-repeat="schedule in vm.quarter.schedule">
-                                        <div ng-switch="day">
-                                            <div ng-switch-when="M">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Monday') && vm.contains(schedule.course_start_time,'18:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
-                                            </div>
-                                            <div ng-switch-when="T">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Tuesday') && vm.contains(schedule.course_start_time,'18:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
-                                            </div>
-                                            <div ng-switch-when="W">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Wednesday') && vm.contains(schedule.course_start_time,'18:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
-                                            </div>
-                                            <div ng-switch-when="TH">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Thursday') && vm.contains(schedule.course_start_time,'18:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
-                                            </div>
-                                            <div ng-switch-when="F">
-                                                <div class="courseDetailview" ng-if="vm.contains(schedule.course_day,'Friday') && vm.contains(schedule.course_start_time,'18:')">
-                                                    <label>{{schedule.course_id}} {{schedule.name}}</label>
-                                                    <p>{{schedule.course_start_time}} - {{schedule.course_end_time}}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </md-content>
         </md-card-content>
     </md-card>

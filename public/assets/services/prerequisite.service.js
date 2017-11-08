@@ -32,6 +32,14 @@
                         url: '/getPrerequisite'
                     })
 
+                },
+
+                deletePrerequisite:function (coyote_id,course_id) {
+                    return $http({
+                        method: 'DELETE',
+                        url: '/deletePrerequisite',
+                        params: {coyote_id:coyote_id,course_id:course_id}
+                    })
                 }
 
             }//end of outer return

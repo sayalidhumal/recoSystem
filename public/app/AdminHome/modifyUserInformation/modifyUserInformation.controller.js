@@ -12,11 +12,12 @@
         vm.form = {};
         vm.searchName = '';
         vm.searchID = '';
-        vm.search = search;
         vm.course = [];
         vm.user=[];
-        vm.role=""
+        vm.role="";
+        vm.error = false;
         vm.view =view;
+        vm.search = search;
 
         function view(user) {
             console.log(user)
@@ -24,15 +25,19 @@
         }
 
         function search(searchName,searchID) {
+            vm.error = false;
             UserService.getUser(searchID,searchName).then(
                 function success(response) {
-                    vm.user = response.data[0];
-                    console.log(vm.user);
-                    UserService.getUserRole(vm.user.coyote_id).then(function success(response) {
-                        vm.role = response.data[0];
-                    },function () {
+                    if(response.data.length !=0){
+                        vm.user = response.data[0];
+                        UserService.getUserRole(vm.user.coyote_id).then(function success(response) {
+                            vm.role = response.data[0];
+                        },function () {
 
-                    })
+                        })
+                    }else {
+                        vm.error = true;
+                    }
 
                 },function error(response) {
                     console.log(response);

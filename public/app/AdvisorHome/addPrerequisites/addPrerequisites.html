@@ -11,12 +11,14 @@
                 <tr md-row>
                     <th md-column><span>Course ID</span></th>
                     <th md-column><span>Course Name</span></th>
+                    <th md-column></th>
                 </tr>
                 </thead>
                 <tbody md-body>
                 <tr md-row ng-repeat="course in vm.prerequisite" ng-if="vm.prerequisite.length!=0">
                     <td md-cell><span>{{course.course_id}}</span></td>
                     <td md-cell><span>{{course.name}}</span></td>
+                    <td md-cell><md-button ng-click=vm.delete(course.course_id)><i class="material-icons">delete</i></md-button></td>
                 </tr>
                 </tbody>
             </table>

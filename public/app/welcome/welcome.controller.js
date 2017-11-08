@@ -9,7 +9,7 @@
 
     function WelcomeController(){
         var vm =this;
-        vm.title = "Welcome to Course Recommendation System"
+        vm.title = "Welcome to CSE MSCS Course Recommendation System"
         vm.welcomeNote = "This system will help you in planning what courses to take when to successfully graduate on time.";
     }
 })();

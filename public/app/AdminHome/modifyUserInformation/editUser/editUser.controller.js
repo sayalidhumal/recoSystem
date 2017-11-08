@@ -60,7 +60,8 @@
             console.log("submit",vm.user);
             UserService.updateUser(vm.user).then(
                 function success(response) {
-                    console.log("Successful operation")
+                    console.log("updated")
+                    $state.go('root.admin.userDetails.viewUserDetails',{coyote_id: vm.coyote_id,role:vm.role});
                 },
                 function error() {
 

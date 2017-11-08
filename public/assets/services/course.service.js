@@ -57,6 +57,22 @@
                         url: '/addSchedule',
                         data: {schedule: schedule}
                     })
+                },
+
+                getCourseWithSchedule:function (courseID) {
+                    return $http({
+                        method: 'GET',
+                        url:'/getCourseWithSchedule',
+                        params: {courseID: courseID}
+                    })
+                },
+
+                deleteCourseSchedule: function (course) {
+                    return  $http({
+                        method: 'DELETE',
+                        url: '/deleteCourseSchedule',
+                        params: {course: course}
+                    })
                 }
 
             }//end of outer return

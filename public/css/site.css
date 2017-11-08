@@ -38,6 +38,37 @@ md-card:first-child {
     text-align: center;
 }
 
-.topNav{
+#student.topNav{
+    background-color: #5F9EA0;
     height: 2cm;
+}
+#advisor.topNav{
+    background-color: #4682B4;
+    height: 2cm;
+}
+#administrator.topNav{
+    background-color: #4054ae;
+    height: 2cm;
+}
+
+.core-class{
+    background-color: lightcyan;
+}
+
+.default-color{
+    background-color: transparent
+}
+
+.gpa-class{
+    color: red;
+    text-align: right;
+    padding-right: 10cm;
+    padding-top: 1cm;
+}
+
+.default-gpa-color{
+    color: transparent;
+    text-align: right;
+    padding-right: 10cm;
+    padding-top: 1cm;
 }

@@ -19,7 +19,6 @@
 
         UserService.getEnrolledCourses(vm.coyote_id).then(function success(response) {
                 vm.userCourseDetails = response.data;
-                console.log("userDetails",vm.userCourseDetails);
                 vm.coursesTaken=[];
                 vm.coursesEnrolled=[];
                 for(var i=0;i<vm.userCourseDetails.length;i++){
@@ -29,7 +28,7 @@
                         vm.coursesEnrolled.push(vm.userCourseDetails[i]);
                     }
                 }
-                console.log("courseTaken",vm.coursesTaken,vm.coursesEnrolled);
+
                 vm.gradePointAverage = gradePointAverageCalculate(vm.coursesTaken);
                 vm.coursesTaken = displayFormat(vm.coursesTaken);
             },
@@ -61,7 +60,8 @@
                 }
             }
             if(gradepoints){
-                gradePointAverage = gradepoints / totalUnitstaken;
+                gradePointAverage = 2;
+                //gradePointAverage = gradepoints / totalUnitstaken;
             }
 
             return gradePointAverage;

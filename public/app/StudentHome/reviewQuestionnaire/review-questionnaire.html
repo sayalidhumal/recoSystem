@@ -6,144 +6,144 @@
             </div>
         </md-toolbar>
         <md-card-content>
-                <md-content>
+            <md-content>
+                <div>
+                    <md-button class="md-raised md-primary" aria-label="Login" ng-click="vm.edit(vm.coyote_id)" style="float: right;">Edit Questionnaire</md-button>
+                </div>
+                <div>
+                    <p><em><b></b></em></p>
+                    <p><b>What is your degree option? (Please Select One)</b></p>
                     <div>
-                        <md-button class="md-raised md-primary" aria-label="Login" ng-click="vm.edit(vm.coyote_id)" style="float: right;">Edit Questionnaire</md-button>
+                        <p>
+                            <md-icon class="material-icons" ng-if="vm.preference.preference.degree_preference == 'Project'">radio_button_checked</md-icon>
+                            <md-icon  class="material-icons" ng-if="vm.preference.preference.degree_preference != 'Project'">radio_button_unchecked</md-icon >
+                            Project
+                        </p>
+
+                        <p>
+                            <md-icon  class="material-icons" ng-if="vm.preference.preference.degree_preference == 'Thesis'">radio_button_checked</md-icon >
+                            <md-icon  class="material-icons" ng-if="vm.preference.preference.degree_preference != 'Thesis'">radio_button_unchecked</md-icon >
+                            Thesis
+                        </p>
+                        <p>
+                            <md-icon  class="material-icons" ng-if="vm.preference.preference.degree_preference == 'Comprehensive Exam'">radio_button_checked</md-icon >
+                            <md-icon  class="material-icons" ng-if="vm.preference.preference.degree_preference != 'Comprehensive Exam'">radio_button_unchecked</md-icon >
+                            Comprehensive Exam
+                        </p>
                     </div>
+                    <md-divider></md-divider>
+
+                    <p><b>For Elective Courses, What are your Preferences?</b></p>
                     <div>
-                        <p><em><b></b></em></p>
-                        <p><b>What is your degree option? (Please Select One)</b></p>
-                        <div>
-                            <p>
-                                <md-icon class="material-icons" ng-if="vm.preference.preference.degree_preference == 'Project'">radio_button_checked</md-icon>
-                                <md-icon  class="material-icons" ng-if="vm.preference.preference.degree_preference != 'Project'">radio_button_unchecked</md-icon >
-                                Project
-                            </p>
+                        <p>
+                            <md-icon class="material-icons" ng-if="vm.preference.preference.lecture_preference">radio_button_checked</md-icon>
+                            <md-icon  class="material-icons" ng-if="!vm.preference.preference.lecture_preference">radio_button_unchecked</md-icon >
+                            Lecture and Lab
+                        </p>
 
-                            <p>
-                                <md-icon  class="material-icons" ng-if="vm.preference.preference.degree_preference == 'Thesis'">radio_button_checked</md-icon >
-                                <md-icon  class="material-icons" ng-if="vm.preference.preference.degree_preference != 'Thesis'">radio_button_unchecked</md-icon >
-                                Thesis
-                            </p>
-                            <p>
-                                <md-icon  class="material-icons" ng-if="vm.preference.preference.degree_preference == 'Comprehensive Exam'">radio_button_checked</md-icon >
-                                <md-icon  class="material-icons" ng-if="vm.preference.preference.degree_preference != 'Comprehensive Exam'">radio_button_unchecked</md-icon >
-                                Comprehensive Exam
-                            </p>
-                        </div>
-                        <md-divider></md-divider>
-
-                        <p><b>For Elective Courses, What are your Preferences?</b></p>
-                        <div>
-                            <p>
-                                <md-icon class="material-icons" ng-if="vm.preference.preference.lecture_preference">radio_button_checked</md-icon>
-                                <md-icon  class="material-icons" ng-if="!vm.preference.preference.lecture_preference">radio_button_unchecked</md-icon >
-                                Lecture and Lab
-                            </p>
-
-                            <p>
-                                <md-icon  class="material-icons" ng-if="!vm.preference.preference.lecture_preference">radio_button_checked</md-icon >
-                                <md-icon  class="material-icons" ng-if="vm.preference.preference.lecture_preference">radio_button_unchecked</md-icon >
-                                Lecture
-                            </p>
-                        </div>
-                        <md-divider></md-divider>
-
-                        <p><b>On Which days do you prefer to take Classes?(Select all that Apply)</b></p>
-                        <div>
-                            <p>
-                                <md-icon  class="material-icons" ng-if="vm.contains(vm.preference.day_preference,'MondayAndWednesday')">check_box</md-icon >
-                                <md-icon  class="material-icons" ng-if="!vm.contains(vm.preference.day_preference,'MondayAndWednesday')">check_box_outline_blank</md-icon >
-                                Monday and Wednesday
-                            </p>
-                            <p>
-                                <md-icon  class="material-icons" ng-if="vm.contains(vm.preference.day_preference,'TuesdayAndThursday')">check_box</md-icon >
-                                <md-icon  class="material-icons" ng-if="!vm.contains(vm.preference.day_preference,'TuesdayAndThursday')">check_box_outline_blank</md-icon >
-                                Tuesday and Thursday
-                            </p>
-                            <p>
-                                <md-icon  class="material-icons" ng-if="vm.contains(vm.preference.day_preference,'Friday')">check_box</md-icon >
-                                <md-icon  class="material-icons" ng-if="!vm.contains(vm.preference.day_preference,'Friday')">check_box_outline_blank</md-icon >
-                                Friday
-                            </p>
-                        </div>
-                        <md-divider></md-divider>
-
-                        <p><b>Which time do you prefer to take Classes?(Select all that Apply)</b></p>
-                        <div>
-                            <p>
-                                <md-icon  class="material-icons" ng-if="vm.contains(vm.preference.time_preference,'Morning')">check_box</md-icon >
-                                <md-icon  class="material-icons" ng-if="!vm.contains(vm.preference.time_preference,'Morning')">check_box_outline_blank</md-icon >
-                                Morning: Between 08:00am - 12:00pm
-                            </p>
-                            <p>
-                                <md-icon  class="material-icons" ng-if="vm.contains(vm.preference.time_preference,'Afternoon')">check_box</md-icon >
-                                <md-icon  class="material-icons" ng-if="!vm.contains(vm.preference.time_preference,'Afternoon')">check_box_outline_blank</md-icon >
-                                Afternoon: Between 12:00pm - 05:00pm
-                            </p>
-                            <p>
-                                <md-icon  class="material-icons" ng-if="vm.contains(vm.preference.time_preference,'Evening')">check_box</md-icon >
-                                <md-icon  class="material-icons" ng-if="!vm.contains(vm.preference.time_preference,'Evening')">check_box_outline_blank</md-icon >
-                                Evening: Between 05:00pm - 10:00pm
-                            </p>
-                        </div>
-                        <md-divider></md-divider>
-
-                        <p><b>Do you prefer to take Summer Courses?</b></p>
-                        <div>
-                            <p>
-                                <md-icon class="material-icons" ng-if="vm.preference.preference.summer_course_preference">radio_button_checked</md-icon>
-                                <md-icon  class="material-icons" ng-if="!vm.preference.preference.summer_course_preference">radio_button_unchecked</md-icon >
-                                Yes
-                            </p>
-
-                            <p>
-                                <md-icon  class="material-icons" ng-if="!vm.preference.preference.summer_course_preference">radio_button_checked</md-icon >
-                                <md-icon  class="material-icons" ng-if="vm.preference.preference.summer_course_preference">radio_button_unchecked</md-icon >
-                                No
-                            </p>
-                        </div>
-                        <md-divider></md-divider>
-
-                        <p><b>How many courses do you prefer to take in Upcoming Quarter? (Enter 1-4)</b></p>
-                        <input type="number" ng-maxlength="4" ng-minlength="1" name="phone" ng-disabled="true" ng-model="vm.preference.preference.course_count_preference">
-                        <p></p>
-                        <md-divider></md-divider>
-
-                        <p><b>Do you want to do course overload?</b></p>
-                        <div>
-                            <p>
-                                <md-icon class="material-icons" ng-if="vm.preference.preference.course_overload_preference">radio_button_checked</md-icon>
-                                <md-icon  class="material-icons" ng-if="!vm.preference.preference.course_overload_preference">radio_button_unchecked</md-icon >
-                                Yes
-                            </p>
-
-                            <p>
-                                <md-icon  class="material-icons" ng-if="!vm.preference.preference.course_overload_preference">radio_button_checked</md-icon >
-                                <md-icon  class="material-icons" ng-if="vm.preference.preference.course_overload_preference">radio_button_unchecked</md-icon >
-                                No
-                            </p>
-                        </div>
-                        <md-divider></md-divider>
-
-                        <p><b>Are you interested in taking Independent Study?</b></p>
-                        <div>
-                            <p>
-                                <md-icon class="material-icons" ng-if="vm.preference.preference.independent_study_preference">radio_button_checked</md-icon>
-                                <md-icon  class="material-icons" ng-if="!vm.preference.preference.independent_study_preference">radio_button_unchecked</md-icon >
-                                Yes
-                            </p>
-
-                            <p>
-                                <md-icon  class="material-icons" ng-if="!vm.preference.preference.independent_study_preference">radio_button_checked</md-icon >
-                                <md-icon  class="material-icons" ng-if="vm.preference.preference.independent_study_preference">radio_button_unchecked</md-icon >
-                                No
-                            </p>
-                        </div>
-                        <md-divider></md-divider>
-
+                        <p>
+                            <md-icon  class="material-icons" ng-if="!vm.preference.preference.lecture_preference">radio_button_checked</md-icon >
+                            <md-icon  class="material-icons" ng-if="vm.preference.preference.lecture_preference">radio_button_unchecked</md-icon >
+                            Lecture
+                        </p>
                     </div>
-                </md-content>
+                    <md-divider></md-divider>
+
+                    <p><b>On Which days do you prefer to take Classes?(Select all that Apply)</b></p>
+                    <div>
+                        <p>
+                            <md-icon  class="material-icons" ng-if="vm.contains(vm.preference.day_preference,'MondayAndWednesday')">check_box</md-icon >
+                            <md-icon  class="material-icons" ng-if="!vm.contains(vm.preference.day_preference,'MondayAndWednesday')">check_box_outline_blank</md-icon >
+                            Monday and Wednesday
+                        </p>
+                        <p>
+                            <md-icon  class="material-icons" ng-if="vm.contains(vm.preference.day_preference,'TuesdayAndThursday')">check_box</md-icon >
+                            <md-icon  class="material-icons" ng-if="!vm.contains(vm.preference.day_preference,'TuesdayAndThursday')">check_box_outline_blank</md-icon >
+                            Tuesday and Thursday
+                        </p>
+                        <p>
+                            <md-icon  class="material-icons" ng-if="vm.contains(vm.preference.day_preference,'Friday')">check_box</md-icon >
+                            <md-icon  class="material-icons" ng-if="!vm.contains(vm.preference.day_preference,'Friday')">check_box_outline_blank</md-icon >
+                            Friday
+                        </p>
+                    </div>
+                    <md-divider></md-divider>
+
+                    <p><b>Which time do you prefer to take Classes?(Select all that Apply)</b></p>
+                    <div>
+                        <p>
+                            <md-icon  class="material-icons" ng-if="vm.contains(vm.preference.time_preference,'Morning')">check_box</md-icon >
+                            <md-icon  class="material-icons" ng-if="!vm.contains(vm.preference.time_preference,'Morning')">check_box_outline_blank</md-icon >
+                            Morning: Between 08:00am - 12:00pm
+                        </p>
+                        <p>
+                            <md-icon  class="material-icons" ng-if="vm.contains(vm.preference.time_preference,'Afternoon')">check_box</md-icon >
+                            <md-icon  class="material-icons" ng-if="!vm.contains(vm.preference.time_preference,'Afternoon')">check_box_outline_blank</md-icon >
+                            Afternoon: Between 12:00pm - 05:00pm
+                        </p>
+                        <p>
+                            <md-icon  class="material-icons" ng-if="vm.contains(vm.preference.time_preference,'Evening')">check_box</md-icon >
+                            <md-icon  class="material-icons" ng-if="!vm.contains(vm.preference.time_preference,'Evening')">check_box_outline_blank</md-icon >
+                            Evening: Between 05:00pm - 10:00pm
+                        </p>
+                    </div>
+                    <md-divider></md-divider>
+
+                    <p><b>Do you prefer to take Summer Courses?</b></p>
+                    <div>
+                        <p>
+                            <md-icon class="material-icons" ng-if="vm.preference.preference.summer_course_preference">radio_button_checked</md-icon>
+                            <md-icon  class="material-icons" ng-if="!vm.preference.preference.summer_course_preference">radio_button_unchecked</md-icon >
+                            Yes
+                        </p>
+
+                        <p>
+                            <md-icon  class="material-icons" ng-if="!vm.preference.preference.summer_course_preference">radio_button_checked</md-icon >
+                            <md-icon  class="material-icons" ng-if="vm.preference.preference.summer_course_preference">radio_button_unchecked</md-icon >
+                            No
+                        </p>
+                    </div>
+                    <md-divider></md-divider>
+
+                    <p><b>How many courses do you prefer to take in Upcoming Quarter? (Enter 1-4)</b></p>
+                    <input type="number" ng-maxlength="4" ng-minlength="1" name="phone" ng-disabled="true" ng-model="vm.preference.preference.course_count_preference">
+                    <p></p>
+                    <md-divider></md-divider>
+
+                    <p><b>Do you want to do course overload?</b></p>
+                    <div>
+                        <p>
+                            <md-icon class="material-icons" ng-if="vm.preference.preference.course_overload_preference">radio_button_checked</md-icon>
+                            <md-icon  class="material-icons" ng-if="!vm.preference.preference.course_overload_preference">radio_button_unchecked</md-icon >
+                            Yes
+                        </p>
+
+                        <p>
+                            <md-icon  class="material-icons" ng-if="!vm.preference.preference.course_overload_preference">radio_button_checked</md-icon >
+                            <md-icon  class="material-icons" ng-if="vm.preference.preference.course_overload_preference">radio_button_unchecked</md-icon >
+                            No
+                        </p>
+                    </div>
+                    <md-divider></md-divider>
+
+                    <p><b>Are you interested in taking Independent Study?</b></p>
+                    <div>
+                        <p>
+                            <md-icon class="material-icons" ng-if="vm.preference.preference.independent_study_preference">radio_button_checked</md-icon>
+                            <md-icon  class="material-icons" ng-if="!vm.preference.preference.independent_study_preference">radio_button_unchecked</md-icon >
+                            Yes
+                        </p>
+
+                        <p>
+                            <md-icon  class="material-icons" ng-if="!vm.preference.preference.independent_study_preference">radio_button_checked</md-icon >
+                            <md-icon  class="material-icons" ng-if="vm.preference.preference.independent_study_preference">radio_button_unchecked</md-icon >
+                            No
+                        </p>
+                    </div>
+                    <md-divider></md-divider>
+
+                </div>
+            </md-content>
         </md-card-content>
     </md-card>
 </md-content>

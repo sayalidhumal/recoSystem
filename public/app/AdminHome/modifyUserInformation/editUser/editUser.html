@@ -1,50 +1,58 @@
  <md-content layout="row" layout-align="space-around" ng-cloak="ng-cloak">
     <md-card flex="flex" flex-gt-sm="50" flex-gt-md="50" >\
-            <div>
-                <md-input-container>
+        <div>
+            <md-input-container>
                 <label>Coyote ID</label>
                 <input type="text" ng-model="vm.user.coyote_id" required>
-                </md-input-container>
-                <md-input-container>
+            </md-input-container>
+
+            <md-input-container>
                 <label>Username</label>
                 <input type="text" ng-model="vm.user.name" required>
-                </md-input-container>
-                <md-input-container>
+            </md-input-container>
+
+            <md-input-container>
                 <label>Email ID</label>
                 <input type="text" ng-model="vm.user.email_id" required>
-                </md-input-container>
-                <md-input-container>
-                    <label>Phone</label>
-                    <input type="text" ng-model="vm.user.phone" required>
-                </md-input-container>
-                <md-input-container>
+            </md-input-container>
+
+            <md-input-container>
+                <label>Phone</label>
+                <input type="text" ng-model="vm.user.phone" required>
+            </md-input-container>
+
+            <md-input-container>
                 <label>Address</label>
                 <input type="text" ng-model="vm.user.address.Address" required>
-                </md-input-container>
-                <md-input-container>
+            </md-input-container>
+
+            <md-input-container>
                 <label>City</label>
                 <input type="text" ng-model="vm.user.address.City" required>
-                </md-input-container>
-                <md-input-container>
+            </md-input-container>
+
+            <md-input-container>
                 <label>State</label>
                 <input type="text" ng-model="vm.user.address.State" required>
-                </md-input-container>
-                <md-input-container>
+            </md-input-container>
+
+            <md-input-container>
                 <label>Zipcode</label>
                 <input type="text" ng-model="vm.user.address.Pin" required>
-                </md-input-container>
-                <md-datepicker ng-model="vm.user.date_of_birth" md-placeholder="Birth Date" flex-gt-sm md-min-date="vm.minDate" md-max-date="vm.maxDate"></md-datepicker>
-                <md-input-container>
+            </md-input-container>
+
+            <md-datepicker ng-model="vm.user.date_of_birth" md-placeholder="Birth Date" flex-gt-sm md-min-date="vm.minDate" md-max-date="vm.maxDate"></md-datepicker>
+
+            <md-input-container>
                 <label>Role</label>
                 <md-select ng-model="vm.role" required>
                     <md-option value="administrator">Admin</md-option>
                     <md-option value="advisor">Advisor</md-option>
                     <md-option value="student">Student</md-option>
                 </md-select>
-                </md-input-container>
-                <md-input-container>
-            </div>
-            <md-button class="md-primary" ng-click="vm.submit()">Submit</md-button>
-            <md-button class="md-primary" ng-click="vm.cancel()">Cancel</md-button>
+            </md-input-container>
+        </div>
+        <md-button class="md-primary" ng-click="vm.submit()">Submit</md-button>
+        <md-button class="md-primary" ng-click="vm.cancel()">Cancel</md-button>
     </md-card>
 </md-content>

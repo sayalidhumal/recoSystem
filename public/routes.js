@@ -341,6 +341,20 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
+        .state('root.advisor.advisorhome.recommendationpath.editPath',{
+            url:'/edit-path',
+            views:{
+                'content@root':{
+                    templateUrl:'app/AdvisorHome/recommendationPath/editPath/editPath.html',
+                    controller:'EditPathController',
+                    controllerAs:'vm'
+                }
+            },
+            params:{
+                path: null
+            }
+        })
+
         .state('root.advisor.advisorhome.recommendationpath.detailView',{
             url:'/detail-View',
             views:{

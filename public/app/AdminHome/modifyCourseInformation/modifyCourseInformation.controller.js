@@ -14,6 +14,7 @@
         vm.searchID = '';
         vm.search = search;
         vm.course = [];
+        vm.error = false;
         vm.view =view;
 
         function view(course) {
@@ -22,10 +23,14 @@
         }
 
         function search(searchName,searchID) {
+            vm.error = false;
             CourseService.getCourse(searchID,searchName).then(
                 function success(response) {
-                    vm.course = response.data;
-                    console.log(vm.course)
+                    if(response.data.length !=0){
+                        vm.course = response.data;
+                    }else {
+                        vm.error = true;
+                    }
 
                 },function error(response) {
                     console.log(response);

@@ -34,11 +34,17 @@ function RecommendationAlgo(appconfig,_,$filter) {
             }
 
            elective(vm.userDetails,vm.coursesData.electives,vm.coursesData.constraints);
+            
 
+            vm.optionalSubjects = getOptionalSubjects(vm.coursesData.electives);
             vm.recommendationPath = formatForDisplay(vm.recommendationPath);
+            var path= [];
+            path[0] = {
+                path: vm.recommendationPath,
+                optionalElective: vm.optionalSubjects
+            };
 
-
-            return vm.recommendationPath;
+            return path;
 
             function prerequisites(userDetails,coreCourses,coursePrerequisites) {
 
@@ -206,8 +212,8 @@ function RecommendationAlgo(appconfig,_,$filter) {
                 data.push(_.where(schedule,{year:vm.currentYear.toString()}));
                 data.push(_.where(schedule,{year:(vm.currentYear+1).toString()}));
 
-                data = sortByDay(data,userdetails.preferences);
-                //data = sortByTime(data,userdetails.preferences)
+                //data = sortByDay(data,userdetails.preferences);
+                console.log(data)
                 flag = 0;
                 angular.forEach(vm.recommendationPath[vm.currentYear],function (c,quarter) {
                     course = [];
@@ -433,6 +439,15 @@ function RecommendationAlgo(appconfig,_,$filter) {
                 var electiveNo = electiveUnits/4;
 
                 var electiveCount = electiveUnits/4;
+                for(i=0;i<vm.userDetails.coursesTaken.length;i++){
+                    console.log(vm.userDetails.coursesTaken[i],electives)
+                    index = _.findLastIndex(electives,{course_id:vm.userDetails.coursesTaken[i]});
+                    if(index!==-1){
+                        console.log("found")
+                        electiveCount--;
+                    }
+                }
+                console.log(electiveCount)
                 electivesToBeTaken = getElectives(electives,vm.recommendationPath);
                 var sortDay = sortByDay(electivesToBeTaken,vm.userDetails.preferences);
 
@@ -448,8 +463,6 @@ function RecommendationAlgo(appconfig,_,$filter) {
                 if(above.length <= electiveNo){
                     var sortTime = sortByTime(below,vm.userDetails.preferences);
                 }
-
-
 
                 if(userDetails.preferences.other.independent_study_preference){
                     electiveNo--;
@@ -683,6 +696,30 @@ function RecommendationAlgo(appconfig,_,$filter) {
                     return sortTime
                 }else
                     return electives
+            }
+
+            function getOptionalSubjects(electives) {
+                var optionalSubjects = [];
+                angular.forEach(vm.recommendationPath,function (quarters,year) {
+                    angular.forEach(quarters,function (schedule,quarter) {
+                        for(var i=0;i<schedule.length;i++){
+                            var index = _.findLastIndex(electives,{course_id:schedule[i].course_id});
+                            if(index !== -1){
+                                electives.splice(index,1);
+                            }
+                        }
+                    })
+                });
+                for(var i=0;i<electives.length;i++){
+                    electives[i].quarters = [];
+                    for(var j=0;j<electives[i].schedule.length;j++){
+                        var results = _.contains(electives[i].quarters,electives[i].schedule[j].quarter + " " + electives[i].schedule[j].year)
+                        if(!results){
+                            electives[i].quarters.push(electives[i].schedule[j].quarter + " " + electives[i].schedule[j].year);
+                        }
+                    }
+                }
+                return electives;
             }
 
             function addToPath(courses,course_count_preference,courseType) {

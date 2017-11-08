@@ -1,0 +1,77 @@
+<div ng-cloak>
+    <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <div ng-repeat="year in vm.recommendationPath">
+                <md-tab ng-repeat="quarter in year.quarters" label= '{{quarter.quarter}} {{year.year}}' >
+                    <md-card>
+                        <md-content>
+                            <md-table-container>
+                                <table md-table>
+                                    <thead md-head>
+                                    <tr md-row>
+                                        <th md-column><span>Course ID</span></th>
+                                        <th md-column><span>Course Name</span></th>
+                                        <th md-column><span>Total Units</span></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody md-body>
+                                    <tr md-row ng-repeat="course in quarter.schedule">
+                                        <td md-cell><span>{{course.course_id}}</span></td>
+                                        <td md-cell><span>{{course.name}}</span></td>
+                                        <td md-cell><span>{{course.units}}</span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </md-table-container>
+                            <p ng-if="vm.recommendationPath.length==0">No Courses Enrolled</p>
+                        </md-content>
+                        <!--<md-button class="md-raised md-primary" aria-label="Detail View" ng-click="vm.view(quarter,year.year)" ng-if="vm.recommendationPath.length!=0">Detail View</md-button>-->
+                    </md-card>
+                </md-tab>
+            </div>
+        </md-tabs>
+       <md-card>
+           <form name="vm.form">
+               <md-content layout-gt-sm="row">
+                   <div class="md-block" flex-gt-sm>
+                       <label>Select elective course to remove from recommendation path</label>
+                       <!--Select the subject to swap-->
+                       <md-input-container class="md-block">
+                           <label>Elective courses in path</label>
+                           <md-select ng-model="vm.subjectToRemove" required>
+                               <md-option ng-repeat="subject in vm.subjectsInPath" ng-value=subject>
+                                   {{subject.course_id}} {{subject.name}}
+                               </md-option>
+                           </md-select>
+                       </md-input-container>
+                   </div>
+                   <div flex="5" hide-xs hide-sm>
+                       <!-- Spacer //-->
+                   </div>
+                   <div class="md-block" flex-gt-sm>
+                       <label>Select elective course to be added recommendation path</label>
+                       <md-input-container class="md-block">
+                           <label>Optional elective courses</label>
+                           <md-select ng-model="vm.subjectToAdd" required>
+                               <md-option ng-repeat="subject in vm.optionalSubjects" ng-value=subject ng-click="vm.add(subject)">
+                                   {{subject.course_id}} {{subject.name}}
+                               </md-option>
+                           </md-select>
+                       </md-input-container>
+                       <md-input-container ng-if="vm.subjectToAdd" class="md-block">
+                           <label>Select the quarter and year to add</label>
+                           <md-select ng-model="vm.quartertoadd" required>
+                               <md-option ng-repeat="quarterYear in vm.quarters" value="{{quarterYear}}">
+                                   {{quarterYear}}
+                               </md-option>
+                           </md-select>
+                       </md-input-container>
+                   </div>
+
+               </md-content>
+               <md-button ng-disabled="vm.form.$invalid" aria-label="Check" class="md-raised md-primary" ng-click="vm.check()">Check</md-button>
+           </form>
+           <p class="md-warn" ng-if="vm.obj.clash.length !=0"><b>Course cannot be added because the timing clashes with {{vm.obj.clash[0].course_id}}</b></p>
+       </md-card>
+    </md-content>
+</div>

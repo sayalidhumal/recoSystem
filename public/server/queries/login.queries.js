@@ -30,9 +30,14 @@
             });
 
             query.on('end', function(){
-                results[0]["password"] = cryptr.decrypt(results[0]["password"]);
-                done();
-                return res.json(results);
+                if(results[0]){
+                    results[0]["password"] = cryptr.decrypt(results[0]["password"]);
+                    done();
+                    return res.json(results);
+                }else {
+                    return res.json(results)
+                }
+
             });
         });
     }
@@ -44,10 +49,10 @@
      */
 
     function createUser(req, res, next){
-        const data = req.body.user;
+        var data = req.body.user;
         const results = [];
         var finalquery;
-        console.log(data)
+        data.password =  cryptr.encrypt(data.password);
         pg.connect(connectionString, function(err, client, done){
             // Handle connection errors
             if(err) {
@@ -96,7 +101,6 @@
     function resetPassword(req, res,next) {
         var email = req.body.email;
         var code = req.body.code;
-        console.log("$$$$$$",code,email);
         var text = 'Code to reset password is: '+ code;
         var mailOptions = {
             from: 'saily.d8@gmail.com',

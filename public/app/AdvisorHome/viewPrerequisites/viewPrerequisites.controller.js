@@ -1,13 +1,3 @@
-/**
- * Created by Sanjay Karrolla on 10/6/2017.
- */
-/**
- * Created by Sanjay Karrolla on 9/24/2017.
- */
-/**
- * Created by sayalidhumal on 8/13/17.
- */
-
 (function () {
     angular.module('AdvisorHome').controller('viewPrerequisitesController',viewPrerequisitesController);
 

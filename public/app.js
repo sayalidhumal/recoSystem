@@ -102,6 +102,7 @@
           })
       }
       else if (toState.name=='login') {
+
         unbindTimerEvents();
       }
       function ResetIdleSession(e){

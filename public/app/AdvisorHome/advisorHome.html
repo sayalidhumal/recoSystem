@@ -1,15 +1,15 @@
 <md-content class="md-padding">
     <div layout="row"  layout-xs="column">
-            <md-content>
-                <md-card>
-                    <p><b>Name:</b> {{vm.user.name}}</p>
-                    <p><b>Coyote ID:</b> 00{{vm.user.coyote_id}}</p>
-                    <p><b>DOB:</b> {{vm.user.date_of_birth| date:"MM/dd/yyyy"}}</p>
-                    <p><b>Email:</b> {{vm.user.email_id}}</p>
-                    <p><b>Address:</b> {{vm.user.address.Address}},{{vm.user.address.City}},{{vm.user.address.State}} {{vm.user.address.Pin}}</p>
-                    <p><b>Role:</b> {{vm.role}}</p>
-                </md-card>
-            </md-content>
+        <md-content>
+            <md-card>
+                <p><b>Name:</b> {{vm.user.name}}</p>
+                <p><b>Coyote ID:</b> 00{{vm.user.coyote_id}}</p>
+                <p><b>DOB:</b> {{vm.user.date_of_birth| date:"MM/dd/yyyy"}}</p>
+                <p><b>Email:</b> {{vm.user.email_id}}</p>
+                <p><b>Address:</b> {{vm.user.address.Address}},{{vm.user.address.City}},{{vm.user.address.State}} {{vm.user.address.Pin}}</p>
+                <p><b>Role:</b> {{vm.role}}</p>
+            </md-card>
+        </md-content>
     </div>
     <div layout="row"  layout-xs="column">
         <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">

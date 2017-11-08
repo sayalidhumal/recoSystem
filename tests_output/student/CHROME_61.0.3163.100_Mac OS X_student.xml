@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
             failures="0"
-            tests="1">
+            tests="2">
 
   <testsuite name="student.student"
     errors="0" failures="0" hostname="" id="" package="student" skipped="0"
-    tests="1" time="0.7250" timestamp="Thu, 12 Oct 2017 06:17:37 GMT">
+    tests="2" time="6.520" timestamp="Sat, 21 Oct 2017 22:37:31 GMT">
   
-    <testcase name="Does display all the cards" classname="student.student" time="0.7250" assertions="0">
+    <testcase name="Does display all the cards" classname="student.student" time="4.004" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Does redirect to course Details Page" classname="student.student" time="2.516" assertions="3">
+
+    
+
+    
+
+    
     </testcase>
   
 

@@ -16,12 +16,12 @@ module.exports = {
 
         login
             .click('@CoyoteID')
-            .setValue('@CoyoteID',loginProps.StudentID)
+            .setValue('@CoyoteID', loginProps.StudentID)
             .click('@Password')
-            .setValue('@Password',loginProps.Studentpassword)
-            .waitForElementVisible('@LoginButton',1000)
+            .setValue('@Password', loginProps.Studentpassword)
+            .waitForElementVisible('@LoginButton', 1000)
             .assert.visible('@LoginButton')
-            .click('@LoginButton')
+            .click('@LoginButton');
         client
             .pause(1000)
             .assert.urlEquals(loginProps.StudentURL)

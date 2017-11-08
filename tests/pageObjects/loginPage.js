@@ -38,7 +38,7 @@ module.exports = {
 
     props:{
         StudentID: '005291464',
-        Studentpassword: 'sanjay',
+        Studentpassword: 'karrolla',
         StudentURL:'http://localhost:3000/#!/student/5291464',
 
         AdvisorID: '6578463',

@@ -5,9 +5,9 @@
 (function () {
     angular.module('AdminHome').controller('ViewCourseController',ViewCourseController);
 
-    ViewCourseController.$inject = ['CourseService','$stateParams','appconfig','$state'];
+    ViewCourseController.$inject = ['CourseService','$stateParams','appconfig','$state','$mdDialog'];
 
-    function ViewCourseController(CourseService,$stateParams,appconfig,$state) {
+    function ViewCourseController(CourseService,$stateParams,appconfig,$state,$mdDialog) {
         var vm =this;
         vm.courseID = $stateParams.courseID;
         vm.courseType = '';
@@ -16,9 +16,31 @@
         vm.course = {}
         vm.editschedule = editschedule;
         vm.addSchedule = addSchedule;
+        vm.deleteCourseSchedule = deleteCourseSchedule;
 
         function addSchedule() {
             $state.go('root.admin.courseDetails.viewCourseDetails.addScheduleCourseDetails',{course:vm.course});
+        }
+
+        function deleteCourseSchedule(ev,quarter,year,course) {
+            var confirm = $mdDialog.confirm()
+                .title('Would you like to delete '+quarter+' '+year+' schedule?')
+                .ariaLabel('delete user')
+                .targetEvent(ev)
+                .ok('DELETE')
+                .cancel('CANCEL');
+            console.log(course)
+
+            $mdDialog.show(confirm).then(function() {
+                CourseService.deleteCourseSchedule(course).then(function success() {
+
+                    $state.go('root.admin.courseDetails.viewCourseDetails',{courseID: vm.courseID});
+                },function error() {
+
+                })
+            }, function() {
+                console.log("cancel")
+            });
         }
 
         function editschedule(schedule,has_lab,course_id) {
@@ -48,6 +70,7 @@
                         vm.course.schedule[i].lab_end_time = new Date(null, null, null,vm.time[0],vm.time[1]).toLocaleTimeString();
                     }
                 }
+                console.log()
                 CourseService.getCourseType(vm.courseID).then(
                     function success(response) {
                         vm.courseType = response.data[0];

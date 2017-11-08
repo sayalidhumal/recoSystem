@@ -5,27 +5,16 @@
 
   <testsuite name="login"
     errors="0" failures="0" hostname="" id="" package="login" skipped="0"
-    tests="5" time="8.589" timestamp="Thu, 12 Oct 2017 06:17:29 GMT">
+    tests="5" time="8.655" timestamp="Sat, 21 Oct 2017 22:37:22 GMT">
   
-    <testcase name="Does redirect to login page" classname="login" time="1.803" assertions="2">
+    <testcase name="Does redirect to login page" classname="login" time="1.893" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Does login successful and redirects to student home page" classname="login" time="1.517" assertions="3">
-
-    
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Does login successful and redirects to administrator home page" classname="login" time="1.524" assertions="4">
-
-    
+    <testcase name="Does login successful and redirects to student home page" classname="login" time="1.529" assertions="3">
 
     
 
@@ -34,7 +23,7 @@
     
     </testcase>
   
-    <testcase name="Does login successful and redirects to advisor home page" classname="login" time="1.562" assertions="4">
+    <testcase name="Does login successful and redirects to administrator home page" classname="login" time="1.545" assertions="4">
 
     
 
@@ -45,7 +34,18 @@
     
     </testcase>
   
-    <testcase name="Does not login successfully" classname="login" time="2.183" assertions="4">
+    <testcase name="Does login successful and redirects to advisor home page" classname="login" time="1.594" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Does not login successfully" classname="login" time="2.094" assertions="4">
 
     
 

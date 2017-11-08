@@ -28,5 +28,12 @@
                 </md-card-actions>
             </md-card>
         </md-content>
+        <md-content ng-if="vm.error">
+            <md-card>
+                <md-card-title>
+                    No record found
+                </md-card-title>
+            </md-card>
+        </md-content>
     </md-card>
 </md-content>

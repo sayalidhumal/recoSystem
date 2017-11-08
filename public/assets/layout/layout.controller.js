@@ -1,15 +1,32 @@
 (function(){
   angular.module('myApp')
       .controller('LayoutController',
-          function(appconfig,AuthService,$state,$scope,$mdSidenav,$log,$stateParams,$rootElement){
+          function(appconfig,AuthService,$state,$scope,$mdSidenav,$log,$stateParams,$rootElement,UserService,$cookies){
               var vm = this;
-              vm.user = appconfig.CurrentUser;
+              vm.coyote_id = $stateParams.userID;
               vm.signOut = signOut;
               $scope.toggleLeft = buildToggler('left');
               $rootElement.menu = []
-              vm.menu = $rootElement.menu
+              vm.menu = $rootElement.menu;
 
-              if($stateParams.userRole == 'advisor'){
+              UserService.getUser(vm.coyote_id, null).then(
+                  function success(response) {
+                      var user = response.data[0];
+                      if(user){
+                          UserService.getUserRole(user.coyote_id).then(function success(response) {
+                              vm.userRole = response.data[0];
+                              vm.user = user
+                              console.log(vm.user,vm.userRole);
+                          }, function () {
+
+                          })
+                      }
+
+                  }, function error(response) {
+                      console.log(response);
+                  });
+
+              if($stateParams.userRole === 'advisor'){
                   vm.menu = [
                         {
                             "cardName": 'Educational History',
@@ -24,6 +41,42 @@
                             "route": 'root.advisor.advisorhome.recommendationpath'
                         }
                     ]
+              }
+              if($stateParams.userRole === 'student'){
+                  vm.menu = [
+                      {
+                          "cardName": 'Course History',
+                          "route": 'root.student.userCourseDetails'
+                      },
+                      {
+                          "cardName": 'Recommendation Path',
+                          "route": 'root.student.recommendationPath'
+                      },
+                      {
+                          "cardName": 'Review Questionnaire',
+                          "route": 'root.student.reviewquestionnaire'
+                      }
+                  ]
+              }
+              if($stateParams.userRole === 'administrator'){
+                  vm.menu = [
+                      {
+                          "cardName": 'Search and Modify User Information',
+                          "route": 'root.admin.userDetails'
+                      },
+                      {
+                          "cardName": 'Create New User',
+                          "route": 'root.admin.createUser'
+                      },
+                      {
+                          "cardName": 'Search and Modify Course Information',
+                          "route": 'root.admin.courseDetails'
+                      },
+                      {
+                          "cardName": 'Create New Course',
+                          "route": 'root.admin.createCourse'
+                      },
+                  ]
               }
 
 
@@ -68,10 +121,8 @@
               }
 
               function signOut(){
-                AuthService.logoutUser().then(function(){
-                  console.log("successfully logged out");
+                  $cookies.remove("usedata");
                   $state.go('login');
-                })
               }
       })
       .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {

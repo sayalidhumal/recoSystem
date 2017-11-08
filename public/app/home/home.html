@@ -5,14 +5,14 @@
         <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
             <md-card-title>
                 <md-card-title-text>
-                    <span class="md-headline">Courses Details</span>
+                    <span class="md-headline">Courses History</span>
                 </md-card-title-text>
                 <md-card-title-media>
                     <div class="md-media-sm card-media"></div>
                 </md-card-title-media>
             </md-card-title>
             <md-card-content>
-                <p>Click view to know the information of courses you've taken and are enrolled</p>
+                <p>Click view to get information on courses currently taking and already taken.</p>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button id="StudentCourseDetails" class="md-primary md-raised" ui-sref="root.student.userCourseDetails">View</md-button>
@@ -29,7 +29,7 @@
                 </md-card-title-media>
             </md-card-title>
             <md-card-content>
-                <p>Click here to view the recommendation path of courses for upcoming quarter</p>
+                <p>Click view to see when to take the recommended courses.</p>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button id="studentrecommendationPath" class="md-primary md-raised" ui-sref="root.student.recommendationPath">View</md-button>
@@ -46,7 +46,7 @@
                 </md-card-title-media>
             </md-card-title>
             <md-card-content>
-                <p>Click to modify the details you've entered while signing up</p>
+                <p>Click view to view/modify the answers you provided on the questionnaire.</p>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button class="md-primary md-raised" ui-sref="root.student.reviewquestionnaire">View</md-button>
@@ -64,14 +64,11 @@
         </div>
     </md-toolbar>
     <div layout="row"  layout-xs="column">
-        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
+        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="60">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">Search and Modify User Information</span>
                 </md-card-title-text>
-                <md-card-title-media>
-                    <div class="md-media-sm card-media"></div>
-                </md-card-title-media>
             </md-card-title>
             <md-card-content>
                 <p>Click to view, update & delete user information</p>
@@ -81,15 +78,11 @@
             </md-card-actions>
         </md-card>
 
-
-        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
+        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="60">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">Create New User</span>
                 </md-card-title-text>
-                <md-card-title-media>
-                    <div class="md-media-sm card-media"></div>
-                </md-card-title-media>
             </md-card-title>
             <md-card-content>
                 <p>Create new user (Admin/Advisor)</p>
@@ -107,14 +100,11 @@
         </div>
     </md-toolbar>
     <div layout="row"  layout-xs="column">
-        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
+        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="60">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">Search and Modify Course Information</span>
                 </md-card-title-text>
-                <md-card-title-media>
-                    <div class="md-media-sm card-media"></div>
-                </md-card-title-media>
             </md-card-title>
             <md-card-content>
                 <p>Click to view, update & delete course information</p>
@@ -125,15 +115,15 @@
         </md-card>
 
 
-        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="30">
+        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex flex-gt-xs="60">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">Create New Course</span>
                 </md-card-title-text>
-                <md-card-title-media>
-                    <div class="md-media-sm card-media"></div>
-                </md-card-title-media>
             </md-card-title>
+            <md-card-content>
+                <p>Click to create new course</p>
+            </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button class="md-primary md-raised" ui-sref="root.admin.createCourse">View</md-button>
             </md-card-actions>
@@ -148,7 +138,8 @@
                 <md-card-title>
                     <md-card-title-text>
                     <span class="md-subhead"><b>NOTE: </b>Enter the student name and/or coyote ID(Eg: 004657847) to search and then click on the search button.
-                    When the student information is displayed, click on view button to view the student records.</span>
+                    When the student information is displayed, click on view button to view the student records.You can enter partial name for search but coyote ID cannot be partial.
+                    </span>
                     </md-card-title-text>
                 </md-card-title>
                 <form name="vm.form">
@@ -164,21 +155,21 @@
                 </form>
                 <md-button type="submit" ng-disabled="vm.searchName==''&& vm.searchID==''" class="md-raised md-primary" ng-click="vm.search(vm.searchName,vm.searchID)">Search</md-button>
             </md-content>
-            <md-content ng-if="vm.user.length != 0 && vm.user != undefined">
-                <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+            <md-content ng-if="vm.user.length != 0 && vm.flag">
+                <md-card ng-repeat="user in vm.user" md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
                     <md-card-title>
-                        Name: {{vm.user.name}}
+                        Name: {{user.name}}
                     </md-card-title>
                     <md-card-content>
-                        <p>Coyote ID: {{vm.user.coyote_id}}</p>
-                        <p>Role: {{vm.userRole}}</p>
+                        <p>Coyote ID: {{user.coyote_id}}</p>
+                        <p>Role: {{user.role}}</p>
                     </md-card-content>
                     <md-card-actions layout="row" layout-align="end center">
-                        <md-button class="md-raised md-primary" ng-click="vm.view(vm.user)">View</md-button>
+                        <md-button class="md-raised md-primary" ng-click="vm.view(user)">View</md-button>
                     </md-card-actions>
                 </md-card>
             </md-content>
-            <md-content ng-if="vm.user == undefined">
+            <md-content ng-if="vm.user.length == 0 && vm.flag">
                 <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
                     <md-card-content>
                         <p>No Student record found with:</p>

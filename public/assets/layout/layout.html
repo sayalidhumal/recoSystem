@@ -1,31 +1,30 @@
 <div>
-  <md-sidenav md-component-id = "left" class = "md-sidenav-left">
-    <md-content ng-controller="LeftCtrl" layout-padding>
-      <md-toolbar class="md-theme-light">
-        <md-button ng-click="close()"><md-icon>arrow_back</md-icon>Back</md-button>
-      </md-toolbar>
-      <div>
-        <table md-table>
-          <tbody md-body>
-            <tr md-row ng-repeat="cell in vm.menu">
-              <td md-cell><a ui-sref="{{cell.route}}">{{cell.cardName}}</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </md-content>
-  </md-sidenav>
-  <md-toolbar class="topNav">
-    <div class="md-toolbar-tools">
-      <md-button ng-click="toggleLeft()" ng-hide="isOpenLeft()"><md-icon>menu</md-icon></md-button>
-      <h1 style="text-align: center;"><b>Course Recommendation System</b></h1>
-      <!--<md-button ng-show="vm.user" ng-click="vm.signOut()">Sign Out</md-button>-->
-    </div>
-  </md-toolbar>
-
-
+    <md-sidenav md-component-id = "left" class = "md-sidenav-left">
+        <md-content ng-controller="LeftCtrl" layout-padding>
+            <md-toolbar class="md-theme-light">
+                <md-button ng-click="close()"><md-icon>arrow_back</md-icon>Back</md-button>
+            </md-toolbar>
+            <div>
+                <table md-table>
+                    <tbody md-body>
+                        <tr md-row ng-repeat="cell in vm.menu">
+                            <td md-cell><a ui-sref="{{cell.route}}">{{cell.cardName}}</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </md-content>
+    </md-sidenav>
+    <md-toolbar class="topNav" id="{{vm.userRole}}">
+        <div class="md-toolbar-tools">
+            <md-button ng-click="toggleLeft()" ng-hide="isOpenLeft()"><md-icon>menu</md-icon></md-button>
+            <h1 style="text-align: center;"><b>Welcome to CSE MSCS Course Recommendation System</b></h1>
+            <span flex></span>
+            <label align="right" style="font-size: small"><b>Name:</b> {{vm.user.name}}<br><b>Role:</b> {{vm.userRole}}<br><a ng-click="vm.signOut()"><u>Sign out</u></a></label>
+        </div>
+    </md-toolbar>
     <md-content>
-      <div ui-view="content"></div>
+        <div ui-view="content"></div>
     </md-content>
 
 </div>

@@ -26,15 +26,15 @@
         function login(){
             AuthService.authenticate(vm.userID).then(
                 function success(response) {
-                    console.log(response.data[0])
                     vm.data = response.data[0];
-                    if(response.data.length == 0){
-                        vm.error = true
+                    console.log(vm.data)
+                    if(response.data.length === 0){
+                        vm.error = true;
                         $mdToast.showSimple("User not found")
                     }
                     else{
 
-                        if(vm.data.password == vm.password){
+                        if(vm.data.password === vm.password){
 
                             UserService.getUserRole(vm.userID).then(
                                 function success(response) {
@@ -42,7 +42,7 @@
                                     cookieData = {
                                         auth: vm.data.userID,
                                         role: vm.role
-                                    }
+                                    };
                                     $cookies.put('usedata',cookieData);
                                     $state.go('root',{userID : vm.data.coyote_id, userRole: vm.role});
                                 },function error(response) {

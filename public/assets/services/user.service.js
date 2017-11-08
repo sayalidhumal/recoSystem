@@ -59,6 +59,14 @@
                         url: '/updateUser',
                         data:{user: user}
                     })
+                },
+
+                deleteUser: function (coyote_id) {
+                    return $http({
+                        method: 'DELETE',
+                        url: '/deleteUser',
+                        params: {coyote_id: coyote_id}
+                    })
                 }
 
             }//end of outer return

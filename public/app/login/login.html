@@ -11,13 +11,13 @@
                     <md-input-container class="md-block">
                         <label>Coyote ID</label>
                         <input id="coyoteID" type="number" required name="username" ng-model="vm.userID"/>
-                        <div ng-messages="vm.form.userID.$error" role="alert" multiple="">
+                        <div ng-messages="vm.form.username.$error" role="alert" ng-if='vm.form.username.$touched' multiple="">
                             <div ng-message="required" class="my-message">Please enter your Coyote ID.</div>
                         </div>
                     </md-input-container>
                     <md-input-container class="md-block">
                         <label>Password</label>
-                        <input id="password" type="password" required name="password" ng-model="vm.password" placeholder="Password"/>
+                        <input id="password" type="password" required name="password" ng-model="vm.password"/>
                         <div ng-messages="vm.form.password.$error" role="alert" multiple="">
                             <div ng-message="required" class="my-message">Please enter your password.</div>
                         </div>

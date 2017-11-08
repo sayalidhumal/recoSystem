@@ -17,6 +17,7 @@
         vm.coyote_id = $stateParams.coyote_id;
         vm.data = [];
         vm.add =add;
+        vm.delete = deletePrereq;
         vm.courseidadd;
         vm.course;
         vm.addPrerequisite = {
@@ -55,14 +56,12 @@
             vm.data.push(vm.addPrerequisite);
             var index = _.findLastIndex(vm.course,{prerequisite_id:id})
             vm.prerequisite.push({course_id:vm.course[index].prerequisite_id,name:vm.course[index].name});
-            console.log("inside add",vm.prerequisite)
             vm.course.splice(index,1);
             PrerequisiteService.postprerequisite(vm.data[0]).then(
                 function success(response) {
-                    console.log("Prerequisite posted");
                     $mdToast.show(
                         $mdToast.simple()
-                            .textContent('Prerequisite Posted')
+                            .textContent('Prerequisite Added')
                             .hideDelay(4000)
                     );
                     //$state.go('root.advisor.advisorhome.addprerequisites');
@@ -72,6 +71,19 @@
                 });
 
 
+        }
+
+        function deletePrereq(course_id) {
+            PrerequisiteService.deletePrerequisite(vm.coyote_id,course_id).then(function success() {
+                $state.go($state.current, {}, {reload: true});
+                $mdToast.show(
+                    $mdToast.simple()
+                        .textContent('Prerequisite Deleted')
+                        .hideDelay(4000)
+                );
+            },function error() {
+
+            })
         }
     }
 })();

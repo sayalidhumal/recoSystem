@@ -1,5 +1,11 @@
 <md-card>
-    Based on your degree option, courses taken & preferences (from questionnaire), we recommend the following path from first quarter to last quarter for graduation.
+    Based on
+    <li>preferences (from the questionnaire).</li>
+    <li>your degree option: {{vm.userDetails.preferences.other.degree_preference}}</li>
+    <li>prerequisites (from the Graduate Decision Form): <b ng-repeat="prerequisite in vm.userDetails.prerequisites">{{prerequisite}},&nbsp;</b></li>
+    <li>CSE course offering schedule.</li>
+    <li ng-if="vm.userDetails.coursesTaken.length!=0">courses taken: <b ng-repeat="course in vm.userDetails.coursesTaken">{{course}},&nbsp;</b></li>
+
     <b>NOTE: </b>To view the recommended courses schedule to take for the upcoming  quarter, please click the detail view button.
 </md-card>
 <div ng-cloak>
@@ -19,7 +25,7 @@
                                     </tr>
                                     </thead>
                                     <tbody md-body>
-                                    <tr md-row ng-repeat="course in quarter.schedule">
+                                    <tr md-row ng-repeat="course in quarter.schedule" ng-class="{'core-class': course.type === 'core', 'default-color': course.type !== 'core'}">
                                         <td md-cell><span>{{course.course_id}}</span></td>
                                         <td md-cell><span>{{course.name}}</span></td>
                                         <td md-cell><span>{{course.units}}</span></td>
