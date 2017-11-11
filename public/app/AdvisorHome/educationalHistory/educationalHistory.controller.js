@@ -23,6 +23,7 @@
         vm.currentQuarter = appconfig.QUARTERS[vm.currentMonth];
         vm.userCourseDetails =[];
         vm.quarterOrder = appconfig.QuarterOrder;
+        vm.totalUnitstaken = 0;
         //vm.gradePointAverageCalculate=gradePointAverageCalculate;
 
         UserService.getEnrolledCourses(vm.coyote_id).then(function success(response) {
@@ -63,16 +64,15 @@
                 "F": 0
             }
             var gradepoints = 0;
-            var totalUnitstaken = 0;
             var gradePointAverage =0;
             for(var i=0;i<userCourseDetails.length;i++){
                 if(userCourseDetails[i].grade){
                     gradepoints = gradepoints + (userCourseDetails[i].units*gradeopts[userCourseDetails[i].grade]);
-                    totalUnitstaken = totalUnitstaken + userCourseDetails[i].units;
+                    vm.totalUnitstaken = vm.totalUnitstaken + userCourseDetails[i].units;
                 }
             }
             if(gradepoints){
-                gradePointAverage = gradepoints / totalUnitstaken;
+                gradePointAverage = gradepoints / vm.totalUnitstaken;
             }
 
             return gradePointAverage;

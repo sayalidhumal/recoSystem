@@ -4,7 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/viewUser/viewUser.controller.js" line="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddf75658-7106-474a-babe-5f9a4b21c0c2" name="Default" comment="Nov 2nd changes from mendoza">
+    <list default="true" id="ddf75658-7106-474a-babe-5f9a4b21c0c2" name="Default" comment="Nov 11th changes from mendoza">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.bin/cake" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.bin/coffee" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.bin/dateformat" />
@@ -3544,14 +3544,10 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLWriterBase.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/index.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/xmlbuilder/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/editPath/editPath.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/editPath/editPath.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/angular-material/modules/closure/swipe/swipe.css" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/angular-material/modules/closure/swipe/swipe.min.css" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/angular-material/modules/js/swipe/swipe.css" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/angular-material/modules/js/swipe/swipe.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/pageObjects/studentPage.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/vendor/angular-route/.bower.json" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/vendor/angular-route/LICENSE.md" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/vendor/angular-route/README.md" afterPath="" />
@@ -3563,58 +3559,26 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/vendor/angular-route/package.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/angular/angular.min.js.gzip" afterPath="$PROJECT_DIR$/public/vendor/angular/angular.min.js.gzip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app.js" afterPath="$PROJECT_DIR$/public/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.controller.js" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.html" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.controller.js" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.html" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/editUser/editUser.controller.js" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/editUser/editUser.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/editUser/editUser.html" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/editUser/editUser.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.controller.js" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.html" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/viewUser/viewUser.controller.js" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/viewUser/viewUser.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/viewUser/viewUser.html" afterPath="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/viewUser/viewUser.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.controller.js" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.html" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/advisorHome.html" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/advisorHome.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/advisorhome.controller.js" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/advisorhome.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.controller.js" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.html" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/detailView/detail-view.html" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/detailView/detail-view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.controller.js" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.html" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/AdvisorHome/viewPrerequisites/viewPrerequisites.controller.js" afterPath="$PROJECT_DIR$/public/app/AdvisorHome/viewPrerequisites/viewPrerequisites.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.html" afterPath="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/detailView/detail-view.html" afterPath="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/detailView/detail-view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.controller.js" afterPath="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.html" afterPath="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.controller.js" afterPath="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.html" afterPath="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/review-questionnaire.html" afterPath="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/review-questionnaire.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.controller.js" afterPath="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html" afterPath="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/home/home.controller.js" afterPath="$PROJECT_DIR$/public/app/home/home.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/home/home.html" afterPath="$PROJECT_DIR$/public/app/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/login/login.controller.js" afterPath="$PROJECT_DIR$/public/app/login/login.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/login/login.html" afterPath="$PROJECT_DIR$/public/app/login/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/resetPassword/reset-password.controller.js" afterPath="$PROJECT_DIR$/public/app/resetPassword/reset-password.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/resetPassword/reset-password.html" afterPath="$PROJECT_DIR$/public/app/resetPassword/reset-password.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/signup/signup.html" afterPath="$PROJECT_DIR$/public/app/signup/signup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/welcome/welcome.controller.js" afterPath="$PROJECT_DIR$/public/app/welcome/welcome.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/welcome/welcome.html" afterPath="$PROJECT_DIR$/public/app/welcome/welcome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/layout/layout.controller.js" afterPath="$PROJECT_DIR$/public/assets/layout/layout.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/layout/layout.html" afterPath="$PROJECT_DIR$/public/assets/layout/layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/services/course.service.js" afterPath="$PROJECT_DIR$/public/assets/services/course.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/services/prerequisite.service.js" afterPath="$PROJECT_DIR$/public/assets/services/prerequisite.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/services/user.service.js" afterPath="$PROJECT_DIR$/public/assets/services/user.service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/utils/recommendation_algorithm.js" afterPath="$PROJECT_DIR$/public/assets/utils/recommendation_algorithm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/site.css" afterPath="$PROJECT_DIR$/public/css/site.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/routes.js" afterPath="$PROJECT_DIR$/public/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/server/queries/course.queries.js" afterPath="$PROJECT_DIR$/public/server/queries/course.queries.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/server/queries/login.queries.js" afterPath="$PROJECT_DIR$/public/server/queries/login.queries.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/server/queries/user.queries.js" afterPath="$PROJECT_DIR$/public/server/queries/user.queries.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/server/routes/index.js" afterPath="$PROJECT_DIR$/public/server/routes/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/angular-animate/.bower.json" afterPath="$PROJECT_DIR$/public/vendor/angular-animate/.bower.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/angular-animate/angular-animate.js" afterPath="$PROJECT_DIR$/public/vendor/angular-animate/angular-animate.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/angular-animate/angular-animate.min.js" afterPath="$PROJECT_DIR$/public/vendor/angular-animate/angular-animate.min.js" />
@@ -4317,12 +4281,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/toastr/.bower.json" afterPath="$PROJECT_DIR$/public/vendor/toastr/.bower.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/underscore/.bower.json" afterPath="$PROJECT_DIR$/public/vendor/underscore/.bower.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/zxcvbn/.bower.json" afterPath="$PROJECT_DIR$/public/vendor/zxcvbn/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/e2e/login.js" afterPath="$PROJECT_DIR$/tests/e2e/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/e2e/student/student.js" afterPath="$PROJECT_DIR$/tests/e2e/student/student.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/pageObjects/loginPage.js" afterPath="$PROJECT_DIR$/tests/pageObjects/loginPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests_output/CHROME_61.0.3163.100_Mac OS X_login.xml" afterPath="$PROJECT_DIR$/tests_output/CHROME_61.0.3163.100_Mac OS X_login.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests_output/CHROME_61.0.3163.100_Mac OS X_welcome.xml" afterPath="$PROJECT_DIR$/tests_output/CHROME_61.0.3163.100_Mac OS X_welcome.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests_output/student/CHROME_61.0.3163.100_Mac OS X_student.xml" afterPath="$PROJECT_DIR$/tests_output/student/CHROME_61.0.3163.100_Mac OS X_student.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -4340,21 +4298,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="recommendation-path.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.controller.js">
+      <file leaf-file-name="educationalHistory.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="69" column="61" lean-forward="false" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
+            <state relative-caret-position="1080">
+              <caret line="72" column="66" lean-forward="false" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recommendation-path.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.html">
+      <file leaf-file-name="educationalHistory.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="27" column="176" lean-forward="false" selection-start-line="27" selection-start-column="86" selection-end-line="27" selection-end-column="176" />
+            <state relative-caret-position="1080">
+              <caret line="74" column="61" lean-forward="false" selection-start-line="74" selection-start-column="61" selection-end-line="74" selection-end-column="61" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail-view.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/detailView/detail-view.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="98" lean-forward="false" selection-start-line="2" selection-start-column="98" selection-end-line="2" selection-end-column="98" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recommendationPath.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="83" lean-forward="false" selection-start-line="22" selection-start-column="83" selection-end-line="22" selection-end-column="83" />
               <folding>
                 <element signature="e#296#302#0" expanded="true" />
                 <element signature="e#488#494#0" expanded="true" />
@@ -4363,44 +4343,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="site.styl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/site.styl">
+      <file leaf-file-name="recommendationPath.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="site.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/site.css">
+      <file leaf-file-name="recommendation-path.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="61" column="10" lean-forward="false" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user-courses-details.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="70" column="109" lean-forward="true" selection-start-line="70" selection-start-column="109" selection-end-line="70" selection-end-column="208" />
+            <state relative-caret-position="105">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="7" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#p#0;n#md-card#0;n#md-content#1;n#body#0;n#!!top" expanded="true" />
+                <element signature="e#296#302#0" expanded="true" />
+                <element signature="e#488#494#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail-view.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/detailView/detail-view.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -4408,8 +4369,8 @@
       <file leaf-file-name="detail-view.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/detailView/detail-view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+            <state relative-caret-position="30">
+              <caret line="2" column="98" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="98" />
               <folding>
                 <element signature="n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#md-content#0;n#md-card-content#0;n#md-card#0;n#md-content#0;n#!!top" expanded="false" />
                 <element signature="n#td#0;n#tr#2;n#tbody#0;n#table#0;n#md-content#0;n#md-card-content#0;n#md-card#0;n#md-content#0;n#!!top" expanded="false" />
@@ -4426,11 +4387,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="questionnaire.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.html">
+      <file leaf-file-name="detail-view.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/detailView/detail-view.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="62" lean-forward="false" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -4439,20 +4400,20 @@
       <file leaf-file-name="user-courses-details.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+            <state relative-caret-position="870">
+              <caret line="58" column="59" lean-forward="false" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit-questionnaire.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.html">
+      <file leaf-file-name="user-courses-details.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="1095">
+              <caret line="73" column="29" lean-forward="false" selection-start-line="66" selection-start-column="24" selection-end-line="73" selection-end-column="29" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#md-card-title-text#0;n#md-card-title#0;n#md-card#0;n#md-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#md-card#0;n#md-content#1;n#body#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -4505,29 +4466,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/assets/utils/recommendation_algorithm.js" />
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/editPath/editPath.controller.js" />
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/viewPrerequisites/viewPrerequisites.controller.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/editUser/editUser.html" />
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.html" />
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/detailView/detail-view.html" />
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/advisorHome.html" />
-        <option value="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/review-questionnaire.html" />
-        <option value="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.html" />
-        <option value="$PROJECT_DIR$/public/assets/services/prerequisite.service.js" />
         <option value="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/viewUser/viewUser.html" />
         <option value="$PROJECT_DIR$/public/assets/services/user.service.js" />
         <option value="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/viewUser/viewUser.controller.js" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.html" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.html" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.controller.js" />
-        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.controller.js" />
         <option value="$PROJECT_DIR$/public/assets/services/course.service.js" />
         <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.html" />
         <option value="$PROJECT_DIR$/public/server/queries/course.queries.js" />
         <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.controller.js" />
-        <option value="$PROJECT_DIR$/public/app/home/home.controller.js" />
         <option value="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.controller.js" />
         <option value="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/editPath/editPath.html" />
         <option value="$PROJECT_DIR$/public/assets/layout/layout.controller.js" />
@@ -4535,7 +4480,6 @@
         <option value="$PROJECT_DIR$/public/app/welcome/welcome.html" />
         <option value="$PROJECT_DIR$/public/app/signup/signup.html" />
         <option value="$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.html" />
-        <option value="$PROJECT_DIR$/public/assets/layout/layout.html" />
         <option value="$PROJECT_DIR$/public/app/home/home.html" />
         <option value="$PROJECT_DIR$/tests/e2e/login.js" />
         <option value="$PROJECT_DIR$/public/app/login/login.html" />
@@ -4549,13 +4493,30 @@
         <option value="$PROJECT_DIR$/public/app/signup/signup.controller.js" />
         <option value="$PROJECT_DIR$/public/app.js" />
         <option value="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/detailView/detail-view.html" />
-        <option value="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.html" />
         <option value="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.controller.js" />
         <option value="$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.html" />
         <option value="$PROJECT_DIR$/public/css/site.styl" />
-        <option value="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.controller.js" />
         <option value="$PROJECT_DIR$/public/css/site.css" />
+        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.html" />
+        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.controller.js" />
+        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.controller.js" />
+        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.html" />
+        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/editUser/editUser.controller.js" />
+        <option value="$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/editUser/editUser.html" />
+        <option value="$PROJECT_DIR$/public/app/home/home.controller.js" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/advisorhome.controller.js" />
+        <option value="$PROJECT_DIR$/public/assets/utils/recommendation_algorithm.js" />
+        <option value="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/review-questionnaire.html" />
+        <option value="$PROJECT_DIR$/public/assets/layout/layout.html" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/advisorHome.html" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.html" />
+        <option value="$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.html" />
+        <option value="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.controller.js" />
         <option value="$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.html" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.controller.js" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/detailView/detail-view.html" />
+        <option value="$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.html" />
       </list>
     </option>
   </component>
@@ -4595,6 +4556,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -4607,196 +4569,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site.styl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentHome" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentHome" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="userCoursesDetails" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recoSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentHome" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recommendationPath" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -4971,7 +4746,9 @@
       <workItem from="1509682953082" duration="15809000" />
       <workItem from="1510006730721" duration="140000" />
       <workItem from="1510007541549" duration="10558000" />
-      <workItem from="1510104278405" duration="13408000" />
+      <workItem from="1510104278405" duration="16886000" />
+      <workItem from="1510357126198" duration="7342000" />
+      <workItem from="1510405689696" duration="238000" />
     </task>
     <task id="LOCAL-00001" summary="basic structure">
       <created>1496789371316</created>
@@ -5078,11 +4855,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508379188875</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Nov 2nd changes from mendoza">
+      <created>1510178518561</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1510178518561</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="588455000" />
+    <option name="totallyTimeSpent" value="599513000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -5096,7 +4880,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="809" extended-state="6" />
     <layout>
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26286116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32850942" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
@@ -5135,220 +4919,23 @@
     <MESSAGE value="Sidebar" />
     <MESSAGE value="Sidebar ui" />
     <MESSAGE value="Nov 2nd changes from mendoza" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nov 2nd changes from mendoza" />
+    <MESSAGE value="Nov 11th changes from mendoza" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nov 11th changes from mendoza" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/server/queries/course.queries.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="430" column="27" lean-forward="false" selection-start-line="430" selection-start-column="8" selection-end-line="430" selection-end-column="27" />
-          <folding>
-            <element signature="e#315#2734#0" expanded="false" />
-            <element signature="e#2774#4099#0" expanded="false" />
-            <element signature="e#4142#6129#0" expanded="false" />
-            <element signature="e#6175#6888#0" expanded="false" />
-            <element signature="e#6935#8471#0" expanded="false" />
-            <element signature="e#8517#9947#0" expanded="false" />
-            <element signature="e#9992#11257#0" expanded="false" />
-            <element signature="e#11311#13076#0" expanded="false" />
-            <element signature="e#13120#14079#0" expanded="false" />
-            <element signature="e#14122#15091#0" expanded="false" />
-            <element signature="e#15144#16204#0" expanded="false" />
-            <element signature="e#16254#16987#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/viewCourse/viewCourse.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="47" lean-forward="false" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/viewUser/viewUser.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/advisorhome.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/services/user.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="66" column="41" lean-forward="false" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/advisorHome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/home/home.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/viewPrerequisites/viewPrerequisites.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/viewPrerequisites/viewPrerequisites.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="20" column="78" lean-forward="false" selection-start-line="20" selection-start-column="78" selection-end-line="20" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="63" column="60" lean-forward="false" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/editPath/editPath.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="59" lean-forward="false" selection-start-line="53" selection-start-column="59" selection-end-line="53" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/editPath/editPath.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/services/authenticate.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/welcome/welcome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="95" lean-forward="false" selection-start-line="10" selection-start-column="95" selection-end-line="10" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/welcome/welcome.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/layout/layout.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="124" column="37" lean-forward="false" selection-start-line="124" selection-start-column="37" selection-end-line="124" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/layout/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="67" lean-forward="false" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/home/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="91" lean-forward="false" selection-start-line="48" selection-start-column="91" selection-end-line="48" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/e2e/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/AdminHome/createCourse/createCourse.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5356,7 +4943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-80">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5364,7 +4950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5372,7 +4957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5380,11 +4964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="130" column="5" lean-forward="true" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
-          <folding>
-            <element signature="e#452#2046#0" expanded="false" />
-            <element signature="e#2090#3813#0" expanded="false" />
-            <element signature="e#3860#5813#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -5392,17 +4971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="283" column="5" lean-forward="true" selection-start-line="283" selection-start-column="5" selection-end-line="283" selection-end-column="5" />
-          <folding>
-            <element signature="e#361#2211#0" expanded="false" />
-            <element signature="e#2260#3829#0" expanded="false" />
-            <element signature="e#2614#2726#0" expanded="false" />
-            <element signature="e#3176#3281#0" expanded="false" />
-            <element signature="e#3867#5115#0" expanded="false" />
-            <element signature="e#5171#8184#0" expanded="false" />
-            <element signature="e#8237#8929#0" expanded="false" />
-            <element signature="e#8971#9721#0" expanded="false" />
-            <element signature="e#9763#10373#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -5410,7 +4978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5418,23 +4985,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/login/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/login/login.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5442,7 +4992,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5450,11 +4999,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
           <caret line="100" column="42" lean-forward="false" selection-start-line="100" selection-start-column="42" selection-end-line="100" selection-end-column="42" />
-          <folding>
-            <element signature="e#563#1418#0" expanded="false" />
-            <element signature="e#1579#3643#0" expanded="false" />
-            <element signature="e#3687#4523#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -5462,64 +5006,290 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="13" column="78" lean-forward="false" selection-start-line="13" selection-start-column="78" selection-end-line="13" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/detailView/detail-view.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="69" column="61" lean-forward="false" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/site.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/site.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="61" column="10" lean-forward="false" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="21" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="47" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/resetPassword/reset-password.controller.js">
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/modifyUserInformation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="76" lean-forward="true" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
+        <state relative-caret-position="255">
+          <caret line="17" column="48" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyCourseInformation/modifyCourseInformation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="82" lean-forward="false" selection-start-line="6" selection-start-column="82" selection-end-line="6" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/editUser/editUser.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="169" column="26" lean-forward="false" selection-start-line="158" selection-start-column="16" selection-end-line="169" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/signup/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="144" column="70" lean-forward="false" selection-start-line="144" selection-start-column="70" selection-end-line="144" selection-end-column="70" />
+        <state relative-caret-position="255">
+          <caret line="17" column="30" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="17" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/login/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/modifyUserInformation/editUser/editUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="82" lean-forward="false" selection-start-line="6" selection-start-column="82" selection-end-line="6" selection-end-column="82" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/login/login.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/resetPassword/reset-password.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="52" column="76" lean-forward="true" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/signup/signup.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1081">
+        <state relative-caret-position="633">
           <caret line="98" column="17" lean-forward="true" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/home/home.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+          <folding>
+            <element signature="e#997#1662#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdminHome/adminhome.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/advisorhome.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
+        <state relative-caret-position="-565">
           <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/utils/underscore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/server/queries/course.queries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/utils/recommendation_algorithm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="278" column="0" lean-forward="false" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
+        <state relative-caret-position="415">
+          <caret line="449" column="0" lean-forward="false" selection-start-line="449" selection-start-column="0" selection-end-line="449" selection-end-column="0" />
           <folding>
             <element signature="e#1853#8063#0" expanded="false" />
-            <element signature="e#8135#9623#0" expanded="false" />
             <element signature="e#9676#13228#0" expanded="false" />
             <element signature="e#13285#19834#0" expanded="false" />
-            <element signature="e#19901#24825#0" expanded="false" />
-            <element signature="e#24876#29501#0" expanded="false" />
-            <element signature="e#29555#31493#0" expanded="false" />
-            <element signature="e#31549#33317#0" expanded="false" />
-            <element signature="e#33371#34530#0" expanded="false" />
-            <element signature="e#34607#40130#0" expanded="false" />
-            <element signature="e#40190#44257#0" expanded="false" />
-            <element signature="e#44316#45828#0" expanded="false" />
+            <element signature="e#26979#31604#0" expanded="false" />
+            <element signature="e#31658#33596#0" expanded="false" />
+            <element signature="e#33652#35420#0" expanded="false" />
+            <element signature="e#35474#36633#0" expanded="false" />
+            <element signature="e#36710#42233#0" expanded="false" />
+            <element signature="e#42293#46360#0" expanded="false" />
+            <element signature="e#46419#47931#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/detailView/detail-view.controller.js">
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/review-questionnaire.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="128" column="68" lean-forward="false" selection-start-line="128" selection-start-column="68" selection-end-line="128" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/studenthome.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/layout/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="82" lean-forward="false" selection-start-line="22" selection-start-column="82" selection-end-line="22" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#div#0;n#md-toolbar#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/advisorHome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="51" lean-forward="false" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#md-card#0;n#md-content#0;n#div#0;n#md-content#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#4;n#md-card#0;n#md-content#0;n#div#0;n#md-content#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/addPrerequisites/addPrerequisites.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="45" lean-forward="false" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#md-card-title-text#0;n#md-card-title#0;n#md-card#0;n#md-content#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="74" lean-forward="true" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="59" lean-forward="false" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="73" column="29" lean-forward="false" selection-start-line="66" selection-start-column="24" selection-end-line="73" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#md-card#0;n#md-content#1;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="72" column="66" lean-forward="false" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/educationalHistory/educationalHistory.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="74" column="61" lean-forward="false" selection-start-line="74" selection-start-column="61" selection-end-line="74" selection-end-column="61" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/detailView/detail-view.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -5529,8 +5299,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/detailView/detail-view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        <state relative-caret-position="30">
+          <caret line="2" column="98" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="98" />
           <folding>
             <element signature="n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#md-content#0;n#md-card-content#0;n#md-card#0;n#md-content#0;n#!!top" expanded="false" />
             <element signature="n#td#0;n#tr#2;n#tbody#0;n#table#0;n#md-content#0;n#md-card-content#0;n#md-card#0;n#md-content#0;n#!!top" expanded="false" />
@@ -5546,44 +5316,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/questionnaire/questionnaire.html">
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/detailView/detail-view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="62" lean-forward="false" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/reviewQuestionnaire/editQuestionnaire/edit-questionnaire.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#md-card-title-text#0;n#md-card-title#0;n#md-card#0;n#md-content#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="69" column="61" lean-forward="false" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/site.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="30">
+          <caret line="2" column="98" lean-forward="false" selection-start-line="2" selection-start-column="98" selection-end-line="2" selection-end-column="98" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/StudentHome/recommendationPath/recommendation-path.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="27" column="176" lean-forward="false" selection-start-line="27" selection-start-column="86" selection-end-line="27" selection-end-column="176" />
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="e#296#302#0" expanded="true" />
             <element signature="e#488#494#0" expanded="true" />
@@ -5591,28 +5335,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.controller.js">
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+        <state relative-caret-position="135">
+          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/site.css">
+    <entry file="file://$PROJECT_DIR$/public/app/AdvisorHome/recommendationPath/recommendationPath.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="61" column="10" lean-forward="false" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/StudentHome/userCoursesDetails/user-courses-details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="70" column="109" lean-forward="true" selection-start-line="70" selection-start-column="109" selection-end-line="70" selection-end-column="208" />
+        <state relative-caret-position="330">
+          <caret line="22" column="83" lean-forward="false" selection-start-line="22" selection-start-column="83" selection-end-line="22" selection-end-column="83" />
           <folding>
-            <element signature="n#style#0;n#p#0;n#md-card#0;n#md-content#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#296#302#0" expanded="true" />
+            <element signature="e#488#494#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -447,7 +447,7 @@ function RecommendationAlgo(appconfig,_,$filter) {
                         electiveCount--;
                     }
                 }
-                console.log(electiveCount)
+
                 electivesToBeTaken = getElectives(electives,vm.recommendationPath);
                 var sortDay = sortByDay(electivesToBeTaken,vm.userDetails.preferences);
 
@@ -471,23 +471,30 @@ function RecommendationAlgo(appconfig,_,$filter) {
 
                 var data =[];
                 data[0] = [];
+
                 for(var i=0;i<above.length;i++){
+
                     if(electiveCount>0){
                         data[0] = above[i];
                         addToPath(data,userDetails.preferences.other.course_count_preference,"elective");
                         if(vm.added==1){
+
                             vm.added=0;
                             electiveCount--;
                         }
                     }
 
                 }
+
                 if(electiveCount>0){
+
                     for(var i=0;i<below.length;i++){
+
                         if(electiveCount>0){
                             data[0] = below[i];
                             addToPath(data,userDetails.preferences.other.course_count_preference,"elective");
                             if(vm.added==1){
+
                                 vm.added=0;
                                 electiveCount--;
                             }
@@ -495,13 +502,16 @@ function RecommendationAlgo(appconfig,_,$filter) {
 
                     }
                 }
+                vm.added=0;
                 var sch = angular.copy(vm.coursesData.schedule);
                 sch = _.groupBy(sch,'course_id');
                 var flag = 0;
+
                 if(electiveNo!==(electiveUnits/4)){
-                    for(i=0;i<sch[595].length;i++){
-                        if((sch[595][i].quarter==="Summer") && (userDetails.preferences.other.summer_course_preference===false)){
-                            sch[595].splice(i,1);
+
+                    for(i=0;i<sch[695].length;i++){
+                        if((sch[695][i].quarter==="Summer") && (userDetails.preferences.other.summer_course_preference===false)){
+                            sch[695].splice(i,1);
                             console.log(vm.sch[595],i);
                             i--
                         }
@@ -512,15 +522,54 @@ function RecommendationAlgo(appconfig,_,$filter) {
                             angular.forEach(data,function (schedules,quarter) {
                                 if(flag===0){
                                     if(schedules.length<2){
+
                                         var a = [];
-                                        a[0]= _.where(sch[595],{quarter:quarter,year:year});
+                                        a[0]= _.where(sch[695],{quarter:quarter,year:year});
                                         addToPath(a,userDetails.preferences.other.course_count_preference,"elective");
-                                        flag=1;
+                                        if(vm.added==1){
+                                            vm.added=0;
+                                            flag=1;
+                                        }
                                     }
                                 }
                             })
                         }
                     })
+                    if(flag == 0){
+                        if(userDetails.preferences.other.summer_course_preference===true){
+                            angular.forEach(vm.recommendationPath,function (data,year) {
+                                if(flag == 0){
+                                    var a  = [];
+                                    a[0]= _.where(sch[695],{quarter:"Summer",year:year});
+                                    if(a[0].length !== 0){
+                                        addToPath(a,userDetails.preferences.other.course_count_preference,"elective");
+                                        flag = 1;
+                                    }
+                                }
+
+                            })
+                        }else {
+                            angular.forEach(vm.recommendationPath,function (data,year) {
+                                if(flag===0){
+                                    angular.forEach(data,function (schedules,quarter) {
+                                        if(flag===0){
+                                            console.log(year,quarter)
+                                            if(schedules.length<4){
+
+                                                var a = [];
+                                                a[0]= _.where(sch[695],{quarter:quarter,year:year});
+                                                addToPath(a,userDetails.preferences.other.course_count_preference,"elective");
+                                                if(vm.added==1){
+                                                    vm.added=0;
+                                                    flag=1;
+                                                }
+                                            }
+                                        }
+                                    })
+                                }
+                            })
+                        }
+                    }
                 }
                 return;
             }

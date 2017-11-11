@@ -9,6 +9,7 @@
 
     function EditUserController(UserService,$stateParams,appconfig,$state) {
         var vm =this;
+        vm.form = {};
         vm.coyote_id = $stateParams.coyote_id;
         vm.user;
         // vm.user = {

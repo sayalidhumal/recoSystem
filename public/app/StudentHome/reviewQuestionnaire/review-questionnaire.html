@@ -12,7 +12,7 @@
                 </div>
                 <div>
                     <p><em><b></b></em></p>
-                    <p><b>What is your degree option? (Please Select One)</b></p>
+                    <p><b>What is your degree option? (Please select one)</b></p>
                     <div>
                         <p>
                             <md-icon class="material-icons" ng-if="vm.preference.preference.degree_preference == 'Project'">radio_button_checked</md-icon>
@@ -33,12 +33,12 @@
                     </div>
                     <md-divider></md-divider>
 
-                    <p><b>For Elective Courses, What are your Preferences?</b></p>
+                    <p><b>For elective courses, what are your preferences?</b></p>
                     <div>
                         <p>
                             <md-icon class="material-icons" ng-if="vm.preference.preference.lecture_preference">radio_button_checked</md-icon>
                             <md-icon  class="material-icons" ng-if="!vm.preference.preference.lecture_preference">radio_button_unchecked</md-icon >
-                            Lecture and Lab
+                            Lecture and lab
                         </p>
 
                         <p>
@@ -49,7 +49,7 @@
                     </div>
                     <md-divider></md-divider>
 
-                    <p><b>On Which days do you prefer to take Classes?(Select all that Apply)</b></p>
+                    <p><b>On which days do you prefer to take classes?(Select all that apply)</b></p>
                     <div>
                         <p>
                             <md-icon  class="material-icons" ng-if="vm.contains(vm.preference.day_preference,'MondayAndWednesday')">check_box</md-icon >
@@ -69,7 +69,7 @@
                     </div>
                     <md-divider></md-divider>
 
-                    <p><b>Which time do you prefer to take Classes?(Select all that Apply)</b></p>
+                    <p><b>Which time do you prefer to take classes?(Select all that apply)</b></p>
                     <div>
                         <p>
                             <md-icon  class="material-icons" ng-if="vm.contains(vm.preference.time_preference,'Morning')">check_box</md-icon >
@@ -89,7 +89,7 @@
                     </div>
                     <md-divider></md-divider>
 
-                    <p><b>Do you prefer to take Summer Courses?</b></p>
+                    <p><b>Do you prefer to take summer courses?</b></p>
                     <div>
                         <p>
                             <md-icon class="material-icons" ng-if="vm.preference.preference.summer_course_preference">radio_button_checked</md-icon>
@@ -105,7 +105,7 @@
                     </div>
                     <md-divider></md-divider>
 
-                    <p><b>How many courses do you prefer to take in Upcoming Quarter? (Enter 1-4)</b></p>
+                    <p><b>How many courses do you prefer to take in upcoming quarter? (Enter 1-4)</b></p>
                     <input type="number" ng-maxlength="4" ng-minlength="1" name="phone" ng-disabled="true" ng-model="vm.preference.preference.course_count_preference">
                     <p></p>
                     <md-divider></md-divider>
@@ -126,7 +126,7 @@
                     </div>
                     <md-divider></md-divider>
 
-                    <p><b>Are you interested in taking Independent Study?</b></p>
+                    <p><b>Are you interested in taking independent study?</b></p>
                     <div>
                         <p>
                             <md-icon class="material-icons" ng-if="vm.preference.preference.independent_study_preference">radio_button_checked</md-icon>

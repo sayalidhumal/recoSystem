@@ -24,6 +24,7 @@
 
         function search(searchName,searchID) {
             vm.error = false;
+            vm.course = [];
             CourseService.getCourse(searchID,searchName).then(
                 function success(response) {
                     if(response.data.length !=0){

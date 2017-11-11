@@ -1,56 +1,96 @@
  <md-content layout="row" layout-align="space-around" ng-cloak="ng-cloak">
-    <md-card flex="flex" flex-gt-sm="50" flex-gt-md="50" >\
+    <md-card flex="flex" flex-gt-sm="50" flex-gt-md="50" >
         <div>
-            <md-input-container>
-                <label>Coyote ID</label>
-                <input type="text" ng-model="vm.user.coyote_id" required>
-            </md-input-container>
+            <form name="vm.form">
+                <md-input-container>
+                    <label>Coyote ID</label>
+                    <input type="number" required ng-maxlength="8" ng-minlength="8" name="userID" ng-model="vm.user.coyote_id">
+                    <div ng-messages="vm.form.userID.$error" class="help-block" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">This field is required</div>
+                        <div ng-message="minlength">This field is too short</div>
+                        <div ng-message="maxlength">This field is too long</div>
+                    </div>
+                </md-input-container>
 
-            <md-input-container>
-                <label>Username</label>
-                <input type="text" ng-model="vm.user.name" required>
-            </md-input-container>
 
-            <md-input-container>
-                <label>Email ID</label>
-                <input type="text" ng-model="vm.user.email_id" required>
-            </md-input-container>
+                <!--<md-input-container>-->
+                    <!--<label>Coyote ID</label>-->
+                    <!--<input type="text" ng-model="vm.user.coyote_id" required name="coyote_id" ng-minlength="10" ng-maxlength="10">-->
+                    <!--<div ng-messages="vm.form.coyote_id.$error" class="help-block" role="alert" multiple="">-->
+                        <!--<div ng-message="required" class="my-message">This field is required.</div>-->
+                        <!--<div ng-message="minlength">This field is too short.</div>-->
+                        <!--<div ng-message="maxlength"> This field is too long</div>-->
+                    <!--</div>-->
+                <!--</md-input-container>-->
 
-            <md-input-container>
-                <label>Phone</label>
-                <input type="text" ng-model="vm.user.phone" required>
-            </md-input-container>
+                <md-input-container>
+                    <label>Student name</label>
+                    <input type="text" ng-model="vm.user.name" required name="student_name">
+                    <div ng-messages="vm.form.student_name.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Name field is required.</div>
+                    </div>
+                </md-input-container>
 
-            <md-input-container>
-                <label>Address</label>
-                <input type="text" ng-model="vm.user.address.Address" required>
-            </md-input-container>
+                <md-input-container>
+                    <label>Email ID</label>
+                    <input type="text" ng-model="vm.user.email_id" required name="email">
+                    <div ng-messages="vm.form.email.$error" role="alert" multiple="">
+                        <div ng-message="email" class="my-message">Please enter valid email address</div>
+                    </div>
+                </md-input-container>
 
-            <md-input-container>
-                <label>City</label>
-                <input type="text" ng-model="vm.user.address.City" required>
-            </md-input-container>
+                <md-input-container>
+                    <label>Phone</label>
+                    <input type="text" ng-model="vm.user.phone" required name="phone">
+                    <div ng-messages="vm.form.phone.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Phone field is required.</div>
+                    </div>
+                </md-input-container>
 
-            <md-input-container>
-                <label>State</label>
-                <input type="text" ng-model="vm.user.address.State" required>
-            </md-input-container>
+                <md-input-container>
+                    <label>Street</label>
+                    <input type="text" ng-model="vm.user.address.Address" required name="address">
+                    <div ng-messages="vm.form.address.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Street field is required.</div>
+                    </div>
+                </md-input-container>
 
-            <md-input-container>
-                <label>Zipcode</label>
-                <input type="text" ng-model="vm.user.address.Pin" required>
-            </md-input-container>
+                <md-input-container>
+                    <label>City</label>
+                    <input type="text" ng-model="vm.user.address.City" required name="city">
+                    <div ng-messages="vm.form.city.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">City field is required.</div>
+                    </div>
+                </md-input-container>
 
-            <md-datepicker ng-model="vm.user.date_of_birth" md-placeholder="Birth Date" flex-gt-sm md-min-date="vm.minDate" md-max-date="vm.maxDate"></md-datepicker>
+                <md-input-container>
+                    <label>State</label>
+                    <input type="text" ng-model="vm.user.address.State" required name="state">
+                    <div ng-messages="vm.form.state.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">State field is required.</div>
+                    </div>
+                </md-input-container>
 
-            <md-input-container>
-                <label>Role</label>
-                <md-select ng-model="vm.role" required>
-                    <md-option value="administrator">Admin</md-option>
-                    <md-option value="advisor">Advisor</md-option>
-                    <md-option value="student">Student</md-option>
-                </md-select>
-            </md-input-container>
+                <md-input-container>
+                    <label>Zipcode</label>
+                    <input type="text" ng-model="vm.user.address.Pin" required name="zipcode">
+                    <div ng-messages="vm.form.zipcode.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Zipcode field is required.</div>
+                    </div>
+                </md-input-container>
+
+                <md-datepicker ng-model="vm.user.date_of_birth" md-placeholder="Birth Date" required flex-gt-sm md-min-date="vm.minDate" md-max-date="vm.maxDate"></md-datepicker>
+
+                <md-input-container>
+                    <label>Role</label>
+                    <md-select ng-model="vm.role" required>
+                        <md-option value="administrator">Admin</md-option>
+                        <md-option value="advisor">Advisor</md-option>
+                        <md-option value="student">Student</md-option>
+                    </md-select>
+                </md-input-container>
+            </form>
+
         </div>
         <md-button class="md-primary" ng-click="vm.submit()">Submit</md-button>
         <md-button class="md-primary" ng-click="vm.cancel()">Cancel</md-button>

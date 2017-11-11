@@ -15,23 +15,23 @@
             <md-button type="submit" ng-disabled="vm.form.$invalid" class="md-raised md-primary" ng-click="vm.search(vm.searchName,vm.searchID)">Search</md-button>
         </md-content>
         <md-content ng-if="vm.user.length != 0">
-            <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+            <md-card ng-repeat="user in vm.user" md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
                 <md-card-title>
-                    Name: {{vm.user.name}}
+                    Name: {{user.name}}
                 </md-card-title>
                 <md-card-content>
-                    <p>Coyote ID: 00{{vm.user.coyote_id}}</p>
-                    <p>Role: {{vm.role}}</p>
+                    <p>Coyote ID: {{user.coyote_id}}</p>
+                    <p>Role: {{user.role}}</p>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="end center">
-                    <md-button class="md-raised md-primary" ng-click="vm.view(vm.user)">View</md-button>
+                    <md-button class="md-raised md-primary" ng-click="vm.view(user)">View</md-button>
                 </md-card-actions>
             </md-card>
         </md-content>
         <md-content ng-if="vm.error">
             <md-card>
                 <md-card-title>
-                    No record found
+                    No record found. Please enter valid coyote ID or name.
                 </md-card-title>
             </md-card>
         </md-content>

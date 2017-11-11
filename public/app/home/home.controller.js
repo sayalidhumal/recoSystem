@@ -46,22 +46,6 @@
                         console.log(vm.user)
                     }
 
-
-                    // var user = response.data[0];
-                    // if(user){
-                    //     UserService.getUserRole(user.coyote_id).then(function success(response) {
-                    //         vm.userRole = response.data[0];
-                    //
-                    //         if(vm.userRole !== 'student'){
-                    //             vm.user = undefined;
-                    //         }
-                    //         else
-                    //             vm.user = user
-                    //     }, function () {
-                    //
-                    //     })
-                    // }
-
                 }, function error(response) {
                     console.log(response);
                 });
