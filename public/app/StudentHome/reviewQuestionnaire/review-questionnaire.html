@@ -106,11 +106,20 @@
                     <md-divider></md-divider>
 
                     <p><b>How many courses do you prefer to take in upcoming quarter? (Enter 1-4)</b></p>
-                    <input type="number" ng-maxlength="4" ng-minlength="1" name="phone" ng-disabled="true" ng-model="vm.preference.preference.course_count_preference">
-                    <p></p>
+                    <input type="range" ng-disabled="true" min="1" max="4" name="phone" ng-model="vm.preference.course_count_preference">
+                    <input type="number" ng-disabled="true" ng-model="vm.preference.course_count_preference"><br>
                     <md-divider></md-divider>
 
-                    <p><b>Do you want to do course overload?</b></p>
+
+
+                    <p><b>Do you want to do course overload?</b><span flex>
+                    <md-button href="https://www.csusb.edu/advising/forms-petitions/course-overload" target="_blank" class="md-icon-button test-tooltip" aria-label="Refresh">
+                        <md-tooltip md-direction="right">To know more about course overload, click i</md-tooltip>
+                        <md-icon class="material-icons" style="width: 12px; height: 12px">info outline
+                        </md-icon>
+                    </md-button>
+                    </span>
+                    </p>
                     <div>
                         <p>
                             <md-icon class="material-icons" ng-if="vm.preference.preference.course_overload_preference">radio_button_checked</md-icon>
@@ -126,7 +135,13 @@
                     </div>
                     <md-divider></md-divider>
 
-                    <p><b>Are you interested in taking independent study?</b></p>
+                    <p><b>Are you interested in taking independent study?</b><span flex>
+                    <md-button href="https://health.csusb.edu/studentsAlumni/independentStudy.html"target="_blank" class="md-icon-button test-tooltip" aria-label="Refresh">
+                        <md-tooltip md-direction="right">To know more about course overload, click i</md-tooltip>
+                        <md-icon class="material-icons" style="width: 12px; height: 12px">info outline
+                        </md-icon>
+                    </md-button>
+                    </span></p>
                     <div>
                         <p>
                             <md-icon class="material-icons" ng-if="vm.preference.preference.independent_study_preference">radio_button_checked</md-icon>

@@ -10,6 +10,10 @@
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Coyote ID</label>
                     <input type="number" name="searchID" ng-model="vm.searchID">
+                    <div ng-messages="vm.form.searchID.$error" ng-minlength="10" ng-maxlength="10" class="help-block" role="alert" multiple="">
+                        <div ng-message="minlength">The field is too short: must be ten numeric characters</div>
+                        <div ng-message="maxlength">The field is too long: must be ten numeric characters</div>
+                    </div>
                 </md-input-container>
             </form>
             <md-button type="submit" ng-disabled="vm.form.$invalid" class="md-raised md-primary" ng-click="vm.search(vm.searchName,vm.searchID)">Search</md-button>

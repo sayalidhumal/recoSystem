@@ -1,20 +1,26 @@
 <md-content layout="row" layout-align="space-around" ng-cloak="ng-cloak">
     <md-card flex="flex" flex-gt-sm="50" flex-gt-md="50" >
-        <!--<div layout-gt-sm="row">-->
-            <!--<md-input-container class="md-block" flex-gt-sm>-->
-                <!--<label>Quarter</label>-->
-                <!--<md-select ng-model="vm.schedule.quarter" required>-->
-                    <!--<md-option value="Fall">Fall</md-option>-->
-                    <!--<md-option value="Winter">Winter</md-option>-->
-                    <!--<md-option value="Spring">Spring</md-option>-->
-                    <!--<md-option value="Summer">Summer</md-option>-->
-                <!--</md-select>-->
-            <!--</md-input-container>-->
-            <!--<md-input-container class="md-block" flex-gt-sm>-->
-                <!--<label>Year</label>-->
-                <!--<input type="numeric" ng-model="vm.schedule.year" required required min="2015" placeholder="YYYY">-->
-            <!--</md-input-container>-->
-        <!--</div>-->
+        <form name="vm.form">
+        <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Quarter</label>
+                <md-select ng-model="vm.schedule.quarter" required>
+                    <md-option value="Fall">Fall</md-option>
+                    <md-option value="Winter">Winter</md-option>
+                    <md-option value="Spring">Spring</md-option>
+                    <md-option value="Summer">Summer</md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Year</label>
+                <input type="numeric" name="year" ng-model="vm.schedule.year" ng-minlength="4" ng-maxlength="4" required required min="2015" placeholder="YYYY">
+                <div ng-messages="vm.form.year.$error" class="help-block" role="alert" multiple="">
+                    <div ng-message="required" class="my-message">This field is required</div>
+                    <div ng-message="minlength">The field is too short: must be four numeric characters</div>
+                    <div ng-message="maxlength">The field is too long: must be four numeric characters</div>
+                </div>
+            </md-input-container>
+        </div>
         <div layout-gt-sm="row">
             <md-input-container class="md-block" flex-gt-sm>
                 <label>Instructor</label>
@@ -74,8 +80,10 @@
                 </div>
             </div>
             <p ng-if="!vm.schedule.lab_day">Lab Day: ONLINE</p>
-        </div>
         <md-button class="md-primary" ng-click="vm.submit()">Submit</md-button>
         <md-button class="md-primary" ng-click="vm.cancel()">Cancel</md-button>
+        </div>
+        </div>
+        </form>
     </md-card>
 </md-content>

@@ -61,7 +61,8 @@
                     <md-divider></md-divider>
 
                     <p><b>How many courses do you prefer to take in upcoming quarter? (Enter 1-4)</b></p>
-                    <input type="number" ng-maxlength="4" ng-minlength="1" name="phone" ng-model="vm.preference.preference.course_count_preference">
+                    <input type="range" min="1" max="4" name="phone" ng-model="vm.preference.course_count_preference">
+                    <input type="number" ng-model="vm.preference.course_count_preference"><br>
                     <md-divider></md-divider>
 
                     <p><b>Do you want to do course overload?</b></p>

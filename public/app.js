@@ -3,6 +3,7 @@
       'ui.router',
       'ngMaterial',
       'ngCookies',
+      'ngMessages',
       'services',
       'directives',
       'underscore',

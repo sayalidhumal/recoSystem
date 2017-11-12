@@ -15,6 +15,8 @@ router.get('/', function(req, res, next){
     __dirname, '..','..','index.html'));
 });
 
+module.exports = router;
+
 
 
 router.get('/login', loginQueries.getUser);
@@ -72,4 +74,4 @@ router.post('/addSchedule',courseQueries.addSchedule);
 router.post('/resetPassword',loginQueries.resetPassword);
 
 
-module.exports = router;
+//module.exports = router;

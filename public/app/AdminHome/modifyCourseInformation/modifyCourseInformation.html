@@ -9,7 +9,11 @@
 
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Course ID</label>
-                    <input type="number" name="searchID" ng-model="vm.searchID">
+                    <input type="number" name="searchID" ng-model="vm.searchID" ng-maxlength="3" ng-minlength="3">
+                    <div ng-messages="vm.form.searchID.$error" class="help-block" role="alert" multiple="">
+                        <div ng-message="maxlength">The field is too long: must be three numeric characters</div>
+                        <div ng-message="minlength">The field is too short: must be three numeric characters</div>
+                    </div>
                 </md-input-container>
             </form>
             <md-button type="submit" ng-disabled="vm.form.$invalid" class="md-raised md-primary" ng-click="vm.search(vm.searchName,vm.searchID)">Search</md-button>
@@ -30,7 +34,7 @@
         <md-content ng-if="vm.error">
             <md-card>
                 <md-card-title>
-                    Course not found. Please enter valid course id or course name.
+                    Course not found.
                 </md-card-title>
             </md-card>
         </md-content>
