@@ -10,7 +10,7 @@
                 <md-content>
                     <p><em><b>In order for the system to recommend a schedule of courses for you, please answer the following questions:</b></em></p>
                     <p><b>What is your degree option? (Please select one)</b></p>
-                    <md-radio-group ng-model="vm.preference.degree_preference">
+                    <md-radio-group  required ng-model="vm.preference.degree_preference">
                         <md-radio-button value="Project">Project</md-radio-button>
                         <md-radio-button value="Thesis">Thesis</md-radio-button>
                         <md-radio-button value="Comprehensive Exam">Comprehensive Exam</md-radio-button>
@@ -18,56 +18,56 @@
                     <md-divider></md-divider>
 
                     <p><b>For elective courses, what are your preferences?</b></p>
-                    <md-radio-group ng-model="vm.preference.lecture_preference">
+                    <md-radio-group required ng-model="vm.preference.lecture_preference">
                         <md-radio-button value=1>Lecture and lab</md-radio-button>
                         <md-radio-button value=0>Lecture</md-radio-button>
                     </md-radio-group>
                     <md-divider></md-divider>
 
                     <p><b>On which days do you prefer to take classes?(Select all that apply)</b></p>
-                    <md-checkbox ng-checked="vm.exists('MondayAndWednesday', vm.preference.day_preference)" ng-click="vm.toggle('MondayAndWednesday', vm.preference.day_preference)">
+                    <md-checkbox required ng-checked="vm.exists('MondayAndWednesday', vm.preference.day_preference)" ng-click="vm.toggle('MondayAndWednesday', vm.preference.day_preference)">
                         Monday and Wednesday
                     </md-checkbox>
-                    <md-checkbox ng-checked="vm.exists('TuesdayAndThursday', vm.preference.day_preference)" ng-click="vm.toggle('TuesdayAndThursday', vm.preference.day_preference)">
+                    <md-checkbox required ng-checked="vm.exists('TuesdayAndThursday', vm.preference.day_preference)" ng-click="vm.toggle('TuesdayAndThursday', vm.preference.day_preference)">
                         Tuesday and Thursday
                     </md-checkbox>
-                    <md-checkbox ng-checked="vm.exists('Friday', vm.preference.day_preference)" ng-click="vm.toggle('Friday', vm.preference.day_preference)">
+                    <md-checkbox required ng-checked="vm.exists('Friday', vm.preference.day_preference)" ng-click="vm.toggle('Friday', vm.preference.day_preference)">
                         Friday
                     </md-checkbox>
                     <md-divider></md-divider>
 
                     <p><b>Which time do you prefer to take classes?(Select all that apply)</b></p>
-                    <md-checkbox ng-checked="vm.exists('Morning', vm.preference.time_preference)" ng-click="vm.toggle('Morning', vm.preference.time_preference)">
+                    <md-checkbox required ng-checked="vm.exists('Morning', vm.preference.time_preference)" ng-click="vm.toggle('Morning', vm.preference.time_preference)">
                         Morning: Between 08:00am - 12:00pm
                     </md-checkbox>
-                    <md-checkbox ng-checked="vm.exists('Afternoon', vm.preference.time_preference)" ng-click="vm.toggle('Afternoon', vm.preference.time_preference)">
+                    <md-checkbox required ng-checked="vm.exists('Afternoon', vm.preference.time_preference)" ng-click="vm.toggle('Afternoon', vm.preference.time_preference)">
                         Afternoon: Between 12:00pm - 05:00pm
                     </md-checkbox>
-                    <md-checkbox ng-checked="vm.exists('Evening', vm.preference.time_preference)" ng-click="vm.toggle('Evening', vm.preference.time_preference)">
+                    <md-checkbox required ng-checked="vm.exists('Evening', vm.preference.time_preference)" ng-click="vm.toggle('Evening', vm.preference.time_preference)">
                         Evening: Between 05:00pm - 10:00pm
                     </md-checkbox>
                     <md-divider></md-divider>
 
                     <p><b>Do you prefer to take summer courses?</b></p>
-                    <md-radio-group ng-model="vm.preference.summer_course_preference">
+                    <md-radio-group required ng-model="vm.preference.summer_course_preference">
                         <md-radio-button value=1>Yes</md-radio-button>
                         <md-radio-button value=0>No</md-radio-button>
                     </md-radio-group>
                     <md-divider></md-divider>
 
                     <p><b>How many courses do you prefer to take in upcoming quarter? (Enter 1-4)</b></p>
-                    <input type="number" ng-maxlength="4" ng-minlength="1" name="phone" ng-model="vm.preference.course_count_preference">
+                    <input type="number" required ng-maxlength="4" ng-minlength="1" name="phone" ng-model="vm.preference.course_count_preference">
                     <md-divider></md-divider>
 
                     <p><b>Do you want to do course overload?</b></p>
-                    <md-radio-group ng-model="vm.preference.course_overload_preference">
+                    <md-radio-group required ng-model="vm.preference.course_overload_preference">
                         <md-radio-button value=1>Yes</md-radio-button>
                         <md-radio-button value=0>No</md-radio-button>
                     </md-radio-group>
                     <md-divider></md-divider>
 
                     <p><b>Are you interested in taking independent study?</b></p>
-                    <md-radio-group ng-model="vm.preference.independent_study_preference">
+                    <md-radio-group required ng-model="vm.preference.independent_study_preference">
                         <md-radio-button value=1>Yes</md-radio-button>
                         <md-radio-button value=0>No</md-radio-button>
                     </md-radio-group>

@@ -157,7 +157,7 @@
             </md-content>
             <md-content ng-if="vm.user.length != 0 && vm.flag">
                 <md-card ng-repeat="user in vm.user" md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
-                    <md-card-title>
+                    <md-card-title style="text-transform:capitalize">
                         Name: {{user.name}}
                     </md-card-title>
                     <md-card-content>

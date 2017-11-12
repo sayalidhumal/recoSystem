@@ -12,7 +12,9 @@
                         <label>Coyote ID</label>
                         <input id="coyoteID" type="number" required name="username" ng-model="vm.userID"/>
                         <div ng-messages="vm.form.username.$error" role="alert" ng-if='vm.form.username.$touched' multiple="">
-                            <div ng-message="required" class="my-message">Please enter your Coyote ID.</div>
+                            <!--<div ng-message="required" class="my-message">Please enter your coyote ID.</div>-->
+                            <!--<div ng-message="ng-maxlength" class="my-message">The field is too long: must be ten numeric characters.</div>-->
+                            <!--<div ng-message="ng-maxlength" class="my-message">The field is too short: must be ten numeric characters.</div>-->
                         </div>
                     </md-input-container>
                     <md-input-container class="md-block">
@@ -23,7 +25,7 @@
                         </div>
                     </md-input-container>
                 </md-content>
-                <p class="md-warn" ng-if="vm.error">Invalid User Name or Password</p>
+                <p class="md-warn" ng-if="vm.error">Invalid coyote ID or password</p>
                 <md-button id="loginButton" ng-disabled="vm.form.$invalid" class="md-raised md-primary" aria-label="Login" ng-click="vm.login()">Login</md-button>
             </form>
             <md-button ng-click="vm.forgot()">forgot password?</md-button>

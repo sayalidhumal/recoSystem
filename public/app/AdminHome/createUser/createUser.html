@@ -49,9 +49,9 @@
 
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>Email</label>
-                            <input type="email" name="email" ng-model="vm.user.email">
-                            <div ng-messages="vm.form.email.$error" role="alert" multiple="">
-                                <div ng-message="required" class="my-message">Please enter your email.</div>
+                            <input type="email" name="email" ng-model="vm.user.email" required placeholder="coyoteID@coyote.csusb.edu">
+                            <div ng-messages="vm.form.email.$error" role="alert" multiple>
+                                <div ng-message="required">Please enter your email.</div>
                             </div>
                         </md-input-container>
                         <div flex="5" hide-xs hide-sm>

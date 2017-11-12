@@ -2,26 +2,26 @@
     <md-card flex="flex" flex-gt-sm="50" flex-gt-md="50" >
         <div>
             <form name="vm.form">
-                <md-input-container>
-                    <label>Coyote ID</label>
-                    <input type="number" required ng-maxlength="8" ng-minlength="8" name="userID" ng-model="vm.user.coyote_id">
-                    <div ng-messages="vm.form.userID.$error" class="help-block" role="alert" multiple="">
-                        <div ng-message="required" class="my-message">This field is required</div>
-                        <div ng-message="minlength">This field is too short</div>
-                        <div ng-message="maxlength">This field is too long</div>
-                    </div>
-                </md-input-container>
-
-
                 <!--<md-input-container>-->
                     <!--<label>Coyote ID</label>-->
-                    <!--<input type="text" ng-model="vm.user.coyote_id" required name="coyote_id" ng-minlength="10" ng-maxlength="10">-->
+                    <!--<input type="number" required name="userID" ng-model="vm.coyote_id">-->
+                    <!--<div ng-messages="vm.form.userID.$error" class="help-block" role="alert" multiple="">-->
+                        <!--<div ng-message="required" class="my-message">This field is required</div>-->
+                        <!--<div ng-message="minlength">This field is too short</div>-->
+                        <!--<div ng-message="maxlength">This field is too long</div>-->
+                    <!--</div>-->
+                <!--</md-input-container>-->
+
+
+                <md-input-container>
+                    <label>Coyote ID</label>
+                    <input type="text" ng-model="vm.user.coyote_id" name="coyote_id" >
                     <!--<div ng-messages="vm.form.coyote_id.$error" class="help-block" role="alert" multiple="">-->
                         <!--<div ng-message="required" class="my-message">This field is required.</div>-->
                         <!--<div ng-message="minlength">This field is too short.</div>-->
                         <!--<div ng-message="maxlength"> This field is too long</div>-->
                     <!--</div>-->
-                <!--</md-input-container>-->
+                </md-input-container>
 
                 <md-input-container>
                     <label>Student name</label>

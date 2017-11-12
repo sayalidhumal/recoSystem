@@ -30,13 +30,13 @@
                     <md-divider></md-divider>
 
                     <p><b>On which days do you prefer to take classes?(Select all that apply)</b></p>
-                    <md-checkbox ng-checked="vm.exists('MondayAndWednesday', vm.preference.day_preference)" ng-click="vm.toggle('MondayAndWednesday', vm.preference.day_preference)">
+                    <md-checkbox required ng-checked="vm.exists('MondayAndWednesday', vm.preference.day_preference)" ng-click="vm.toggle('MondayAndWednesday', vm.preference.day_preference)">
                         Monday and Wednesday
                     </md-checkbox>
-                    <md-checkbox ng-checked="vm.exists('TuesdayAndThursday', vm.preference.day_preference)" ng-click="vm.toggle('TuesdayAndThursday', vm.preference.day_preference)">
+                    <md-checkbox required ng-checked="vm.exists('TuesdayAndThursday', vm.preference.day_preference)" ng-click="vm.toggle('TuesdayAndThursday', vm.preference.day_preference)">
                         Tuesday and Thursday
                     </md-checkbox>
-                    <md-checkbox ng-checked="vm.exists('Friday', vm.preference.day_preference)" ng-click="vm.toggle('Friday', vm.preference.day_preference)">
+                    <md-checkbox required ng-checked="vm.exists('Friday', vm.preference.day_preference)" ng-click="vm.toggle('Friday', vm.preference.day_preference)">
                         Friday
                     </md-checkbox>
                     <md-divider></md-divider>

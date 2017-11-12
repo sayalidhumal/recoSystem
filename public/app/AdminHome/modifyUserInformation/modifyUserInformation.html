@@ -16,12 +16,12 @@
         </md-content>
         <md-content ng-if="vm.user.length != 0">
             <md-card ng-repeat="user in vm.user" md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
-                <md-card-title>
+                <md-card-title style="text-transform:capitalize">
                     Name: {{user.name}}
                 </md-card-title>
                 <md-card-content>
                     <p>Coyote ID: {{user.coyote_id}}</p>
-                    <p>Role: {{user.role}}</p>
+                    <p style="text-transform:capitalize">Role: {{user.role}}</p>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="end center">
                     <md-button class="md-raised md-primary" ng-click="vm.view(user)">View</md-button>

@@ -12,7 +12,7 @@
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>First Name</label>
-                        <input type="text" name="firstname" ng-model="vm.firstname">
+                        <input type="text" name="firstname" ng-model="vm.firstname" required>
                         <div ng-messages="vm.form.firstname.$error" role="alert" multiple="">
                             <div ng-message="required" class="my-message">Please enter your first name.</div>
                         </div>
@@ -29,7 +29,7 @@
                     </div>
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Last Name</label>
-                        <input type="text" name="lastname" ng-model="vm.lastname">
+                        <input type="text" name="lastname" ng-model="vm.lastname" required>
                         <div ng-messages="vm.form.lastname.$error" role="alert" multiple="">
                             <div ng-message="required" class="my-message">Please enter your last name.</div>
                         </div>
@@ -38,9 +38,11 @@
                 <div layout-gt-sm="row">
                   <md-input-container class="md-block" flex-gt-sm>
                       <label>Coyote ID</label>
-                      <input type="number" ng-maxlength=10 name="userID" ng-model="vm.user.userID">
+                      <input type="number" required ng-maxlength="9" ng-minlength="8" name="userID" ng-model="vm.user.userID">
                       <div ng-messages="vm.form.userID.$error" role="alert" multiple="">
                           <div ng-message="required" class="my-message">Please enter your coyote ID.</div>
+                          <div ng-message="ng-maxlength" class="my-message">The field is too long: must be ten numeric characters.</div>
+                          <div ng-message="ng-maxlength" class="my-message">The field is too short: must be ten numeric characters.</div>
                       </div>
                   </md-input-container>
                   <div flex="5" hide-xs hide-sm>
@@ -49,9 +51,9 @@
 
                   <md-input-container class="md-block" flex-gt-sm>
                       <label>Email</label>
-                      <input type="email" name="email" ng-model="vm.user.email">
+                      <input type="email" required name="email" ng-model="vm.user.email">
                       <div ng-messages="vm.form.email.$error" role="alert" multiple="">
-                        <div ng-message="required" class="my-message">Please enter your email.</div>
+                        <div ng-message="required" class="my-message">Please enter your valid email.</div>
                       </div>
                   </md-input-container>
                   <div flex="5" hide-xs hide-sm>
@@ -60,7 +62,7 @@
                 </div>
                 <md-input-container class="md-block">
                     <label>Password</label>
-                    <input type="password" name="password" ng-model="vm.user.password" id="password">
+                    <input type="password"  required name="password" ng-model="vm.user.password" id="password">
                     <ul id="strength" check-strength="password"></ul>
                     <div ng-messages="vm.form.password.$error" role="alert" multiple="">
                         <div ng-message="required" class="my-message">Please enter your password.</div>
@@ -88,9 +90,11 @@
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Phone Number</label>
-                        <input type="number" ng-maxlength="10" ng-minlength="10" name="phone" ng-model="vm.user.phone">
+                        <input type="number" required ng-maxlength="10" ng-minlength="10" name="phone" ng-model="vm.user.phone">
                         <div ng-messages="vm.form.phone.$error" role="alert" multiple="">
-                            <div ng-message="required" class="my-message">Please enter your phone.</div>
+                            <!--<div ng-message="required" class="my-message">Please enter your phone number.</div>-->
+                            <!--<div ng-message="ng-maxlength" class="my-message">Please enter valid phone number.</div>-->
+                            <!--<div ng-message="ng-maxlength" class="my-message">Please enter valid phone number.</div>-->
                         </div>
                     </md-input-container>
                     <div flex="5" hide-xs hide-sm>
@@ -100,18 +104,18 @@
                 </div>
                 <md-input-container class="md-block">
                     <label>Street Address</label>
-                    <input type="text" name="address" ng-model="vm.user.address.Address">
+                    <input type="text" name="address" required ng-model="vm.user.address.Address">
                     <div ng-messages="vm.form.address.$error" role="alert" multiple="">
-                      <div ng-message="required" class="my-message">Please enter your Address.</div>
+                      <div ng-message="required" class="my-message">Please enter your address.</div>
                     </div>
                 </md-input-container>
 
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block">
                       <label>City</label>
-                      <input type="text" name="city" ng-model="vm.user.address.City">
+                      <input type="text" name="city" required ng-model="vm.user.address.City">
                       <div ng-messages="vm.form.city.$error" role="alert" multiple="">
-                        <div ng-message="required" class="my-message">Please enter your City.</div>
+                        <div ng-message="required" class="my-message">Please enter your city.</div>
                       </div>
                     </md-input-container>
                     <div flex="5" hide-xs hide-sm>
@@ -125,7 +129,7 @@
                                 {{state.abbrev}}
                             </md-option>
                         </md-select>
-                        <div ng-message="required" class="my-message">Please select your State</div>
+                        <div ng-message="required" class="my-message">Please select your state</div>
                     </md-input-container>
                     <div flex="5" hide-xs hide-sm>
                   <!-- Spacer //-->
